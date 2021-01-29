@@ -8,11 +8,28 @@ body{
 }
 footer{
   width: 100%;
-  background-color: #89c7de;
-  color: #fff;
-  text-align: center;
+  background-color: rgb(106,191,176);
+  color: white;
+  text-align: center!important;
   margin-bottom: -200px;
-  position: absolute;/*←絶対位置*/
-  bottom: 0; /*下に固定*/
+  position: absolute;
+  bottom: 0;
   z-index:1;
+  display: table;
 }
+footer a{
+  padding: 20px;
+}
+footer nav{
+  padding: 5px;
+  margin: 5px;
+}
+footer img{
+  width:auto;
+  height: 50px;
+  padding-top: 10px;
+}
+footer a:link { color: white; }
+footer a:visited { color: white; }
+footer a:hover { color: white; }
+footer a:active { color: white; }
