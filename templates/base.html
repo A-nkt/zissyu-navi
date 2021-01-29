@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>実習ナビ | {% block title %}{% endblock %}</title>
+    <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/minty/bulmaswatch.min.css">
+    <link rel="icon" type="image/png" href="{% static 'img/header-icon.png' %}">
+    {# Global javascript #}
+      {% block js_file %}{% endblock %}
+    {# Global stylesheets #}
+      {% block css_file %}{% endblock %}
+  </head>
+  <body>
+    <header class="site-header">
+        <div>
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item" id="site-icon">
+                  <img src="{% static 'img/site-icon.png' %}" hspace="0" vspace="0">
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHero1">
+                  <span>口コミを探す</span>
+                  <span>口コミを投稿する</span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHero1" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item">口コミを探す</a>
+                  <a class="navbar-item">口コミを投稿する</a>
+                  <!--a class="navbar-item">Documentation</a-->
+                  <!--div class="navbar-item has-dropdown is-hoverable">
+                    <div class="navbar-link">
+                      More
+                    </div>
+                    <div id="moreDropdown" class="navbar-dropdown ">
+                      <a class="navbar-item " href="#">
+                        <div class="level is-mobile">
+                          <div class="level-left">
+                            <div class="level-item">
+                              <p>
+                                <strong>Extensions</strong>
+                                <br>
+                                <small>Side projects to enhance Bulma</small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div-->
+                  <!--span class="navbar-item">
+                    <a class="button is-primary is-inverted">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Download</span>
+                    </a>
+                  </span-->
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+        {% block content %}
+        {% endblock %}
+  </body>
+</html>

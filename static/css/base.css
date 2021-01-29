@@ -1,0 +1,8 @@
+body{
+  font-family:'メイリオ';
+}
+.site-header{
+  z-index:1;
+  position: fixed;
+  width:100%;
+}
