@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main_app',
+    'widget_tweaks',#フォームのcssを可変的にする
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,7 +77,8 @@ WSGI_APPLICATION = 'zissyu_navi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
+        #'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

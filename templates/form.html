@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block js_file %}<link rel="stylesheet" href="{% static 'css/form.css' %}">{% endblock %}
+{% block css_file %}<script type="text/javascript" src="{% static 'js/form.js' %}"></script>{% endblock %}
+{% block title %}口コミを投稿する{% endblock %}
+
+{% block content %}
+<div class="form-content">
+
+
+
+<form method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+     <div class="form-group">
+       <div class="form-header">
+         <div class="form-title">
+           {% render_field field.label %}　
+         </div>
+          <p class="must-or-not">
+           {% if field.field.required %}必須{% endif %}
+         </p>
+       </div>
+       {% render_field field class="input is-primary" %}
+
+       {% if field.help_text %}
+         <small class="form-text text-muted">
+           {{ field.help_text }}
+         </small>
+       {% endif %}
+     </div>
+   {% endfor %}
+    <button class="button is-primary" type="submit" onclick="return check()">投稿する</button>
+    <div style="color:red">{{text}}</div>
+</form>
+</div>
+
+{% endblock %}
