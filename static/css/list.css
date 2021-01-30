@@ -87,7 +87,7 @@
 .star5_rating[data-rate="4.5"]:after{ width: 90%; } /* 星4.5 */
 .star5_rating[data-rate="4"]:after{ width: 80%; } /* 星4 */
 .star5_rating[data-rate="3.5"]:after{ width: 70%; } /* 星3.5 */
-.star5_rating[data-rate="3"]:after{ width: 60%; } /* 星3 */
+.star5_rating[data-rate="3.0"]:after{ width: 60%; } /* 星3 */
 .star5_rating[data-rate="2.5"]:after{ width: 50%; } /* 星2.5 */
 .star5_rating[data-rate="2.4"]:after{ width: 48; } /* 星2.4 */
 .star5_rating[data-rate="2.3"]:after{ width: 46%; } /* 星2.3 */
@@ -100,6 +100,7 @@
 .star5_rating[data-rate="0"]:after{ width: 0%; } /* 星0 */
 .star-category{
   padding-left:10px;
+  padding-top: 1%;
 }
 
 .hospital-name-bg {
@@ -192,4 +193,11 @@ border-left: solid 10px #478400;
 }
 .hospital-name-bg:hover{
   text-shadow:0 5px 5px black;
+}
+.pref-category{
+  text-align: center;
+  color: gray;
+}
+.pref-category a:hover{
+  font-weight: bold;
 }

@@ -12,59 +12,66 @@
     <p class="recommend">関連するコンテンツ</p>
   </div>
   <div class="midashi">病院を探す</div>
-  <!--
-  {% for data in datas %}
-  <p>{{ data.hospital_name }}</p>
-  <p>{{ data.place }}</p>
-  <p>{{ data.major }}</p>
-  {% endfor %}
-  -->
+  {% for index, row in result.iterrows %}
+  <!--tr>
+    <td>{{row.hospital_name}}</td>
+    <td>{{row.review}}</td>
+    <td>{{row.count}}</td>
+    <td>{{ row.major_0 }}</td>
+    <td>{{ row.major_1 }}</td>
+    <td>{{ row.major_2 }}</td>
+    <td>{{ row.major_3 }}</td>
+    <td>{{ row.major_4 }}</td>
+  </tr-->
   <div class="hospital-wrap">
     <div class="hospital-content">
       <a href="#">
         <div class="hospital-name-bg">
-          <div class="name">X病院</div>
+          <div class="name">{{ row.hospital_name }}</div>
         </div>
       </a>
+      <div class="pref-category">
+        病院所在地：<a href="#">{{ row.place }}</a>
+      </div>
         <center>
           <div class="star-category">
-            <div class="star5_rating" data-rate="4">
+            <div class="star5_rating" data-rate="{{ row.review }}">
             </div>
-            4
+            {{ row.review }}
           </div>
         </center>
         <div class="major-category">
-          <div class="major-tag"><a href="#">#医師</a></div>
-            <div class="major-tag"><a href="#">#看護師</a></div>
+          {% if row.major_0 == 0 %}
+          {% elif row.major_0 == None %}
+          {% else %}
+          <div class="major-tag"><a href="#">#{{ row.major_0 }}</a></div>
+          {% endif %}
+          {% if row.major_1 == 0 %}
+          {% elif row.major_1 == None %}
+          {% else %}
+          <div class="major-tag"><a href="#">#{{ row.major_1 }}</a></div>
+          {% endif %}
+          {% if row.major_2 == 0 %}
+          {% elif row.major_2 == None %}
+          {% else %}
+          <div class="major-tag"><a href="#">#{{ row.major_2}}</a></div>
+          {% endif %}
+          {% if row.major_3 == 0 %}
+          {% elif row.major_3 == None %}
+          {% else %}
+          <div class="major-tag"><a href="#">#{{ row.major_3 }}</a></div>
+          {% endif %}
+          {% if row.major_4 == 0 %}
+          {% elif row.major_4 == None %}
+          {% else %}
+          <div class="major-tag"><a href="#">#{{ row.major_4 }}</a></div>
+          {% endif %}
+
         </div>
-        <div class="count-category">クチコミ件数：10件</div>
+        <div class="count-category">クチコミ件数：{{ row.count }}件</div>
     </div>
   </div>
-  <div class="hospital-wrap">
-    <div class="hospital-content">
-      <a href="#">
-        <div class="hospital-name-bg">
-          <div class="name">Y病院</div>
-        </div>
-      </a>
-      <center>
-        <div class="star-category">
-          <div class="star5_rating" data-rate="3">
-          </div>
-          3
-        </div>
-      </center>
-        <div class="major-category">
-          <div class="major-tag"><a href="#">#医師</a></div>
-          <div class="major-tag"><a href="#">#看護師</a></div>
-          <div class="major-tag"><a href="#">#看護師</a></div>
-        </div>
-        <div class="count-category">クチコミ件数：4件</div>
-    </div>
-  </div>
-
-
-
+  {% endfor%}
 </div>
 
 
