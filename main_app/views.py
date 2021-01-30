@@ -82,7 +82,7 @@ def list(request):
             result.loc[f,'review'] = round(score.mean(),1)
             result.loc[f,'count'] = str(len(score))
     result = result.fillna(0)
-    #print(result)
+    print(result)
 
 
     return render(request, 'list.html', {'result':result})
