@@ -38,9 +38,11 @@ def list(request):
     result = pd.DataFrame()
     try:
         param = request.GET['pref']
+        txt = "病院平均評価"
         datas = Record.objects.all().filter(place=param)
     except:
         param = request.GET['major']
+        txt = "専攻平均評価"
         datas = Record.objects.all().filter(major=param)
     df_o = read_frame(datas)
     df = df_o[["hospital_name","place",'review','major']]
@@ -82,7 +84,37 @@ def list(request):
             result.loc[f,'review'] = round(score.mean(),1)
             result.loc[f,'count'] = str(len(score))
     result = result.fillna(0)
+
+    PLACE_CHOISE = (
+                ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
+                ('miyagi', '宮城'), ('yamagata', '山形'), ('fukushima', '福島'),('ibaraki', '茨城'),
+                ('tochigi', '栃木'), ('gunma', '群馬'), ('saitama', '埼玉'), ('chiba', '千葉'),
+                ('tokyo', '東京'), ('kanagawa', '神奈川'),('nigata', '新潟'), ('toyama', '富山'),
+                ('ishikawa', '石川'), ('fukui', '福井'), ('yamanashi', '山梨'), ('nagano', '長野'),
+                ('gihu', '岐阜'), ('shizuoka', '静岡'), ('aichi', '愛知'), ('mie', '三重'),
+                ('shiga', '滋賀'), ('kyoto', '京都'), ('osaka', '大阪'), ('hyogo', '兵庫'), ('nara', '奈良'),
+                ('wakayama', '和歌山'),('tottori', '鳥取'), ('simane', '島根'), ('okayama', '岡山'),
+                ('hiroshima', '広島'), ('yamaguchi', '山口'), ('tokushima', '徳島'), ('kagawa', '香川'),
+                ('ehime', '愛媛'), ('kochi', '高知'),('fukuoka', '福岡'), ('saga', '佐賀'), ('ohita', '大分'),
+                ('miyazaki', '宮崎'), ('nagasaki', '長崎'), ('kumamoto', '熊本'), ('kagoshima', '鹿児島'), ('okinawa', '沖縄')
+    )
+    MAJOR_CHOICE = (
+                ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師')
+            )
+
+    for j in range(len(result)):
+        for k in range(len(PLACE_CHOISE)):
+            if PLACE_CHOISE[k][1] == result.loc[j,'place']:
+                result.loc[j,'place_name'] = PLACE_CHOISE[k][0]
+
+    leng = len(result.loc[0])-6
+    for j in range(len(result)):
+        for t in range(leng):
+            for x in range(len(MAJOR_CHOICE)):
+                if MAJOR_CHOICE[x][1] == result.loc[j,'major_'+str(t)]:
+                    result.loc[j,'major_'+str(t)+'_name'] = MAJOR_CHOICE[x][0]
+    for j in range(len(result)):
+        result.loc[j,'txt'] = txt
+
     print(result)
-
-
     return render(request, 'list.html', {'result':result})
