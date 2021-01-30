@@ -5,10 +5,15 @@ from .forms import RecordForm
 from django_pandas.io import read_frame
 import pandas as pd
 import numpy as np
+from django.utils import timezone
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    datas = Record.objects.all().order_by('-date')
+    datas = read_frame(datas)
+    datas = datas[["hospital_name","place",'date','major']]
+    datas = datas[:7]
+    return render(request, 'home.html' ,{'datas': datas})
 
 def form(request):
     if request.method == 'POST': #POSTがされた時
@@ -107,14 +112,15 @@ def list(request):
             if PLACE_CHOISE[k][1] == result.loc[j,'place']:
                 result.loc[j,'place_name'] = PLACE_CHOISE[k][0]
 
-    leng = len(result.loc[0])-6
-    for j in range(len(result)):
-        for t in range(leng):
-            for x in range(len(MAJOR_CHOICE)):
-                if MAJOR_CHOICE[x][1] == result.loc[j,'major_'+str(t)]:
-                    result.loc[j,'major_'+str(t)+'_name'] = MAJOR_CHOICE[x][0]
-    for j in range(len(result)):
-        result.loc[j,'txt'] = txt
+    if len(result) != 0:
+        leng = len(result.loc[0])-6
+        for j in range(len(result)):
+            for t in range(leng):
+                for x in range(len(MAJOR_CHOICE)):
+                    if MAJOR_CHOICE[x][1] == result.loc[j,'major_'+str(t)]:
+                        result.loc[j,'major_'+str(t)+'_name'] = MAJOR_CHOICE[x][0]
+        for j in range(len(result)):
+            result.loc[j,'txt'] = txt
 
-    print(result)
+    #print(result)
     return render(request, 'list.html', {'result':result})
