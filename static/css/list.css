@@ -1,3 +1,195 @@
 .main-content{
   padding-top: 90px;
+  padding-right: 12%;
+  padding-left: 22%;
+}
+.advertise{
+  width : 100% ;
+  padding-top : 100% ;
+  background-color: green;
+  margin:auto;
+  color: black;
+  margin-bottom: 100px;
+}
+.side-wrap{
+  width: 20%;
+  float: right;
+}
+.hospital-wrap{
+  float: left;
+  width: 75%;
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  background: rgb(106,191,176,0.4);
+  box-shadow: 0px 0px 0px 10px rgb(106,191,176,0.4);
+  border: dashed 2px white;
+}
+
+}
+.hospital-content{
+  width : 100%;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+
+}
+.recommend{
+  width : 100% ;
+  padding-top : 100% ;
+  background-color: rgb(106,191,176);
+  margin:auto;
+  color: black;
+  height:900px;
+}
+.midashi {
+  position: relative;
+  padding: 0.5em;
+  background: #a6d3c8;
+  color: white;
+  float: left;
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.midashi:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(149, 158, 155);
+}
+
+.star5_rating{
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: #CCCCCC; /* グレーカラー 自由に設定化 */
+}
+
+.star5_rating:before, .star5_rating:after{
+    content: '★★★★★';
+}
+
+.star5_rating:after{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #ffcf32; /* イエローカラー 自由に設定化 */
+}
+.star5_rating[data-rate="5"]:after{ width: 100%; } /* 星5 */
+.star5_rating[data-rate="4.5"]:after{ width: 90%; } /* 星4.5 */
+.star5_rating[data-rate="4"]:after{ width: 80%; } /* 星4 */
+.star5_rating[data-rate="3.5"]:after{ width: 70%; } /* 星3.5 */
+.star5_rating[data-rate="3"]:after{ width: 60%; } /* 星3 */
+.star5_rating[data-rate="2.5"]:after{ width: 50%; } /* 星2.5 */
+.star5_rating[data-rate="2.4"]:after{ width: 48; } /* 星2.4 */
+.star5_rating[data-rate="2.3"]:after{ width: 46%; } /* 星2.3 */
+.star5_rating[data-rate="2.2"]:after{ width: 44%; } /* 星2.2 */
+.star5_rating[data-rate="2.1"]:after{ width: 42%; } /* 星2.1 */
+.star5_rating[data-rate="2"]:after{ width: 40%; } /* 星2 */
+.star5_rating[data-rate="1.5"]:after{ width: 30%; } /* 星1.5 */
+.star5_rating[data-rate="1"]:after{ width: 20%; } /* 星1 */
+.star5_rating[data-rate="0.5"]:after{ width: 10%; } /* 星0.5 */
+.star5_rating[data-rate="0"]:after{ width: 0%; } /* 星0 */
+.star-category{
+  padding-left:10px;
+}
+
+.hospital-name-bg {
+box-sizing: border-box;
+height: 45px;
+margin: 5px auto;
+position: relative;
+text-align: center;
+vertical-align: middle;
+width: 300px;
+}
+
+.hospital-name-bg::before,.hospital-name-bg::after {
+border-color: #73c01a;
+border-style: solid;
+bottom: -10px;
+content: '';
+position: absolute;
+width: 0;
+z-index: -2;
+}
+
+.hospital-name-bg::before {
+border-left-color: transparent;
+border-width: 20px 15px 20px 15px;
+left: -20px;
+}
+
+.hospital-name-bg::after {
+border-right-color: transparent;
+border-width: 20px 15px 20px 15px;
+right: -20px;
+}
+
+.name {
+font-size: 18px;
+font-weight: bold;
+}
+
+.name {
+background: #8dce41;
+color: #fff;
+padding: 6px 10px;
+position: relative;
+}
+
+.name::before,.name::after {
+border: none;
+border-bottom: solid 10px transparent;
+content: '';
+position: absolute;
+top: 100%;
+}
+
+.name::before {
+left: 0;
+border-right: solid 10px #478400;
+}
+
+.name::after {
+right: 0;
+border-left: solid 10px #478400;
+}
+.hospital-wrap a:link { color: gray; }
+.hospital-wrap a:visited { color: gray; }
+.hospital-wrap a:hover { color: gray; }
+.hospital-wrap a:active { color: gray; }
+.major-tag{
+  display: inline-block;
+  background-color: #EEEEEE	;
+  border-radius: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: 1px solid #EEEEEE;
+
+}
+.major-category{
+  margin-top: 10px;
+  text-align: center;
+}
+.count-category{
+  float: right;
+  padding-right: 100px;
+  color: gray;
+  font-weight: bold;
+}
+.major-tag:hover{
+  border: 1px solid black;
+  background-color: white;
+}
+.hospital-name-bg:hover{
+  text-shadow:0 5px 5px black;
 }

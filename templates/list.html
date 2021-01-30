@@ -1,12 +1,70 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block js_file %}<link rel="stylesheet" href="{% static 'css/list.css' %}">{% endblock %}
-{% block title %}{% endblock %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/list.css' %}">{% endblock %}
+{% block js_file %}<script type="text/javascript" src="{% static 'js/list.js' %}"></script>{% endblock %}
+{% block title %}病院を探す{% endblock %}
 
 
 {% block content %}
 <div class="main-content">
-  <p>{{ param }}</p>
+  <div class="side-wrap">
+    <p class="advertise">広告枠</p>
+    <p class="recommend">関連するコンテンツ</p>
+  </div>
+  <div class="midashi">病院を探す</div>
+  <!--
+  {% for data in datas %}
+  <p>{{ data.hospital_name }}</p>
+  <p>{{ data.place }}</p>
+  <p>{{ data.major }}</p>
+  {% endfor %}
+  -->
+  <div class="hospital-wrap">
+    <div class="hospital-content">
+      <a href="#">
+        <div class="hospital-name-bg">
+          <div class="name">X病院</div>
+        </div>
+      </a>
+        <center>
+          <div class="star-category">
+            <div class="star5_rating" data-rate="4">
+            </div>
+            4
+          </div>
+        </center>
+        <div class="major-category">
+          <div class="major-tag"><a href="#">#医師</a></div>
+            <div class="major-tag"><a href="#">#看護師</a></div>
+        </div>
+        <div class="count-category">クチコミ件数：10件</div>
+    </div>
+  </div>
+  <div class="hospital-wrap">
+    <div class="hospital-content">
+      <a href="#">
+        <div class="hospital-name-bg">
+          <div class="name">Y病院</div>
+        </div>
+      </a>
+      <center>
+        <div class="star-category">
+          <div class="star5_rating" data-rate="3">
+          </div>
+          3
+        </div>
+      </center>
+        <div class="major-category">
+          <div class="major-tag"><a href="#">#医師</a></div>
+          <div class="major-tag"><a href="#">#看護師</a></div>
+          <div class="major-tag"><a href="#">#看護師</a></div>
+        </div>
+        <div class="count-category">クチコミ件数：4件</div>
+    </div>
+  </div>
+
+
+
 </div>
 
 

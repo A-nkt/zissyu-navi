@@ -45,7 +45,7 @@ class Record(models.Model):
     date = models.DateField(verbose_name='打刻日',blank=True,null=True,default=timezone.now)
 
     def __str__(self):
-        template='{0.hospital_name} '+','+'{0.date}'
+        template='{0.hospital_name} '+','+'{0.major}'+','+'{0.date}'
         return template.format(self)
 
 
@@ -55,7 +55,8 @@ class Major(models.Model):
 
     image = models.ImageField(upload_to='media/images/',blank=False,null=True)
     major_name = models.CharField(verbose_name='専攻名',blank=True,null=True,max_length=100)
-    count = models.IntegerField(verbose_name='件数',blank=False,null=True)
+    db_major_name = models.CharField(verbose_name='DB用専攻名',blank=True,null=True,max_length=100)
+    count = models.IntegerField(verbose_name='件数',blank=True,null=True,default=0)
     link = models.CharField(verbose_name='リンク',blank=True,null=True,max_length=100)
 
     def __str__(self):

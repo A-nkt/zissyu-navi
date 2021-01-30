@@ -22,8 +22,12 @@ def form(request):
 
 
 def search(request):
-    datas=Major.objects.all()
+    datas = Major.objects.all()
 
+    majors = Record.objects.all().values_list('major', flat=True).distinct() #クチコミのある職種別の参照
+    #職種ごとに件数を参照して変更
+    for major in majors:
+        Major_db = Major.objects.filter(db_major_name=major).update(count=len(Record.objects.all().filter(major=major)))
     return render(request, 'search.html', {'datas':datas})
 
 
@@ -32,4 +36,5 @@ def list(request):
         param = request.GET['pref']
     except:
         param = request.GET['major']
-    return render(request, 'list.html', {'param':param})
+    datas = Record.objects.all().filter(place=param)
+    return render(request, 'list.html', {'datas':datas})
