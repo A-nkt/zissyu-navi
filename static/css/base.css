@@ -31,5 +31,8 @@ footer img{
 }
 footer a:link { color: white; }
 footer a:visited { color: white; }
-footer a:hover { color: white; }
+footer a:hover { color: white; font-weight: bold;}
 footer a:active { color: white; }
+footer p{
+  padding-top: 10px;
+}

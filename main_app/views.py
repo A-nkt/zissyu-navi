@@ -30,12 +30,17 @@ def form(request):
 
 
 def search(request):
-    datas = Major.objects.all()
+    MAJOR_CHOICE = (
+                ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師')
+            )
+    for k in range(len(MAJOR_CHOICE)):
+        Major.objects.filter(db_major_name=MAJOR_CHOICE[k][0]).update(count=0)
 
     majors = Record.objects.all().values_list('major', flat=True).distinct() #クチコミのある職種別の参照
     #職種ごとに件数を参照して変更
     for major in majors:
-        Major_db = Major.objects.filter(db_major_name=major).update(count=len(Record.objects.all().filter(major=major)))
+        Major.objects.filter(db_major_name=major).update(count=len(Record.objects.all().filter(major=major)))
+    datas = Major.objects.all()
     return render(request, 'search.html', {'datas':datas})
 
 
@@ -122,5 +127,10 @@ def list(request):
         for j in range(len(result)):
             result.loc[j,'txt'] = txt
 
+        return render(request, 'list.html', {'result':result,'content':True,})
+    else:
+        #result = "コンテンツはまだありません。"
+        return render(request, 'list.html', {'content':False})
+
+
     #print(result)
-    return render(request, 'list.html', {'result':result})

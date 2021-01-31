@@ -100,6 +100,7 @@
 }
 .main-content-bk:hover{
   box-shadow: 0 0 25px rgba(0,0,0,.45);
+  font-weight: bold;
 }
 .top-content-bk:hover{
   box-shadow: 0 0 25px rgba(0,0,0,.45);
@@ -156,6 +157,9 @@ li {
 }
 .main-top-text{
   color:gray;
+}
+.top-content-bk :hover{
+  font-weight: bold;
 }
 .box-sub-text{
   padding-top: 10px;
