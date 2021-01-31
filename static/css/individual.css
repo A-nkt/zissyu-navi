@@ -1,0 +1,36 @@
+.main-content{
+  padding-top: 90px;
+  padding-right: 12%;
+  padding-left: 22%;
+}
+
+.advertise{
+  width : 100% ;
+  padding-top : 100% ;
+  background-color: green;
+  margin:auto;
+  color: black;
+  margin-bottom: 100px;
+}
+.side-wrap{
+  width: 20%;
+  float: right;
+}
+.recommend{
+  width : 100% ;
+  padding-top : 100% ;
+  background-color: rgb(106,191,176);
+  margin:auto;
+  color: black;
+  height:900px;
+}
+.box{
+  background-color: rgb(106,191,176,0.5);
+  width:70%;
+  height:200px;
+}
+#myRaderChart{
+  float: left;
+  height: 100% !important;
+  width: auto !important;
+}

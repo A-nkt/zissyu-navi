@@ -94,7 +94,7 @@ def list(request):
             result.loc[f,'review'] = round(score.mean(),1)
             result.loc[f,'count'] = str(len(score))
     result = result.fillna(0)
-    
+
     PLACE_CHOISE = (
                 ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
                 ('miyagi', '宮城'), ('yamagata', '山形'), ('fukushima', '福島'),('ibaraki', '茨城'),
@@ -135,3 +135,6 @@ def list(request):
 
 def footer_content(request):
     return render(request, 'footer-content.html')
+
+def individual(request):
+    return render(request, 'individual.html')

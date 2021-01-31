@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+SECURE_SSL_REDIRECT = False
 ROOT_URLCONF = 'zissyu_navi.urls'
 
 TEMPLATES = [

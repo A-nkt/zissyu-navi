@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/individual.css' %}">{% endblock %}
+{% block js_file %}<script type="text/javascript" src="{% static 'js/individual.js' %}"></script>{% endblock %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <div class="side-wrap">
+    <p class="advertise">広告枠</p>
+    <p class="recommend">関連するコンテンツ</p>
+  </div>
+
+  <div class="box">
+    <div class="hospital_name">
+      X病院
+    </div>
+    <canvas id="myRaderChart"></canvas>
+  </div>
+  <script>
+    var ctx = document.getElementById("myRaderChart");
+        var myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ["実習担当者について", "レポートについて", "コミュニケーションについて"],
+                datasets: [{
+                    data: [3.3, 2.6, 4.1],
+                    backgroundColor: 'RGBA(225,95,150, 0.5)',
+                    borderColor: 'RGBA(225,95,150, 1)',
+                    borderWidth: 1,
+                    pointBackgroundColor: 'RGB(46,106,177)',
+                }]
+            },
+            options: {
+                scale:{
+                    ticks:{
+                        suggestedMin: 0,
+                        suggestedMax: 5,
+                    }
+                }
+            }
+        });
+  </script>
+
+</div>
+{% endblock %}

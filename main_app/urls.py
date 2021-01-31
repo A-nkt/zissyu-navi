@@ -9,4 +9,5 @@ urlpatterns = [
     path('search/',views.search,name='search'),
     path('list/',views.list,name='list'),
     path('footer-content/',views.footer_content,name='footer_content'),
+    path('list/individual/',views.individual,name='individual'),
 ]
