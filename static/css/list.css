@@ -238,3 +238,41 @@ border-left: solid 10px #478400;
 .pref-category a:hover{
   font-weight: bold;
 }
+.no-content-wrap{
+
+  padding-top: 10%;
+}
+.no-content-box{
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    background: #f4f4f4;
+    border-left: solid 6px rgb(106,191,176);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+    width: 50%;
+    font-weight: bold;
+
+}
+.no-content-box p {
+    margin: 0;
+    padding: 0;
+}
+.button {
+  position: relative;
+  background-color: #1abc9c;
+  border-radius: 4px;
+  color: #fff;
+  line-height: 52px;
+  -webkit-transition: none;
+  transition: none;
+  box-shadow: 0 3px 0 #0e8c73;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+  font-weight: bold;
+}
+.button:hover {
+  background-color: #31c8aa;
+  box-shadow: 0 3px 0 #23a188;
+}
+.button:active {
+  top: 3px;
+  box-shadow: none;
+}

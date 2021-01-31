@@ -74,7 +74,12 @@
     </div>
     {% endfor%}
     {% else %}
-    <p>TEST</p>
+    <div class="no-content-wrap">
+      <div class="no-content-box">
+        <p>現在、選択されたカテゴリーには、投稿されたコンテンツがございません。<br>ぜひ、下記からコンテンツをご投稿ください</p>
+      </div>
+      <a class="button" href="/form/">口コミを投稿する</a>
+    </div>
     {% endif %}
 </div>
 

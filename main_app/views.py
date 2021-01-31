@@ -133,4 +133,5 @@ def list(request):
         return render(request, 'list.html', {'content':False})
 
 
-    #print(result)
+def footer_content(request):
+    return render(request, 'footer-content.html')

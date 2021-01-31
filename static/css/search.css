@@ -28,7 +28,7 @@
 
 .body-contents a:link { color: black; }
 .body-contents a:visited { color: black; }
-.body-contents a:hover { color: black; }
+.body-contents a:hover { color: black; font-weight: bold;}
 .body-contents a:active { color: black; }
 
 .box-header-text{
