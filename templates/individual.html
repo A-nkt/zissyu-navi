@@ -2,45 +2,102 @@
 {% load static %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/individual.css' %}">{% endblock %}
 {% block js_file %}<script type="text/javascript" src="{% static 'js/individual.js' %}"></script>{% endblock %}
-{% block title %}{% endblock %}
+{% block title %}X病院{% endblock %}
 
 {% block content %}
+
 <div class="main-content">
   <div class="side-wrap">
     <p class="advertise">広告枠</p>
     <p class="recommend">関連するコンテンツ</p>
   </div>
 
+  <div class="header-tab">
+    <p class="header-top">病院評価スコア - </p>
+    <p class="header-sub">X病院</p>
+  </div>
+
   <div class="box">
     <div class="hospital_name">
       X病院
     </div>
-    <canvas id="myRaderChart"></canvas>
+    <div class="star-category" id="star-all">
+      総合評価：
+      <div class="star5_rating" data-rate="3.0">
+      </div>&nbsp;&nbsp;<b>3.0</b>
+    </div>
+
+    <div class="star-category" id="star-content">
+      <li>実習担当者について：
+        <div class="star5_rating" data-rate="2.4">
+        </div>&nbsp;&nbsp;<b>2.4</b>
+      </li>
+    </div>
+    <div class="star-category" id="star-content">
+      <li>レポートについて：
+        <div class="star5_rating" data-rate="1.6">
+        </div>&nbsp;&nbsp;<b>1.6</b>
+      </li>
+    </div>
+    <div class="star-category" id="star-content">
+      <li>コミュニケーションについて：
+        <div class="star5_rating" data-rate="3.2">
+        </div>&nbsp;&nbsp;<b>3.2</b>
+      </li>
+    </div>
+    <div class="hospital-url">
+      URL : <a href="http://mori-hosp.jp/">http://mori-hosp.jp/</a>
+    </div>
   </div>
-  <script>
-    var ctx = document.getElementById("myRaderChart");
-        var myRadarChart = new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: ["実習担当者について", "レポートについて", "コミュニケーションについて"],
-                datasets: [{
-                    data: [3.3, 2.6, 4.1],
-                    backgroundColor: 'RGBA(225,95,150, 0.5)',
-                    borderColor: 'RGBA(225,95,150, 1)',
-                    borderWidth: 1,
-                    pointBackgroundColor: 'RGB(46,106,177)',
-                }]
-            },
-            options: {
-                scale:{
-                    ticks:{
-                        suggestedMin: 0,
-                        suggestedMax: 5,
-                    }
-                }
-            }
-        });
-  </script>
+
+  <div class="header-tab" id="second-g">
+    <p class="header-top">カテゴリ別の口コミ(11件) - </p>
+    <p class="header-sub">X病院</p>
+  </div>
+
+  <div class="category-group">
+    <ul id="nav">
+      <a href="#">
+        <li><i class="fas fa-user"></i>実習担当者について<i class="mark">></i></li>
+      </a>
+      <a href="#">
+        <li><i class="far fa-file-alt"></i>レポートについて<i class="mark">></i></li>
+      </a>
+      <a href="#">
+        <li><i class="fas fa-comments"></i>コミュニケーションについて<i class="mark">></i></li>
+      </a>
+    </ul>
+  </div>
+
+  <div class="header-tab" id="thrid-g">
+    <p class="header-top">回答者別の口コミ(4件) - </p>
+    <p class="header-sub">X病院</p>
+  </div>
+
+  <div class="answer-group">
+
+    <ul id="nav_gender">
+      <li id="gender_type">性別：</li>
+      <li><a href="#">男性</a></li>
+      <li id="gender_mid">|</li>
+      <li><a href="#">女性</a></li>
+    </ul>
+
+    <ul id="nav_ptn_2">
+      <a href="#"><li>MENU1</li></a>
+      <a href="#"><li>MENU1</li></a>
+      <a href="#"><li>MENU1</li></a>
+      <a href="#"><li>MENU1</li></a>
+      <a href="#"><li>MENU1</li></a>
+    </ul>
+
+  </div>
+
+
+
+
+
+
 
 </div>
 {% endblock %}
