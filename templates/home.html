@@ -20,7 +20,7 @@
     <ul class="top-block">
       {% for index, row in datas.iterrows %}
       <li>
-        <a href="">
+        <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
           <div class="top-content-bk">
             <div class="main-top-text">
               {{ row.hospital_name }}
@@ -57,8 +57,14 @@
       </a>
     </li>
   </ul>
+</div>
+
+<div class="lanking-section">
+  <div class="content-header-text">人気のコンテンツ</div>
 
 </div>
+
+
 
 
 

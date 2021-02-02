@@ -22,7 +22,7 @@
   background-color: rgb(106,191,176);
   margin:auto;
   color: black;
-  height:900px;
+  height:800px;
 }
 .box{
   margin-top: 10px;
@@ -181,7 +181,7 @@ div p {
   background-color:rgb(76,161,146,0.7);
   color:white;
 }
-#nav li i {
+#nav li span {
   color: gray;
   padding-right: 5%;
 }
@@ -189,7 +189,7 @@ div p {
   float: right;
   color:rgb(170,170,170);
 }
-#nav li:hover i{
+#nav li:hover span{
   color:white;
   font-weight: bold;
 }

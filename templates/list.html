@@ -72,7 +72,50 @@
           <div class="count-category">クチコミ件数：{{ row.count }}件</div>
       </div>
     </div>
-    {% endfor%}
+    {% endfor %}
+    <div class="paginator">
+      <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+        {% if previous_page != 0 %}{# page=1以外 #}
+        <a class="pagination-previous" href="/list/?{{ param_p }}={{ param }}&page={{ previous_page }}">Previous</a>
+        {% endif %}
+        {% if page != last_page %}
+        <a class="pagination-next" href="/list/?{{ param_p }}={{ param }}&page={{ next_page }}">Next page</a>
+        {% endif %}
+        <ul class="pagination-list">
+          {% if page == 1 %}{# now page is 1 #}
+            {% if last_page == 2 %}
+            <li><a class="pagination-link is-current" aria-label="Goto page 1" href="/list/?{{ param_p }}={{ param }}&page=1">1</a></li>
+            <li><a class="pagination-link" aria-label="Goto page 86" href="/list/?{{ param_p }}={{ param }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% elif last_page == 1 %}
+            <li><a class="pagination-link is-current" aria-label="Goto page 1" href="/list/?{{ param_p }}={{ param }}&page=1">1</a></li>
+            {% else %}
+            <li><a class="pagination-link is-current" aria-label="Goto page 1" href="/list/?{{ param_p }}={{ param }}&page=1">1</a></li>
+            <li><span class="pagination-ellipsis">…</span></li>
+            <li><a class="pagination-link" aria-label="Goto page 86" href="/list/?{{ param_p }}={{ param }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% endif %}
+          {% elif page == last_page %}{# now page is last #}
+            {% if last_page != 2 %}
+            <li><a class="pagination-link" aria-label="Goto page 1" href="/list/?{{ param_p }}={{ param }}&page=1">1</a></li>
+            <li><span class="pagination-ellipsis">…</span></li>
+            <li><a class="pagination-link is-current" aria-label="Goto page 86" href="/list/?{{ param_p }}={{ param }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% else %}
+            <li><a class="pagination-link" aria-label="Goto page 1" href="/list/?{{ param_p }}={{ param }}&page=1">1</a></li>
+            <li><a class="pagination-link is-current" aria-label="Goto page 86" href="/list/?{{ param_p }}={{ param }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% endif %}
+          {% else %}
+            <li><a class="pagination-link" aria-label="Goto page 45" href="/list/?{{ param_p }}={{ param }}&page=1">1</a></li>
+            {% if page != 2 %}
+            <li><span class="pagination-ellipsis">…</span></li>
+            {% endif %}
+            <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page" href="/list/?{{ param_p }}={{ param }}&page={{ page }}">{{ page }}</a></li>
+            {% if page != last_previous_page %}
+            <li><span class="pagination-ellipsis">…</span></li>
+            {% endif %}
+            <li><a class="pagination-link" aria-label="Goto page 86" href="/list/?{{ param_p }}={{ param }}&page={{ last_page }}">{{ last_page }}</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
     {% else %}
     <div class="no-content-wrap">
       <div class="no-content-box">

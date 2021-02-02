@@ -2,7 +2,7 @@
 {% load static %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/individual.css' %}">{% endblock %}
 {% block js_file %}<script type="text/javascript" src="{% static 'js/individual.js' %}"></script>{% endblock %}
-{% block title %}X病院{% endblock %}
+{% block title %}{{ hospital_name }}{% endblock %}
 
 {% block content %}
 
@@ -68,15 +68,25 @@
         <li>
           <i class="fas fa-user"></i>
           実習担当者について
-          <i class="count">（{{ comment_people_counter }}件）</i>
-          <i class="mark">></i>
+          <span class="count">（{{ comment_people_counter }}件）</span>
+          <span class="mark">></span>
         </li>
       </a>
       <a href="#">
-        <li><i class="far fa-file-alt"></i>レポートについて<i class="count">（{{ comment_report_counter }}件）</i><i class="mark">></i></li>
+        <li>
+          <i class="far fa-file-alt"></i>
+          レポートについて
+          <span class="count">（{{ comment_report_counter }}件）</span>
+          <span class="mark">></span>
+        </li>
       </a>
       <a href="#">
-        <li><i class="fas fa-comments"></i>コミュニケーションについて<i class="count">（{{ comment_communication_counter }}件）</i><i class="mark">></i></li>
+        <li>
+          <i class="fas fa-comments"></i>
+          コミュニケーションについて
+          <span class="count">（{{ comment_communication_counter }}件）</span>
+          <span class="mark">></span>
+        </li>
       </a>
     </ul>
   </div>

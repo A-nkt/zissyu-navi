@@ -39,7 +39,7 @@
   background-color: rgb(106,191,176);
   margin:auto;
   color: black;
-  height:900px;
+  height:800px;
 }
 .midashi {
   position: relative;
@@ -275,4 +275,13 @@ border-left: solid 10px #478400;
 .button:active {
   top: 3px;
   box-shadow: none;
+}
+.paginator ul{
+  list-style: none;
+}
+.paginator{
+  float: left;
+  width: 75%;
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
 }

@@ -2,7 +2,7 @@ body{
   font-family:'メイリオ';
 }
 .content {
-  min-height: calc(120vh - 70px);
+  min-height: calc(160vh - 70px);
 }
 .footer {
   height: 50px;
@@ -20,10 +20,6 @@ footer{
   color: white;
   position: absolute;
 }
-/*footer{
-  width: 100%;
-  background-color: rgb(106,191,176);
-}*/
 footer a{
   padding: 20px;
 }

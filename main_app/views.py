@@ -6,6 +6,26 @@ from django_pandas.io import read_frame
 import pandas as pd
 import numpy as np
 from django.utils import timezone
+from django.core.paginator import Paginator
+import math
+
+PLACE_CHOISE = (
+            ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
+            ('miyagi', '宮城'), ('yamagata', '山形'), ('fukushima', '福島'),('ibaraki', '茨城'),
+            ('tochigi', '栃木'), ('gunma', '群馬'), ('saitama', '埼玉'), ('chiba', '千葉'),
+            ('tokyo', '東京'), ('kanagawa', '神奈川'),('nigata', '新潟'), ('toyama', '富山'),
+            ('ishikawa', '石川'), ('fukui', '福井'), ('yamanashi', '山梨'), ('nagano', '長野'),
+            ('gihu', '岐阜'), ('shizuoka', '静岡'), ('aichi', '愛知'), ('mie', '三重'),
+            ('shiga', '滋賀'), ('kyoto', '京都'), ('osaka', '大阪'), ('hyogo', '兵庫'), ('nara', '奈良'),
+            ('wakayama', '和歌山'),('tottori', '鳥取'), ('simane', '島根'), ('okayama', '岡山'),
+            ('hiroshima', '広島'), ('yamaguchi', '山口'), ('tokushima', '徳島'), ('kagawa', '香川'),
+            ('ehime', '愛媛'), ('kochi', '高知'),('fukuoka', '福岡'), ('saga', '佐賀'), ('ohita', '大分'),
+            ('miyazaki', '宮崎'), ('nagasaki', '長崎'), ('kumamoto', '熊本'), ('kagoshima', '鹿児島'), ('okinawa', '沖縄')
+)
+
+MAJOR_CHOICE = (
+            ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師')
+        )
 
 # Create your views here.
 def home(request):
@@ -13,6 +33,10 @@ def home(request):
     datas = read_frame(datas)
     datas = datas[["hospital_name","place",'date','major']]
     datas = datas[:7]
+    for j in range(len(datas)):
+        for k in range(len(PLACE_CHOISE)):
+            if PLACE_CHOISE[k][1] == datas.loc[j,'place']:
+                datas.loc[j,'place_name'] = PLACE_CHOISE[k][0]
     return render(request, 'home.html' ,{'datas': datas})
 
 def form(request):
@@ -30,9 +54,6 @@ def form(request):
 
 
 def search(request):
-    MAJOR_CHOICE = (
-                ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師')
-            )
     for k in range(len(MAJOR_CHOICE)):
         Major.objects.filter(db_major_name=MAJOR_CHOICE[k][0]).update(count=0)
 
@@ -45,14 +66,16 @@ def search(request):
 
 
 def list(request):
+    page = request.GET['page']
     result = pd.DataFrame()
     try:
         param = request.GET['pref']
+        param_p = "pref"
         txt = "病院平均評価"
         datas = Record.objects.all().filter(place=param)
     except:
         param = request.GET['major']
-        print(param)
+        param_p = "major"
         txt = "専攻平均評価"
         datas = Record.objects.all().filter(major=param)
     df_o = read_frame(datas)
@@ -97,23 +120,6 @@ def list(request):
             result.loc[f,'count'] = str(len(score))
     result = result.fillna(0)
 
-    PLACE_CHOISE = (
-                ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
-                ('miyagi', '宮城'), ('yamagata', '山形'), ('fukushima', '福島'),('ibaraki', '茨城'),
-                ('tochigi', '栃木'), ('gunma', '群馬'), ('saitama', '埼玉'), ('chiba', '千葉'),
-                ('tokyo', '東京'), ('kanagawa', '神奈川'),('nigata', '新潟'), ('toyama', '富山'),
-                ('ishikawa', '石川'), ('fukui', '福井'), ('yamanashi', '山梨'), ('nagano', '長野'),
-                ('gihu', '岐阜'), ('shizuoka', '静岡'), ('aichi', '愛知'), ('mie', '三重'),
-                ('shiga', '滋賀'), ('kyoto', '京都'), ('osaka', '大阪'), ('hyogo', '兵庫'), ('nara', '奈良'),
-                ('wakayama', '和歌山'),('tottori', '鳥取'), ('simane', '島根'), ('okayama', '岡山'),
-                ('hiroshima', '広島'), ('yamaguchi', '山口'), ('tokushima', '徳島'), ('kagawa', '香川'),
-                ('ehime', '愛媛'), ('kochi', '高知'),('fukuoka', '福岡'), ('saga', '佐賀'), ('ohita', '大分'),
-                ('miyazaki', '宮崎'), ('nagasaki', '長崎'), ('kumamoto', '熊本'), ('kagoshima', '鹿児島'), ('okinawa', '沖縄')
-    )
-    MAJOR_CHOICE = (
-                ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師')
-            )
-
     for j in range(len(result)):
         for k in range(len(PLACE_CHOISE)):
             if PLACE_CHOISE[k][1] == result.loc[j,'place']:
@@ -128,8 +134,24 @@ def list(request):
                         result.loc[j,'major_'+str(t)+'_name'] = MAJOR_CHOICE[x][0]
         for j in range(len(result)):
             result.loc[j,'txt'] = txt
-
-        return render(request, 'list.html', {'result':result,'content':True,})
+        page = int(page)
+        previous_page = page - 1
+        next_page = page + 1
+        last_page = math.ceil(len(result) / 5)
+        last_previous_page = last_page -1
+        result = result[5*(page - 1):5*page]
+        context = {
+            'result':result,
+            'content':True,
+            'param':param,
+            'param_p':param_p,
+            'page':page, #今いるページ
+            'previous_page':previous_page, #一個前のページ
+            'next_page':next_page, #一個次のページ
+            'last_page':last_page, #最後のページ
+            'last_previous_page':last_previous_page,#最後の一個前
+        }
+        return render(request, 'list.html', context)
     else:
         #result = "コンテンツはまだありません。"
         return render(request, 'list.html', {'content':False})
