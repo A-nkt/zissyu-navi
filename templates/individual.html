@@ -19,40 +19,47 @@
 
   <div class="box">
     <div class="hospital_name">
-      X病院
+      {{ hospital_name }}
     </div>
+    <div class="hospital-url">回答者：{{ all_count }}人</div>
     <div class="star-category" id="star-all">
       総合評価：
-      <div class="star5_rating" data-rate="3.0">
-      </div>&nbsp;&nbsp;<b>3.0</b>
+      <div class="star5_rating" data-rate="{{ review_average }}">
+      </div>&nbsp;&nbsp;<b>{{ review_average }}</b>
     </div>
-
     <div class="star-category" id="star-content">
       <li>実習担当者について：
-        <div class="star5_rating" data-rate="2.4">
-        </div>&nbsp;&nbsp;<b>2.4</b>
+        <div class="star5_rating" data-rate="{{ review_average_people }}">
+        </div>&nbsp;&nbsp;<b>{{ review_average_people }}</b>
       </li>
     </div>
     <div class="star-category" id="star-content">
       <li>レポートについて：
-        <div class="star5_rating" data-rate="1.6">
-        </div>&nbsp;&nbsp;<b>1.6</b>
+        <div class="star5_rating" data-rate="{{ review_average_report }}">
+        </div>&nbsp;&nbsp;<b>{{ review_average_report }}</b>
       </li>
     </div>
     <div class="star-category" id="star-content">
       <li>コミュニケーションについて：
-        <div class="star5_rating" data-rate="3.2">
-        </div>&nbsp;&nbsp;<b>3.2</b>
+        <div class="star5_rating" data-rate="{{ review_average_communicaion }}">
+        </div>&nbsp;&nbsp;<b>{{ review_average_communicaion}}</b>
       </li>
     </div>
+    {% if url == "" %}
     <div class="hospital-url">
-      URL : <a href="http://mori-hosp.jp/">http://mori-hosp.jp/</a>
+      {{ url_text }}
     </div>
+    {% else %}
+    <div class="hospital-url">
+      URL : <a href="{{ url }}">{{ url_text }}</a>
+    </div>
+    {% endif %}
+
   </div>
 
   <div class="header-tab" id="second-g">
-    <p class="header-top">カテゴリ別の口コミ(11件) - </p>
-    <p class="header-sub">X病院</p>
+    <p class="header-top">カテゴリ別の口コミ({{ category_count }}件) - </p>
+    <p class="header-sub">{{ hospital_name }}</p>
   </div>
 
   <div class="category-group">
@@ -61,21 +68,21 @@
         <li>
           <i class="fas fa-user"></i>
           実習担当者について
-          <i class="count">（5件）</i>
+          <i class="count">（{{ comment_people_counter }}件）</i>
           <i class="mark">></i>
         </li>
       </a>
       <a href="#">
-        <li><i class="far fa-file-alt"></i>レポートについて<i class="count">（6件）</i><i class="mark">></i></li>
+        <li><i class="far fa-file-alt"></i>レポートについて<i class="count">（{{ comment_report_counter }}件）</i><i class="mark">></i></li>
       </a>
       <a href="#">
-        <li><i class="fas fa-comments"></i>コミュニケーションについて<i class="count">（8件）</i><i class="mark">></i></li>
+        <li><i class="fas fa-comments"></i>コミュニケーションについて<i class="count">（{{ comment_communication_counter }}件）</i><i class="mark">></i></li>
       </a>
     </ul>
   </div>
 
   <div class="header-tab" id="thrid-g">
-    <p class="header-top">回答者別の口コミ(4件) - </p>
+    <p class="header-top">回答者別の口コミ({{ df_date | length }}件) - </p>
     <p class="header-sub">X病院</p>
   </div>
 
@@ -89,92 +96,27 @@
     </ul>
 
     <ul id="nav_ptn_2">
+      {% for index, row in df_date.iterrows %}
       <a href="#">
         <li>
           <div class="personal_group">
             <p class="i_mark">></p>
             <div class="personal_own">
-              <p class="personal_major">看護師</p>
-              <p class="personal_gender">女性</p>
+              <p class="personal_major">{{ row.major }}</p>
+              <p class="personal_gender">{{ row.sex }}</p>
             </div>
             <div class="personal_own_2">
-                <p class="star5_rating" data-rate="3.2"></p>
-                  &nbsp;&nbsp;<b>3.2</b>
-                <p class="personal_date">回答日：2021年1月25日</p>
-            </div>
-          </div>
-
-        </li>
-      </a>
-      <a href="#">
-        <li>
-          <div class="personal_group">
-            <p class="i_mark">></p>
-            <div class="personal_own">
-              <p class="personal_major">医師</p>
-              <p class="personal_gender">男性</p>
-            </div>
-            <div class="personal_own_2">
-                <p class="star5_rating" data-rate="4.2"></p>
-                  &nbsp;&nbsp;<b>4.2</b>
-              <p class="personal_date">回答日：2021年1月22日</p>
+                <p class="star5_rating" data-rate="{{ row.review }}.0"></p>
+                  &nbsp;&nbsp;<b>{{ row.review }}</b>
+                <p class="personal_date">{{ row.date }}</p>
             </div>
           </div>
         </li>
       </a>
-      <a href="#">
-        <li>
-          <div class="personal_group">
-            <p class="i_mark">></p>
-            <div class="personal_own">
-              <p class="personal_major">看護師</p>
-              <p class="personal_gender">男性</p>
-            </div>
-            <div class="personal_own_2">
-                <p class="star5_rating" data-rate="3.7"></p>
-                  &nbsp;&nbsp;<b>3.7</b>
-              <p class="personal_date">回答日：2021年1月21日</p>
-            </div>
-          </div>
-        </li>
-      </a>
-      <a href="#">
-        <li>
-          <div class="personal_group">
-            <p class="i_mark">></p>
-            <div class="personal_own">
-              <p class="personal_major">歯科衛生士</p>
-              <p class="personal_gender">女性</p>
-            </div>
-            <div class="personal_own_2">
-                <p class="star5_rating" data-rate="3.2"></p>
-                  &nbsp;&nbsp;<b>3.2</b>
-              <p class="personal_date">回答日：2021年1月25日</p>
-            </div>
-          </div>
-        </li>
-      </a>
-      <a href="#">
-        <li>
-          <div class="personal_group">
-            <p class="i_mark">></p>
-            <div class="personal_own">
-              <p class="personal_major">医師</p>
-              <p class="personal_gender">女性</p>
-            </div>
-            <div class="personal_own_2">
-                <p class="star5_rating" data-rate="3.2"></p>
-                  &nbsp;&nbsp;<b>3.2</b>
-              <p class="personal_date">回答日：2021年1月25日</p>
-            </div>
-
-          </div>
-
-        </li>
-      </a>
+      {% endfor %}
     </ul>
     <div class="anwer_for_all">
-      <a href="#">回答者一覧を見る(8件)  >></a>
+      <a href="#">回答者一覧を見る({{ df_date | length }}件)  >></a>
     </div>
   </div>
 

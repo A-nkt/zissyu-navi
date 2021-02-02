@@ -7,7 +7,7 @@ class Record(models.Model):
     class Meta:
         db_table = 'Record'
     SEX_CHOICE = (
-                ('man', '男'), ('woman', '女')
+                ('man', '男性'), ('woman', '女性')
             )
     MAJOR_CHOICE = (
                 ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師')

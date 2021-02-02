@@ -139,4 +139,65 @@ def footer_content(request):
     return render(request, 'footer-content.html')
 
 def individual(request):
-    return render(request, 'individual.html')
+    pref_query = request.GET['pref']
+    hp_query = request.GET['hospital_name']
+    hospital_name = hp_query #病院名
+    datas = Record.objects.all().filter(place=pref_query,hospital_name=hp_query)
+    df_o = read_frame(datas)
+
+    all_count = len(df_o) #回答者数
+    url = ""
+    for k in range(len(df_o)):
+        if df_o.loc[k,'url'] != None:
+            url = df_o.loc[k,'url'] #病院URL
+            url_text = "病院HP"
+    if url == "":
+        url_text = "公式HPは登録されていません"
+
+    review_counter = [];review_conter_people = []
+    review_counter_report = [];review_counter_communication = []
+    for i in range(len(df_o)):
+        review_counter.append(df_o.loc[i,'review'])
+        review_conter_people.append(df_o.loc[i,'review_people'])
+        review_counter_report.append(df_o.loc[i,'review_report'])
+        review_counter_communication.append(df_o.loc[i,'review_communication'])
+    review_average = np.mean(review_counter)
+    review_average_people = np.mean(review_conter_people)
+    review_average_report = np.mean(review_counter_report)
+    review_average_communicaion = np.mean(review_counter_communication)
+
+    #カテゴリ別の口コミ
+    comment_people_counter = 0
+    comment_report_counter = 0
+    comment_communication_counter = 0
+    for k in range(len(df_o)):
+        if df_o.loc[k,'review_people_comment'] != '':
+            comment_people_counter += 1
+        if df_o.loc[k,'review_report_comment'] != '':
+            comment_report_counter += 1
+        if df_o.loc[k,'review_communication_comment'] != '':
+            comment_communication_counter += 1
+    category_count = comment_people_counter + comment_report_counter + comment_communication_counter
+
+    df_date = Record.objects.all().filter(place=pref_query,hospital_name=hp_query).order_by('-date')
+    df_date = read_frame(df_date)
+    df_date = df_date[:5]
+    print(df_date['review'])
+
+    context = {
+        'hospital_name':hospital_name,
+        'all_count':all_count,
+        'review_average':review_average,
+        'review_average_people':review_average_people,
+        'review_average_report':review_average_report,
+        'review_average_communicaion':review_average_communicaion,
+        'url':url,
+        'url_text':url_text,
+        'comment_people_counter':comment_people_counter,
+        'comment_report_counter':comment_report_counter,
+        'comment_communication_counter':comment_communication_counter,
+        'category_count':category_count,
+        'df_date':df_date,
+    }
+
+    return render(request, 'individual.html',context)
