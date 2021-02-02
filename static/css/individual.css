@@ -184,11 +184,15 @@ div p {
 }
 #nav .mark{
   float: right;
+  color:rgb(170,170,170);
 }
-#nav .mark:hover{
+#nav li:hover i{
+  color:white;
   font-weight: bold;
 }
-
+#nav .count{
+  padding-left: 1%;
+}
 #nav a {
   text-decoration: none;
   color: #fff;
@@ -202,19 +206,24 @@ div p {
 #nav_ptn_2 {
   list-style: none;
 }
-
 #nav_ptn_2 li {
   width:60%;
-  height:80px;
+  height:70px;
   text-align: center;
   background-color: rgb(106,191,176,0.7);
   border-radius: 30px;
   margin-top: 1%;
   border:1px solid gray;
 }
-
 #nav_ptn_2 li a {
   text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+#nav_ptn_2 li:hover{
+  background-color:rgb(76,161,146,0.7);
+}
+#nav_ptn_2 li:hover .i_mark{
   color: white;
   font-weight: bold;
 }
@@ -241,4 +250,65 @@ div p {
 #nav_gender li a {
   text-decoration: none;
   color: gray;
+}
+.anwer_for_all:hover{
+  background-color:rgb(128,128,128,0.7);
+}
+.anwer_for_all{
+  margin-top: 3%;
+  border:1px solid gray;
+  background-color:rgb(60,60,60,0.7);
+  border-radius: 30px;
+  width:20%;
+  height:10%;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.anwer_for_all a:link { color: white; }
+.anwer_for_all a:visited { color: white; }
+.anwer_for_all a:hover { color: white; }
+.anwer_for_all a:active { color: white; }
+.personal_own p {
+  display: inline;
+ }
+.personal_major{
+  font-size: 18px;
+  font-weight:bold;
+}
+.personal_gender{
+  font-size: 16px;
+}
+.personal_gender{
+  padding-left: 1%;
+}
+.personal_own{
+  padding-top: 0.5%;
+}
+.personal_own_2{
+  padding-top: 0.5%;
+  padding-left: 2%;
+  font-size: 18px;
+}
+.personal_date{
+  padding-left:3%;
+  font-size: 16px;
+}
+.rating .personal_date {
+
+ }
+.rating{
+  font-size: 18px;
+}
+.personal_group{
+  text-align:left;
+  padding-left: 5%;
+}
+.i_mark{
+  float:right;
+  padding-right: 3%;
+  color:rgb(170,170,170);
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 20px;
 }

@@ -100,7 +100,7 @@
     <ul class="inline-block">
       {% for data in datas %}
       <li>
-        <a href="/list?major={{ data.link }}">
+        <a href="/list?major={{ data.db_major_name }}">
           <div class="main-content-bk" id="content-no2">
             <img src="{{ data.image.url }}"/>
             <div class="main-sub-text">{{ data.major_name }}<br>{{ data.count }}件</div><!--クチコミ件数は動的に-->

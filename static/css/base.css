@@ -1,6 +1,13 @@
 body{
   font-family:'メイリオ';
 }
+.content {
+  min-height: calc(120vh - 70px);
+}
+.footer {
+  height: 50px;
+}
+
 .site-header{
   z-index:1;
   position: fixed;
@@ -9,14 +16,14 @@ body{
 footer{
   width: 100%;
   background-color: rgb(106,191,176);
-  color: white;
   text-align: center!important;
-  margin-bottom: -80vh;
+  color: white;
   position: absolute;
-  bottom: 0;
-  z-index:1;
-  display: table;
 }
+/*footer{
+  width: 100%;
+  background-color: rgb(106,191,176);
+}*/
 footer a{
   padding: 20px;
 }

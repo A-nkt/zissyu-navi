@@ -41,6 +41,8 @@ def search(request):
     for major in majors:
         Major.objects.filter(db_major_name=major).update(count=len(Record.objects.all().filter(major=major)))
     datas = Major.objects.all()
+    df_o = read_frame(datas)
+    print(df_o)
     return render(request, 'search.html', {'datas':datas})
 
 
@@ -52,6 +54,7 @@ def list(request):
         datas = Record.objects.all().filter(place=param)
     except:
         param = request.GET['major']
+        print(param)
         txt = "専攻平均評価"
         datas = Record.objects.all().filter(major=param)
     df_o = read_frame(datas)
@@ -86,6 +89,7 @@ def list(request):
             if result.duplicated(subset='hospital_name')[i] == True:
                 result = result.drop(index=i)
         #スコアの導出
+        result = result.reset_index(drop=True)
         for f in range(len(result)):
             score = np.zeros(0)
             for x in range(len(dx)):
