@@ -41,8 +41,6 @@ def search(request):
     for major in majors:
         Major.objects.filter(db_major_name=major).update(count=len(Record.objects.all().filter(major=major)))
     datas = Major.objects.all()
-    df_o = read_frame(datas)
-    print(df_o)
     return render(request, 'search.html', {'datas':datas})
 
 
