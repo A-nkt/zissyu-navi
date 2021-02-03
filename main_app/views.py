@@ -26,7 +26,7 @@ PLACE_CHOISE = (
 MAJOR_CHOICE = (
             ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師'),
             ('occupational_therapist', '作業療法士'), ('registered_dietitian','管理栄養士'), ('midwife','助産師'), ('social_worker','社会福祉士'),
-            ('dental_hygienist','歯科衛生士'), ('caregiver','介護士'), ('paramedic', '救急救命士'),
+            ('dental_hygienist','歯科衛生士'), ('caregiver','介護士'), ('paramedic', '救急救命士'), ('psychiatric_social_worker', '精神保健福祉士'),
         )
 
 # Create your views here.
@@ -262,7 +262,7 @@ def user_answer(request):
 def user_list(request):
     pref_query = request.GET['pref']
     hp_query = request.GET['hospital_name']
-
+    page = request.GET['page']
     try:
         about = request.GET['about']
     except:
@@ -272,7 +272,7 @@ def user_list(request):
         gender_query = request.GET['gender']
     except:
         gender_query = ""
-    print(about)
+
     if about != "":
         if gender_query != "": #about 有,gender_query 有
             datas = Record.objects.all().filter(place=pref_query,hospital_name=hp_query,sex=gender_query)
@@ -327,6 +327,12 @@ def user_list(request):
             if datas.loc[j,'review_communication_comment'] == "":
                 datas = datas.drop([j])
     datas = datas.reset_index(drop=True)
+    page = int(page)
+    previous_page = page - 1
+    next_page = page + 1
+    last_page = math.ceil(len(datas) / 10)
+    last_previous_page = last_page -1
+    datas = datas.loc[10*(page-1):10*page]
 
     datas_all = read_frame(Record.objects.all().filter(place=pref_query,hospital_name=hp_query))
     hospital_score = []
@@ -342,6 +348,11 @@ def user_list(request):
         'place':pref_query,
         'gender_query':gender_query,
         'about':about,
+        'previous_page':previous_page,
+        'next_page':next_page,
+        'last_previous_page':last_previous_page,
+        'last_page':last_page,
+        'page':page,
     }
 
 

@@ -29,25 +29,25 @@
       <li id="gender_type">性別：</li>
       {% if about != "" %}
         {% if gender_query == "man" %}
-        <li id="gender_man" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
-        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        <li id="gender_man" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man&page=1">男性</a></li>
+        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman&page=1">女性</a></li>
         {% elif  gender_query == "woman" %}
-        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
-        <li id="gender_woman" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man&page=1">男性</a></li>
+        <li id="gender_woman" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman&page=1">女性</a></li>
         {% else %}
-        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
-        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man&page=1">男性</a></li>
+        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman&page=1">女性</a></li>
         {% endif %}
       {% else %}
       {% if gender_query == "man" %}
-        <li id="gender_man" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
-        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        <li id="gender_man" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man&page=1">男性</a></li>
+        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman&page=1">女性</a></li>
         {% elif  gender_query == "woman" %}
-        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
-        <li id="gender_woman" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man&page=1">男性</a></li>
+        <li id="gender_woman" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman&page=1">女性</a></li>
         {% else %}
-        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
-        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man&page=1">男性</a></li>
+        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman&page=1">女性</a></li>
         {% endif %}
       {% endif %}
     </ul>
@@ -72,6 +72,94 @@
       </a>
       {% endfor %}
     </ul>
+  </div>
+
+  <div class="paginator">
+    {% if about != "" %}
+      <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+        {% if previous_page != 0 %}{# page=1以外 #}
+        <a class="pagination-previous" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page={{ previous_page }}">Previous</a>
+        {% endif %}
+        {% if page != last_page %}
+        <a class="pagination-next" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page={{ next_page }}">Next page</a>
+        {% endif %}
+        <ul class="pagination-list">
+          {% if page == 1 %}{# now page is 1 #}
+            {% if last_page == 2 %}
+            <li><a class="pagination-link is-current" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page=1">1</a></li>
+            <li><a class="pagination-link" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% elif last_page == 1 %}
+            <li><a class="pagination-link is-current" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page=1">1</a></li>
+            {% else %}
+            <li><a class="pagination-link is-current" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page=1">1</a></li>
+            <li><span class="pagination-ellipsis">…</span></li>
+            <li><a class="pagination-link" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% endif %}
+          {% elif page == last_page %}{# now page is last #}
+            {% if last_page != 2 %}
+            <li><a class="pagination-link" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page=1">1</a></li>
+            <li><span class="pagination-ellipsis">…</span></li>
+            <li><a class="pagination-link is-current" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% else %}
+            <li><a class="pagination-link" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page=1">1</a></li>
+            <li><a class="pagination-link is-current" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% endif %}
+          {% else %}
+            <li><a class="pagination-link" aria-label="Goto page 45" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page=1">1</a></li>
+            {% if page != 2 %}
+            <li><span class="pagination-ellipsis">…</span></li>
+            {% endif %}
+            <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page={{ page }}">{{ page }}</a></li>
+            {% if page != last_previous_page %}
+            <li><span class="pagination-ellipsis">…</span></li>
+            {% endif %}
+            <li><a class="pagination-link" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&page={{ last_page }}">{{ last_page }}</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% else %}
+      <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+        {% if previous_page != 0 %}{# page=1以外 #}
+        <a class="pagination-previous" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page={{ previous_page }}">Previous</a>
+        {% endif %}
+        {% if page != last_page %}
+        <a class="pagination-next" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page={{ next_page }}">Next page</a>
+        {% endif %}
+        <ul class="pagination-list">
+          {% if page == 1 %}{# now page is 1 #}
+            {% if last_page == 2 %}
+            <li><a class="pagination-link is-current" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page=1">1</a></li>
+            <li><a class="pagination-link" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% elif last_page == 1 %}
+            <li><a class="pagination-link is-current" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page=1">1</a></li>
+            {% else %}
+            <li><a class="pagination-link is-current" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page=1">1</a></li>
+            <li><span class="pagination-ellipsis">…</span></li>
+            <li><a class="pagination-link" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% endif %}
+          {% elif page == last_page %}{# now page is last #}
+            {% if last_page != 2 %}
+            <li><a class="pagination-link" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page=1">1</a></li>
+            <li><span class="pagination-ellipsis">…</span></li>
+            <li><a class="pagination-link is-current" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% else %}
+            <li><a class="pagination-link" aria-label="Goto page 1" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page=1">1</a></li>
+            <li><a class="pagination-link is-current" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page={{ last_page }}">{{ last_page }}</a></li>
+            {% endif %}
+          {% else %}
+            <li><a class="pagination-link" aria-label="Goto page 45" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page=1">1</a></li>
+            {% if page != 2 %}
+            <li><span class="pagination-ellipsis">…</span></li>
+            {% endif %}
+            <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page={{ page }}">{{ page }}</a></li>
+            {% if page != last_previous_page %}
+            <li><span class="pagination-ellipsis">…</span></li>
+            {% endif %}
+            <li><a class="pagination-link" aria-label="Goto page 86" href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page={{ last_page }}">{{ last_page }}</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% endif %}
   </div>
 
   <div class="back-hospital-page-cover">

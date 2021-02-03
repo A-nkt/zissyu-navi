@@ -278,3 +278,12 @@
   font-weight: bold !important;
   color: black!important;
 }
+.paginator ul{
+  list-style: none;
+}
+.paginator{
+  float: left;
+  width: 60%;
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+}
