@@ -248,7 +248,8 @@ div p {
 }
 #nav_gender li {
   text-align: center;
-  float: left;
+  /*float: left;*/
+  display: inline;
 }
 
 #nav_gender li a {
@@ -315,4 +316,14 @@ div p {
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 20px;
+}
+#gender_man{
+  border-right: 0.1px solid gray;
+  padding-right: 10px;
+  margin-right: -1.86px;
+}
+#gender_woman{
+  border-left: 0.1px solid gray;
+  padding-left: 10px;
+  margin-left: -1.86px;
 }

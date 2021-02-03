@@ -92,17 +92,15 @@
   </div>
 
   <div class="header-tab" id="thrid-g">
-    <p class="header-top">回答者別の口コミ({{ df_date | length }}件) - </p>
+    <p class="header-top">回答者別の口コミ({{ all_count }}件) - </p>
     <p class="header-sub">X病院</p>
   </div>
 
   <div class="answer-group">
-
     <ul id="nav_gender">
       <li id="gender_type">性別：</li>
-      <li><a href="#">男性</a></li>
-      <li id="gender_mid">|</li>
-      <li><a href="#">女性</a></li>
+      <li id="gender_man"><a href="#">男性</a></li>
+      <li id="gender_woman"><a href="#">女性</a></li>
     </ul>
 
     <ul id="nav_ptn_2">
@@ -125,9 +123,11 @@
       </a>
       {% endfor %}
     </ul>
+    {% if all_count > 5 %}
     <div class="anwer_for_all">
-      <a href="#">回答者一覧を見る({{ df_date | length }}件)  >></a>
+      <a href="#">回答者一覧を見る({{ all_count }}件)  >></a>
     </div>
+    {% endif %}
   </div>
 
 

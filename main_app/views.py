@@ -67,20 +67,34 @@ def search(request):
 
 def list(request):
     page = request.GET['page']
-    result = pd.DataFrame()
+    result = pd.DataFrame();txt = "病院平均評価"
     try:
         param = request.GET['pref']
         param_p = "pref"
-        txt = "病院平均評価"
-        datas = Record.objects.all().filter(place=param)
+        datas = Record.objects.all().filter(place=param) #指定した都道府県の病院一覧でフィルター
+        df_o = read_frame(datas)
     except:
         param = request.GET['major']
         param_p = "major"
-        txt = "専攻平均評価"
-        datas = Record.objects.all().filter(major=param)
-    df_o = read_frame(datas)
+        datas = Record.objects.all().filter(major=param);datas_o = read_frame(datas)
+        datas_all = Record.objects.all();datas_all = read_frame(datas_all)
+        df_o = pd.DataFrame();k = 0
+        datas_o = datas_o[~datas_o.duplicated(subset=['hospital_name', 'place'])];datas_o = datas_o.reset_index(drop=True)
+        print("datas_all",datas_all)
+        #病院の県と名前から記録を抽出
+        for i in range(len(datas_o)):
+            for j in range(len(datas_all)):
+                if (datas_all.loc[j,'hospital_name'] == datas_o.loc[i,'hospital_name']) and (datas_all.loc[j,'place'] == datas_o.loc[i,'place']):
+                    df_o.loc[k,'hospital_name'] = datas_all.loc[j,'hospital_name']
+                    df_o.loc[k,'place'] = datas_all.loc[j,'place']
+                    df_o.loc[k,'review'] = datas_all.loc[j,'review']
+                    df_o.loc[k,'major'] = datas_all.loc[j,'major']
+                    k += 1
+        print("df_o",df_o)
+    #変数定義
     df = df_o[["hospital_name","place",'review','major']]
     dx = df[["hospital_name","place",'review','major']]
+    print(dx)
     #病院名の重複を削除 df
     for i in range(len(df)):
         if df.duplicated(subset='hospital_name')[i] == True:
@@ -99,6 +113,8 @@ def list(request):
             if dz.duplicated(subset='major')[i] == True:
                 dz = dz.drop(index=i)
         dz = dz.reset_index(drop=True)
+        print("dz",dz)
+        print("dx",dx)
         #同じ病院名において、データのある専攻を記載
         for x in range(len(dx)):
             for z in range(len(dz)):
@@ -110,6 +126,8 @@ def list(request):
             if result.duplicated(subset='hospital_name')[i] == True:
                 result = result.drop(index=i)
         #スコアの導出
+        print(result)
+        print(dx)
         result = result.reset_index(drop=True)
         for f in range(len(result)):
             score = np.zeros(0)
@@ -174,7 +192,7 @@ def individual(request):
             url = df_o.loc[k,'url'] #病院URL
             url_text = "病院HP"
     if url == "":
-        url_text = "公式HPは登録されていません"
+        url_text = "病院HPは登録されていません"
 
     review_counter = [];review_conter_people = []
     review_counter_report = [];review_counter_communication = []
@@ -204,15 +222,14 @@ def individual(request):
     df_date = Record.objects.all().filter(place=pref_query,hospital_name=hp_query).order_by('-date')
     df_date = read_frame(df_date)
     df_date = df_date[:5]
-    print(df_date['review'])
 
     context = {
         'hospital_name':hospital_name,
         'all_count':all_count,
-        'review_average':review_average,
-        'review_average_people':review_average_people,
-        'review_average_report':review_average_report,
-        'review_average_communicaion':review_average_communicaion,
+        'review_average':round(review_average,1),
+        'review_average_people':round(review_average_people,1),
+        'review_average_report':round(review_average_report,1),
+        'review_average_communicaion':round(review_average_communicaion,1),
         'url':url,
         'url_text':url_text,
         'comment_people_counter':comment_people_counter,

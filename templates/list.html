@@ -32,7 +32,7 @@
           </div>
         </a>
         <div class="pref-category">
-          病院所在地：<a href="?pref={{ row.place_name }}">{{ row.place }}</a>
+          病院所在地：<a href="?pref={{ row.place_name }}&page=1">{{ row.place }}</a>
         </div>
           <center>
             <div class="star-category">
@@ -45,27 +45,27 @@
             {% if row.major_0 == 0 %}
             {% elif row.major_0 == None %}
             {% else %}
-            <div class="major-tag"><a href="?major={{ row.major_0_name }}">#{{ row.major_0 }}</a></div>
+            <div class="major-tag"><a href="?major={{ row.major_0_name }}&page=1">#{{ row.major_0 }}</a></div>
             {% endif %}
             {% if row.major_1 == 0 %}
             {% elif row.major_1 == None %}
             {% else %}
-            <div class="major-tag"><a href="?major={{ row.major_1_name }}">#{{ row.major_1 }}</a></div>
+            <div class="major-tag"><a href="?major={{ row.major_1_name }}&page=1">#{{ row.major_1 }}</a></div>
             {% endif %}
             {% if row.major_2 == 0 %}
             {% elif row.major_2 == None %}
             {% else %}
-            <div class="major-tag"><a href="?major={{ row.major_2_name }}">#{{ row.major_2}}</a></div>
+            <div class="major-tag"><a href="?major={{ row.major_2_name }}&page=1">#{{ row.major_2}}</a></div>
             {% endif %}
             {% if row.major_3 == 0 %}
             {% elif row.major_3 == None %}
             {% else %}
-            <div class="major-tag"><a href="?major={{ row.major_3_name }}">#{{ row.major_3 }}</a></div>
+            <div class="major-tag"><a href="?major={{ row.major_3_name }}&page=1">#{{ row.major_3 }}</a></div>
             {% endif %}
             {% if row.major_4 == 0 %}
             {% elif row.major_4 == None %}
             {% else %}
-            <div class="major-tag"><a href="?major={{ row.major_4_name }}">#{{ row.major_4 }}</a></div>
+            <div class="major-tag"><a href="?major={{ row.major_4_name }}&page=1">#{{ row.major_4 }}</a></div>
             {% endif %}
 
           </div>
