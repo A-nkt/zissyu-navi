@@ -3,7 +3,6 @@
   padding-right: 22%;
   padding-left: 22%;
 }
-
 #top-row{
   background-color: rgb(106,191,176);
   text-align: center!important;
@@ -25,12 +24,10 @@
   padding-bottom: 2%;
   padding-left: 10px;
 }
-
 .body-contents a:link { color: black; }
 .body-contents a:visited { color: black; }
 .body-contents a:hover { color: black; font-weight: bold;}
 .body-contents a:active { color: black; }
-
 .box-header-text{
   text-align: center;
   color: black;
@@ -64,7 +61,6 @@
 }
 .main-sub-text{
   position: absolute;
-  /*bottom: 5%;*/
   margin: 0%;
   padding: 0%;
   font-size: 20px;

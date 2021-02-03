@@ -31,21 +31,17 @@
   padding-bottom: 50px;
   border-bottom: 1px solid silver;
   width:60%;
-
 }
-
 .star5_rating{
     position: relative;
     z-index: 0;
     display: inline-block;
     white-space: nowrap;
-    color: #CCCCCC; /* グレーカラー 自由に設定化 */
+    color: #CCCCCC;
 }
-
 .star5_rating:before, .star5_rating:after{
     content: '★★★★★';
 }
-
 .star5_rating:after{
     position: absolute;
     z-index: 1;
@@ -53,7 +49,7 @@
     left: 0;
     overflow: hidden;
     white-space: nowrap;
-    color: #ffcf32; /* イエローカラー 自由に設定化 */
+    color: #ffcf32;
 }
 .star5_rating[data-rate="5.0"]:after{ width: 100%; } /* 星5 */
 .star5_rating[data-rate="5"]:after{ width: 100%; } /* 星5 */
@@ -194,7 +190,6 @@
   border : 2px solid white;
   background-color: rgb(76,161,146,0.7);
 }
-
 .back-hospital-page-cover{
   width:60%;
 }

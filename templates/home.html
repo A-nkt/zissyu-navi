@@ -13,64 +13,54 @@
 </div>
 
 <div class="contents-section">
-
-<div class="box-section">
-<div class="box-header-text">新着投稿</div>
-  <div class="main-box">
-    <ul class="top-block">
-      {% for index, row in datas.iterrows %}
-      <li>
-        <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
-          <div class="top-content-bk">
-            <div class="main-top-text">
-              {{ row.hospital_name }}
-              <div class="box-sub-text">
-                {{ row.place }},{{ row.major }}
+  <div class="box-section">
+  <div class="box-header-text">新着投稿</div>
+    <div class="main-box">
+      <ul class="top-block">
+        {% for index, row in datas.iterrows %}
+        <li>
+          <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
+            <div class="top-content-bk">
+              <div class="main-top-text">
+                {{ row.hospital_name }}
+                <div class="box-sub-text">
+                  {{ row.place }},{{ row.major }}
+                </div>
+                投稿日：{{ row.date }}
               </div>
-              投稿日：{{ row.date }}
             </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="main-section">
+    <div class="content-header-text">コンテンツ</div>
+    <ul class="inline-block">
+    	<li>
+        <a href="/search/">
+          <div class="main-content-bk" id="content-no1">
+            <i class="fas fa-search fa-6x"></i>
+            <div class="main-sub-text">口コミを探す</div>
           </div>
         </a>
       </li>
-      {% endfor %}
+    	<li>
+        <a href="/form/">
+          <div class="main-content-bk" id="content-no2">
+            <i class="fas fa-edit fa-6x"></i>
+            <div class="main-sub-text">口コミを投稿する</div>
+          </div>
+        </a>
+      </li>
     </ul>
   </div>
-</div>
 
-<div class="main-section">
-  <div class="content-header-text">コンテンツ</div>
-  <ul class="inline-block">
-  	<li>
-      <a href="/search/">
-        <div class="main-content-bk" id="content-no1">
-          <i class="fas fa-search fa-6x"></i>
-          <div class="main-sub-text">口コミを探す</div>
-        </div>
-      </a>
-    </li>
-  	<li>
-      <a href="/form/">
-        <div class="main-content-bk" id="content-no2">
-          <i class="fas fa-edit fa-6x"></i>
-          <div class="main-sub-text">口コミを投稿する</div>
-        </div>
-      </a>
-    </li>
-  </ul>
-</div>
-
-<div class="lanking-section">
-  <div class="content-header-text">人気のコンテンツ</div>
+  <div class="lanking-section">
+    <div class="content-header-text">人気のコンテンツ</div>
+  </div>
 
 </div>
-
-
-
-
-
-</div>
-
-
-
-
 {% endblock %}

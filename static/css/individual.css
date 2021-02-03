@@ -3,7 +3,6 @@
   padding-right: 12%;
   padding-left: 22%;
 }
-
 .advertise{
   width : 100% ;
   padding-top : 100% ;
@@ -27,7 +26,6 @@
 .box{
   margin-top: 10px;
   padding-top: 10px;
-  /*background-color: rgb(106,191,176,0.6);*/
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.33);
   width:70%;
   height:210px;
@@ -45,7 +43,6 @@ div p {
 .header-tab{
   font-weight: bold;
 }
-
 .star5_rating{
     position: relative;
     z-index: 0;
@@ -53,11 +50,9 @@ div p {
     white-space: nowrap;
     color: #CCCCCC; /* グレーカラー 自由に設定化 */
 }
-
 .star5_rating:before, .star5_rating:after{
     content: '★★★★★';
 }
-
 .star5_rating:after{
     position: absolute;
     z-index: 1;
@@ -138,13 +133,11 @@ div p {
 .hospital-url{
   float: right;
   padding-right: 6%;
-
 }
 .hospital-url a:link { color: gray; }
 .hospital-url a:visited { color: gray; }
 .hospital-url a:hover { color : #0000ff;}
 .hospital-url a:active { color: gray; }
-
 #second-g{
   padding-top: 20px;
   padding-bottom: 10px;
@@ -155,27 +148,22 @@ div p {
   border:1px solid black;
   background-color:lightgray;
 }
-
 .category-group li{
   float: left;
   list-style: none;
 }
-
 #nav {
   list-style: none;
   overflow: hidden;
 }
-
 #nav li {
   color:gray;
   width: 42.5%;
   margin:5px; padding:10px;
   border:2px solid rgb(106,191,176,0.7);
-  /*background-color:rgb(106,191,176,0.6);*/
   border-radius: 30px;
   float: left;
   padding-left: 3%;
-
 }
 #nav li:hover{
   background-color:rgb(76,161,146,0.7);
@@ -205,7 +193,6 @@ div p {
   padding-top: 30px;
   padding-bottom: 0px;
 }
-
 #nav_ptn_2 {
   list-style: none;
 }
@@ -250,15 +237,12 @@ div p {
 }
 #nav_gender li {
   text-align: center;
-  /*float: left;*/
   display: inline;
 }
-
 #nav_gender li a {
   text-decoration: none;
   color: gray;
 }
-
 .anwer_for_all{
   margin-top: 3%;
   border:2px solid white;
@@ -308,9 +292,6 @@ div p {
   padding-left:3%;
   font-size: 16px;
 }
-.rating .personal_date {
-
- }
 .rating{
   font-size: 18px;
 }

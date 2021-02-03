@@ -20,10 +20,6 @@
   color: black;
   font-weight: bold;
 }
-
-.form-header{
-  /*padding-bottom: 20px;*/
-}
 #id_review_people_comment,#id_review_report_comment,#id_review_communication_comment{
   width:100%;
   height: 100px;

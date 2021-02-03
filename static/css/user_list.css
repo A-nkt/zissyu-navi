@@ -3,7 +3,6 @@
   padding-right: 12%;
   padding-left: 22%;
 }
-
 .advertise{
   width : 100% ;
   padding-top : 100% ;
@@ -32,9 +31,7 @@
   padding-bottom: 50px;
   border-bottom: 1px solid silver;
   width:60%;
-
 }
-
 .star5_rating{
     position: relative;
     z-index: 0;
@@ -42,11 +39,9 @@
     white-space: nowrap;
     color: #CCCCCC; /* グレーカラー 自由に設定化 */
 }
-
 .star5_rating:before, .star5_rating:after{
     content: '★★★★★';
 }
-
 .star5_rating:after{
     position: absolute;
     z-index: 1;
@@ -245,7 +240,6 @@
   border : 2px solid white;
   background-color: rgb(76,161,146,0.7);
 }
-
 .back-hospital-page-cover{
   width:60%;
 }
@@ -271,7 +265,6 @@
 }
 #nav_gender li {
   text-align: center;
-  /*float: left;*/
   display: inline;
 }
 #gender_man:hover,#gender_woman:hover{

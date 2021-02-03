@@ -47,7 +47,7 @@ class Record(models.Model):
     date = models.DateField(verbose_name='打刻日',blank=True,null=True,default=timezone.now)
 
     def __str__(self):
-        template='{0.hospital_name} '+','+'{0.major}'+','+'{0.date}'
+        template='{0.hospital_name} '+','+'{0.major}'+','+'{0.date}'+','+'{0.sex}'+','+'{0.year}'+','+'{0.place}'
         return template.format(self)
 
 

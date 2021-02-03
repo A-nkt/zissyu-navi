@@ -7,7 +7,6 @@ body{
 .footer {
   height: 50px;
 }
-
 .site-header{
   z-index:1;
   position: fixed;

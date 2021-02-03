@@ -30,13 +30,11 @@
   font-size: 40px;
   font-weight: bold;
 }
-
 .contents-section{
   padding-right: 22%;
   padding-left: 22%;
   z-index:0;
 }
-
 .main-box{
   width: 100%;
   height: auto;
@@ -44,7 +42,6 @@
   overflow-x: auto;
   white-space: nowrap;
 }
-
 #bk{
   display: inline-block;
   width: 200px;
@@ -57,7 +54,6 @@
 #bk:hover{
   box-shadow: 0 0 25px rgba(0,0,0,.45);
 }
-
 .box-header-text{
   text-align: center;
   color: black;
@@ -115,7 +111,6 @@
   margin: 0%;
   padding: 0%;
 }
-
 ul {
 	list-style-type: none;
 	padding-left: 0;
@@ -140,7 +135,6 @@ li {
 .top-block li {
 	display: inline-block;
 }
-
 .content-header-text{
   text-align: center;
   color: black;
