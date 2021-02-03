@@ -64,7 +64,7 @@
 
   <div class="category-group">
     <ul id="nav">
-      <a href="#">
+      <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=people">
         <li>
           <i class="fas fa-user"></i>
           実習担当者について
@@ -72,7 +72,7 @@
           <span class="mark">></span>
         </li>
       </a>
-      <a href="#">
+      <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=report">
         <li>
           <i class="far fa-file-alt"></i>
           レポートについて
@@ -80,7 +80,7 @@
           <span class="mark">></span>
         </li>
       </a>
-      <a href="#">
+      <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=communication">
         <li>
           <i class="fas fa-comments"></i>
           コミュニケーションについて
@@ -111,6 +111,7 @@
             <p class="i_mark">></p>
             <div class="personal_own">
               <p class="personal_major">{{ row.major }}</p>
+              <p class="personal_gender">{{ row.year }}年に実習</p>
               <p class="personal_gender">{{ row.sex }}</p>
             </div>
             <div class="personal_own_2">
@@ -124,19 +125,12 @@
       {% endfor %}
     </ul>
     {% if all_count > 5 %}
-    <a href="" id="answer-tag">
+    <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}" id="answer-tag">
       <div class="anwer_for_all">
         回答者一覧を見る({{ all_count }}件)  >>
       </div>
     </a>
     {% endif %}
   </div>
-
-
-
-
-
-
-
 </div>
 {% endblock %}

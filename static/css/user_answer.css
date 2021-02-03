@@ -121,8 +121,8 @@
 }
 .all_count{
   font-size: 18px;
-  margin-left: 40px;
-  margin-top: -1.5%;
+  margin-left: 5%;
+  margin-top: -1.0%;
 }
 #second-g{
   padding-top: 40px;
@@ -210,8 +210,3 @@
 .back-hospital-page-cover a:active{
   color: white;
 }
-/*
-
-
-
-*/

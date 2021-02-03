@@ -232,6 +232,7 @@ def individual(request):
         'comment_communication_counter':comment_communication_counter,
         'category_count':category_count,
         'df_date':df_date,
+        'pref_query':pref_query,
     }
 
     return render(request, 'individual.html',context)
@@ -256,3 +257,92 @@ def user_answer(request):
         'score':round(np.mean(hospital_score),1),
     }
     return render(request, 'user_answer.html',context)
+
+
+def user_list(request):
+    pref_query = request.GET['pref']
+    hp_query = request.GET['hospital_name']
+
+    try:
+        about = request.GET['about']
+    except:
+        about = ""
+
+    try:
+        gender_query = request.GET['gender']
+    except:
+        gender_query = ""
+    print(about)
+    if about != "":
+        if gender_query != "": #about 有,gender_query 有
+            datas = Record.objects.all().filter(place=pref_query,hospital_name=hp_query,sex=gender_query)
+            datas = read_frame(datas)
+            if about == "people":
+                for j in range(len(datas)):
+                    if datas.loc[j,'review_people_comment'] == "":
+                        datas = datas.drop([j])
+            elif about == "report":
+                for j in range(len(datas)):
+                    if datas.loc[j,'review_report_comment'] == "":
+                        datas = datas.drop([j])
+            elif about == "communication":
+                for j in range(len(datas)):
+                    if datas.loc[j,'review_communication_comment'] == "":
+                        datas = datas.drop([j])
+            datas = datas.reset_index(drop=True)
+        else:#about 有,gender_query 無
+            datas = Record.objects.all().filter(place=pref_query,hospital_name=hp_query)
+            datas = read_frame(datas)
+            if about == "people":
+                for j in range(len(datas)):
+                    if datas.loc[j,'review_people_comment'] == "":
+                        datas = datas.drop([j])
+            elif about == "report":
+                for j in range(len(datas)):
+                    if datas.loc[j,'review_report_comment'] == "":
+                        datas = datas.drop([j])
+            elif about == "communication":
+                for j in range(len(datas)):
+                    if datas.loc[j,'review_communication_comment'] == "":
+                        datas = datas.drop([j])
+            datas = datas.reset_index(drop=True)
+    else:
+        if gender_query != "":#about 無,gender_query 有
+            datas = Record.objects.all().filter(place=pref_query,hospital_name=hp_query,sex=gender_query)
+            datas = read_frame(datas)
+        else: #about 無,gender_query 無
+            datas = Record.objects.all().filter(place=pref_query,hospital_name=hp_query)
+            datas = read_frame(datas)
+
+    if about == "people":
+        for j in range(len(datas)):
+            if datas.loc[j,'review_people_comment'] == "":
+                datas = datas.drop([j])
+    elif about == "report":
+        for j in range(len(datas)):
+            if datas.loc[j,'review_report_comment'] == "":
+                datas = datas.drop([j])
+    elif about == "communication":
+        for j in range(len(datas)):
+            if datas.loc[j,'review_communication_comment'] == "":
+                datas = datas.drop([j])
+    datas = datas.reset_index(drop=True)
+
+    datas_all = read_frame(Record.objects.all().filter(place=pref_query,hospital_name=hp_query))
+    hospital_score = []
+    for j in range(len(datas_all)):
+        hospital_score.append(datas_all.loc[j,'review'])
+
+    context = {
+        'datas':datas,
+        'hospital_name':hp_query,
+        'score':round(np.mean(hospital_score),1),
+        'length':len(datas_all),
+        'pref_query':pref_query,
+        'place':pref_query,
+        'gender_query':gender_query,
+        'about':about,
+    }
+
+
+    return render(request, 'user_list.html',context)

@@ -24,26 +24,15 @@
   color: black;
   height:800px;
 }
-.box{
-  margin-top: 10px;
-  padding-top: 10px;
-  /*background-color: rgb(106,191,176,0.6);*/
-  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.33);
-  width:70%;
-  height:210px;
-  border:2.5px solid rgb(106,191,176,0.6);;
-}
-div p {
-  display: inline-block;
-}
-.header-top{
-  font-size: 22px;
-}
-.header-sub{
-  font-size: 18px;
+.header-top,#star-all{
+  font-weight: bold;
+  font-size: 24px;
 }
 .header-tab{
-  font-weight: bold;
+  padding-bottom: 50px;
+  border-bottom: 1px solid silver;
+  width:60%;
+
 }
 
 .star5_rating{
@@ -68,6 +57,7 @@ div p {
     color: #ffcf32; /* イエローカラー 自由に設定化 */
 }
 .star5_rating[data-rate="5.0"]:after{ width: 100%; } /* 星5 */
+.star5_rating[data-rate="5"]:after{ width: 100%; } /* 星5 */
 .star5_rating[data-rate="4.9"]:after{ width: 98%; } /* 星4.9 */
 .star5_rating[data-rate="4.8"]:after{ width: 96%; } /* 星4.8 */
 .star5_rating[data-rate="4.7"]:after{ width: 94%; } /* 星4.7 */
@@ -78,6 +68,7 @@ div p {
 .star5_rating[data-rate="4.2"]:after{ width: 84%; } /* 星4.2 */
 .star5_rating[data-rate="4.1"]:after{ width: 82%; } /* 星4.1 */
 .star5_rating[data-rate="4.0"]:after{ width: 80%; } /* 星4.0 */
+.star5_rating[data-rate="4"]:after{ width: 80%; } /* 星4.0 */
 .star5_rating[data-rate="3.9"]:after{ width: 78%; } /* 星3.9 */
 .star5_rating[data-rate="3.8"]:after{ width: 76%; } /* 星3.8 */
 .star5_rating[data-rate="3.7"]:after{ width: 74%; } /* 星3.7 */
@@ -88,6 +79,7 @@ div p {
 .star5_rating[data-rate="3.2"]:after{ width: 64%; } /* 星3.2 */
 .star5_rating[data-rate="3.1"]:after{ width: 62%; } /* 星3.1 */
 .star5_rating[data-rate="3.0"]:after{ width: 60%; } /* 星3.0 */
+.star5_rating[data-rate="3"]:after{ width: 60%; } /* 星3.0 */
 .star5_rating[data-rate="2.9"]:after{ width: 58%; } /* 星2.9 */
 .star5_rating[data-rate="2.8"]:after{ width: 56%; } /* 星2.8 */
 .star5_rating[data-rate="2.7"]:after{ width: 54%; } /* 星2.7 */
@@ -98,6 +90,7 @@ div p {
 .star5_rating[data-rate="2.2"]:after{ width: 44%; } /* 星2.2 */
 .star5_rating[data-rate="2.1"]:after{ width: 42%; } /* 星2.1 */
 .star5_rating[data-rate="2.0"]:after{ width: 40%; } /* 星2 */
+.star5_rating[data-rate="2"]:after{ width: 40%; } /* 星2 */
 .star5_rating[data-rate="1.9"]:after{ width: 38%; } /* 星1.9 */
 .star5_rating[data-rate="1.8"]:after{ width: 36%; } /* 星1.8 */
 .star5_rating[data-rate="1.7"]:after{ width: 34%; } /* 星1.7 */
@@ -108,6 +101,7 @@ div p {
 .star5_rating[data-rate="1.2"]:after{ width: 24%; } /* 星1.2 */
 .star5_rating[data-rate="1.1"]:after{ width: 22%; } /* 星1.1 */
 .star5_rating[data-rate="1.0"]:after{ width: 20%; } /* 星1 */
+.star5_rating[data-rate="1"]:after{ width: 20%; } /* 星1 */
 .star5_rating[data-rate="0.9"]:after{ width: 18%; } /* 星0.9 */
 .star5_rating[data-rate="0.8"]:after{ width: 16%; } /* 星0.8 */
 .star5_rating[data-rate="0.7"]:after{ width: 14%; } /* 星0.7 */
@@ -118,92 +112,53 @@ div p {
 .star5_rating[data-rate="0.2"]:after{ width: 4%; } /* 星0.2 */
 .star5_rating[data-rate="0.1"]:after{ width: 2%; } /* 星0.1 */
 .star5_rating[data-rate="0.0"]:after{ width: 0%; } /* 星0 */
+.star5_rating[data-rate="0"]:after{ width: 0%; } /* 星0 */
 .star-category{
-  padding-left:3%;
-  padding-top: 1%;
   color:gray;
+  margin-top: -2%;
 }
-#star-content{
-  margin-left: 10px;
+.star-category,.all_count{
+  float: left;
 }
-#star-all{
+.all_count{
   font-size: 18px;
-  font-weight:bold;
+  margin-left: 5%;
+  margin-top: -1.0%;
 }
-.hospital_name{
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-}
-.hospital-url{
-  float: right;
-  padding-right: 6%;
-
-}
-.hospital-url a:link { color: gray; }
-.hospital-url a:visited { color: gray; }
-.hospital-url a:hover { color : #0000ff;}
-.hospital-url a:active { color: gray; }
-
 #second-g{
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-.category-box {
-  width:100%; height:60px;
-  margin:5px; padding:10px;
-  border:1px solid black;
-  background-color:lightgray;
-}
-
-.category-group li{
-  float: left;
-  list-style: none;
-}
-
-#nav {
-  list-style: none;
-  overflow: hidden;
-}
-
-#nav li {
-  color:gray;
-  width: 42.5%;
-  margin:5px; padding:10px;
-  border:2px solid rgb(106,191,176,0.7);
-  /*background-color:rgb(106,191,176,0.6);*/
-  border-radius: 30px;
-  float: left;
-  padding-left: 3%;
-
-}
-#nav li:hover{
-  background-color:rgb(76,161,146,0.7);
-  color:white;
-}
-#nav li span {
-  color: gray;
-  padding-right: 5%;
-}
-#nav .mark{
-  float: right;
-  color:rgb(170,170,170);
-}
-#nav li:hover span{
-  color:white;
+  padding-top: 40px;
+  padding-bottom: 0px;
   font-weight: bold;
 }
-#nav .count{
+#second-g p{
+  display: inline-block;
+}
+.second-top{
+  font-size: 22px;
+}
+.second-sub{
+  font-size: 20px;
+}
+#gender_man{
+  border-right: 0.1px solid gray;
+  padding-right: 10px;
+  margin-right: -1.86px;
+}
+#gender_woman{
+  padding-left: 10px;
+  margin-left: -1.86px;
+}
+#gender_type{
+  padding-right: 1%;
+}
+#gender_mid{
+  padding-right: 1%;
   padding-left: 1%;
 }
-#nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-}
-#thrid-g{
-  padding-top: 30px;
-  padding-bottom: 0px;
+
+#nav_gender{
+  margin-bottom: 30px;
+  margin-top: -10px;
 }
 
 #nav_ptn_2 {
@@ -235,54 +190,6 @@ div p {
 #nav_ptn_2 a:visited { color: white; }
 #nav_ptn_2 a:hover { color: white; }
 #nav_ptn_2 a:active { color: white; }
-#nav_gender {
-  list-style: none;
-  overflow: hidden;
-  margin-bottom: 30px;
-  margin-top: -10px;
-}
-#gender_type{
-  padding-right: 1%;
-}
-#gender_mid{
-  padding-right: 1%;
-  padding-left: 1%;
-}
-#nav_gender li {
-  text-align: center;
-  /*float: left;*/
-  display: inline;
-}
-
-#nav_gender li a {
-  text-decoration: none;
-  color: gray;
-}
-
-.anwer_for_all{
-  margin-top: 3%;
-  border:2px solid white;
-  background-color:rgb(76,161,146,0.7);
-  border-radius: 30px;
-  width:20%;
-  height:10%;
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-#answer-tag{
-  color:white;
-}
-#answer-tag a:visited { color: white; }
-#answer-tag a:link { color: white; }
-#answer-tag:hover {
-    color: gray;
-    font-weight: bold;
-  }
-.anwer_for_all:hover{
-  background-color:white;
-  border:2px solid rgb(76,161,146,0.7);
-}
 .personal_own p {
   display: inline;
  }
@@ -307,12 +214,7 @@ div p {
 .personal_date{
   padding-left:3%;
   font-size: 16px;
-}
-.rating .personal_date {
-
- }
-.rating{
-  font-size: 18px;
+  display: inline-block;
 }
 .personal_group{
   text-align:left;
@@ -326,12 +228,53 @@ div p {
   padding-bottom: 15px;
   font-size: 20px;
 }
-#gender_man{
-  border-right: 0.1px solid gray;
-  padding-right: 10px;
-  margin-right: -1.86px;
+
+.back-hospital-page{
+  margin-top: 50px;
+  border : 2px solid rgb(76,161,146,0.7);
+  background-color: white;
+  float: right;
+  border-radius: 30px;
+  height: 30px;
+  width:200px;
+  text-align: center;
+  padding-top: auto;
+  padding-bottom: auto;
 }
-#gender_woman{
-  padding-left: 10px;
-  margin-left: -1.86px;
+.back-hospital-page:hover{
+  border : 2px solid white;
+  background-color: rgb(76,161,146,0.7);
+}
+
+.back-hospital-page-cover{
+  width:60%;
+}
+.back-hospital-page-cover a:visited{
+  color: gray;
+}
+.back-hospital-page-cover a:link{
+  color: gray;
+}
+.back-hospital-page-cover a:hover{
+  color: white;
+}
+.back-hospital-page-cover a:active{
+  color: white;
+}
+.is-current a{
+   font-weight: bold !important;
+   color: black!important;
+}
+#nav_gender li a {
+  text-decoration: none;
+  color: gray;
+}
+#nav_gender li {
+  text-align: center;
+  /*float: left;*/
+  display: inline;
+}
+#gender_man:hover,#gender_woman:hover{
+  font-weight: bold !important;
+  color: black!important;
 }

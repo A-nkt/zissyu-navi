@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/user_list.css' %}">{% endblock %}
+{% block title %}{{ hospital_name }}のクチコミ一覧{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <div class="side-wrap">
+    <p class="advertise">広告枠</p>
+    <p class="recommend">関連するコンテンツ</p>
+  </div>
+  <div class="header-tab">
+    <p class="header-top">{{ hospital_name }}</p>
+    <div class="star-category" id="star-all">
+      <div class="star5_rating" data-rate="{{ score }}">
+      </div>&nbsp;&nbsp;<b>{{ score }}</b>
+    </div>
+    <div class="all_count">
+      <i class="fas fa-comment-alt fa-sm"></i>
+      病院クチコミ：{{ length }}件
+    </div>
+  </div>
+  <div class="second-tab" id="second-g">
+    <p class="second-top">回答者別のクチコミ - </p>
+    <p class="second-sub">X病院</p>
+  </div>
+  <div class="answer-group">
+    <ul id="nav_gender">
+      <li id="gender_type">性別：</li>
+      {% if about != "" %}
+        {% if gender_query == "man" %}
+        <li id="gender_man" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
+        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        {% elif  gender_query == "woman" %}
+        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
+        <li id="gender_woman" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        {% else %}
+        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
+        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        {% endif %}
+      {% else %}
+      {% if gender_query == "man" %}
+        <li id="gender_man" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
+        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        {% elif  gender_query == "woman" %}
+        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
+        <li id="gender_woman" class="is-current"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        {% else %}
+        <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=man">男性</a></li>
+        <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about={{ about }}&gender=woman">女性</a></li>
+        {% endif %}
+      {% endif %}
+    </ul>
+    <ul id="nav_ptn_2">
+      {% for index, row in datas.iterrows %}
+      <a href="/list/individual/user_answer/?id={{ row.id }}">
+        <li>
+          <div class="personal_group">
+            <p class="i_mark">></p>
+            <div class="personal_own">
+              <p class="personal_major">{{ row.major }}</p>
+              <p class="personal_gender">{{ row.year }}年に実習</p>
+              <p class="personal_gender">{{ row.sex }}</p>
+            </div>
+            <div class="personal_own_2">
+                <p class="star5_rating" data-rate="{{ row.review }}.0"></p>
+                  &nbsp;&nbsp;<b>{{ row.review }}</b>
+                <p class="personal_date">{{ row.date }}</p>
+            </div>
+          </div>
+        </li>
+      </a>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="back-hospital-page-cover">
+    <a href="/list/individual/?pref={{ place }}&hospital_name={{ hospital_name }}">
+      <div class="back-hospital-page">
+        病院ページへ戻る
+      </div>
+    </a>
+  </div>
+
+</div>
+{% endblock %}
