@@ -24,7 +24,9 @@ PLACE_CHOISE = (
 )
 
 MAJOR_CHOICE = (
-            ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師')
+            ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師'),
+            ('occupational_therapist', '作業療法士'), ('registered_dietitian','管理栄養士'), ('midwife','助産師'), ('social_worker','社会福祉士'),
+            ('dental_hygienist','歯科衛生士'), ('caregiver','介護士'), ('paramedic', '救急救命士'),
         )
 
 # Create your views here.
@@ -80,7 +82,6 @@ def list(request):
         datas_all = Record.objects.all();datas_all = read_frame(datas_all)
         df_o = pd.DataFrame();k = 0
         datas_o = datas_o[~datas_o.duplicated(subset=['hospital_name', 'place'])];datas_o = datas_o.reset_index(drop=True)
-        print("datas_all",datas_all)
         #病院の県と名前から記録を抽出
         for i in range(len(datas_o)):
             for j in range(len(datas_all)):
@@ -90,11 +91,9 @@ def list(request):
                     df_o.loc[k,'review'] = datas_all.loc[j,'review']
                     df_o.loc[k,'major'] = datas_all.loc[j,'major']
                     k += 1
-        print("df_o",df_o)
     #変数定義
     df = df_o[["hospital_name","place",'review','major']]
     dx = df[["hospital_name","place",'review','major']]
-    print(dx)
     #病院名の重複を削除 df
     for i in range(len(df)):
         if df.duplicated(subset='hospital_name')[i] == True:
@@ -113,8 +112,6 @@ def list(request):
             if dz.duplicated(subset='major')[i] == True:
                 dz = dz.drop(index=i)
         dz = dz.reset_index(drop=True)
-        print("dz",dz)
-        print("dx",dx)
         #同じ病院名において、データのある専攻を記載
         for x in range(len(dx)):
             for z in range(len(dz)):
@@ -126,8 +123,6 @@ def list(request):
             if result.duplicated(subset='hospital_name')[i] == True:
                 result = result.drop(index=i)
         #スコアの導出
-        print(result)
-        print(dx)
         result = result.reset_index(drop=True)
         for f in range(len(result)):
             score = np.zeros(0)
@@ -240,3 +235,24 @@ def individual(request):
     }
 
     return render(request, 'individual.html',context)
+
+def user_answer(request):
+    id = request.GET['id']
+    datas = Record.objects.all().filter(id=id);datas_o = read_frame(datas)
+    hospital_name = datas_o.loc[0,'hospital_name'];place = datas_o.loc[0,'place']
+    for j in range(len(PLACE_CHOISE)):
+        if PLACE_CHOISE[j][1] == place:
+            place_name = PLACE_CHOISE[j][0]
+    datas_all = Record.objects.all().filter(place=place_name,hospital_name=hospital_name)
+    df_o = read_frame(datas_all)
+    hospital_score = []
+    for j in range(len(df_o)):
+        hospital_score.append(df_o.loc[j,'review'])
+    context = {
+        'datas_o':datas_o,
+        'hospital_name':hospital_name,
+        'place':place_name,
+        'length':len(datas_all),
+        'score':round(np.mean(hospital_score),1),
+    }
+    return render(request, 'user_answer.html',context)

@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/user_answer.css' %}">{% endblock %}
+{% block title %}{{ hospital_name }}の投稿者別口コミ{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <div class="side-wrap">
+    <p class="advertise">広告枠</p>
+    <p class="recommend">関連するコンテンツ（他病院）</p>
+  </div>
+  <div class="header-tab">
+    <p class="header-top">{{ hospital_name }}</p>
+    <div class="star-category" id="star-all">
+      <div class="star5_rating" data-rate="{{ score }}">
+      </div>&nbsp;&nbsp;<b>{{ score }}</b>
+    </div>
+    <div class="all_count">
+      <i class="fas fa-comment-alt fa-sm"></i>
+      病院クチコミ：{{ length }}件
+    </div>
+  </div>
+
+  <div class="second-tab" id="second-g">
+    <p class="second-top">回答者別のクチコミ - </p>
+    <p class="second-sub">{{ hospital_name }}</p>
+  </div>
+  {% for index, row in datas_o.iterrows %}
+  <div style="margin:0px;padding:0px;" align="center" class="table">
+    <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;">
+      <tbody>
+        <tr>
+          <th style="border:1px solid	rgb(214,223,229);background-color:rgb(245,245,245);color:#000000;text-align:left;">回答者</th>
+          <th style="border:1px solid	rgb(214,223,229);background-color:rgb(245,245,245);color:#000000;text-align:left;">実習年度</th>
+          <th style="border:1px solid	rgb(214,223,229);background-color:rgb(245,245,245);color:#000000;text-align:left;">性別</th>
+        </tr>
+        <tr>
+          <td style="border:1px solid	rgb(214,223,229);text-align:left;">{{ row.major }}</td>
+          <td style="border:1px solid	rgb(214,223,229);text-align:left;">{{ row.year }}</td>
+          <td style="border:1px solid	rgb(214,223,229);text-align:left;">{{ row.sex }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="private-category">
+    <div class="star-category" id="star-all-2">
+      回答者による総合評価：
+      <div class="star5_rating" data-rate="{{ row.review }}">
+      </div>&nbsp;&nbsp;<b>{{ row.review }}</b>
+    </div><br>
+    <div class="star-sub-content">
+      <div class="star-category" id="star-all-content">
+        <li>実習担当者について：
+          <div class="star5_rating" data-rate="{{ row.review_people }}">
+          </div>&nbsp;&nbsp;<b>{{ row.review_people }}</b>
+        </li>
+      </div><br>
+      <div class="star-category" id="star-all-content">
+        <li>レポートについて：
+          <div class="star5_rating" data-rate="{{ row.review_report }}">
+          </div>&nbsp;&nbsp;<b>{{ row.review_report }}</b>
+        </li>
+      </div><br>
+      <div class="star-category" id="star-all-content">
+        <li>コミュニケーションについて：
+          <div class="star5_rating" data-rate="{{ row.review_communication }}">
+          </div>&nbsp;&nbsp;<b>{{ row.review_communication }}</b>
+        </li>
+      </div>
+    </div>
+    <div class="text-content">
+    <div class="about-people">
+      <div class="head-txt">実習担当者について</div>
+      <div class="content-txt">
+        {{ row.review_report_comment }}
+      </div>
+    </div>
+    <div class="about-report">
+      <div class="head-txt">レポートについて</div>
+      <div class="content-txt">
+        {{ row.review_report_comment }}
+      </div>
+    </div>
+    <div class="about-communication">
+      <div class="head-txt">コミュニケーションについて</div>
+      <div class="content-txt">
+        {{ row.review_communication_comment }}
+      </div>
+    </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="back-hospital-page-cover">
+    <a href="/list/individual/?pref={{ place }}&hospital_name={{ hospital_name }}">
+      <div class="back-hospital-page">
+        病院ページへ戻る
+      </div>
+    </a>
+  </div>
+
+
+  <div class="bottom-wrap">
+    <p class="relate">同じ病院のコンテンツ</p>
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

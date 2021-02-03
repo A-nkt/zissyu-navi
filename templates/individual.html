@@ -105,7 +105,7 @@
 
     <ul id="nav_ptn_2">
       {% for index, row in df_date.iterrows %}
-      <a href="#">
+      <a href="/list/individual/user_answer/?id={{ row.id }}">
         <li>
           <div class="personal_group">
             <p class="i_mark">></p>
@@ -124,9 +124,11 @@
       {% endfor %}
     </ul>
     {% if all_count > 5 %}
-    <div class="anwer_for_all">
-      <a href="#">回答者一覧を見る({{ all_count }}件)  >></a>
-    </div>
+    <a href="" id="answer-tag">
+      <div class="anwer_for_all">
+        回答者一覧を見る({{ all_count }}件)  >>
+      </div>
+    </a>
     {% endif %}
   </div>
 
