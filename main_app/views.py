@@ -40,7 +40,21 @@ def home(request):
         for k in range(len(PLACE_CHOISE)):
             if PLACE_CHOISE[k][1] == datas.loc[j,'place']:
                 datas.loc[j,'place_name'] = PLACE_CHOISE[k][0]
-    return render(request, 'home.html' ,{'datas': datas})
+    datas_all = Record.objects.all()
+    datas_all = read_frame(datas_all)
+    df_list = datas_all[~datas_all.duplicated(subset=['hospital_name', 'place'])]
+    df_list = df_list[["hospital_name","place"]];df_list['counter'] = 0;df_list=df_list.reset_index(drop=True)
+    for j in range(len(df_list)):
+        for k in range(len(datas_all)):
+            if df_list.loc[j,'hospital_name'] == datas_all.loc[k,'hospital_name'] and df_list.loc[j,'place'] == datas_all.loc[k,'place']:
+                df_list.loc[j,'counter'] += 1
+    for j in range(len(df_list)):
+        for i in range(len(PLACE_CHOISE)):
+            if PLACE_CHOISE[i][1] == df_list.loc[j,'place']:
+                df_list.loc[j,'place_name'] = PLACE_CHOISE[i][0]
+    df_list = df_list.sort_values('counter', ascending=False)
+    df_list = df_list[:5]
+    return render(request, 'home.html' ,{'datas': datas,'df_list':df_list})
 
 def form(request):
     if request.method == 'POST': #POSTがされた時

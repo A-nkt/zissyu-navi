@@ -115,7 +115,7 @@ ul {
 	list-style-type: none;
 	padding-left: 0;
 }
-li {
+.box-section li, .main-section li {
 	width: 50px;
 	height: 50px;
 	padding: 10px;
@@ -160,5 +160,37 @@ li {
   padding-bottom: 30px;
 }
 .lanking-section{
-  margin-top: 100px;
+  margin-top: 200px;
+  width:50%;
+  margin-left: auto;
+  margin-right: auto;
 }
+.lank-g li {
+  border: 1px solid rgb(106,191,176);
+  border-radius: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  list-style: none;
+}
+.lank-g li:hover{
+  box-shadow: 0 0 5px rgba(0,0,0,.45);
+  border: 1px solid rgb(106,191,176);
+}
+.lank-g li:before {
+  padding:10px;
+  margin: 10px;
+}
+.lank-top-text{
+  font-size: 18px;
+  margin-bottom:5px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+.lank-count{
+  margin-bottom:5px;
+  padding-left: 10px;
+}
+.lank-g a:link { color: gray; }
+.lank-g a:visited { color: gray; }
+.lank-g a:hover { color : gray;}
+.lank-g a:active { color: gray; }

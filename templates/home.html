@@ -60,7 +60,24 @@
 
   <div class="lanking-section">
     <div class="content-header-text">人気のコンテンツ</div>
+    <div>
+      <ul class="lank-g">
+        {% for index, row in df_list.iterrows %}
+        <li>
+          <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
+            <div class="text-g">
+              <div class="lank-top-text">
+                {{ row.hospital_name }}（{{ row.place }}）
+              </div>
+              <div class="lank-count">
+                {{ row.counter }}件の口コミ
+              </div>
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
-
 </div>
 {% endblock %}
