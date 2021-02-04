@@ -9,21 +9,38 @@
 <div class="main-content">
   <div class="side-wrap">
     <p class="advertise">広告枠</p>
-    <p class="recommend">関連するコンテンツ</p>
+    {% if judge == True %}
+    <div class="recommend">
+      {% for index, row in related_df.iterrows %}
+      <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
+        <div class="recommend-box">
+          <div class="rcd-content">
+            <div class="rcd-hospital-name">
+              {{ row.hospital_name }}
+            </div>
+            <div class="rcd-place">
+              病院所在地：{{ row.place }}
+            </div>
+            <div class="star-category">
+              <div class="star5_rating" data-rate="{{ row.average_score }}">
+              </div>&nbsp;&nbsp;<b>{{ row.average_score }}</b>
+            </div>
+            <div class="rcd-count">
+              クチコミ件数：{{ row.counter }}件
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="recommend" id="if-none">
+    </div>
+    {% endif %}
   </div>
   <div class="midashi">病院を探す</div>
   {% if content == True %}
     {% for index, row in result.iterrows %}
-    <!--tr>
-      <td>{{row.hospital_name}}</td>
-      <td>{{row.review}}</td>
-      <td>{{row.count}}</td>
-      <td>{{ row.major_0 }}</td>
-      <td>{{ row.major_1 }}</td>
-      <td>{{ row.major_2 }}</td>
-      <td>{{ row.major_3 }}</td>
-      <td>{{ row.major_4 }}</td>
-    </tr-->
     <div class="hospital-wrap">
       <div class="hospital-content">
         <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
