@@ -12,6 +12,9 @@ body{
   position: fixed;
   width:100%;
 }
+#navbarMenuHero1{
+  background-color: rgb(106,191,176);
+}
 footer{
   width: 100%;
   background-color: rgb(106,191,176);
