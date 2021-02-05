@@ -64,3 +64,25 @@ class Major(models.Model):
     def __str__(self):
         template='{0.major_name} '+','+'{0.count}'+'件'
         return template.format(self)
+
+
+class Chapter(models.Model):
+    chapeter_tag = models.CharField(verbose_name='章',blank=True,null=True,max_length=100)
+
+    def __str__(self):
+        return self.chapeter_tag+'章'
+
+class Category(models.Model):
+    category_tag = models.CharField(verbose_name='カテゴリー',blank=True,null=True,max_length=100)
+
+    def __str__(self):
+        return self.category_tag
+
+class Article(models.Model):
+    article_category = models.ForeignKey(Category, on_delete=models.CASCADE,verbose_name='カテゴリー')
+    article_chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE,verbose_name='章')
+    article_tg = models.CharField(verbose_name='条',blank=True,null=True,max_length=100)
+    article_content = models.TextField(verbose_name='規約',blank=True,null=True,max_length=100)
+
+    def __str__(self):
+        return str(self.article_category)+','+str(self.article_chapter)+','+str(self.article_tg)+'条'
