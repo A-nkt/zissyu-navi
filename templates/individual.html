@@ -85,7 +85,7 @@
 
   <div class="category-group">
     <ul id="nav">
-      <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=people&page=1">
+      <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=people&page=1&sort=normal">
         <li>
           <i class="fas fa-user"></i>
           実習担当者について
@@ -93,7 +93,7 @@
           <span class="mark">></span>
         </li>
       </a>
-      <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=report&page=1">
+      <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=report&page=1&sort=normal">
         <li>
           <i class="far fa-file-alt"></i>
           レポートについて
@@ -101,7 +101,7 @@
           <span class="mark">></span>
         </li>
       </a>
-      <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=communication&page=1">
+      <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=communication&page=1&sort=normal">
         <li>
           <i class="fas fa-comments"></i>
           コミュニケーションについて
@@ -120,8 +120,8 @@
   <div class="answer-group">
     <ul id="nav_gender">
       <li id="gender_type">性別：</li>
-      <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=&gender=man&page=1">男性</a></li>
-      <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=&gender=woman&page=1">女性</a></li>
+      <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=&gender=man&page=1&sort=normal">男性</a></li>
+      <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=&gender=woman&page=1&sort=normal">女性</a></li>
     </ul>
 
     <ul id="nav_ptn_2">
@@ -146,7 +146,7 @@
       {% endfor %}
     </ul>
     {% if all_count > 5 %}
-    <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page=1" id="answer-tag">
+    <a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&page=1&sort=normal" id="answer-tag">
       <div class="anwer_for_all">
         回答者一覧を見る({{ all_count }}件)  >>
       </div>

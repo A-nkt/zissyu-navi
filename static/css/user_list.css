@@ -204,7 +204,7 @@
 }
 
 #nav_gender{
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   margin-top: -10px;
 }
 
@@ -331,4 +331,7 @@
   width: 60%;
   padding: 0.2em 0.5em;
   margin: 2em 0;
+}
+.tabs{
+  width:60%;
 }

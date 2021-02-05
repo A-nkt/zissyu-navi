@@ -558,6 +558,15 @@ def user_list(request):
             if datas.loc[j,'place'] == PLACE_CHOISE[k][1]:
                 datas.loc[j,'place_name'] = PLACE_CHOISE[k][0]
 
+    #sortに関して
+    sort = request.GET['sort']
+    if sort == 'date':
+        datas = datas.sort_values(by="date", ascending=False)
+        datas = datas.reset_index(drop=True)
+    elif sort == 'score':
+        datas = datas.sort_values(by="review", ascending=False)
+        datas = datas.reset_index(drop=True)
+
     page = int(page)
     previous_page = page - 1
     next_page = page + 1
@@ -587,5 +596,6 @@ def user_list(request):
         'last_page':last_page,
         'page':page,
         'related_df':related_df,
+        'sort':sort,
     }
     return render(request, 'user_list.html',context)
