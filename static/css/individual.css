@@ -17,12 +17,64 @@
 }
 .recommend{
   width : 100% ;
-  padding-top : 100% ;
-  background-color: rgb(106,191,176);
+  border-radius: 5px;
   margin:auto;
   color: black;
-  height:800px;
+  height:100%;
+  margin:2em 0;
+  position: relative;
+  padding: 0.25em 1em;
+  border: solid 2px rgb(106,191,176,0.7);
+  border-radius: 3px 0 3px 0;
 }
+.recommend:before,.recommend:after{
+  content: '';
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border: solid 2px rgb(106,191,176,0.7);
+  border-radius: 50%;
+}
+.recommend:after {
+  top:-12px;
+  left:-12px;
+}
+.recommend:before {
+  bottom:-12px;
+  right:-12px;
+}
+.recommend-box{
+  border:2px solid rgb(106,191,176);
+  padding: 10px;
+  border-radius: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 15px;
+  margin-top:10px;
+}
+.recommend-box:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,.45);
+}
+.rcd-hospital-name,.rcd-place{
+  display: inline-block;
+}
+.rcd-hospital-name{
+  font-size: 18px;
+  margin-left: 10px;
+}
+.rcd-place{
+  margin-left: 10px;
+  font-size: 16px;
+}
+.rcd-count{
+  float: right;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+.recommend a:link { color: gray; }
+.recommend a:visited { color: gray; }
+.recommend a:hover { color: gray; }
+.recommend a:active { color: gray; }
+
 .box{
   margin-top: 10px;
   padding-top: 10px;

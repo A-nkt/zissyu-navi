@@ -273,6 +273,98 @@ def list(request):
 def footer_content(request):
     return render(request, 'footer-content.html')
 
+def individual_related_df(pref_query,hp_query):
+    for j in range(len(PLACE_CHOISE)):
+        if PLACE_CHOISE[j][0] == pref_query:
+            place_name = PLACE_CHOISE[j][1]
+
+    GROUP1 = ["北海道","青森","岩手","秋田","宮城","山形","福島"]
+    GROUP2 = ["茨城","栃木","群馬","埼玉","千葉","東京","神奈川"]
+    GROUP3 = ["新潟","富山","石川","福井","山梨","長野","岐阜","静岡","三重"]
+    GROUP4 = ["滋賀","京都","大阪","兵庫","奈良","和歌山"]
+    GROUP5 = ["鳥取","島根","岡山","広島","山口","徳島","香川","愛媛","高知"]
+    GROUP6 = ["福岡","佐賀","大分","宮崎","長崎","熊本","鹿児島","沖縄"]
+    #GROUP判定
+    found_ = False
+    for group in GROUP1:
+        if place_name == group:
+            my_pref_group = GROUP1
+            found_ = True
+    if found_ == False:
+        for group in GROUP2:
+            if place_name == group:
+                my_pref_group = GROUP2
+                found_ = True
+    if found_ == False:
+        for group in GROUP3:
+            if place_name == group:
+                my_pref_group = GROUP3
+                found_ = True
+    if found_ == False:
+        for group in GROUP4:
+            if place_name == group:
+                my_pref_group = GROUP4
+                found_ = True
+    if found_ == False:
+        for group in GROUP5:
+            if place_name == group:
+                my_pref_group = GROUP5
+                found_ = True
+    if found_ == False:
+        for group in GROUP6:
+            if place_name == group:
+                my_pref_group = GROUP6
+                found_ = True
+
+    group_en = []
+    for pref in my_pref_group:
+        for j in range(len(PLACE_CHOISE)):
+            if pref == PLACE_CHOISE[j][1]:
+                group_en.append(PLACE_CHOISE[j][0])
+
+    datas=pd.DataFrame()
+    for pref_en in group_en:
+        datas_o = Record.objects.all().filter(place=pref_en)
+        datas_o = read_frame(datas_o)
+        datas = datas.append(datas_o)
+    datas = datas[["hospital_name","place",'review']];datas=datas.reset_index(drop=True)
+
+    datas_list = datas[~datas.duplicated(subset=['hospital_name', 'place'])] #重複を削除
+    datas_list = datas_list.reset_index(drop=True);datas_list['review'] = 0;datas_list['counter'] = 0
+
+    for j in range(len(datas_list)):
+        for k in range(len(datas)):
+            if datas_list.loc[j,'hospital_name'] == datas.loc[k,'hospital_name'] and datas_list.loc[j,'place'] == datas.loc[k,'place']:
+                datas_list.loc[j,'review'] += datas.loc[k,'review']
+                datas_list.loc[j,'counter'] += 1
+    datas_list['average_score'] = round(datas_list['review']/datas_list['counter'],1)
+    for k in range(len(datas_list)):
+        for j in range(len(PLACE_CHOISE)):
+            if datas_list.loc[k,'place'] == PLACE_CHOISE[j][1]:
+                datas_list.loc[k,'place_name'] = PLACE_CHOISE[j][0]
+    #自分の病院をGROUPから除く
+    for k in range(len(datas_list)):
+        if datas_list.loc[k,'hospital_name'] == hp_query and datas_list.loc[k,'place'] == place_name:
+            datas_list = datas_list.drop(datas_list.index[k])
+    datas_list = datas_list.reset_index(drop=True)
+
+    datas_list_same_pref = pd.DataFrame(columns=['hospital_name','place','review','counter','average_score','place_name']);i = 0
+    datas_list_not_pref = pd.DataFrame(columns=['hospital_name','place','review','counter','average_score','place_name']);j = 0
+    for k in range(len(datas_list)):
+        if datas_list.loc[k,'place'] == place_name:
+            datas_list_same_pref.loc[i] = datas_list.loc[k]
+            i += 1
+        else:
+            datas_list_not_pref.loc[j] = datas_list.loc[k]
+            j += 1
+
+    for n in range(len(datas_list_not_pref)):
+        datas_list_same_pref.loc[len(datas_list_same_pref)] = datas_list_not_pref.loc[n]
+
+    datas_list_same_pref = datas_list_same_pref[:7]
+    return datas_list_same_pref
+
+
 def individual(request):
     pref_query = request.GET['pref']
     hp_query = request.GET['hospital_name']
@@ -318,6 +410,8 @@ def individual(request):
     df_date = read_frame(df_date)
     df_date = df_date[:5] #先頭の５つを抽出
 
+    related_df = individual_related_df(pref_query,hp_query)
+
     context = {
         'hospital_name':hospital_name, #病院名
         'all_count':all_count, #回答者数
@@ -333,6 +427,7 @@ def individual(request):
         'category_count':category_count, #実習担当者数+レポート数+コミュニケーション数
         'df_date':df_date,
         'pref_query':pref_query,
+        'related_df':related_df,
     }
     return render(request, 'individual.html',context)
 
@@ -440,6 +535,8 @@ def user_list(request):
     for j in range(len(datas_all)):
         hospital_score.append(datas_all.loc[j,'review'])
 
+    related_df = individual_related_df(pref_query,hp_query)
+
     context = {
         'datas':datas,
         'hospital_name':hp_query,
@@ -454,5 +551,6 @@ def user_list(request):
         'last_previous_page':last_previous_page,
         'last_page':last_page,
         'page':page,
+        'related_df':related_df,
     }
     return render(request, 'user_list.html',context)
