@@ -7,7 +7,29 @@
 <div class="main-content">
   <div class="side-wrap">
     <p class="advertise">広告枠</p>
-    <p class="recommend">関連するコンテンツ（他病院）</p>
+    <div class="recommend">
+      {% for index, row in related_df.iterrows %}
+      <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
+        <div class="recommend-box">
+          <div class="rcd-content">
+            <div class="rcd-hospital-name">
+              {{ row.hospital_name }}
+            </div>
+            <div class="rcd-place">
+              病院所在地：{{ row.place }}
+            </div>
+            <div class="star-category">
+              <div class="star5_rating" data-rate="{{ row.average_score }}">
+              </div>&nbsp;&nbsp;<b>{{ row.average_score }}</b>
+            </div>
+            <div class="rcd-count">
+              クチコミ件数：{{ row.counter }}件
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
   </div>
   <div class="header-tab">
     <p class="header-top">{{ hospital_name }}</p>
@@ -32,11 +54,13 @@
           <th style="border:1px solid	rgb(214,223,229);background-color:rgb(245,245,245);color:#000000;text-align:left;">回答者</th>
           <th style="border:1px solid	rgb(214,223,229);background-color:rgb(245,245,245);color:#000000;text-align:left;">実習年度</th>
           <th style="border:1px solid	rgb(214,223,229);background-color:rgb(245,245,245);color:#000000;text-align:left;">性別</th>
+          <th style="border:1px solid	rgb(214,223,229);background-color:rgb(245,245,245);color:#000000;text-align:left;">回答日</th>
         </tr>
         <tr>
           <td style="border:1px solid	rgb(214,223,229);text-align:left;">{{ row.major }}</td>
           <td style="border:1px solid	rgb(214,223,229);text-align:left;">{{ row.year }}</td>
           <td style="border:1px solid	rgb(214,223,229);text-align:left;">{{ row.sex }}</td>
+          <td style="border:1px solid	rgb(214,223,229);text-align:left;">{{ row.date }}</td>
         </tr>
       </tbody>
     </table>
@@ -71,7 +95,7 @@
     <div class="about-people">
       <div class="head-txt">実習担当者について</div>
       <div class="content-txt">
-        {{ row.review_report_comment }}
+        {{ row.review_people_comment }}
       </div>
     </div>
     <div class="about-report">

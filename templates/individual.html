@@ -120,13 +120,13 @@
   <div class="answer-group">
     <ul id="nav_gender">
       <li id="gender_type">性別：</li>
-      <li id="gender_man"><a href="#">男性</a></li>
-      <li id="gender_woman"><a href="#">女性</a></li>
+      <li id="gender_man"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=&gender=man&page=1">男性</a></li>
+      <li id="gender_woman"><a href="/list/individual/user_list/?pref={{ pref_query }}&hospital_name={{ hospital_name }}&about=&gender=woman&page=1">女性</a></li>
     </ul>
 
     <ul id="nav_ptn_2">
       {% for index, row in df_date.iterrows %}
-      <a href="/list/individual/user_answer/?id={{ row.id }}">
+      <a href="/list/individual/user_answer/?id={{ row.id }}&hospital_name={{ row.hospital_name }}&pref={{ row.place_name }}">
         <li>
           <div class="personal_group">
             <p class="i_mark">></p>

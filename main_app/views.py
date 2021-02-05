@@ -269,7 +269,6 @@ def list(request):
     else:
         return render(request, 'list.html', {'content':False})
 
-
 def footer_content(request):
     return render(request, 'footer-content.html')
 
@@ -364,7 +363,6 @@ def individual_related_df(pref_query,hp_query):
     datas_list_same_pref = datas_list_same_pref[:7]
     return datas_list_same_pref
 
-
 def individual(request):
     pref_query = request.GET['pref']
     hp_query = request.GET['hospital_name']
@@ -410,6 +408,11 @@ def individual(request):
     df_date = read_frame(df_date)
     df_date = df_date[:5] #先頭の５つを抽出
 
+    for j in range(len(df_date)):
+        for k in range(len(PLACE_CHOISE)):
+            if df_date.loc[j,'place'] == PLACE_CHOISE[k][1]:
+                df_date.loc[j,'place_name'] = PLACE_CHOISE[k][0]
+
     related_df = individual_related_df(pref_query,hp_query)
 
     context = {
@@ -433,6 +436,8 @@ def individual(request):
 
 def user_answer(request):
     id = request.GET['id']
+    pref_query = request.GET['pref']
+    hp_query = request.GET['hospital_name']
     datas = Record.objects.all().filter(id=id);datas_o = read_frame(datas) #特定のidを抽出
     hospital_name = datas_o.loc[0,'hospital_name'];place = datas_o.loc[0,'place'] #病院名と県を取得
     #placeを元にplace_nameを決める
@@ -445,15 +450,18 @@ def user_answer(request):
     hospital_score = []
     for j in range(len(df_o)):
         hospital_score.append(df_o.loc[j,'review'])
+
+    related_df = individual_related_df(pref_query,hp_query)
+
     context = {
         'datas_o':datas_o,
         'hospital_name':hospital_name,
         'place':place_name,
         'length':len(datas_all),
         'score':round(np.mean(hospital_score),1),
+        'related_df':related_df,
     }
     return render(request, 'user_answer.html',context)
-
 
 def user_list(request):
     pref_query = request.GET['pref']
@@ -523,6 +531,11 @@ def user_list(request):
             if datas.loc[j,'review_communication_comment'] == "":
                 datas = datas.drop([j])
     datas = datas.reset_index(drop=True)
+    for j in range(len(datas)):
+        for k in range(len(PLACE_CHOISE)):
+            if datas.loc[j,'place'] == PLACE_CHOISE[k][1]:
+                datas.loc[j,'place_name'] = PLACE_CHOISE[k][0]
+
     page = int(page)
     previous_page = page - 1
     next_page = page + 1

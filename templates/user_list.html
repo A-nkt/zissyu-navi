@@ -75,7 +75,7 @@
     </ul>
     <ul id="nav_ptn_2">
       {% for index, row in datas.iterrows %}
-      <a href="/list/individual/user_answer/?id={{ row.id }}">
+      <a href="/list/individual/user_answer/?id={{ row.id }}&hospital_name={{ row.hospital_name }}&pref={{ row.place_name }}">
         <li>
           <div class="personal_group">
             <p class="i_mark">></p>
