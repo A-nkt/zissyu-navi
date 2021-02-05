@@ -434,6 +434,25 @@ def individual(request):
     }
     return render(request, 'individual.html',context)
 
+
+def bottom_related_df(pref_query,hp_query,id):
+    judge =  False
+    data_o = Record.objects.all().filter(place=pref_query,hospital_name=hp_query);data_o = read_frame(data_o)
+    for k in range(len(data_o)):
+        for j in range(len(PLACE_CHOISE)):
+            if data_o.loc[k,'place'] == PLACE_CHOISE[j][1]:
+                data_o.loc[k,'place_name'] = PLACE_CHOISE[j][0]
+    #自分の投稿を除く
+    for k in range(len(data_o)):
+        if str(data_o.loc[k,'id']) == id:
+            data_o = data_o.drop([k])
+    data_o = data_o.sort_values('year', ascending=False)
+    data_o = data_o.reset_index(drop=True)
+    if len(data_o) != 0:
+        judge = True
+    return data_o[:5],judge
+
+
 def user_answer(request):
     id = request.GET['id']
     pref_query = request.GET['pref']
@@ -452,6 +471,7 @@ def user_answer(request):
         hospital_score.append(df_o.loc[j,'review'])
 
     related_df = individual_related_df(pref_query,hp_query)
+    related_df2 = bottom_related_df(place_name,hp_query,id)
 
     context = {
         'datas_o':datas_o,
@@ -460,6 +480,8 @@ def user_answer(request):
         'length':len(datas_all),
         'score':round(np.mean(hospital_score),1),
         'related_df':related_df,
+        'related_df2':related_df2[0],
+        'judge':related_df2[1],
     }
     return render(request, 'user_answer.html',context)
 

@@ -120,8 +120,32 @@
       </div>
     </a>
   </div>
+  {% if judge == True %}
   <div class="bottom-wrap">
-    <p class="relate">同じ病院のコンテンツ</p>
+    <span class="box-title">他の回答者のクチコミ</span>
+    <ul id="nav_ptn_2">
+      {% for index, row in related_df2.iterrows %}
+      <a href="/list/individual/user_answer/?id={{ row.id }}&hospital_name={{ row.hospital_name }}&pref={{ row.place_name }}">
+        <li>
+          <div class="personal_group">
+            <p class="i_mark">></p>
+            <div class="personal_own">
+              <p class="personal_major">{{ row.major }}</p>
+              <p class="personal_gender">{{ row.year }}年に実習</p>
+              <p class="personal_gender">{{ row.sex }}</p>
+            </div>
+            <div class="personal_own_2">
+                <p class="star5_rating" data-rate="{{ row.review }}"></p>
+                  &nbsp;&nbsp;<b>{{ row.review }}</b>
+                <p class="personal_date">{{ row.date }}</p>
+            </div>
+          </div>
+        </li>
+      </a>
+      {% endfor %}
+    </ul>
   </div>
+  {% endif %}
+
 </div>
 {% endblock %}
