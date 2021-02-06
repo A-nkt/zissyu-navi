@@ -2,7 +2,7 @@ body{
   font-family:'メイリオ';
 }
 .content {
-  min-height: calc(170vh - 70px);
+  min-height: calc(90vw - 70px);
 }
 .footer {
   height: 50px;
