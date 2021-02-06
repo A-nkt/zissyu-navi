@@ -1,8 +1,27 @@
-.main-content{
-  padding-top: 90px;
-  padding-right: 12%;
-  padding-left: 22%;
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  .main-content{
+    padding-top: 90px;
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+
 }
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+
+}
+/*PC*/
+@media screen and (min-width:960px){
+  .main-content{
+    padding-top: 90px;
+    padding-right: 12%;
+    padding-left: 22%;
+  }
+
+}
+
+
 .advertise{
   width : 100% ;
   padding-top : 100% ;

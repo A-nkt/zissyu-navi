@@ -11,8 +11,14 @@ body{
 .site-header{
   z-index:1;
   position: fixed;
-  width: 100%;
+  /*width: 100%;*/
 }
+section{
+  z-index:1;
+  /*position: fixed;
+  width: 93%;*/
+}
+
 #navbarMenuHero1{
   background-color: rgb(106,191,176);
 }

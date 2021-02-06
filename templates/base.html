@@ -6,7 +6,7 @@
     <title>実習ナビ | {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/minty/bulmaswatch.min.css">
-    <!--link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css" crossorigin="anonymous"-->
+    <!--link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css" crossorigin="anonymous"-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><!--JQuery-->
     <link rel="icon" type="image/png" href="{% static 'img/header-icon.png' %}">
@@ -17,26 +17,31 @@
       {% block css_file %}{% endblock %}
   </head>
   <body>
-    <header class="site-header">
-        <div>
-          <nav class="navbar">
-            <div class="container">
-              <div class="navbar-brand">
-                <a href="/" class="navbar-item" id="site-icon">
-                  <img src="{% static 'img/site-icon.png' %}">
-                </a>
-              </div>
-              <div id="navbarMenuHero1" class="navbar-menu">
-                <div class="navbar-end">
-                  <a href="/search/" class="navbar-item">口コミを探す</a>
-                  <a href="/form/" class="navbar-item">口コミを投稿する</a>
-                </div>
+    <section>
+      <div>
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a href="/" class="navbar-item" id="site-icon">
+                <img src="{% static 'img/site-icon.png' %}">
+              </a>
+              <span class="navbar-burger burger" data-target="navbarMenuHero1">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHero1" class="navbar-menu">
+              <div class="navbar-end">
+                <a href="/search/" class="navbar-item">口コミを探す</a>
+                <a href="/form/" class="navbar-item">口コミを投稿する</a>
               </div>
             </div>
-          </nav>
-        </div>
-      </header>
-
+          </div>
+        </nav>
+      </div>
+    </section>
+    <header class="site-header"></header>
       <div class="content">
         {% block content %}
         {% endblock %}
