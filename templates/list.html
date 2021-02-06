@@ -8,10 +8,10 @@
 {% block content %}
 <div class="main-content">
   <div class="side-wrap">
-    <p class="advertise">広告枠</p>
+    <!--p class="advertise">広告枠</p-->
     {% if judge == True %}
     <div class="recommend">
-      <div class="recommend-text"><u>あなたへのおすすめ</u></div>
+      <div class="recommend-text"><u>近くの病院のクチコミ</u></div>
       {% for index, row in related_df.iterrows %}
       <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
         <div class="recommend-box">
