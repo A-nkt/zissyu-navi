@@ -3,3 +3,11 @@
   padding-left: 22%;
   padding-top: 90px;
 }
+.rule-content{
+  margin-left: 3%;
+  border:1px solid #DCDCDC;
+  padding: 1%;
+}
+.article{
+  margin-bottom: 40px;
+}

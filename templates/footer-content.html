@@ -1,10 +1,59 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/footer-content.css' %}">{% endblock %}
-{% block js_file %}<script type="text/javascript" src="{% static 'js/footer-content.js' %}"></script>{% endblock %}
-{% block title %}{% endblock %}
+{% block title %}
+  {% if pattern == 'rule' %}利用規約
+  {% elif pattern == 'privacy' %}プライバシーポリシー
+  {% endif %}
+{% endblock %}
 
 {% block content %}
 <div class="main-content">
+  <div class="tabs">
+    <ul>
+      {% if pattern == 'rule' %}
+      <li class="is-active"><a href="/footer-content/?pattern=rule">利用規約 ▼</a></li>
+      <li><a href="/footer-content/?pattern=privacy">プライバシーポリシー</a></li>
+      {% elif pattern == 'privacy' %}
+      <li><a href="/footer-content/?pattern=rule">利用規約</a></li>
+      <li class="is-active"><a href="/footer-content/?pattern=privacy">プライバシーポリシー ▼</a></li>
+      {% endif %}
+    </ul>
+  </div>
+  {% if pattern == 'rule' %}
+  <div class="rule-content">
+    {% for index, row in cp.iterrows %}
+    <div class="chapter">
+        {{ row.chapeter_return }}
+    </div>
+    <div class="article">
+      <ol>
+          {% for index2, row2 in df.iterrows %}
+            {% if row2.article_chapter == row.chapeter_return %}
+            <li>{{ row2.article_content }}</li>
+            {% endif %}
+          {% endfor %}
+      </ol>
+    </div>
+    {% endfor %}
+  </div>
+  {% elif pattern == 'privacy' %}
+  <div class="rule-content">
+    {% for index, row in cp.iterrows %}
+    <div class="chapter">
+        {{ row.chapeter_return }}
+    </div>
+    <div class="article">
+      <ol>
+          {% for index2, row2 in df.iterrows %}
+            {% if row2.article_chapter == row.chapeter_return %}
+            <li>{{ row2.article_content }}</li>
+            {% endif %}
+          {% endfor %}
+      </ol>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

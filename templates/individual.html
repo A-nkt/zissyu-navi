@@ -9,6 +9,7 @@
   <div class="side-wrap">
     <p class="advertise">広告枠</p>
     <div class="recommend">
+      <div class="recommend-text"><u>あなたへのおすすめ</u></div>
       {% for index, row in related_df.iterrows %}
       <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
         <div class="recommend-box">

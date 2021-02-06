@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Record,Major
+from .models import Record,Major,Chapter,Article
 from .forms import RecordForm
 from django_pandas.io import read_frame
 import pandas as pd
@@ -270,7 +270,27 @@ def list(request):
         return render(request, 'list.html', {'content':False})
 
 def footer_content(request):
-    return render(request, 'footer-content.html')
+    pattern = request.GET['pattern']
+    df = Article.objects.all();df = read_frame(df)
+    df = df.sort_values(by=['article_chapter','article_tg']);df = df.reset_index(drop=True)
+
+    cp = Chapter.objects.all();cp = read_frame(cp)
+    for j in range(len(cp)):
+        cp.loc[j,'chapeter_return'] = str(cp.loc[j,'chapeter_tag'])+'条:' + cp.loc[j,'chapeter_name']
+
+    if pattern == 'rule':
+        cp = cp[cp['category_tag'] == '利用規約']
+        df = df[df['article_category'] == '利用規約']
+    elif pattern == 'privacy':
+        cp = cp[cp['category_tag'] == 'プライバシーポリシー']
+        df = df[df['article_category'] == 'プライバシーポリシー']
+
+    context={
+        'pattern':pattern,
+        'cp':cp,
+        'df':df,
+    }
+    return render(request, 'footer-content.html',context)
 
 def individual_related_df(pref_query,hp_query):
     for j in range(len(PLACE_CHOISE)):
