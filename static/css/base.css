@@ -1,5 +1,6 @@
 body{
   font-family:'メイリオ';
+  width: 100%;
 }
 .content {
   min-height: calc(90vw - 70px);
@@ -10,7 +11,7 @@ body{
 .site-header{
   z-index:1;
   position: fixed;
-  width:100%;
+  width: 100%;
 }
 #navbarMenuHero1{
   background-color: rgb(106,191,176);
