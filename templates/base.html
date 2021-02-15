@@ -16,33 +16,19 @@
     {# Global stylesheets #}
       {% block css_file %}{% endblock %}
   </head>
+  <header>
+      <h1><a href="/" id="site-icon"><img src="{% static 'img/Hospee.png' %}"></a></h1>
+      <nav class="pc-nav">
+        <ul>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">SERVICE</a></li>
+          <li><a href="#">COMPANY</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
   <body>
-    <section>
-      <div>
-        <nav class="navbar">
-          <div class="container">
-            <div class="navbar-brand">
-              <a href="/" class="navbar-item" id="site-icon">
-                <img src="{% static 'img/site-icon.png' %}">
-              </a>
-              <span class="navbar-burger burger" data-target="navbarMenuHero1">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-            <div id="navbarMenuHero1" class="navbar-menu">
-              <div class="navbar-end">
-                <a href="/search/" class="navbar-item">口コミを探す</a>
-                <a href="/form/" class="navbar-item">口コミを投稿する</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </section>
-    <header class="site-header"></header>
-    
+
       <div class="content">
         {% block content %}
         {% endblock %}
