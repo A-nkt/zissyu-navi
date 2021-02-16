@@ -17,29 +17,25 @@
       {% block css_file %}{% endblock %}
   </head>
   <header>
-      <h1><a href="/" id="site-icon"><img src="{% static 'img/Hospee.png' %}"></a></h1>
-      <nav class="pc-nav">
-        <ul>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">SERVICE</a></li>
-          <li><a href="#">COMPANY</a></li>
-          <li><a href="#">CONTACT</a></li>
+    <body>
+    <h1><a href="/" id="site-icon"><img src="{% static 'img/Hospee.png' %}"></a></h1>
+      <nav class="header-group">
+        <ul class="">
+          <li class="menu-item"><a href="/search">クチコミを探す</a></li>
+          <li class="menu-item"><a href="/form">クチコミを投稿する</a></li>
         </ul>
       </nav>
     </header>
-  <body>
-
       <div class="content">
         {% block content %}
         {% endblock %}
       </div>
-
-  <footer>
-    <a href="/"><img src="{% static 'img/site-icon.png' %}" hspace="0" vspace="0"></a>
-    <nav class="footer-content" id="footer-year">
-      <a href="/footer-content/?pattern=rule">利用規約・プライバシーポリシー</a>
-    </nav>
-  </footer>
-  <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+      <footer>
+        <a href="/"><img src="{% static 'img/site-icon.png' %}" hspace="0" vspace="0"></a>
+        <nav class="footer-content" id="footer-year">
+          <a href="/footer-content/?pattern=rule">利用規約・プライバシーポリシー</a>
+        </nav>
+      </footer>
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
   </body>
 </html>
