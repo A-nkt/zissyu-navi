@@ -172,10 +172,7 @@
         </td>
       </tr>
     </table>
-
   </div>
-  </tbody>
-</table>
 
   <div class="main-section">
     <div class="major-header-text">職種から探す</div>
@@ -191,6 +188,17 @@
       </li>
       {% endfor %}
     </ul>
+  </div>
+  <div class="main-section2">
+    <div class="major-header-text">職種から探す</div>
+      {% for data in datas %}
+        <a href="/list?major={{ data.db_major_name }}&page=1">
+          <div class="main-content-bk" id="content-no2">
+            <img src="{{ data.image.url }}"/>
+            <div class="main-sub-text">{{ data.major_name }}<br>{{ data.count }}件</div><!--クチコミ件数は動的に-->
+          </div>
+        </a>
+      {% endfor %}
   </div>
 </div>
 {% endblock %}
