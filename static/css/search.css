@@ -1,19 +1,20 @@
 /*SmartPhone*/
 @media screen and (max-width:560px){
   .body-contents{
-    padding-top: 90px;
+    padding-top: 20px;
     padding-right: 1%;
     padding-left: 1%;
   }
   #first-column{
     width:25%;
   }
-  li {
+  .inline-block li {
   	width: 40px;
   	height: 40px;
-  	padding: 5px;
+  	padding: 10px;
     margin-right: 30px;
     margin-left: 30px;
+    padding-bottom: 600px;
   }
   .main-content-bk{
     width: 100px;
@@ -38,6 +39,9 @@
     padding: 0%;
     font-size: 14px;
     font-weight: bold;
+  }
+  .main-section{
+    width: 106%;
   }
 }
 /*Tablet*/
@@ -81,7 +85,9 @@
     font-size: 20px;
     font-weight: bold;
   }
-
+  .inline-block li {
+  	display: inline-block;
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
@@ -120,6 +126,9 @@
     padding: 0%;
     font-size: 20px;
     font-weight: bold;
+  }
+  .inline-block li {
+  	display: inline-block;
   }
 
 }
@@ -160,10 +169,7 @@
 .main-content-bk:hover{
   box-shadow: 0 0 25px rgba(0,0,0,.45);
 }
-.main-content-bk i{
-  position: absolute;
-  top:20%;
-}
+
 
 ul {
 	list-style-type: none;
@@ -173,9 +179,7 @@ ul {
 .inline-block {
 	text-align: center;
 }
-.inline-block li {
-	display: inline-block;
-}
+
 .major-header-text{
   text-align: center;
   color: black;
