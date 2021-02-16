@@ -7,6 +7,7 @@
 
 {% block content %}
 <div class="main-content">
+  <div class="midashi">病院を探す</div>
   <div class="side-wrap">
     <!--p class="advertise">広告枠</p-->
     {% if judge == True %}
@@ -39,7 +40,6 @@
     </div>
     {% endif %}
   </div>
-  <div class="midashi">病院を探す</div>
   {% if content == True %}
     {% for index, row in result.iterrows %}
     <div class="hospital-wrap">
@@ -141,5 +141,7 @@
       <a class="button" href="/form/">口コミを投稿する</a>
     </div>
     {% endif %}
+
+
 </div>
 {% endblock %}

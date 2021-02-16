@@ -1,9 +1,7 @@
 body{
   font-family:'メイリオ';
 }
-.content {
-  min-height: calc(90vw - 70px);
-}
+
 /*SmartPhone*/
 @media screen and (max-width:560px){
   .hamburger {
@@ -135,6 +133,9 @@ body{
   .content{
     padding-top: 70px;
   }
+  .content {
+    min-height: calc(500vw - 70px);
+  }
 
 
 }
@@ -174,6 +175,9 @@ body{
   .content{
     padding-top: 110px;
   }
+  .content {
+    min-height: calc(90vw - 70px);
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
@@ -210,6 +214,9 @@ body{
   }
   .content{
     padding-top: 110px;
+  }
+  .content {
+    min-height: calc(90vw - 70px);
   }
 }
 

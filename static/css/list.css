@@ -1,9 +1,56 @@
 /*SmartPhone*/
 @media screen and (max-width:560px){
   .main-content{
-    padding-top: 90px;
+    padding-top: 10px;
     padding-right: 2%;
     padding-left: 2%;
+  }
+  .side-wrap{
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  .recommend{
+    width : 100% ;
+    border-radius: 5px;
+    margin:auto;
+    color: black;
+    height:100%;
+    margin:2em 0;
+    position: relative;
+    padding: 0.25em 1em;
+    border: solid 2px rgb(106,191,176,0.7);
+    border-radius: 3px 0 3px 0;
+    margin-top:5em;
+  }
+  .midashi {
+    position: relative;
+    padding: 0.5em;
+    background: #a6d3c8;
+    color: white;
+    float: left;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .midashi:before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px rgb(149, 158, 155);
+  }
+  .hospital-wrap{
+    float: left;
+    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 0.2em 0.5em;
+    margin: 1em 0;
+    background: rgb(106,191,176,0.4);
+    box-shadow: 0px 0px 0px 10px rgb(106,191,176,0.4);
+    border: dashed 2px white;
   }
 
 }
@@ -14,11 +61,56 @@
 /*PC*/
 @media screen and (min-width:960px){
   .main-content{
-    padding-top: 90px;
+    padding-top: 10px;
     padding-right: 12%;
     padding-left: 22%;
   }
+  .side-wrap{
+    width: 20%;
+    float: right;
+  }
+  .recommend{
+    width : 100% ;
+    border-radius: 5px;
+    margin:auto;
+    color: black;
+    height:100%;
+    margin:2em 0;
+    position: relative;
+    padding: 0.25em 1em;
+    border: solid 2px rgb(106,191,176,0.7);
+    border-radius: 3px 0 3px 0;
+    margin-top:6em;
+  }
+  .midashi {
+    position: relative;
+    padding: 0.5em;
+    background: #a6d3c8;
+    color: white;
+    float: left;
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .midashi:before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px rgb(149, 158, 155);
+  }
 
+  .hospital-wrap{
+    float: left;
+    width: 75%;
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    background: rgb(106,191,176,0.4);
+    box-shadow: 0px 0px 0px 10px rgb(106,191,176,0.4);
+    border: dashed 2px white;
+  }
 }
 
 
@@ -33,37 +125,14 @@
 #if-none{
   height: 800px;
 }
-.side-wrap{
-  width: 20%;
-  float: right;
-}
-.hospital-wrap{
-  float: left;
-  width: 75%;
-  padding: 0.2em 0.5em;
-  margin: 2em 0;
-  background: rgb(106,191,176,0.4);
-  box-shadow: 0px 0px 0px 10px rgb(106,191,176,0.4);
-  border: dashed 2px white;
-}
+
 .hospital-content{
   width : 100%;
   height: 150px;
   margin: 0;
   padding: 0;
 }
-.recommend{
-  width : 100% ;
-  border-radius: 5px;
-  margin:auto;
-  color: black;
-  height:100%;
-  margin:2em 0;
-  position: relative;
-  padding: 0.25em 1em;
-  border: solid 2px rgb(106,191,176,0.7);
-  border-radius: 3px 0 3px 0;
-}
+
 .recommend:before,.recommend:after{
   content: '';
   position: absolute;
@@ -112,25 +181,7 @@
 .recommend a:hover { color: gray; }
 .recommend a:active { color: gray; }
 
-.midashi {
-  position: relative;
-  padding: 0.5em;
-  background: #a6d3c8;
-  color: white;
-  float: left;
-  margin-bottom: 30px;
-  font-size: 22px;
-  font-weight: bold;
-}
-.midashi:before {
-  position: absolute;
-  content: '';
-  top: 100%;
-  left: 0;
-  border: none;
-  border-bottom: solid 15px transparent;
-  border-right: solid 20px rgb(149, 158, 155);
-}
+
 .star5_rating{
     position: relative;
     z-index: 0;
