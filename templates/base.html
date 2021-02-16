@@ -3,7 +3,7 @@
 <html lang="ja" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>実習ナビ | {% block title %}{% endblock %}</title>
+    <title>Hospee(ホスピー) | {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/minty/bulmaswatch.min.css">
     <!--link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css" crossorigin="anonymous"-->
@@ -16,10 +16,15 @@
     {# Global stylesheets #}
       {% block css_file %}{% endblock %}
   </head>
-  <header>
     <body>
-    <h1><a href="/" id="site-icon"><img src="{% static 'img/Hospee.png' %}"></a></h1>
-      <nav class="header-group">
+    <header>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    <h1><a href="/"><img src="{% static 'img/Hospee.png' %}"></a></h1>
+      <nav class="globalMenuSp">
         <ul class="">
           <li class="menu-item"><a href="/search">クチコミを探す</a></li>
           <li class="menu-item"><a href="/form">クチコミを投稿する</a></li>
