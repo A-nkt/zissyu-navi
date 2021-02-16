@@ -43,9 +43,54 @@
   .main-section{
     width: 106%;
   }
+  .tbl-r01 {
+    display: none;
+  }
+p {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 60px auto 40px;
+}
+table {
+  margin: 20px auto;
+  border: solid 1px rgb(106,191,176);
+}
+.tbl-r02 th {
+  background: rgb(106,191,176);
+  border: solid 1px rgb(106,191,176);
+  color: white !important;
+  padding: 10px;
+  text-align: center !important;
+}
+.tbl-r02 td {
+　border: solid 1px #ccc;
+  padding: 10px;
+}
+.last td:last-child {
+  border-bottom: solid 1px #ccc;
+  width: 100%;
+}
+.tbl-r02 {
+  width: 80%;
+}
+.tbl-r02 th,
+.tbl-r02 td {
+　border-bottom: none;
+  display: block;
+  width: 100%;
+}
+.tbl-r02 td{
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
+  .tbl-r02{
+    display: none;
+  }
   .body-contents{
     padding-top: 90px;
     padding-right: 1%;
@@ -88,9 +133,34 @@
   .inline-block li {
   	display: inline-block;
   }
+
+  #top-row{
+    background-color: rgb(106,191,176);
+    text-align: center!important;
+    color: white;
+    font-size: 18px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  #first-column{
+    background-color: rgb(106,191,176);
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  #second-row{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 10px;
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
+  .tbl-r02{
+    display: none;
+  }
   .body-contents{
     padding-top: 90px;
     padding-right: 22%;
@@ -131,29 +201,29 @@
   	display: inline-block;
   }
 
+  #top-row{
+    background-color: rgb(106,191,176);
+    text-align: center!important;
+    color: white;
+    font-size: 18px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  #first-column{
+    background-color: rgb(106,191,176);
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  #second-row{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 10px;
+  }
 }
 
-#top-row{
-  background-color: rgb(106,191,176);
-  text-align: center!important;
-  color: white;
-  font-size: 18px;
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-#first-column{
-  background-color: rgb(106,191,176);
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-#second-row{
-  padding-top: 2%;
-  padding-bottom: 2%;
-  padding-left: 10px;
-}
 .body-contents a:link { color: black; }
 .body-contents a:visited { color: black; }
 .body-contents a:hover { color: black; font-weight: bold;}
