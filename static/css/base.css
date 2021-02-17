@@ -134,7 +134,7 @@ body{
     padding-top: 70px;
   }
   .content {
-    min-height: calc(500vw - 70px);
+    min-height: calc(400vw - 70px);
   }
 
 
@@ -176,7 +176,7 @@ body{
     padding-top: 110px;
   }
   .content {
-    min-height: calc(90vw - 70px);
+    min-height: calc(250vw - 70px);
   }
 }
 /*PC*/
