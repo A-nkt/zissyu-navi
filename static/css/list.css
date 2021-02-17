@@ -350,11 +350,12 @@
     padding-left: 2%;
   }
   .side-wrap{
-    margin-right: 5%;
-    margin-left: 5%;
+    display: none;
   }
   .side-wrap2{
-    display: none;
+    margin-top: 1300px;
+    margin-right: 15%;
+    margin-left: 15%;
   }
   .recommend{
     width : 100% ;
@@ -389,16 +390,15 @@
     border-right: solid 20px rgb(149, 158, 155);
   }
   .hospital-wrap{
-    /*float: left;*/
-    margin: auto !important;
-    width: 80%;
-    margin-left: 2%;
-    margin-right: 2%;
+    float: left;
+    width: 90%;
     padding: 0.2em 0.5em;
     margin: 1em 0;
     background: rgb(106,191,176,0.4);
     box-shadow: 0px 0px 0px 10px rgb(106,191,176,0.4);
     border: dashed 2px white;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   .advertise{
@@ -443,6 +443,7 @@
     padding-bottom: 40px;
     margin-bottom: 15px;
     margin-top:10px;
+    text-align: center;
   }
   .recommend-box:hover{
     box-shadow: 0 0 10px rgba(0,0,0,.45);
@@ -451,12 +452,12 @@
     display: inline-block;
   }
   .rcd-hospital-name{
-    font-size: 16px;
+    font-size: 18px;
     margin-left: 10px;
   }
   .rcd-place{
     margin-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
   }
   .rcd-count{
     float: right;
@@ -682,6 +683,7 @@
   }
   .recommend-text{
     text-align: center;
+    font-size: 18px;
   }
 
 
