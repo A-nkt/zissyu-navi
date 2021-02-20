@@ -74,6 +74,167 @@
   table{
     font-size: 14px;
   }
+  .private-category{
+    padding-top: 30px;
+    font-size: 10px!important;
+  }
+  #star-all-2{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .star-sub-content{
+    font-size: 18px;
+    padding-top: 20px;
+    padding-left: 10px;
+  }
+  .about-people{
+    padding-top: 60px;
+  }
+  .head-txt{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content-txt{
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 16px;
+  }
+  .text-content{
+    width:60%;
+  }
+  .about-report,.about-communication{
+    padding-top: 40px;
+  }
+  .back-hospital-page{
+    margin-top: 50px;
+    border : 2px solid rgb(76,161,146,0.7);
+    background-color: white;
+    float: right;
+    border-radius: 30px;
+    height: 30px;
+    width:200px;
+    text-align: center;
+    padding-top: auto;
+    padding-bottom: auto;
+  }
+  .back-hospital-page:hover{
+    border : 2px solid white;
+    background-color: rgb(76,161,146,0.7);
+  }
+  .back-hospital-page-cover{
+    width:60%;
+  }
+  .back-hospital-page-cover a:visited{
+    color: gray;
+  }
+  .back-hospital-page-cover a:link{
+    color: gray;
+  }
+  .back-hospital-page-cover a:hover{
+    color: white;
+  }
+  .back-hospital-page-cover a:active{
+    color: white;
+  }
+  .bottom-wrap{
+    position: relative;
+    padding: 0.5em 1em;
+    margin-top: 150px;
+    border-radius: 8px;
+    width:60%;
+  }
+  .bottom-wrap .box-title{
+    position: absolute;
+    display: inline-block;
+    top:-13px;
+    left:-10px;
+    padding:9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #FFF;
+    color: gray;
+    font-weight: bold;
+    z-index: 0;
+  }
+  .bottom-wrap p{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    z-index: 1;
+  }
+  #nav_ptn_2 {
+    list-style: none;
+    padding-top: 10px;
+  }
+  #nav_ptn_2 li {
+    width:100%;
+    height:70px;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 1%;
+    border:2px solid rgb(51,153,204);
+    margin-bottom: 15px;
+    color:gray;
+  }
+  #nav_ptn_2 li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  #nav_ptn_2 li:hover{
+    background-color:rgb(51,153,204,0.7);
+    color:white;
+  }
+  #nav_ptn_2 li:hover .i_mark{
+    color: white;
+    font-weight: bold;
+  }
+  #nav_ptn_2 a:link { color: white; }
+  #nav_ptn_2 a:visited { color: white; }
+  #nav_ptn_2 a:hover { color: white; }
+  #nav_ptn_2 a:active { color: white; }
+  .personal_group{
+    text-align:left;
+    padding-left: 5%;
+    width:100%;
+  }
+  .i_mark{
+    float:right;
+    padding-right: 15px;
+    color:rgb(170,170,170);
+    font-size: 20px;
+  }
+  .personal_own p {
+    display: inline;
+   }
+   .personal_own{
+     padding-top: 0.5%;
+   }
+   .personal_own_2{
+     /*padding-top: 0.5%;*/
+     padding-left: 2%;
+     font-size: 18px;
+     margin-top: -10px;
+   }
+   .star5_rating,.personal_date{
+     display:inline-block;
+   }
+   .personal_major{
+     font-size: 18px;
+     font-weight:bold;
+   }
+   .personal_gender{
+     font-size: 16px;
+   }
+   .personal_gender{
+     padding-left: 1%;
+   }
+   .personal_date{
+     padding-left:3%;
+     font-size: 16px;
+   }
+   .recommend-text{
+     text-align: center;
+   }
 }
 
 
