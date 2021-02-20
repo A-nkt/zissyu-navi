@@ -148,5 +148,33 @@
   </div>
   {% endif %}
 
+  <div class="side-wrap2">
+    <!--p class="advertise">広告枠</p-->
+    <div class="recommend">
+      <div class="recommend-text"><u>あなたへのおすすめ</u></div>
+      {% for index, row in related_df.iterrows %}
+      <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
+        <div class="recommend-box">
+          <div class="rcd-content">
+            <div class="rcd-hospital-name">
+              {{ row.hospital_name }}
+            </div>
+            <div class="rcd-place">
+              病院所在地：{{ row.place }}
+            </div>
+            <div class="star-category">
+              <div class="star5_rating" data-rate="{{ row.average_score }}">
+              </div>&nbsp;&nbsp;<b>{{ row.average_score }}</b>
+            </div>
+            <div class="rcd-count">
+              クチコミ件数：{{ row.counter }}件
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
 </div>
 {% endblock %}
