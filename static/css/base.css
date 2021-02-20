@@ -184,7 +184,7 @@ body{
   header {
     display: flex;
     width: 100%;
-    height: 110px;
+    height: 95px;
     background-color: rgb(106,191,176);
     align-items: center;
     position: fixed;
@@ -213,10 +213,13 @@ body{
     padding: 10px;
   }
   .content{
-    padding-top: 110px;
+    padding-top: 95px;
   }
   .content {
-    min-height: calc(90vw - 70px);
+    min-height: 190vh;
+    position: relative;/*←相対位置*/
+    padding-bottom: 0px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
   }
 }
 

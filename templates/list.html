@@ -41,6 +41,7 @@
     {% endif %}
   </div>
   {% if content == True %}
+  <div class="hospital-wrap-g">
     {% for index, row in result.iterrows %}
     <div class="hospital-wrap">
       <div class="hospital-content">
@@ -90,6 +91,7 @@
       </div>
     </div>
     {% endfor %}
+    </div>
     <div class="paginator">
       <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
         {% if previous_page != 0 %}{# page=1以外 #}
