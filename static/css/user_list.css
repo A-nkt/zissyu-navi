@@ -352,7 +352,7 @@
   .all_count{
     font-size: 18px;
     margin-left: 5%;
-    margin-top: -1.0%;
+    margin-top: -0.5%;
   }
   #second-g{
     padding-top: 40px;
@@ -522,7 +522,7 @@
   .main-content{
     padding-top: 40px;
     padding-right: 2%;
-    padding-left: 12%;
+    padding-left: 2%;
   }
   .advertise{
     width : 100% ;
@@ -533,7 +533,7 @@
     margin-bottom: 100px;
   }
   .side-wrap{
-    width: 25%;
+    width: 32.5%;
     float: right;
   }
 }
