@@ -196,20 +196,88 @@ body{
 }
 /*PC*/
 @media screen and (min-width:960px){
-  .trim i {
-      border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-      width:  1.5em;       /* ※縦横を同値に */
-      height: 1.5em;       /* ※縦横を同値に */
+  /*.trim i {
+      border-radius: 50%;
+      width:  1.5em;
+      height: 1.5em;
       color: white;
       border: solid 1px white;
       padding-left: 20%;
       padding-top: 10%;
       font-size: 3em !important;
+  }*/
+  /*div nav{
+    text-align:center;
+    color: white;
+    background-color: red;
   }
-  .trim{
+  */
+  .over-trim label{
     position: absolute;
-    left:95%;
+    left:90%;
     top:25%;
+    list-style-type: none;
+  }
+  #sample label .trim i{
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: white;
+    border: solid 1px white;
+    padding-left: 20%;
+    padding-top: 10%;
+    font-size: 3em !important;
+  }
+  #sample input{
+    display: none;
+  }
+  #sample input+div{
+    display: none;
+  }
+  #sample input:checked .trim i{
+    background-color: rgb(106,191,176);
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: red;
+    border: solid 1px white;
+    font-size: 3em !important;
+  }
+  #sample input:checked+.trim-2{
+    display: block;
+    background-color: rgb(106,191,176);
+    position: absolute;
+    left:86%;
+    top:85%;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5%;
+  }
+  .trim-2 li{
+    padding-top: 5px;
+    padding: 10px;
+  }
+  .trim-2 li:hover{
+    background-color: white;
+    color:  rgb(106,191,176);
+  }
+  #sample label .trim:hover{
+    background-color: white;
+    border-radius: 50%;
+  }
+  #sample label .trim i:hover{
+    color: rgb(106,191,176);
+  }
+  .trim-2 a:link { color: white; }
+  .trim-2 a:visited { color: white; }
+  .trim-2 a:hover { color : white;}
+  .trim-2 a:active { color: white; }
+
+  .trim nav{
+    display: none;
+
   }
   header {
     display: flex;
@@ -254,13 +322,6 @@ body{
   }
 }
 
-.trim:hover{
-  background-color: white;
-  border-radius: 50%;
-}
-.trim i:hover{
-  color: rgb(106,191,176);
-}
 
 footer{
   background-color: rgb(106,191,176);

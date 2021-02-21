@@ -6,7 +6,6 @@
     <title>Hospee(ホスピー) | {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/minty/bulmaswatch.min.css">
-    <!--link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css" crossorigin="anonymous"-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><!--JQuery-->
     <link rel="icon" type="image/png" href="{% static 'img/Hospee-icon.png' %}">
@@ -18,11 +17,19 @@
   </head>
     <body>
     <header>
-      <a href="#">
-        <div class="trim">
-          <i class="fas fa-user fa-3x"></i>
+      {# if you have account and login now #}
+      <div class="over-trim" id="sample">
+        <label for="toggle">
+          <div class="trim"><i class="fas fa-user fa-3x"></i></div>
+        </label>
+        <input type="checkbox" id="toggle">
+        <div class="trim-2">
+          <nav>
+            <a href="#"><li>メール設定</li></a>
+            <a href="#"><li>ユーザー情報の変更・退会</li></a>
+          </nav>
         </div>
-      </a>
+      </div>
 
       <div class="hamburger">
         <span></span>
@@ -37,10 +44,12 @@
         </ul>
       </nav>
     </header>
+
       <div class="content">
         {% block content %}
         {% endblock %}
       </div>
+
       <footer>
         <nav id="footer-year">
           <a href="/footer-content/?pattern=rule">利用規約・プライバシーポリシー</a>
