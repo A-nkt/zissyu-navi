@@ -7,7 +7,14 @@
 {% block content %}
 <div class="main-content">
   <div class="side-wrap">
-    <!--p class="advertise">広告枠</p-->
+    <a href="#">
+      <div class="ads-group">
+        <div class="advertise"><i class="fas fa-plus"></i>この病院をフォロー</div>
+      	<div class="box">
+      		<p class="text">新着口コミが追加されると、メールで通知します</p>
+      	</div>
+      </div>
+    </a>
     <div class="recommend">
       <div class="recommend-text"><u>あなたへのおすすめ</u></div>
       {% for index, row in related_df.iterrows %}
@@ -36,7 +43,7 @@
 
   <div class="header-tab">
     <p class="header-top">病院評価スコア - </p>
-    <p class="header-sub">X病院</p>
+    <p class="header-sub">{{ hospital_name }}</p>
   </div>
 
   <div class="box">
@@ -115,7 +122,7 @@
 
   <div class="header-tab" id="thrid-g">
     <p class="header-top">回答者別の口コミ({{ all_count }}件) - </p>
-    <p class="header-sub">X病院</p>
+    <p class="header-sub">{{ hospital_name }}</p>
   </div>
 
   <div class="answer-group">
@@ -156,7 +163,14 @@
   </div>
 
   <div class="side-wrap2">
-    <!--p class="advertise">広告枠</p-->
+    <a href="#">
+      <div class="ads-group">
+        <div class="advertise"><i class="fas fa-plus"></i>この病院をフォロー</div>
+      	<div class="box">
+      		<p class="text">新着口コミが追加されると、メールで通知します</p>
+      	</div>
+      </div>
+    </a>
     <div class="recommend">
       <div class="recommend-text"><u>あなたへのおすすめ</u></div>
       {% for index, row in related_df.iterrows %}
