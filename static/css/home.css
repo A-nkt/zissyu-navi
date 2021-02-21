@@ -26,9 +26,9 @@
   }
   .header-text{
     color: white;
-    -webkit-text-stroke: 0.75px rgb(106,191,176);
-    text-stroke: 1px #FFF;
-    font-size: 40px;
+    /*-webkit-text-stroke: 0.75px rgb(106,191,176);*/
+    text-shadow:2px 2px 0 rgb(106,191,176);
+    font-size: 50px;
     font-weight: bold;
   }
   .img-text-section p{
@@ -181,9 +181,9 @@
   }
   .header-text{
     color: white;
-    -webkit-text-stroke: 0.75px rgb(106,191,176);
-    text-stroke: 1px #FFF;
-    font-size: 40px;
+    /*-webkit-text-stroke: 0.75px rgb(106,191,176);*/
+    text-shadow:2px 2px 0 rgb(106,191,176);
+    font-size: 50px;
     font-weight: bold;
   }
   .img-text-section p{

@@ -4,6 +4,73 @@ body{
 
 /*SmartPhone*/
 @media screen and (max-width:560px){
+  .over-trim label{
+    position: absolute;
+    left:2%;
+    top:20%;
+    list-style-type: none;
+  }
+  #sample label .trim i{
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: white;
+    border: solid 1px white;
+    padding-left: 20%;
+    padding-top: 10%;
+    font-size: 2em !important;
+  }
+  #sample input{
+    display: none;
+  }
+  #sample input+div{
+    display: none;
+  }
+  #sample input:checked .trim i{
+    background-color: rgb(106,191,176);
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: red;
+    border: solid 1px white;
+    font-size: 3em !important;
+  }
+  #sample input:checked+.trim-2{
+    display: block;
+    background-color: rgb(106,191,176);
+    position: absolute;
+    left:0%;
+    top:88%;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5%;
+  }
+  .trim-2 li{
+    padding-top: 5px;
+    padding: 10px;
+  }
+  .trim-2 li:hover{
+    background-color: white;
+    color:  rgb(106,191,176);
+  }
+  #sample label .trim:hover{
+    background-color: white;
+    border-radius: 50%;
+  }
+  #sample label .trim i:hover{
+    color: rgb(106,191,176);
+  }
+  .trim-2 a:link { color: white; }
+  .trim-2 a:visited { color: white; }
+  .trim-2 a:hover { color : white;}
+  .trim-2 a:active { color: white; }
+
+  .trim nav{
+    display: none;
+
+  }
   .hamburger {
     display : block;
     position: fixed;
@@ -141,20 +208,71 @@ body{
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
-  .trim i {
-      border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-      width:  1.5em;       /* ※縦横を同値に */
-      height: 1.5em;       /* ※縦横を同値に */
-      color: white;
-      border: solid 1px white;
-      padding-left: 20%;
-      padding-top: 10%;
-      font-size: 2em !important;
-  }
-  .trim{
+  .over-trim label{
     position: absolute;
     left:90%;
-    top:15%;
+    top:20%;
+    list-style-type: none;
+  }
+  #sample label .trim i{
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: white;
+    border: solid 1px white;
+    padding-left: 20%;
+    padding-top: 10%;
+    font-size: 2.5em !important;
+  }
+  #sample input{
+    display: none;
+  }
+  #sample input+div{
+    display: none;
+  }
+  #sample input:checked .trim i{
+    background-color: rgb(106,191,176);
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: red;
+    border: solid 1px white;
+    font-size: 3em !important;
+  }
+  #sample input:checked+.trim-2{
+    display: block;
+    background-color: rgb(106,191,176);
+    position: absolute;
+    left:75%;
+    top:85%;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5%;
+  }
+  .trim-2 li{
+    padding-top: 5px;
+    padding: 10px;
+  }
+  .trim-2 li:hover{
+    background-color: white;
+    color:  rgb(106,191,176);
+  }
+  #sample label .trim:hover{
+    background-color: white;
+    border-radius: 50%;
+  }
+  #sample label .trim i:hover{
+    color: rgb(106,191,176);
+  }
+  .trim-2 a:link { color: white; }
+  .trim-2 a:visited { color: white; }
+  .trim-2 a:hover { color : white;}
+  .trim-2 a:active { color: white; }
+
+  .trim nav{
+    display: none;
   }
   header {
     display: flex;
@@ -196,22 +314,6 @@ body{
 }
 /*PC*/
 @media screen and (min-width:960px){
-  /*.trim i {
-      border-radius: 50%;
-      width:  1.5em;
-      height: 1.5em;
-      color: white;
-      border: solid 1px white;
-      padding-left: 20%;
-      padding-top: 10%;
-      font-size: 3em !important;
-  }*/
-  /*div nav{
-    text-align:center;
-    color: white;
-    background-color: red;
-  }
-  */
   .over-trim label{
     position: absolute;
     left:90%;
@@ -279,9 +381,11 @@ body{
     display: none;
 
   }
+  .menu-item{
+    font-size: 18px;
+  }
   header {
     display: flex;
-    font-size: 0.8vw;
     width: 100%;
     height: 6.23vw;
     background-color: rgb(106,191,176);
@@ -315,7 +419,7 @@ body{
     padding-top: 10vw !important;
   }
   .content {
-    min-height: 90vw;
+    min-height: 120vw;
     position: relative;/*←相対位置*/
     padding-bottom: 0px;/*←footerの高さ*/
     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
