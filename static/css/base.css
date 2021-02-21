@@ -183,6 +183,7 @@ body{
 @media screen and (min-width:960px){
   header {
     display: flex;
+    font-size: 0.8vw;
     width: 100%;
     height: 6.23vw;
     background-color: rgb(106,191,176);
