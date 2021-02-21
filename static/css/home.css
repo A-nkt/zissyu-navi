@@ -147,6 +147,11 @@
     padding:10px;
     margin: 10px;
   }
+  .crw{
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -283,6 +288,11 @@
     padding:10px;
     margin: 10px;
   }
+  .crw{
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
@@ -418,6 +428,24 @@
     padding:10px;
     margin: 10px;
   }
+  .crw{
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+}
+.rank45{
+  color:gray;
+}
+
+.rank1{
+  color: #dab300;
+}
+.rank2{
+  color:#C0C0C0 ;
+}
+.rank3{
+  color:#C47222;
 }
 
 #site-icon{

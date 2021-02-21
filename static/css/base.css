@@ -141,6 +141,21 @@ body{
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
+  .trim i {
+      border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+      width:  1.5em;       /* ※縦横を同値に */
+      height: 1.5em;       /* ※縦横を同値に */
+      color: white;
+      border: solid 1px white;
+      padding-left: 20%;
+      padding-top: 10%;
+      font-size: 2em !important;
+  }
+  .trim{
+    position: absolute;
+    left:90%;
+    top:15%;
+  }
   header {
     display: flex;
     width: 100%;
@@ -181,6 +196,21 @@ body{
 }
 /*PC*/
 @media screen and (min-width:960px){
+  .trim i {
+      border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+      width:  1.5em;       /* ※縦横を同値に */
+      height: 1.5em;       /* ※縦横を同値に */
+      color: white;
+      border: solid 1px white;
+      padding-left: 20%;
+      padding-top: 10%;
+      font-size: 3em !important;
+  }
+  .trim{
+    position: absolute;
+    left:95%;
+    top:25%;
+  }
   header {
     display: flex;
     font-size: 0.8vw;
@@ -222,6 +252,14 @@ body{
     padding-bottom: 0px;/*←footerの高さ*/
     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
   }
+}
+
+.trim:hover{
+  background-color: white;
+  border-radius: 50%;
+}
+.trim i:hover{
+  color: rgb(106,191,176);
 }
 
 footer{

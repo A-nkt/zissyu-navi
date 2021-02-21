@@ -55,6 +55,9 @@ def home(request):
                 df_list.loc[j,'place_name'] = PLACE_CHOISE[i][0]
     df_list = df_list.sort_values('counter', ascending=False)
     df_list = df_list[:5]
+    rank = [1,2,3,4,5]
+    df_list['rank'] = rank
+
     return render(request, 'home.html' ,{'datas': datas,'df_list':df_list})
 
 def form(request):

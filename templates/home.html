@@ -66,12 +66,34 @@
         <li>
           <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
             <div class="text-g">
-              <div class="lank-top-text">
-                {{ row.hospital_name }}（{{ row.place }}）
+              <div class="crown">
+              {% if row.rank == 1 %}
+                <span class="fa-stack fa-lg crw rank1">
+        					<i class="fas fa-crown fa-stack-2x"></i>
+        					<i class="fa fa-inverse fa-stack-1x">{{ row.rank }}</i>
+        				</span>
+              {% elif row.rank == 2 %}
+              <span class="fa-stack fa-lg crw rank2">
+                <i class="fas fa-crown fa-stack-2x"></i>
+                <i class="fa fa-inverse fa-stack-1x">{{ row.rank }}</i>
+              </span>
+              {% elif row.rank == 3 %}
+              <span class="fa-stack fa-lg crw rank3">
+                <i class="fas fa-crown fa-stack-2x"></i>
+                <i class="fa fa-inverse fa-stack-1x">{{ row.rank }}</i>
+              </span>
+              {% else %}
+              <span class="fa-stack fa-lg crw">
+                <i class="fa fa-inverse fa-stack-1x rank45">{{ row.rank }}</i>
+              </span>
+              {% endif %}
               </div>
-              <div class="lank-count">
-                {{ row.counter }}件の口コミ
-              </div>
+                <div class="lank-top-text">
+                  {{ row.hospital_name }}（{{ row.place }}）
+                </div>
+                <div class="lank-count">
+                  {{ row.counter }}件の口コミ
+                </div>
             </div>
           </a>
         </li>
