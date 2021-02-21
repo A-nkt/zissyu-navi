@@ -60,7 +60,7 @@
 /*PC*/
 @media screen and (min-width:960px){
   .form-content{
-    padding-top: 100px;
+    padding-top: 1vw;
     padding-left: 22%;
     padding-right: 22%;
   }

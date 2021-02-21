@@ -213,10 +213,10 @@ body{
     padding: 10px;
   }
   .content{
-    padding-top: 95px;
+    padding-top: 10vw !important;
   }
   .content {
-    min-height: 190vh;
+    min-height: 90vw;
     position: relative;/*←相対位置*/
     padding-bottom: 0px;/*←footerの高さ*/
     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/

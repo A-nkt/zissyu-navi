@@ -257,16 +257,20 @@
 /*PC*/
 @media screen and (min-width:960px){
   .main-content{
-    padding-top: 30px;
+    padding-top: 2vw;
     padding-right: 6%;
     padding-left: 22%;
+  }
+  .side-wrap{
+    width: 15vw !important;
+    float: right;
   }
   .box{
     margin-top: 10px;
     padding-top: 10px;
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.33);
     width:70%;
-    height:210px;
+    height:220px;
     border:2.5px solid rgb(106,191,176,0.6);;
   }
   .hospital_name{
@@ -373,10 +377,7 @@
   .category-group{
     margin-top: -20px !important;
   }
-  .side-wrap{
-    width: 25%;
-    float: right;
-  }
+
 }
 
 

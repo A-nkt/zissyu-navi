@@ -694,12 +694,12 @@
     display: none;
   }
   .main-content{
-    padding-top: 10px;
+    padding-top: 1vw;
     padding-right: 6%;
     padding-left: 22%;
   }
   .side-wrap{
-    width: 25%;
+    width: 15vw;
     float: right;
   }
   .recommend{

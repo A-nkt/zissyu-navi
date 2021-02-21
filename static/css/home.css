@@ -294,6 +294,7 @@
     position: relative;
     display:inline-block;
     z-index:0;
+    margin-top: -5% !important;
   }
   .img-text-section{
     position: absolute;

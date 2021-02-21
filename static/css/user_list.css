@@ -784,7 +784,7 @@
     text-align: center;
   }
   .main-content{
-    padding-top: 40px;
+    padding-top: 2vw !important;
     padding-right: 12%;
     padding-left: 22%;
   }
@@ -797,7 +797,7 @@
     margin-bottom: 100px;
   }
   .side-wrap{
-    width: 25%;
+    width: 15vw !important;
     float: right;
   }
 }

@@ -100,7 +100,7 @@
     font-size: 16px;
   }
   .text-content{
-    width:60%;
+    width:90% ;
   }
   .about-report,.about-communication{
     padding-top: 40px;
@@ -306,6 +306,307 @@
 
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
+  .main-content{
+    padding-top: 20px;
+    padding-right: 12%;
+    padding-left: 12%;
+  }
+  .side-wrap{
+    display: none;
+  }
+  .header-top,#star-all{
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .header-tab{
+    padding-bottom: 30px;
+    border-bottom: 1px solid silver;
+    width:90%;
+  }
+  .all_count{
+    font-size: 20px;
+    margin-left: 7%;
+    margin-top: -1.0%;
+  }
+  .all_count,.star-category{
+    float: left;
+  }
+  .star-category{
+    font-size: 20px !important;
+  }
+  .star5_rating{
+      position: relative;
+      z-index: 0;
+      display: inline-block;
+      white-space: nowrap;
+      color: #CCCCCC;
+  }
+  .star5_rating:before, .star5_rating:after{
+      content: '★★★★★';
+  }
+  .star5_rating:after{
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      color: #ffcf32;
+  }
+  .star-category{
+    color:gray;
+    margin-top: -2%;
+  }
+  .star5_rating,.personal_date{
+    display:inline-block;
+  }
+  #second-g{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+  #second-g p{
+    display: inline-block;
+  }
+  .second-top{
+    font-size: 24px;
+  }
+  .second-sub{
+    font-size: 24px;
+  }
+  .table{
+    width:90%;
+  }
+  table{
+    font-size: 18px;
+  }
+  .private-category{
+    padding-top: 30px;
+    font-size: 16px!important;
+  }
+  #star-all-2{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .star-sub-content{
+    font-size: 24px;
+    padding-top: 20px;
+    padding-left: 10px;
+  }
+  .about-people{
+    padding-top: 60px;
+  }
+  .head-txt{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .content-txt{
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 18px;
+  }
+  .text-content{
+    width:90% ;
+  }
+  .about-report,.about-communication{
+    padding-top: 40px;
+  }
+  .back-hospital-page{
+    margin-top: 50px;
+    border : 2px solid rgb(76,161,146,0.7);
+    background-color: white;
+    float: right;
+    border-radius: 30px;
+    height: 30px;
+    width:200px;
+    text-align: center;
+    padding-top: auto;
+    padding-bottom: auto;
+  }
+  .back-hospital-page:hover{
+    border : 2px solid white;
+    background-color: rgb(76,161,146,0.7);
+  }
+  .back-hospital-page-cover{
+    width:60%;
+  }
+  .back-hospital-page-cover a:visited{
+    color: gray;
+  }
+  .back-hospital-page-cover a:link{
+    color: gray;
+  }
+  .back-hospital-page-cover a:hover{
+    color: white;
+  }
+  .back-hospital-page-cover a:active{
+    color: white;
+  }
+  .bottom-wrap{
+    position: relative;
+    padding: 0.5em 1em;
+    margin-top: 150px;
+    border-radius: 8px;
+    width:100%;
+  }
+  .bottom-wrap .box-title{
+    position: absolute;
+    display: inline-block;
+    top:-13px;
+    left:-10px;
+    padding:9px;
+    line-height: 1;
+    font-size: 24px;
+    background: #FFF;
+    color: gray;
+    font-weight: bold;
+    z-index: 0;
+  }
+  .bottom-wrap p{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    z-index: 1;
+  }
+  #nav_ptn_2 {
+    list-style: none;
+    padding-top: 10px;
+  }
+  #nav_ptn_2 li {
+    width:100%;
+    height:70px;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 1%;
+    border:2px solid rgb(51,153,204);
+    margin-bottom: 15px;
+    color:gray;
+  }
+  #nav_ptn_2 li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  #nav_ptn_2 li:hover{
+    background-color:rgb(51,153,204,0.7);
+    color:white;
+  }
+  #nav_ptn_2 li:hover .i_mark{
+    color: white;
+    font-weight: bold;
+  }
+  #nav_ptn_2 a:link { color: white; }
+  #nav_ptn_2 a:visited { color: white; }
+  #nav_ptn_2 a:hover { color: white; }
+  #nav_ptn_2 a:active { color: white; }
+  .personal_group{
+    text-align:left;
+    padding-left: 5%;
+    width:100%;
+    font-size: 18px !important;
+  }
+  .i_mark{
+    float:right;
+    padding-right: 15px;
+    color:rgb(170,170,170);
+    font-size: 24px;
+  }
+  .personal_own p {
+    display: inline;
+   }
+   .personal_own{
+     padding-top: 0.5%;
+     font-size: 18px;
+   }
+   .personal_own_2{
+     padding-left: 2%;
+     font-size: 18px;
+     margin-top: -10px;
+   }
+   .star5_rating,.personal_date{
+     display:inline-block;
+   }
+   .personal_major{
+     font-size: 20px;
+     font-weight:bold;
+   }
+   .personal_gender{
+     font-size: 18px;
+   }
+   .personal_gender{
+     padding-left: 1%;
+   }
+   .personal_date{
+     padding-left:3%;
+     font-size: 18px;
+   }
+   .recommend-text{
+     text-align: center;
+   }
+   .side-wrap2{
+     width: 70%;
+     margin: auto;
+     margin-top: 50px;
+   }
+   .recommend{
+     width : 100% ;
+     border-radius: 5px;
+     margin:auto;
+     color: black;
+     height:100%;
+     margin:2em 0;
+     position: relative;
+     padding: 0.25em 1em;
+     border: solid 2px rgb(106,191,176,0.7);
+     border-radius: 3px 0 3px 0;
+   }
+   .recommend:before,.recommend:after{
+     content: '';
+     position: absolute;
+     width:10px;
+     height: 10px;
+     border: solid 2px rgb(106,191,176,0.7);
+     border-radius: 50%;
+   }
+   .recommend:after {
+     top:-12px;
+     left:-12px;
+   }
+   .recommend:before {
+     bottom:-12px;
+     right:-12px;
+   }
+   .recommend-box{
+     border:2px solid rgb(106,191,176);
+     padding: 10px;
+     border-radius: 20px;
+     padding-bottom: 60px;
+     margin-bottom: 15px;
+     margin-top:10px;
+   }
+   .recommend-box:hover{
+     box-shadow: 0 0 10px rgba(0,0,0,.45);
+   }
+   .rcd-hospital-name,.rcd-place{
+     display: inline-block;
+   }
+   .rcd-hospital-name{
+     font-size: 18px;
+     margin-left: 10px;
+   }
+   .rcd-place{
+     margin-left: 10px;
+     font-size: 18px;
+     margin-bottom: 5px;
+   }
+   .rcd-count{
+     float: right;
+     margin-right: 30px;
+     margin-top: 5px;
+   }
+   .recommend a:link { color: gray; }
+   .recommend a:visited { color: gray; }
+   .recommend a:hover { color: gray; }
+   .recommend a:active { color: gray; }
 }
 
 /*PC*/
@@ -314,7 +615,7 @@
     display: none;
   }
   .main-content{
-    padding-top: 90px;
+    padding-top: 2vw;
     padding-right: 10%;
     padding-left: 22%;
   }
@@ -342,7 +643,7 @@
     margin-bottom: 100px;
   }
   .side-wrap{
-    width: 25%;
+    width: 15vw;
     float: right;
   }
   .recommend{
