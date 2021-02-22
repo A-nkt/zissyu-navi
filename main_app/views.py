@@ -635,3 +635,6 @@ def contact(request):
     else:
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
+
+def user(request):
+    return render(request, 'user.html')

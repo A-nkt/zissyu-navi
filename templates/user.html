@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/user.css' %}">{% endblock %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <h4 class="subtitle">ログイン</h4>
+  <div class="sosyal">
+    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
+    <a href="#" class="google"><i class="fab fa-google"></i>Google</a>
+  </div>
+
+  <div class="catch">または</div>
+
+  <div class="field">
+  <p class="control has-icons-left">
+    <input class="input" type="email" placeholder="Email">
+    <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+  </p>
+  </div>
+
+
+
+  <div class="field">
+  <p class="control has-icons-left">
+    <input class="input" type="password" placeholder="Password">
+    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+  </p>
+  </div>
+
+  <div class="field login-button">
+    <p class="control"><button type="submit" class="button is-success">Login</button></p>
+  </div>
+
+  <div class="forget-password"><a href="#">パスワードをお忘れになった方はこちら</a></div>
+
+  <div class="for-account">
+    <p>Hospee IDをお持ちでない方</p>
+    <div class="buttons"><a href="#" class="button is-primary">ユーザー登録（１分・無料）</a></div>
+  </div>
+
+</div>
+
+
+{% endblock %}
