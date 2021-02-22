@@ -784,9 +784,9 @@
     text-align: center;
   }
   .main-content{
-    padding-top: 2vw !important;
-    padding-right: 12%;
-    padding-left: 22%;
+    padding-top: 1vw !important;
+    padding-left: 30vw;
+    padding-right: 15vw;
   }
   .advertise{
     width : 100% ;

@@ -615,9 +615,9 @@
     display: none;
   }
   .main-content{
-    padding-top: 2vw;
-    padding-right: 10%;
-    padding-left: 22%;
+    padding-top: 1vw;
+    padding-left: 30vw;
+    padding-right: 15vw;
   }
   .header-top,#star-all{
     font-weight: bold;

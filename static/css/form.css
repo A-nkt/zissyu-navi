@@ -1,4 +1,3 @@
-
 /*SmartPhone*/
 @media screen and (max-width:560px){
   .form-content{
@@ -61,8 +60,8 @@
 @media screen and (min-width:960px){
   .form-content{
     padding-top: 1vw;
-    padding-left: 22%;
-    padding-right: 22%;
+    padding-left: 30vw;
+    padding-right: 30vw;
   }
   .form-group{
     padding-bottom: 20px;
