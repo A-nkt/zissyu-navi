@@ -638,3 +638,6 @@ def contact(request):
 
 def user(request):
     return render(request, 'user.html')
+
+def mypage(request):
+    return render(request, 'mypage.html')
