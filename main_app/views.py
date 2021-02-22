@@ -9,6 +9,7 @@ from django.utils import timezone
 from django.core.paginator import Paginator
 import math
 from django.db.models import Q
+from django.core.mail import send_mail
 
 PLACE_CHOISE = (
             ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
@@ -627,10 +628,23 @@ def contact(request):
     if request.method == 'POST': #POSTがされた時
         form = ContactForm(request.POST)
         if form.is_valid(): #投稿されたフォームが有効だった時
+            name = request.POST['name']
+            email = request.POST['email']
+            subject = request.POST['subject']
+            content = request.POST['content']
+
+            message = name+"様"+"\n"+"\n"+"お問い合わせありがとうございます。"+"\n"+"近日中にご返信させていただきます。"+"\n"+"----------------------"+ \
+                    "\n"+"件名："+"\n"+subject+"\n"+"\n"+"お問い合わせ内容："+"\n"+content
+            from_email = "information@myproject"
+            recipient_list = [
+                email,
+            ]
+
             post = form.save(commit=False) #フォームを保存
             post.save()
             form = ContactForm()
-            text = "投稿しました！"
+
+            send_mail("お問い合わせありがとうございます。", message, from_email, recipient_list)
             return render(request, 'form-complete.html')
     else:
         form = ContactForm()
