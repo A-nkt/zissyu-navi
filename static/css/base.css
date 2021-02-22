@@ -2,6 +2,7 @@ body{
   font-family:'メイリオ';
 }
 
+
 /*SmartPhone*/
 @media screen and (max-width:560px){
   .over-trim label{
@@ -354,8 +355,12 @@ body{
     list-style-type: none;
     color: white;
     font-size: 18px;
-    text-align: center;
+    text-align: left;
     border-radius: 5%;
+  }
+  #sample input:checked+.trim-2 i {
+    padding-right: 15px;
+    padding-left: 5px;
   }
   .trim-2 li{
     padding-top: 5px;
@@ -426,7 +431,9 @@ body{
   }
 }
 
-
+.foooter-list{
+  padding-bottom: 5px !important;
+}
 footer{
   background-color: rgb(106,191,176);
   text-align: center!important;

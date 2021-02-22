@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Record,Major,Chapter,Article
-from .forms import RecordForm
+from .models import Record,Major,Chapter,Article,Contact
+from .forms import RecordForm,ContactForm
 from django_pandas.io import read_frame
 import pandas as pd
 import numpy as np
@@ -621,4 +621,17 @@ def user_list(request):
         'related_df':related_df,
         'sort':sort,
     }
-    return render(request, 'user_list.html',context)
+
+
+def contact(request):
+    if request.method == 'POST': #POSTがされた時
+        form = ContactForm(request.POST)
+        if form.is_valid(): #投稿されたフォームが有効だった時
+            post = form.save(commit=False) #フォームを保存
+            post.save()
+            form = ContactForm()
+            text = "投稿しました！"
+            return render(request, 'form-complete.html')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})

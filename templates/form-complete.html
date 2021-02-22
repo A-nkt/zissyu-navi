@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/form-complete.css' %}">{% endblock %}
+{% block title %}お問い合わせを受け付けました{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <div class="contact-header">
+    <div class="title contact-line">お問い合わせ完了</div>
+    <hr>
+  </div>
+  <div class="">
+    お問い合わせいただきありがとうございました。<br><br>
+    確認のため、お客様に自動返信メールをお送りしております。<br><br>
+
+    お問い合わせいただいた内容につきましては、近日中にお返事させていただきます。
+  </div>
+</div>
+
+{% endblock %}

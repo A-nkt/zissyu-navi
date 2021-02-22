@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/contact.css' %}">{% endblock %}
+{% block title %}お問い合わせ{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <div class="contact-header">
+    <div class="title contact-line">お問い合わせ</div>
+    <hr>
+  </div>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="field">
+      <label class="label">お名前</label>
+      <p class="control">{% render_field form.name class+="input" placeholder="山田　太郎" %}</p>
+    </div>
+
+    <div class="field">
+      <label class="label">Emailアドレス</label>
+      <p class="control has-icons-left has-icons-right">
+        {% render_field form.email class+="input" placeholder="your-email-address@gmail.com" %}
+        <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+        <span class="icon is-small is-right"><i class="fa fa-warning"></i></span>
+      </p>
+        <!--p class="help is-success">This username is available</p>
+      <p class="help is-danger">This email is invalid</p-->
+    </div>
+
+    <div class="field">
+      <label class="label">件名</label>
+      <p class="control">{% render_field form.subject class+="input" placeholder="○○××について" %}</p>
+    </div>
+
+    <div class="field">
+      <label class="label">お問い合わせ内容</label>
+      <p class="control">{% render_field form.content class+="textarea" placeholder="お問い合わせ内容を入力してください" %}</p>
+    </div>
+
+    <p class="control"><button class="button is-primary" type="submit">送信</button></p>
+  </form>
+</div>
+
+
+{% endblock %}

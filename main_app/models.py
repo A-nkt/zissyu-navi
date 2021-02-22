@@ -50,6 +50,19 @@ class Record(models.Model):
         template='{0.hospital_name} '+','+'{0.major}'+','+'{0.date}'+','+'{0.sex}'+','+'{0.year}'+','+'{0.place}'
         return template.format(self)
 
+class Contact(models.Model):
+    class Meta:
+        db_table = 'Contact'
+
+    name = models.CharField(verbose_name='氏名',blank=False,null=False,max_length=100)
+    email = models.EmailField(verbose_name='Email',blank=False,null=False)
+    subject = models.CharField(verbose_name='タイトル',blank=False,null=False,max_length=100)
+    content = models.TextField(verbose_name='お問い合わせ内容',blank=False,null=False,max_length=5000)
+    date = models.DateField(verbose_name='打刻日',blank=True,null=True,default=timezone.now)
+
+    def __str__(self):
+        template='{0.date} '+','+'{0.name}'+','+'{0.subject}'
+        return template.format(self)
 
 class Major(models.Model):
     class Meta:
