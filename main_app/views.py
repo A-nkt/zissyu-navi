@@ -10,6 +10,7 @@ from django.core.paginator import Paginator
 import math
 from django.db.models import Q
 from django.core.mail import send_mail
+import slackweb
 
 PLACE_CHOISE = (
             ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
@@ -32,6 +33,19 @@ MAJOR_CHOICE = (
         )
 
 # Create your views here.
+
+def major_jp(word):
+    for i in range(len(MAJOR_CHOICE)):
+        if MAJOR_CHOICE[i][0] == word:
+            rword = MAJOR_CHOICE[i][1]
+    return rword
+
+def place_jp(word):
+    for i in range(len(PLACE_CHOISE)):
+        if PLACE_CHOISE[i][0] == word:
+            rword = PLACE_CHOISE[i][1]
+    return rword
+
 def home(request):
     datas = Record.objects.all().order_by('-date') #Recordを日付で降順
     datas = read_frame(datas) #DataFrameに格納
@@ -61,10 +75,25 @@ def home(request):
 
     return render(request, 'home.html' ,{'datas': datas,'df_list':df_list})
 
+
+
 def form(request):
     if request.method == 'POST': #POSTがされた時
         form = RecordForm(request.POST)
         if form.is_valid(): #投稿されたフォームが有効だった時
+            #for slack
+            hospital_name = request.POST['hospital_name']
+            major = major_jp(request.POST['major'])
+            place = place_jp(request.POST['place'])
+            review = request.POST['review']
+            review_people = request.POST['review_people']
+            review_report = request.POST['review_report']
+            review_communication = request.POST['review_communication']
+            slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+            text = hospital_name + '\n' +'専攻：'+ major +'　県：' + place + '\n総合評価：' + review +'\n実習担当者について：' + \
+                    review_people + '\nレポートについて：' + review_report + '\nコミュニケーションについて：' + review_communication
+            slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + text)
+
             post = form.save(commit=False) #フォームを保存
             post.save()
             form = RecordForm()
