@@ -9,10 +9,12 @@ class Record(models.Model):
     SEX_CHOICE = (
                 ('man', '男性'), ('woman', '女性')
             )
+
     MAJOR_CHOICE = (
                 ('doctor', '医師'), ('nurce', '看護師'), ('pharmacist', '薬剤師'), ('physical_therapist', '理学療法士'), ('dentist', '歯科医師'),
                 ('occupational_therapist', '作業療法士'), ('registered_dietitian','管理栄養士'), ('midwife','助産師'), ('social_worker','社会福祉士'),
                 ('dental_hygienist','歯科衛生士'), ('caregiver','介護士'), ('paramedic', '救急救命士'), ('psychiatric_social_worker', '精神保健福祉士'),
+                ('radiation_technician','放射線検査技師'),('clinical_laboratory_technician','臨床検査技師'),
             )
     PLACE_CHOISE = (
                 ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
@@ -26,7 +28,7 @@ class Record(models.Model):
                 ('hiroshima', '広島'), ('yamaguchi', '山口'), ('tokushima', '徳島'), ('kagawa', '香川'),
                 ('ehime', '愛媛'), ('kochi', '高知'),('fukuoka', '福岡'), ('saga', '佐賀'), ('ohita', '大分'),
                 ('miyazaki', '宮崎'), ('nagasaki', '長崎'), ('kumamoto', '熊本'), ('kagoshima', '鹿児島'), ('okinawa', '沖縄')
-    )
+            )
 
     hospital_name = models.CharField(verbose_name='病院名',max_length=100,blank=False,help_text="○○病院")
     sex = models.CharField(verbose_name='性別',choices=SEX_CHOICE,max_length=100,blank=False,null=True,help_text="性別")
@@ -68,7 +70,7 @@ class Major(models.Model):
     class Meta:
         db_table = 'Major'
 
-    image = models.ImageField(upload_to='media/images/',blank=False,null=True)
+    image = models.ImageField(upload_to='media/',blank=False,null=True)
     major_name = models.CharField(verbose_name='専攻名',blank=True,null=True,max_length=100)
     db_major_name = models.CharField(verbose_name='DB用専攻名',blank=True,null=True,max_length=100)
     count = models.IntegerField(verbose_name='件数',blank=True,null=True,default=0)

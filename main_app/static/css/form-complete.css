@@ -1,0 +1,23 @@
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  .main-content{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2vw !important;
+  }
+}
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+  .main-content{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 2vw !important;
+  }
+}
+/*PC*/
+@media screen and (min-width:960px){
+  .main-content{
+    padding-left: 30vw;
+    padding-right: 30vw;
+  }
+}

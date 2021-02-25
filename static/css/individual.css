@@ -137,9 +137,6 @@
   .advertise i{
     color: rgb(76,161,146,1);
   }
-  .box{
-    display: none;
-  }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -279,9 +276,6 @@
   }
   .advertise i{
     color: rgb(76,161,146,1);
-  }
-  .box{
-    display: none;
   }
 
 }

@@ -1,0 +1,36 @@
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  .main-content{
+    padding-top: 20px;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+}
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+  .main-content{
+    padding-top: 40px;
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+/*PC*/
+@media screen and (min-width:960px){
+  .main-content{
+    padding-top: 1vw;
+    padding-left: 25vw;
+    padding-right: 25vw;
+  }
+  .main{
+    background-color: red;
+    width: 70%;
+    float: left;
+    padding-bottom: 300px;
+  }
+  .sub{
+    background-color: blue;
+    width: 20%;
+    float: right;
+    padding-bottom: 300px;
+  }
+}

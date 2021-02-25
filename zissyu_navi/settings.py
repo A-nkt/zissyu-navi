@@ -17,6 +17,7 @@ import environ
 env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
 env.read_env(os.path.join(BASE_DIR,'.env'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -24,9 +25,10 @@ env.read_env(os.path.join(BASE_DIR,'.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['hospeee.com']
 
 # Application definition
 
@@ -76,9 +78,13 @@ WSGI_APPLICATION = 'zissyu_navi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'db.sqlite3'),
-        #'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mysite',
+        'USER':'mysiteuser',
+        'PASSWORD':'mysiteuserp@S5',
+        'HOST':'localhost',
+        'PORT':'5432',
+        'ATOMIC_REQUESTS':True,
     }
 }
 
@@ -110,16 +116,20 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
+#PROJECT_NAME = os.path.basename(BASE_DIR)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+STATIC_ROOT = '/var/www/mysite'
 
-MEDIA_URL = '/media/images/'
-MEDIA_ROOT = BASE_DIR
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/var/www/mysite/media'
+
 
 
 

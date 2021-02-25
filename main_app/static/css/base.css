@@ -1,0 +1,460 @@
+body{
+  font-family:'メイリオ';
+}
+
+
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  .over-trim label{
+    position: absolute;
+    left:2%;
+    top:20%;
+    list-style-type: none;
+  }
+  #sample label .trim i{
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: white;
+    border: solid 1px white;
+    padding-left: 20%;
+    padding-top: 10%;
+    font-size: 2em !important;
+  }
+  #sample input{
+    display: none;
+  }
+  #sample input+div{
+    display: none;
+  }
+  #sample input:checked .trim i{
+    background-color: rgb(106,191,176);
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: red;
+    border: solid 1px white;
+    font-size: 3em !important;
+  }
+  #sample input:checked+.trim-2{
+    display: block;
+    background-color: rgb(106,191,176);
+    position: absolute;
+    left:0%;
+    top:88%;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5%;
+  }
+  .trim-2 li{
+    padding-top: 5px;
+    padding: 10px;
+  }
+  .trim-2 li:hover{
+    background-color: white;
+    color:  rgb(106,191,176);
+  }
+  #sample label .trim:hover{
+    background-color: white;
+    border-radius: 50%;
+  }
+  #sample label .trim i:hover{
+    color: rgb(106,191,176);
+  }
+  .trim-2 a:link { color: white; }
+  .trim-2 a:visited { color: white; }
+  .trim-2 a:hover { color : white;}
+  .trim-2 a:active { color: white; }
+
+  .trim nav{
+    display: none;
+
+  }
+  .hamburger {
+    display : block;
+    position: fixed;
+    z-index : 3;
+    right : 23px;
+    top   : 12px;
+    width : 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .hamburger span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 6px;
+    background : #555;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+  }
+  .hamburger span:nth-child(1) {
+    top: 10px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 20px;
+  }
+  .hamburger span:nth-child(3) {
+    top: 30px;
+  }
+
+  /* ナビ開いてる時のボタン */
+  .hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+  }
+
+  .hamburger.active span:nth-child(2),
+  .hamburger.active span:nth-child(3) {
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+  }
+
+  nav.globalMenuSp {
+    position: fixed;
+    z-index : 2;
+    top  : 0;
+    left : 0;
+    color: #000;
+    background: #fff;
+    text-align: center;
+    transform: translateX(100%);
+    transition: all 0.6s;
+    width: 100%;
+  }
+
+  nav.globalMenuSp ul {
+    background: #ccc;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    background-color: rgb(106,191,176);
+  }
+  nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  nav.globalMenuSp ul li:hover{
+    background :rgb(106,191,176);
+  }
+
+  nav.globalMenuSp ul li a {
+    display: block;
+    color: #000;
+    padding: 1em 0;
+    text-decoration :none;
+  }
+
+  /* このクラスを、jQueryで付与・削除する */
+  nav.globalMenuSp.active {
+    transform: translateX(0%);
+  }
+  header {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(106,191,176);
+    align-items: center;
+    position: fixed;
+    z-index: 3;
+  }
+  header h1 {
+    text-align: center;
+  }
+  header h1 img{
+    width:38%;
+    height: auto;
+  }
+  .globalMenuSp a:link { color: white; }
+  .globalMenuSp a:visited { color: white; }
+  .globalMenuSp a:hover { color : white;}
+  .globalMenuSp a:active { color: white; }
+  .title {
+    margin-right: auto;
+  }
+  .globalMenuSp{
+    text-align:center;
+  }
+  .menu-item{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+  }
+  .content{
+    padding-top: 70px;
+  }
+  .content {
+    min-height: calc(400vw - 70px);
+  }
+
+
+}
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+  .over-trim label{
+    position: absolute;
+    left:90%;
+    top:20%;
+    list-style-type: none;
+  }
+  #sample label .trim i{
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: white;
+    border: solid 1px white;
+    padding-left: 20%;
+    padding-top: 10%;
+    font-size: 2.5em !important;
+  }
+  #sample input{
+    display: none;
+  }
+  #sample input+div{
+    display: none;
+  }
+  #sample input:checked .trim i{
+    background-color: rgb(106,191,176);
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: red;
+    border: solid 1px white;
+    font-size: 3em !important;
+  }
+  #sample input:checked+.trim-2{
+    display: block;
+    background-color: rgb(106,191,176);
+    position: absolute;
+    left:75%;
+    top:85%;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5%;
+  }
+  .trim-2 li{
+    padding-top: 5px;
+    padding: 10px;
+  }
+  .trim-2 li:hover{
+    background-color: white;
+    color:  rgb(106,191,176);
+  }
+  #sample label .trim:hover{
+    background-color: white;
+    border-radius: 50%;
+  }
+  #sample label .trim i:hover{
+    color: rgb(106,191,176);
+  }
+  .trim-2 a:link { color: white; }
+  .trim-2 a:visited { color: white; }
+  .trim-2 a:hover { color : white;}
+  .trim-2 a:active { color: white; }
+
+  .trim nav{
+    display: none;
+  }
+  header {
+    display: flex;
+    width: 100%;
+    height: 110px;
+    background-color: rgb(106,191,176);
+    align-items: center;
+    position: fixed;
+    z-index: 3;
+  }
+  header h1 {
+    text-align: center;
+  }
+  header h1 img{
+    width:20%;
+    height: auto;
+  }
+  .globalMenuSp a:link { color: white; }
+  .globalMenuSp a:visited { color: white; }
+  .globalMenuSp a:hover { color : white;}
+  .globalMenuSp a:active { color: white; }
+  .title {
+    margin-right: auto;
+  }
+  .globalMenuSp{
+    text-align:center;
+  }
+  .menu-item{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+  }
+  .content{
+    padding-top: 110px;
+  }
+  .content {
+    min-height: calc(210vw - 70px);
+  }
+}
+/*PC*/
+@media screen and (min-width:960px){
+  .over-trim label{
+    position: absolute;
+    left:90%;
+    top:25%;
+    list-style-type: none;
+  }
+  #sample label .trim i{
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: white;
+    border: solid 1px white;
+    padding-left: 20%;
+    padding-top: 10%;
+    font-size: 3em !important;
+  }
+  #sample input{
+    display: none;
+  }
+  #sample input+div{
+    display: none;
+  }
+  #sample input:checked .trim i{
+    background-color: rgb(106,191,176);
+    border-radius: 50%;
+    width:  1.5em;
+    height: 1.5em;
+    color: red;
+    border: solid 1px white;
+    font-size: 3em !important;
+  }
+  #sample input:checked+.trim-2{
+    display: block;
+    background-color: rgb(106,191,176);
+    position: absolute;
+    left:86%;
+    top:85%;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    border-radius: 5%;
+  }
+  #sample input:checked+.trim-2 i {
+    padding-right: 15px;
+    padding-left: 5px;
+  }
+  .trim-2 li{
+    padding-top: 5px;
+    padding: 10px;
+  }
+  .trim-2 li:hover{
+    background-color: white;
+    color:  rgb(106,191,176);
+  }
+  #sample label .trim:hover{
+    background-color: white;
+    border-radius: 50%;
+  }
+  #sample label .trim i:hover{
+    color: rgb(106,191,176);
+  }
+  .trim-2 a:link { color: white; }
+  .trim-2 a:visited { color: white; }
+  .trim-2 a:hover { color : white;}
+  .trim-2 a:active { color: white; }
+
+  .trim nav{
+    display: none;
+
+  }
+  .menu-item{
+    font-size: 18px;
+  }
+  header {
+    display: flex;
+    width: 100%;
+    height: 6.23vw;
+    background-color: rgb(106,191,176);
+    align-items: center;
+    position: fixed;
+    z-index: 3;
+  }
+  header h1 {
+    text-align: center;
+  }
+  header h1 img{
+    width:8%;
+    height: auto;
+  }
+  .globalMenuSp a:link { color: white; }
+  .globalMenuSp a:visited { color: white; }
+  .globalMenuSp a:hover { color : white;}
+  .globalMenuSp a:active { color: white; }
+  .title {
+    margin-right: auto;
+  }
+  .globalMenuSp{
+    text-align:center;
+  }
+  .menu-item{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+  }
+  .content{
+    padding-top: 10vw !important;
+  }
+  .content {
+    min-height: 120vw;
+    position: relative;/*←相対位置*/
+    padding-bottom: 0px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+  }
+}
+
+.foooter-list{
+  padding-bottom: 5px !important;
+}
+footer{
+  background-color: rgb(106,191,176);
+  text-align: center!important;
+  color: white;
+  position: absolute;
+  width: 100%;
+}
+footer a{
+  padding: 20px;
+}
+footer nav{
+  padding: 5px;
+  margin: 5px;
+}
+footer a:link { color: white; }
+footer a:visited { color: white; }
+footer a:hover { color: white; font-weight: bold;}
+footer a:active { color: white; }
+footer p{
+  padding-top: 10px;/*jsから取得*/
+}
+.footer {
+  height: 50px;
+}

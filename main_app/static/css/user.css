@@ -1,0 +1,350 @@
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  .main-content{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2vw !important;
+  }
+  .for-account{
+    display:flex;
+    margin-top: 25px;
+  }
+  .for-account .buttons a:hover{
+    background-color: rgb(106,176,176);
+  }
+  .for-account p{
+    margin: auto;
+    padding-top: 20px;
+  }
+  .login-button button:hover{
+    background-color:rgb(106,191,176) !important;
+  }
+  .forget-password a:hover{
+    text-decoration: underline;
+  }
+  .sosyal {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  }
+  .sosyal a i{
+    margin-right: 20px;
+  }
+  .facebook {
+    background-color: #2e4a88;
+    box-shadow: 0 4px 0 #1B3D82;
+    text-shadow: 0 -1px -1px #1B3D82;
+
+    display: inline;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 14px 5.5vw;
+  }
+  .facebook:hover {
+    background-color: #354F84;
+  }
+  .facebook:active {
+    top: 2px;
+  	box-shadow: 0 2px 0 #1B3D82;
+  }
+  .twitter {
+    background-color: #008DDE;
+    box-shadow: 0 4px 0 #0078BD;
+
+    display: inline;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 14px 80px;
+  }
+  .twitter:active {
+    top: 2px;
+  	box-shadow: 0 2px 0 #0078BD;
+  }
+  .twitter:hover {
+    background-color: #1397D8;
+  }
+  .google {
+    background-color: #CC3622;
+    box-shadow: 0 4px 0 #BA2714;
+    display: inline;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 14px 5.5vw;
+  }
+  .google:active {
+    top: 2px;
+  	box-shadow: 0 2px 0 #BA2714;
+  }
+  .google:hover {
+    background-color: #D04829;
+  }
+  .catch {
+  display: flex;
+  align-items: center; /* 垂直中心 */
+  justify-content: center; /* 水平中心 */
+  margin-bottom: 30px;
+  }
+  .catch:before, .catch:after {
+    border-top: 1px solid;
+    content: "";
+    width: 35%; /* 線の長さ */
+  }
+  .catch:before {
+    margin-right: 1em; /* 文字の右隣 */
+  }
+  .catch:after {
+    margin-left: 1em; /* 文字の左隣 */
+  }
+
+}
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+  .main-content{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 2vw !important;
+  }
+  .for-account{
+    display:flex;
+    margin-top: 25px;
+    float: left;
+  }
+  .for-account .buttons a:hover{
+    background-color: rgb(106,176,176);
+  }
+  .for-account p{
+    margin: auto;
+    padding-top: 20px;
+    padding-right: 50px;
+  }
+  .login-button button:hover{
+    background-color:rgb(106,191,176) !important;
+  }
+  .forget-password a:hover{
+    text-decoration: underline;
+  }
+  .sosyal {
+  margin: 50px auto;
+  }
+  .sosyal a i{
+    margin-right: 20px;
+  }
+  .facebook {
+    background-color: #2e4a88;
+    box-shadow: 0 4px 0 #1B3D82;
+    text-shadow: 0 -1px -1px #1B3D82;
+
+    display: inline;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 14px 3.5vw;
+  }
+  .facebook:hover {
+    background-color: #354F84;
+  }
+  .facebook:active {
+    top: 2px;
+    box-shadow: 0 2px 0 #1B3D82;
+  }
+  .twitter {
+    background-color: #008DDE;
+    box-shadow: 0 4px 0 #0078BD;
+
+    display: inline;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 14px 80px;
+  }
+  .twitter:active {
+    top: 2px;
+    box-shadow: 0 2px 0 #0078BD;
+  }
+  .twitter:hover {
+    background-color: #1397D8;
+  }
+  .google {
+    background-color: #CC3622;
+    box-shadow: 0 4px 0 #BA2714;
+
+    display: inline;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 14px 3.5vw;
+  }
+  .google:active {
+    top: 2px;
+    box-shadow: 0 2px 0 #BA2714;
+  }
+  .google:hover {
+    background-color: #D04829;
+  }
+  .catch {
+  display: flex;
+  align-items: center; /* 垂直中心 */
+  justify-content: center; /* 水平中心 */
+  margin-bottom: 30px;
+  }
+  .catch:before, .catch:after {
+    border-top: 1px solid;
+    content: "";
+    width: 40%; /* 線の長さ */
+  }
+  .catch:before {
+    margin-right: 1em; /* 文字の右隣 */
+  }
+  .catch:after {
+    margin-left: 1em; /* 文字の左隣 */
+  }
+}
+/*PC*/
+@media screen and (min-width:960px){
+  .main-content{
+    padding-left: 37.5vw;
+    padding-right: 37.5vw;
+  }
+  .for-account{
+    display:flex;
+    margin-top: 25px;
+    float: left;
+  }
+  .for-account .buttons a:hover{
+    background-color: rgb(106,176,176);
+  }
+  .for-account p{
+    margin: auto;
+    padding-top: 20px;
+    padding-right: 50px;
+  }
+  .login-button button:hover{
+    background-color:rgb(106,191,176) !important;
+  }
+  .forget-password a:hover{
+    text-decoration: underline;
+  }
+  .sosyal {
+  margin: 50px auto;
+  }
+  .sosyal a i{
+    margin-right: 20px;
+  }
+  .facebook {
+    background-color: #2e4a88;
+    box-shadow: 0 4px 0 #1B3D82;
+    text-shadow: 0 -1px -1px #1B3D82;
+
+    display: inline;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 14px 3.5vw;
+  }
+  .facebook:hover {
+    background-color: #354F84;
+  }
+  .facebook:active {
+    top: 2px;
+  	box-shadow: 0 2px 0 #1B3D82;
+  }
+  .twitter {
+    background-color: #008DDE;
+    box-shadow: 0 4px 0 #0078BD;
+
+    display: inline;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 14px 80px;
+  }
+  .twitter:active {
+    top: 2px;
+  	box-shadow: 0 2px 0 #0078BD;
+  }
+  .twitter:hover {
+    background-color: #1397D8;
+  }
+  .google {
+    background-color: #CC3622;
+    box-shadow: 0 4px 0 #BA2714;
+
+    display: inline;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 14px 3.5vw;
+  }
+  .google:active {
+    top: 2px;
+  	box-shadow: 0 2px 0 #BA2714;
+  }
+  .google:hover {
+    background-color: #D04829;
+  }
+  .catch {
+  display: flex;
+  align-items: center; /* 垂直中心 */
+  justify-content: center; /* 水平中心 */
+  margin-bottom: 30px;
+  }
+  .catch:before, .catch:after {
+    border-top: 1px solid;
+    content: "";
+    width: 40%; /* 線の長さ */
+  }
+  .catch:before {
+    margin-right: 1em; /* 文字の右隣 */
+  }
+  .catch:after {
+    margin-left: 1em; /* 文字の左隣 */
+  }
+
+}
