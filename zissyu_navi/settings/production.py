@@ -17,6 +17,7 @@ from .base import *
 
 env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 env.read_env(os.path.join(BASE_DIR,'.env'))
@@ -57,6 +58,8 @@ STATIC_ROOT = '/var/www/mysite'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/var/www/mysite/media'
+
+
 # mail
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
