@@ -667,7 +667,7 @@ def contact(request):
                     "\n"+"件名："+"\n"+subject+"\n"+"\n"+"お問い合わせ内容："+"\n"+content
             from_email = "information@myproject"
             recipient_list = [
-                email,
+                email,'dsduoa31@gmail.com'
             ]
 
             post = form.save(commit=False) #フォームを保存

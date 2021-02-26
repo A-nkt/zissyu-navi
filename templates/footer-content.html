@@ -22,7 +22,8 @@
   </div>
   {% if pattern == 'rule' %}
   <div class="rule-content">
-    {% for index, row in cp.iterrows %}
+   この利用規約（以下，「本規約」といいます。）は,Hospee（以下，「当社」といいます。）がこのウェブサイト上で提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。
+	  {% for index, row in cp.iterrows %}
     <div class="chapter">
         <b>{{ row.chapeter_return }}</b>
     </div>
@@ -39,7 +40,8 @@
   </div>
   {% elif pattern == 'privacy' %}
   <div class="rule-content">
-    {% for index, row in cp.iterrows %}
+  Hospee（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。 
+	  {% for index, row in cp.iterrows %}
     <div class="chapter">
         <b>{{ row.chapeter_return }}</b>
     </div>
