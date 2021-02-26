@@ -2,7 +2,10 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/form.css' %}">{% endblock %}
-{% block js_file %}<script type="text/javascript" src="{% static 'js/form.js' %}"></script>{% endblock %}
+{% block js_file %}
+<script type="text/javascript" src="{% static 'js/form.js' %}"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
 {% block title %}口コミを投稿する{% endblock %}
 
 {% block content %}
@@ -27,7 +30,15 @@
          {% endif %}
        </div>
      {% endfor %}
-      <button class="button is-primary" type="submit" onclick="return check()">投稿する</button>
+      <div class="agree">
+        <input type="checkbox" required>
+        <label for="music">
+          <a href="/footer-content/?pattern=rule" target="_blank">利用規約</a>・
+          <a href="/footer-content/?pattern=privacy" target="_blank">プライバシーポリシー</a>
+          に同意する</label>
+      </div>
+      <div class="g-recaptcha" data-sitekey="6LffvWgaAAAAAEwCrsrcNLJr8DyjgnUx4p5JMLed"></div>
+      <button class="button is-primary for-submit" type="submit" onclick="return check()">投稿する</button>
       <div style="color:red">{{text}}</div>
   </form>
 </div>

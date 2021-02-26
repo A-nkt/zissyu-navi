@@ -119,6 +119,14 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+
+##################
+### RECAPTCHA  ###
+##################
+
+GOOGLE_RECAPTCHA_SECRET_KEY = env('RECAPTCHA_SECRET_KEY')
+
+
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 #PROJECT_NAME = os.path.basename(BASE_DIR)
 # Static files (CSS, JavaScript, Images)

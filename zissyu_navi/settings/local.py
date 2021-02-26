@@ -5,7 +5,7 @@ import environ
 from .base import *
 
 env = environ.Env()
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 env.read_env(os.path.join(BASE_DIR,'.env'))
 

@@ -11,6 +11,11 @@ import math
 from django.db.models import Q
 from django.core.mail import send_mail
 import slackweb
+from django.conf import settings
+from django.contrib import messages
+import requests
+
+
 
 PLACE_CHOISE = (
             ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
@@ -82,24 +87,38 @@ def form(request):
     if request.method == 'POST': #POSTがされた時
         form = RecordForm(request.POST)
         if form.is_valid(): #投稿されたフォームが有効だった時
-            #for slack
-            hospital_name = request.POST['hospital_name']
-            major = major_jp(request.POST['major'])
-            place = place_jp(request.POST['place'])
-            review = request.POST['review']
-            review_people = request.POST['review_people']
-            review_report = request.POST['review_report']
-            review_communication = request.POST['review_communication']
-            slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
-            text = hospital_name + '\n' +'専攻：'+ major +'　県：' + place + '\n総合評価：' + review +'\n実習担当者について：' + \
-                    review_people + '\nレポートについて：' + review_report + '\nコミュニケーションについて：' + review_communication
-            slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + text)
+            ''' Begin reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            data = {
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            result = r.json()
+            ''' End reCAPTCHA validation '''
 
-            post = form.save(commit=False) #フォームを保存
-            post.save()
-            form = RecordForm()
-            text = "投稿しました！"
-            return render(request, 'form.html',{'text':text,'form':form})
+            if result['success']:
+                #for slack
+                hospital_name = request.POST['hospital_name']
+                major = major_jp(request.POST['major'])
+                place = place_jp(request.POST['place'])
+                review = request.POST['review']
+                review_people = request.POST['review_people']
+                review_report = request.POST['review_report']
+                review_communication = request.POST['review_communication']
+                slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+                text = hospital_name + '\n' +'専攻：'+ major +'　県：' + place + '\n総合評価：' + review +'\n実習担当者について：' + \
+                        review_people + '\nレポートについて：' + review_report + '\nコミュニケーションについて：' + review_communication
+                slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + text)
+
+                post = form.save(commit=False) #フォームを保存
+                post.save()
+                form = RecordForm()
+                text = "投稿しました！"
+                return render(request, 'form.html',{'text':text,'form':form})
+            else:
+                return HttpResponse("reCAPTCHAが適切に反映されていません。やり直してください")
+
     else:
         form = RecordForm()
     return render(request, 'form.html', {'form': form})
