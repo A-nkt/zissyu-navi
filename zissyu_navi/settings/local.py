@@ -37,6 +37,7 @@ MEDIA_URL = '/media/images/'
 MEDIA_ROOT = BASE_DIR
 
 
-
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+####################
+## Email Settings ##
+####################
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

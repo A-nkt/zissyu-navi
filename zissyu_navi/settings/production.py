@@ -60,7 +60,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = '/var/www/mysite/media'
 
 
-# mail
+####################
+## Email Settings ##
+####################
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587

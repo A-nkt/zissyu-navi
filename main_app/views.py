@@ -678,27 +678,39 @@ def contact(request):
     if request.method == 'POST': #POSTがされた時
         form = ContactForm(request.POST)
         if form.is_valid(): #投稿されたフォームが有効だった時
-            name = request.POST['name']
-            email = request.POST['email']
-            subject = request.POST['subject']
-            content = request.POST['content']
+            ''' Begin reCAPTCHA validation '''
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            data = {
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            result = r.json()
+            ''' End reCAPTCHA validation '''
+            if result['success']:
+                name = request.POST['name']
+                email = request.POST['email']
+                subject = request.POST['subject']
+                content = request.POST['content']
 
-            message = name+"様"+"\n"+"\n"+"お問い合わせありがとうございます。"+"\n"+"近日中にご返信させていただきます。"+"\n"+"----------------------"+ \
-                    "\n"+"件名："+"\n"+subject+"\n"+"\n"+"お問い合わせ内容："+"\n"+content
-            from_email = "information@myproject"
-            recipient_list = [
-                email,'dsduoa31@gmail.com'
-            ]
+                message = name+"様"+"\n"+"\n"+"お問い合わせありがとうございます。"+"\n"+"近日中にご返信させていただきます。"+"\n"+"----------------------"+ \
+                        "\n"+"件名："+"\n"+subject+"\n"+"\n"+"お問い合わせ内容："+"\n"+content
+                from_email = "information@myproject"
+                recipient_list = [
+                    email,'dsduoa31@gmail.com'
+                ]
 
-            post = form.save(commit=False) #フォームを保存
-            post.save()
-            form = ContactForm()
+                post = form.save(commit=False) #フォームを保存
+                post.save()
+                form = ContactForm()
 
-            send_mail("お問い合わせありがとうございます。", message, from_email, recipient_list)
-            return render(request, 'form-complete.html')
+                send_mail("お問い合わせありがとうございます。", message, from_email, recipient_list)
+                return render(request, 'form-complete.html')
+            else:
+                return HttpResponse("reCAPTCHAが適切に反映されていません。やり直してください")
     else:
         form = ContactForm()
-    return render(request, 'contact.html', context)
+    return render(request, 'contact.html', {'form': form})
 
 def user(request):
     return render(request, 'user.html')

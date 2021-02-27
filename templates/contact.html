@@ -2,6 +2,7 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/contact.css' %}">{% endblock %}
+{% block js_file %}<script src='https://www.google.com/recaptcha/api.js'></script>{% endblock %}
 {% block title %}お問い合わせ{% endblock %}
 
 {% block content %}
@@ -37,6 +38,8 @@
       <label class="label">お問い合わせ内容</label>
       <p class="control">{% render_field form.content class+="textarea" placeholder="お問い合わせ内容を入力してください" %}</p>
     </div>
+
+    <div class="g-recaptcha" data-sitekey="6LffvWgaAAAAAEwCrsrcNLJr8DyjgnUx4p5JMLed"></div>
 
     <p class="control"><button class="button is-primary" type="submit">送信</button></p>
   </form>
