@@ -144,7 +144,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = env('RECAPTCHA_SECRET_KEY')
 #STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),
 #)
-#STATIC_ROOT = '/var/www/mysite'
+STATIC_ROOT = '/var/www/mysite'
 
 
 #MEDIA_URL = '/media/'
