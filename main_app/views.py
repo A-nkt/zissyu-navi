@@ -671,6 +671,7 @@ def user_list(request):
         'related_df':related_df,
         'sort':sort,
     }
+    return render(request, 'user_list.html', context)
 
 
 def contact(request):
@@ -697,7 +698,7 @@ def contact(request):
             return render(request, 'form-complete.html')
     else:
         form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'contact.html', context)
 
 def user(request):
     return render(request, 'user.html')

@@ -282,13 +282,14 @@
 /*PC*/
 @media screen and (min-width:960px){
   .main-content{
-    padding-top: 2vw;
-    padding-left: 30vw;
+    padding-top: 1vw;
+    padding-left: 22vw;
     padding-right: 15vw;
   }
   .side-wrap{
-    width: 15vw !important;
+    width: 17vw;
     float: right;
+    margin-left: 10px;
   }
   .box{
     margin-top: 10px;
@@ -314,12 +315,15 @@
   }
   #nav li {
     color:gray;
-    width: 43% !important;
+    width: 47% ;
     margin:5px; padding:10px;
     border:2px solid rgb(106,191,176,0.7);
     border-radius: 30px;
     float: left;
     padding-left: 3%;
+  }
+  .nav-com {
+    width:60% !important;
   }
   #nav li:hover{
     background-color:rgb(76,161,146,0.7);

@@ -616,7 +616,7 @@
   }
   .main-content{
     padding-top: 1vw;
-    padding-left: 30vw;
+    padding-left: 22vw;
     padding-right: 15vw;
   }
   .header-top,#star-all{
@@ -643,8 +643,9 @@
     margin-bottom: 100px;
   }
   .side-wrap{
-    width: 15vw;
+    width: 17vw;
     float: right;
+    margin-left: 10px;
   }
   .recommend{
     width : 100% ;

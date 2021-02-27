@@ -784,8 +784,8 @@
     text-align: center;
   }
   .main-content{
-    padding-top: 1vw !important;
-    padding-left: 30vw;
+    padding-top: 1vw;
+    padding-left: 22vw;
     padding-right: 15vw;
   }
   .advertise{
@@ -797,8 +797,9 @@
     margin-bottom: 100px;
   }
   .side-wrap{
-    width: 15vw !important;
+    width: 17vw;
     float: right;
+    margin-left: 10px;
   }
 }
 
