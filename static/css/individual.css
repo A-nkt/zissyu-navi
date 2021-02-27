@@ -9,6 +9,7 @@
     display: none;
   }
   .side-wrap2{
+    margin-top: 60%!important;
     width: 90%;
     margin: auto;
   }
@@ -37,6 +38,9 @@
   }
   .url2{
     margin-top: 20px;
+  }
+  .header-tab{
+    margin-bottom: 5%;
   }
 
   #nav li {

@@ -292,7 +292,9 @@
     font-weight: bold;
   }
   .no-content-wrap{
-    padding-top: 10%;
+    padding-top: 20%;
+    margin-right: auto;
+    margin-left: auto;
   }
   .no-content-box{
       padding: 0.5em 1em;
@@ -300,7 +302,7 @@
       background: #f4f4f4;
       border-left: solid 6px rgb(106,191,176);
       box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
-      width: 50%;
+      width: 95%;
       font-weight: bold;
   }
   .no-content-box p {
