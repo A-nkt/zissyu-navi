@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'axes',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'axes.middleware.AxesMiddleware', #login rate limit
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesBackend', #login rate limit
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 SECURE_SSL_REDIRECT = False
 ROOT_URLCONF = 'zissyu_navi.urls'
 
