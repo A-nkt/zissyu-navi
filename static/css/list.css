@@ -9,9 +9,10 @@
     display: none;
   }
   .side-wrap2{
-    margin-top: 1300px;
+    margin-top: 1200px;
     margin-right: 5%;
     margin-left: 5%;
+    font-size: 13px;
   }
   .recommend{
     width : 100% ;
@@ -48,13 +49,13 @@
   .hospital-wrap{
     float: left;
     width: 100%;
-    margin-left: 2%;
-    margin-right: 2%;
     padding: 0.2em 0.5em;
     margin: 1em 0;
     background: rgb(106,191,176,0.4);
     box-shadow: 0px 0px 0px 10px rgb(106,191,176,0.4);
     border: dashed 2px white;
+    height: auto;
+    font-size: 13px;
   }
 
   .advertise{
@@ -94,7 +95,7 @@
   }
   .recommend-box{
     border:2px solid rgb(106,191,176);
-    padding: 10px;
+    padding: 6px;
     border-radius: 20px;
     padding-bottom: 40px;
     margin-bottom: 15px;
@@ -107,7 +108,7 @@
     display: inline-block;
   }
   .rcd-hospital-name{
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 10px;
   }
   .rcd-place{
@@ -207,12 +208,13 @@
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 300px;
+  width: 250px;
+  margin-bottom: -10px;
   }
   .hospital-name-bg::before,.hospital-name-bg::after {
   border-color: #73c01a;
   border-style: solid;
-  bottom: -5px;
+  bottom: 12.5px;
   content: '';
   position: absolute;
   width: 0;
@@ -220,22 +222,22 @@
   }
   .hospital-name-bg::before {
   border-left-color: transparent;
-  border-width: 20px 15px 20px 15px;
+  border-width: 10px 15px 10px 15px;
   left: -20px;
   }
   .hospital-name-bg::after {
   border-right-color: transparent;
-  border-width: 20px 15px 20px 15px;
+  border-width: 10px 15px 10px 15px;
   right: -20px;
   }
   .name {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   }
   .name {
   background: #8dce41;
   color: #fff;
-  padding: 6px 10px;
+  padding: 1.5px 2.5px;
   position: relative;
   }
   .name::before,.name::after {
@@ -269,6 +271,7 @@
   .major-category{
     margin-top: 10px;
     text-align: center;
+    font-size: 11px;
   }
   .count-category{
     margin-top: 10px;
@@ -276,6 +279,7 @@
     padding-right: 100px;
     color: gray;
     font-weight: bold;
+    font-size: 12px;
   }
   .major-tag:hover{
     border: 1px solid black;
@@ -340,6 +344,11 @@
   }
   .recommend-text{
     text-align: center;
+    font-size: 15px;
+  }
+  .hospital-wrap-g{
+    margin-right: 5%;
+    margin-left: 5%;
   }
 
 
