@@ -238,7 +238,10 @@ def list(request):
                     df_o.loc[k,'major'] = datas_all.loc[j,'major']
                     k += 1
     #変数定義
-    df = df_o[["hospital_name","place",'review','major']]
+    try:    
+        df = df_o[["hospital_name","place",'review','major']]
+    except KeyError:
+        return render(request, 'list.html', {'content':False})
     dx = df[["hospital_name","place",'review','major']]
     #病院名の重複を削除 df
     for i in range(len(df)):
