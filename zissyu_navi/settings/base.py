@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'axes',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.sitemaps',
 ]
 
