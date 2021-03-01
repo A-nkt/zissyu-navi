@@ -14,5 +14,5 @@ urlpatterns = [
     path('list/individual/user_list/',views.user_list,name='user_list'),
     path('contact/',views.contact,name="contact"),
     path('user/',views.user,name='user'),
-    path('mypage/',views.mypage,name='mypage'),
+    #path('mypage/',views.mypage,name='mypage'),
 ]
