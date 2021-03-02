@@ -2,6 +2,19 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118360731-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-118360731-8');
+    </script>
+    <!-- User Heat Tag -->
+    <script type="text/javascript">
+   (function(add, cla){window['UserHeatTag']=cla;window[cla]=window[cla]||function(){(window[cla].q=window[cla].q||[]).push(arguments)},window[cla].l=1*new Date();var ul=document.createElement('script');var tag = document.getElementsByTagName('script')[0];ul.async=1;ul.src=add;tag.parentNode.insertBefore(ul,tag);})('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');_uhtracker({id:'uhSRymp9hY'});
+   </script>
+   <!-- End User Heat Tag -->
     <meta charset="utf-8">
     <title>Hospee(ホスピー) | {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -14,19 +27,6 @@
       {% block js_file %}{% endblock %}
     {# Global stylesheets #}
       {% block css_file %}{% endblock %}
-     <!-- Global site tag (gtag.js) - Google Analytics -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118360731-8"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
-           gtag('config', 'UA-118360731-8');
-     </script>
-     <!-- User Heat Tag -->
-     <script type="text/javascript">
-		(function(add, cla){window['UserHeatTag']=cla;window[cla]=window[cla]||function(){(window[cla].q=window[cla].q||[]).push(arguments)},window[cla].l=1*new Date();var ul=document.createElement('script');var tag = document.getElementsByTagName('script')[0];ul.async=1;ul.src=add;tag.parentNode.insertBefore(ul,tag);})('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');_uhtracker({id:'uhSRymp9hY'});
-	</script>
-	<!-- End User Heat Tag -->
   </head>
     <body>
     <header>
