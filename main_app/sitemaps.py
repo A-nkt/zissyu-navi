@@ -11,7 +11,7 @@ class BaseSitemap(Sitemap):
         context = [
             'main_app:home','main_app:form','main_app:search','main_app:list',
             'main_app:footer_content','main_app:individual','main_app:user_answer',
-            'main_app:user_list','main_app:contact','main_app:user']
+            'main_app:user_list','main_app:contact']
         return context
 
     def location(self, item):
