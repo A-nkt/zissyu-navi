@@ -15,7 +15,7 @@ class Record(models.Model):
                 ('occupational_therapist', '作業療法士'), ('registered_dietitian','管理栄養士'), ('midwife','助産師'), ('social_worker','社会福祉士'),
                 ('dental_hygienist','歯科衛生士'), ('caregiver','介護士'), ('paramedic', '救急救命士'), ('psychiatric_social_worker', '精神保健福祉士'),
                 ('radiation_technician','放射線検査技師'),('clinical_laboratory_technician','臨床検査技師'),('speech_language_hearing_therapist','言語聴覚士'),
-                ('public_health_nurse','保健師'),
+                ('public_health_nurse','保健師'),('clinical_psychologist','臨床心理士'),
                 )
     PLACE_CHOISE = (
                 ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
