@@ -2,12 +2,12 @@
 {% load static %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/search.css' %}">{% endblock %}
 {% block title %}口コミを探す{% endblock %}
-
+{% block meta_description %}<meta name="description" content="クチコミを探します。都道府県別・専攻別にほしい情報がすぐ手に入ります">{% endblock %}
 
 {% block content %}
 
 <div class="body-contents">
-  <div class="box-header-text">場所から探す</div>
+  <h5><div class="box-header-text">場所から探す</div></h5>
   <div style="margin:0px;padding:0px;" align="center">
     <table class="tbl-r01" width="90%">
       <tbody>
@@ -175,7 +175,7 @@
   </div>
 
   <div class="main-section">
-    <div class="major-header-text">職種から探す</div>
+    <h5><div class="major-header-text">職種から探す</div></h5>
     <ul class="inline-block">
       {% for data in datas %}
       <li>

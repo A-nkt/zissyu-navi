@@ -1,5 +1,5 @@
-body{
-  font-family:'メイリオ';
+body,h1,h2,h3,h4,h5,h6{
+  font-family:'メイリオ' !important;
 }
 
 
@@ -421,7 +421,7 @@ body{
     padding: 10px;
   }
   .content{
-    padding-top: 10vw !important;
+    padding-top: 8vw !important;
   }
   .content {
     min-height: 120vw;

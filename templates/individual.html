@@ -2,7 +2,8 @@
 {% load static %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/individual.css' %}">{% endblock %}
 {% block js_file %}<script type="text/javascript" src="{% static 'js/individual.js' %}"></script>{% endblock %}
-{% block title %}{{ hospital_name }}{% endblock %}
+{% block title %}{{ hospital_name }}のクチコミ{% endblock %}
+{% block meta_description %}<meta name="description" content="{{ hospital_name }}の実習クチコミ">{% endblock %}
 
 {% block content %}
 <div class="main-content">
@@ -41,10 +42,10 @@
     </div>
   </div>
 
-  <div class="header-tab">
+  <h1><div class="header-tab">
     <p class="header-top">病院評価スコア - </p>
     <p class="header-sub">{{ hospital_name }}</p>
-  </div>
+  </div></h1>
 
   <div class="box">
     <div class="hospital_name">
@@ -86,10 +87,10 @@
 
   </div>
 
-  <div class="header-tab" id="second-g">
+  <h1><div class="header-tab" id="second-g">
     <p class="header-top">カテゴリ別の口コミ({{ category_count }}件) - </p>
     <p class="header-sub">{{ hospital_name }}</p>
-  </div>
+  </div></h1>
 
   <div class="category-group">
     <ul id="nav">
@@ -120,10 +121,10 @@
     </ul>
   </div>
 
-  <div class="header-tab" id="thrid-g">
+  <h1><div class="header-tab" id="thrid-g">
     <p class="header-top">回答者別の口コミ({{ all_count }}件) - </p>
     <p class="header-sub">{{ hospital_name }}</p>
-  </div>
+  </div></h1>
 
   <div class="answer-group">
     <ul id="nav_gender">

@@ -291,7 +291,7 @@
     padding-right: 15vw;
   }
   .side-wrap{
-    width: 17vw;
+    width: 14vw !important;
     float: right;
     margin-left: 10px;
   }
@@ -733,4 +733,7 @@ div p {
 }
 .recommend-text{
   text-align: center;
+}
+h1 {
+   color:rgb(111,111,111)  !important;
 }

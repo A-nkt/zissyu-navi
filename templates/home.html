@@ -2,19 +2,22 @@
 {% load static %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock %}
 {% block title %}ホーム{% endblock %}
+{% block meta_description %}<meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)は、病院実習に特化したクチコミサイトです。また、看護師・理学療法士といった専攻を限定せず病院実習を行う全ての医療系学生のためのサイトです">{% endblock %}
 
 {% block content %}
+<div class="all-section">
+
 <div class="img-section">
   <img src="{% static 'img/home.jpg' %}" alt="">
   <div class="img-text-section">
     <div class="header-text">Hospee</div>
-    <p>実習情報口コミサイト</p>
+    <h2><p>実習情報口コミサイト</p></h2>
   </div>
 </div>
 
 <div class="contents-section">
   <div class="box-section">
-  <div class="box-header-text">新着投稿</div>
+  <div class="box-header-text"><h5>新着投稿</h5></div>
     <div class="main-box">
       <ul class="top-block">
         {% for index, row in datas.iterrows %}
@@ -37,7 +40,7 @@
   </div>
 
   <div class="main-section">
-    <div class="content-header-text">コンテンツ</div>
+    <div class="content-header-text"><h5>コンテンツ</h5></div>
     <ul class="inline-block">
     	<li id="content-no1">
         <a href="/search/">
@@ -59,7 +62,7 @@
   </div>
 
   <div class="lanking-section">
-    <div class="content-header-text">人気のコンテンツ</div>
+    <div class="content-header-text"><h5>人気のコンテンツ</h5></div>
     <div>
       <ul class="lank-g">
         {% for index, row in df_list.iterrows %}
@@ -101,5 +104,7 @@
       </ul>
     </div>
   </div>
+</div>
+
 </div>
 {% endblock %}

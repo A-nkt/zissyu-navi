@@ -252,7 +252,7 @@
       text-align: center;
     }
     .main-content{
-      padding-top: 20px;
+      padding-top: 0px;
       padding-right: 2%;
       padding-left: 2%;
     }
@@ -797,7 +797,7 @@
     margin-bottom: 100px;
   }
   .side-wrap{
-    width: 17vw;
+    width: 14vw;
     float: right;
     margin-left: 10px;
   }
@@ -886,4 +886,7 @@
 }
 .star-category,.all_count{
   float: left;
+}
+h2{
+  color: rgb(111,111,111) !important;
 }

@@ -2,6 +2,7 @@
 {% load static %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/user_list.css' %}">{% endblock %}
 {% block title %}{{ hospital_name }}のクチコミ一覧{% endblock %}
+{% block meta_description %}<meta name="description" content="{{ hospital_name }}のクチコミ一覧">{% endblock %}
 
 {% block content %}
 <div class="main-content">
@@ -14,7 +15,7 @@
         <div class="recommend-box">
           <div class="rcd-content">
             <div class="rcd-hospital-name">
-		    <b>{{ row.hospital_name }}</b>
+		            <b>{{ row.hospital_name }}</b>
             </div>
             <div class="rcd-place">
               病院所在地：{{ row.place }}
@@ -32,7 +33,7 @@
       {% endfor %}
     </div>
   </div>
-  <div class="header-tab">
+  <h2><div class="header-tab">
     <p class="header-top">{{ hospital_name }}</p>
     <div class="star-category" id="star-all">
       <div class="star5_rating" data-rate="{{ score }}">
@@ -42,7 +43,7 @@
       <i class="fas fa-comment-alt fa-sm"></i>
       病院クチコミ：{{ length }}件
     </div>
-  </div>
+  </div></h2>
   <div class="second-tab" id="second-g">
     <p class="second-top">回答者別のクチコミ - </p>
     <p class="second-sub">X病院</p>

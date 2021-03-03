@@ -705,12 +705,11 @@
     display: none;
   }
   .main-content{
-    padding-top: 1vw;
     padding-left: 22vw;
     padding-right: 15vw;
   }
   .side-wrap{
-    width: 17vw;
+    width: 14vw;
     float: right;
     margin-left: 10px;
   }

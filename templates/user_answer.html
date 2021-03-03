@@ -2,6 +2,7 @@
 {% load static %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/user_answer.css' %}">{% endblock %}
 {% block title %}{{ hospital_name }}の投稿者別口コミ{% endblock %}
+{% block meta_description %}<meta name="description" content="{{ hospital_name }}のクチコミ">{% endblock %}
 
 {% block content %}
 <div class="main-content">
@@ -33,7 +34,7 @@
     </div>
   </div>
   <div class="header-tab">
-    <p class="header-top">{{ hospital_name }}</p>
+    <h2><p class="header-top">{{ hospital_name }}</p></h2>
     <div class="star-category" id="star-all">
       <div class="star5_rating" data-rate="{{ score }}">
       </div>&nbsp;&nbsp;<b>{{ score }}</b>

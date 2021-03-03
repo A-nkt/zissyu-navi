@@ -643,7 +643,7 @@
     margin-bottom: 100px;
   }
   .side-wrap{
-    width: 17vw;
+    width: 14vw;
     float: right;
     margin-left: 10px;
   }
@@ -974,3 +974,6 @@
 .star5_rating[data-rate="0.1"]:after{ width: 2%; }
 .star5_rating[data-rate="0.0"]:after{ width: 0%; }
 .star5_rating[data-rate="0"]:after{ width: 0%; }
+h2{
+  color: rgb(111,111,111) !important;
+}
