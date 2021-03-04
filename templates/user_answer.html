@@ -5,6 +5,14 @@
 {% block meta_description %}<meta name="description" content="{{ hospital_name }}のクチコミ">{% endblock %}
 
 {% block content %}
+<div class="left-wrap">
+  <a href="https://twitter.com/intent/tweet?url=https://hospeee.com{{ request.get_full_path }}&hashtags=hospee" target="_blank">
+    <i class="fab fa-twitter twitter-icon"></i>
+  </a>
+  <!--a href="#">
+    <i class="fab fa-facebook-f facebook-icon"></i>
+  </a-->
+</div>
 <div class="main-content">
   <div class="side-wrap">
     <!--p class="advertise">広告枠</p-->
@@ -122,6 +130,11 @@
       </div>
     </a>
   </div>
+  <div class="left-wrap2">
+    <a href="https://twitter.com/intent/tweet?url=https://hospeee.com{{ request.get_full_path }}&hashtags=hospee" target="_blank">
+      <i class="fab fa-twitter twitter-icon"></i>
+    </a>
+  </div>
   {% if judge == True %}
   <div class="bottom-wrap">
     <span class="box-title">他の回答者のクチコミ</span>
@@ -176,6 +189,7 @@
       {% endfor %}
     </div>
   </div>
-
 </div>
+
+
 {% endblock %}

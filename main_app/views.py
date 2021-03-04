@@ -15,6 +15,7 @@ from django.conf import settings
 from django.contrib import messages
 import requests
 from .image import *
+from .sub_function import *
 
 
 PLACE_CHOISE = (
@@ -40,19 +41,6 @@ MAJOR_CHOICE = (
 )
 
 # Create your views here.
-
-def major_jp(word):
-    for i in range(len(MAJOR_CHOICE)):
-        if MAJOR_CHOICE[i][0] == word:
-            rword = MAJOR_CHOICE[i][1]
-    return rword
-
-def place_jp(word):
-    for i in range(len(PLACE_CHOISE)):
-        if PLACE_CHOISE[i][0] == word:
-            rword = PLACE_CHOISE[i][1]
-    return rword
-
 def home(request):
     datas = Record.objects.all().order_by('-date') #Recordを日付で降順
     datas = read_frame(datas) #DataFrameに格納

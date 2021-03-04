@@ -19,7 +19,6 @@ env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
 env.read_env(os.path.join(BASE_DIR,'.env'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -27,11 +26,10 @@ env.read_env(os.path.join(BASE_DIR,'.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False
+#DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['hospeee.com','188.166.190.15']
-
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

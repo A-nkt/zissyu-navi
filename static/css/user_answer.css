@@ -5,6 +5,24 @@
     padding-right: 2%;
     padding-left: 2%;
   }
+  .left-wrap{
+    display: none;
+  }
+  .left-wrap2{
+    margin-top: 100px;
+  }
+  .twitter-icon{
+    font-size: 1.5em;
+  }
+  .left-wrap2 i{
+    border-radius: 50%;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+  }
+  .left-wrap2 i:hover{
+    background-color: rgb(85,172,237);/*Twitter Color*/
+  }
   .side-wrap{
     display: none;
   }
@@ -313,6 +331,24 @@
   }
   .side-wrap{
     display: none;
+  }
+  .left-wrap{
+    display: none;
+  }
+  .left-wrap2{
+    margin-top: 100px;
+  }
+  .twitter-icon{
+    font-size: 1.5em;
+  }
+  .left-wrap2 i{
+    border-radius: 50%;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+  }
+  .left-wrap2 i:hover{
+    background-color: rgb(85,172,237);/*Twitter Color*/
   }
   .header-top,#star-all{
     font-weight: bold;
@@ -633,7 +669,40 @@
     margin-left: 5%;
     margin-top: -1.0%;
   }
-
+  .left-wrap2{
+    display: none;
+  }
+  .left-wrap{
+    width: 3vw;
+    float: left;
+    margin-left: 16vw;
+    position: fixed;
+    margin-top: 10vw;
+  }
+  .twitter-icon,.facebook-icon{
+    font-size: 1.5em;
+  }
+  .left-wrap .twitter-icon{
+    border-radius: 50%;
+    background-color: gray;
+    color: white;
+    padding: 20%;
+    margin-bottom: 10px;
+  }
+  .left-wrap .facebook-icon{
+    background-color: gray;
+    color: white;
+    padding: 20%;
+    padding-right:28%;
+    padding-left: 28%;
+    border-radius: 50%;
+  }
+  .left-wrap .twitter-icon:hover{
+    background-color: rgb(85,172,237);/*Twitter Color*/
+  }
+  .left-wrap .facebook-icon:hover{
+    background-color: rgb(59,89,152);/*Facebook Color*/
+  }
   .advertise{
     width : 100% ;
     padding-top : 100% ;

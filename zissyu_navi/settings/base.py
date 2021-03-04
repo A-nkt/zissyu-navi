@@ -18,8 +18,9 @@ env = environ.Env()
 #BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
 env.read_env(os.path.join(BASE_DIR,'.env'))
+
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'ud#90yv)ao6y2dn_4ps27gtdhq_%i4-016fyf7u-zku3nv6=e0'

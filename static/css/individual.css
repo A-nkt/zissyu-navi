@@ -8,6 +8,24 @@
   .side-wrap{
     display: none;
   }
+  .left-wrap{
+    display: none;
+  }
+  .left-wrap2{
+    margin-top: 20px;
+  }
+  .twitter-icon{
+    font-size: 1.5em;
+  }
+  .left-wrap2 i{
+    border-radius: 50%;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+  }
+  .left-wrap2 i:hover{
+    background-color: rgb(85,172,237);/*Twitter Color*/
+  }
   .side-wrap2{
     margin-top: 60%!important;
     width: 90%;
@@ -155,6 +173,24 @@
   .side-wrap2{
     width: 60%;
     margin: auto;
+  }
+  .left-wrap{
+    display: none;
+  }
+  .left-wrap2{
+    margin-top: 20px;
+  }
+  .twitter-icon{
+    font-size: 1.5em;
+  }
+  .left-wrap2 i{
+    border-radius: 50%;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+  }
+  .left-wrap2 i:hover{
+    background-color: rgb(85,172,237);/*Twitter Color*/
   }
   .box{
     margin-top: 10px;
@@ -316,6 +352,40 @@
   .hospital-url{
     float: right;
     padding-right: 6%;
+  }
+  .left-wrap2{
+    display: none;
+  }
+  .left-wrap{
+    width: 3vw;
+    float: left;
+    margin-left: 16vw;
+    position: fixed;
+    margin-top: 10vw;
+  }
+  .twitter-icon,.facebook-icon{
+    font-size: 1.5em;
+  }
+  .left-wrap .twitter-icon{
+    border-radius: 50%;
+    background-color: gray;
+    color: white;
+    padding: 20%;
+    margin-bottom: 10px;
+  }
+  .left-wrap .facebook-icon{
+    background-color: gray;
+    color: white;
+    padding: 20%;
+    padding-right:28%;
+    padding-left: 28%;
+    border-radius: 50%;
+  }
+  .left-wrap .twitter-icon:hover{
+    background-color: rgb(85,172,237);/*Twitter Color*/
+  }
+  .left-wrap .facebook-icon:hover{
+    background-color: rgb(59,89,152);/*Facebook Color*/
   }
   #nav li {
     color:gray;
