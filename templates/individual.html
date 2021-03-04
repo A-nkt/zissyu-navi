@@ -4,6 +4,14 @@
 {% block js_file %}<script type="text/javascript" src="{% static 'js/individual.js' %}"></script>{% endblock %}
 {% block title %}{{ hospital_name }}のクチコミ{% endblock %}
 {% block meta_description %}<meta name="description" content="{{ hospital_name }}の実習クチコミ">{% endblock %}
+{% block twitter_card %}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@To_Hospee" />
+<meta property="og:url" content="{{ request.get_full_path }}" />
+<meta property="og:title" content="{{ hospital_name }}" />
+<meta property="og:description" content="[TEST]記事の要約" />
+<meta property="og:image" content="画像のURL" />
+{% endblock %}
 
 {% block content %}
 <div class="main-content">
