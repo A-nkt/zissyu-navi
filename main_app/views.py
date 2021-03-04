@@ -14,7 +14,7 @@ import slackweb
 from django.conf import settings
 from django.contrib import messages
 import requests
-
+from .image import *
 
 
 PLACE_CHOISE = (
@@ -36,7 +36,7 @@ MAJOR_CHOICE = (
             ('occupational_therapist', '作業療法士'), ('registered_dietitian','管理栄養士'), ('midwife','助産師'), ('social_worker','社会福祉士'),
             ('dental_hygienist','歯科衛生士'), ('caregiver','介護士'), ('paramedic', '救急救命士'), ('psychiatric_social_worker', '精神保健福祉士'),
             ('radiation_technician','放射線検査技師'),('clinical_laboratory_technician','臨床検査技師'),('speech_language_hearing_therapist','言語聴覚士'),
-            ('public_health_nurse','保健師'),('clinical_psychologist','臨床心理士'),            
+            ('public_health_nurse','保健師'),('clinical_psychologist','臨床心理士'),
 )
 
 # Create your views here.
@@ -239,7 +239,7 @@ def list(request):
                     df_o.loc[k,'major'] = datas_all.loc[j,'major']
                     k += 1
     #変数定義
-    try:    
+    try:
         df = df_o[["hospital_name","place",'review','major']]
     except KeyError:
         return render(request, 'list.html', {'content':False})
@@ -491,6 +491,8 @@ def individual(request):
                 df_date.loc[j,'place_name'] = PLACE_CHOISE[k][0]
 
     related_df = individual_related_df(pref_query,hp_query)
+
+    image_card(hospital_name)
 
     context = {
         'hospital_name':hospital_name, #病院名
