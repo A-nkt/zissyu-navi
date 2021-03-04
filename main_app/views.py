@@ -16,7 +16,7 @@ from django.contrib import messages
 import requests
 from .image import *
 from .sub_function import *
-
+import urllib.parse
 
 PLACE_CHOISE = (
             ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
@@ -498,6 +498,7 @@ def individual(request):
         'df_date':df_date,
         'pref_query':pref_query,
         'related_df':related_df,
+        'encode_name':urllib.parse.quote(hospital_name),
     }
     return render(request, 'individual.html',context)
 
@@ -551,6 +552,7 @@ def user_answer(request):
         'related_df2':related_df2[0],
         'judge':related_df2[1],
         'id':id,
+        'encode_name':urllib.parse.quote(hospital_name),
     }
     return render(request, 'user_answer.html',context)
 
