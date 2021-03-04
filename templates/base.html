@@ -29,6 +29,12 @@
       {% block css_file %}{% endblock %}
     {# meta description #}
       {% block meta_description %}{% endblock %}
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@To_Hospee" />
+    <meta property="og:url" content="{{ request.get_full_path }}" />
+    <meta property="og:title" content="Hospee | 病院実習クチコミサイト" />
+    <meta property="og:description" content="Hospee(ほすぴー)は病院実習に特化したクチコミサイトとして医療系学生に”知る機会”を提供しています。" />
+    <meta property="og:image" content="https://hospeee.com/media/media/card-hospee.png" />
     {# Twitter Card #}
       {% block twitter_card %}{% endblock %}
   </head>
