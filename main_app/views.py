@@ -543,12 +543,14 @@ def user_answer(request):
     context = {
         'datas_o':datas_o,
         'hospital_name':hospital_name,
+        'pref_query':pref_query,
         'place':place_name,
         'length':len(datas_all),
         'score':round(np.mean(hospital_score),1),
         'related_df':related_df,
         'related_df2':related_df2[0],
         'judge':related_df2[1],
+        'id':id,
     }
     return render(request, 'user_answer.html',context)
 
