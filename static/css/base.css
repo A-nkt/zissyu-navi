@@ -430,6 +430,12 @@ body,h1,h2,h3,h4,h5,h6{
     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
   }
 }
+.content{
+  margin: 0;
+display: flex;
+flex-flow: column;
+min-height: 100vh;
+}
 
 .foooter-list{
   padding-bottom: 5px !important;
