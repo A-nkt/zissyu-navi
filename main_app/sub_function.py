@@ -198,3 +198,21 @@ def individual_related_df(pref_query,hp_query):
 
     datas_list_same_pref = datas_list_same_pref[:7]
     return datas_list_same_pref
+
+
+def bottom_related_df(pref_query,hp_query,id):
+    judge =  False
+    data_o = Record.objects.all().filter(place=pref_query,hospital_name=hp_query);data_o = read_frame(data_o)
+    for k in range(len(data_o)):
+        for j in range(len(PLACE_CHOISE)):
+            if data_o.loc[k,'place'] == PLACE_CHOISE[j][1]:
+                data_o.loc[k,'place_name'] = PLACE_CHOISE[j][0]
+    #自分の投稿を除く
+    for k in range(len(data_o)):
+        if str(data_o.loc[k,'id']) == id:
+            data_o = data_o.drop([k])
+    data_o = data_o.sort_values('year', ascending=False)
+    data_o = data_o.reset_index(drop=True)
+    if len(data_o) != 0:
+        judge = True
+    return data_o[:5],judge

@@ -68,7 +68,7 @@ def home(request):
     rank = [1,2,3,4,5]
     df_list['rank'] = rank
 
-    return render(request, 'home.html' ,{'datas': datas,'df_list':df_list})
+    return render(request, 'main_app/home.html' ,{'datas': datas,'df_list':df_list})
 
 def form(request):
     if request.method == 'POST': #POSTがされた時
@@ -102,13 +102,13 @@ def form(request):
                 post.save()
                 form = RecordForm()
                 text = "投稿しました！"
-                return render(request, 'form.html',{'text':text,'form':form})
+                return render(request, 'main_app/form.html',{'text':text,'form':form})
             else:
                 return HttpResponse("reCAPTCHAが適切に反映されていません。やり直してください")
 
     else:
         form = RecordForm()
-    return render(request, 'form.html', {'form': form})
+    return render(request, 'main_app/form.html', {'form': form})
 
 
 def search(request):
@@ -121,7 +121,7 @@ def search(request):
     for major in majors:
         Major.objects.filter(db_major_name=major).update(count=len(Record.objects.all().filter(major=major)))
     datas = Major.objects.all()
-    return render(request, 'search.html', {'datas':datas})
+    return render(request, 'main_app/search.html', {'datas':datas})
 
 def list(request):
     page = request.GET['page']
@@ -238,9 +238,9 @@ def list(request):
             'related_df':related_df,
             'judge':judge,
         }
-        return render(request, 'list.html', context)
+        return render(request, 'main_app/list.html', context)
     else:
-        return render(request, 'list.html', {'content':False})
+        return render(request, 'main_app/list.html', {'content':False})
 
 def footer_content(request):
     pattern = request.GET['pattern']
@@ -263,7 +263,7 @@ def footer_content(request):
         'cp':cp,
         'df':df,
     }
-    return render(request, 'footer-content.html',context)
+    return render(request, 'main_app/footer-content.html',context)
 
 def individual(request):
     pref_query = request.GET['pref']
@@ -337,26 +337,7 @@ def individual(request):
         'related_df':related_df,
         'encode_name':urllib.parse.quote(hospital_name),
     }
-    return render(request, 'individual.html',context)
-
-
-def bottom_related_df(pref_query,hp_query,id):
-    judge =  False
-    data_o = Record.objects.all().filter(place=pref_query,hospital_name=hp_query);data_o = read_frame(data_o)
-    for k in range(len(data_o)):
-        for j in range(len(PLACE_CHOISE)):
-            if data_o.loc[k,'place'] == PLACE_CHOISE[j][1]:
-                data_o.loc[k,'place_name'] = PLACE_CHOISE[j][0]
-    #自分の投稿を除く
-    for k in range(len(data_o)):
-        if str(data_o.loc[k,'id']) == id:
-            data_o = data_o.drop([k])
-    data_o = data_o.sort_values('year', ascending=False)
-    data_o = data_o.reset_index(drop=True)
-    if len(data_o) != 0:
-        judge = True
-    return data_o[:5],judge
-
+    return render(request, 'main_app/individual.html',context)
 
 def user_answer(request):
     id = request.GET['id']
@@ -391,7 +372,7 @@ def user_answer(request):
         'id':id,
         'encode_name':urllib.parse.quote(hospital_name),
     }
-    return render(request, 'user_answer.html',context)
+    return render(request, 'main_app/user_answer.html',context)
 
 def user_list(request):
     pref_query = request.GET['pref']
@@ -506,7 +487,7 @@ def user_list(request):
         'related_df':related_df,
         'sort':sort,
     }
-    return render(request, 'user_list.html', context)
+    return render(request, 'main_app/user_list.html', context)
 
 def contact(request):
     if request.method == 'POST': #POSTがされた時
@@ -539,15 +520,15 @@ def contact(request):
                 form = ContactForm()
 
                 send_mail("お問い合わせありがとうございます。", message, from_email, recipient_list)
-                return render(request, 'form-complete.html')
+                return render(request, 'main_app/form-complete.html')
             else:
                 return HttpResponse("reCAPTCHAが適切に反映されていません。やり直してください")
     else:
         form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'main_app/contact.html', {'form': form})
 
 def user(request):
-    return render(request, 'user.html')
+    return render(request, 'main_app/user.html')
 
 def mypage(request):
-    return render(request, 'mypage.html')
+    return render(request, 'main_app/mypage.html')
