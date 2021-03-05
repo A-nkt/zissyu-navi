@@ -17,6 +17,7 @@ import requests
 from .image import *
 from .sub_function import *
 import urllib.parse
+from .error_views import *
 
 PLACE_CHOISE = (
             ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
