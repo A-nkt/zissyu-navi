@@ -5,6 +5,13 @@
     padding-right: 2%;
     padding-left: 2%;
   }
+  .i_mark{
+    float:right;
+    color:rgb(170,170,170);
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+  }
   .side-wrap{
     display: none;
   }
@@ -167,6 +174,13 @@
     padding-right: 2%;
     padding-left: 2%;
   }
+  .i_mark{
+    float:right;
+    color:rgb(170,170,170);
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
   .side-wrap{
     display: none;
   }
@@ -324,12 +338,19 @@
   .main-content{
     padding-top: 1vw;
     padding-left: 22vw;
-    padding-right: 15vw;
+    padding-right: 12em;
   }
   .side-wrap{
-    width: 14vw !important;
+    width: 15em !important;
     float: right;
     margin-left: 10px;
+  }
+  .i_mark{
+    float:right;
+    color:rgb(170,170,170);
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .box{
     margin-top: 10px;
@@ -783,14 +804,6 @@ div p {
 .personal_group{
   text-align:left;
   padding-left: 5%;
-}
-.i_mark{
-  float:right;
-  padding-right: 15px;
-  color:rgb(170,170,170);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-size: 20px;
 }
 #gender_man{
   border-right: 0.1px solid gray;

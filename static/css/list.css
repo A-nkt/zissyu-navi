@@ -706,10 +706,10 @@
   }
   .main-content{
     padding-left: 22vw;
-    padding-right: 15vw;
+    padding-right: 12em;
   }
   .side-wrap{
-    width: 14vw;
+    width: 15em !important;
     float: right;
     margin-left: 10px;
   }

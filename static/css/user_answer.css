@@ -653,7 +653,7 @@
   .main-content{
     padding-top: 1vw;
     padding-left: 22vw;
-    padding-right: 15vw;
+    padding-right: 12em;
   }
   .header-top,#star-all{
     font-weight: bold;
@@ -712,7 +712,7 @@
     margin-bottom: 100px;
   }
   .side-wrap{
-    width: 14vw;
+    width: 15em !important;
     float: right;
     margin-left: 10px;
   }
