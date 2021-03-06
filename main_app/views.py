@@ -159,7 +159,7 @@ def list(request):
     try:
         df = df_o[["hospital_name","place",'review','major']]
     except KeyError:
-        return render(request, 'list.html', {'content':False})
+        return render(request, 'main_app/list.html', {'content':False})
     dx = df[["hospital_name","place",'review','major']]
     #病院名の重複を削除 df
     for i in range(len(df)):
