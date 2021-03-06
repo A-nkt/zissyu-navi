@@ -11,6 +11,10 @@
   .is-2{
     font-size: 1.75em !important;
   }
+  .is-2:after {
+    margin-bottom: -1% !important;
+  }
+
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -19,12 +23,18 @@
     padding-right: 10vw;
     padding-top: 2vw !important;
   }
+  .is-2:after {
+    margin-bottom: -1% !important;
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
   .main-content{
     padding-left: 30vw;
     padding-right: 30vw;
+  }
+  .is-2:after {
+    margin-bottom: -1% !important;
   }
 }
 h1,h2{
