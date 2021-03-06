@@ -51,6 +51,7 @@ MAJOR_CHOICE = (
 def home(request):
     datas = Record.objects.all().order_by('-date') #Recordを日付で降順
     datas = read_frame(datas) #DataFrameに格納
+    all_record = len(datas)
     datas = datas[["hospital_name","place",'date','major']] #特定のcolumnsのみ抽出
     datas = datas[:7] #最新の7項目を抽出
     #datasにplace_nameを追加
@@ -75,7 +76,7 @@ def home(request):
     rank = [1,2,3,4,5]
     df_list['rank'] = rank
 
-    return render(request, 'main_app/home.html' ,{'datas': datas,'df_list':df_list})
+    return render(request, 'main_app/home.html' ,{'datas': datas,'df_list':df_list,'all_record':all_record,})
 
 class FormView(View):
     def get(self,request,*args,**kwargs):
