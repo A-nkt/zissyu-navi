@@ -129,6 +129,7 @@ def search(request):
 
 def list(request):
     page = request.GET['page']
+    sort = request.GET['sort']
     result = pd.DataFrame()
     txt = "病院平均評価"
     try:
@@ -223,6 +224,20 @@ def list(request):
         last_page = math.ceil(len(result) / 5)
         last_previous_page = last_page -1
         result = result[5*(page - 1):5*page]
+        if sort == "1":
+            for inx in range(len(result)):
+                result.loc[inx,'count'] = int(result.loc[inx,'count'])
+            result = result.sort_values('count', ascending=False)
+            result = result.reset_index(drop=True)
+            for inx in range(len(result)):
+                result.loc[inx,'count'] = str(result.loc[inx,'count'])
+        elif sort == "2":
+            for inx in range(len(result)):
+                result.loc[inx,'review'] = int(result.loc[inx,'review'])
+            result = result.sort_values('review', ascending=False)
+            result = result.reset_index(drop=True)
+            for inx in range(len(result)):
+                result.loc[inx,'review'] = str(result.loc[inx,'review'])
         if param_p == "pref":
             related_df = list_related_df(use_pref)
             judge = True
@@ -241,6 +256,7 @@ def list(request):
             'last_previous_page':last_previous_page,#最後の一個前
             'related_df':related_df,
             'judge':judge,
+            'sort':sort,
         }
         return render(request, 'main_app/list.html', context)
     else:

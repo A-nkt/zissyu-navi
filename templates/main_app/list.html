@@ -8,6 +8,23 @@
 {% block content %}
 <div class="main-content">
   <h1><div class="midashi">病院を探す</div></h1>
+  {% if sort == '1' %}
+  <div class="tabs is-medium">
+    <ul>
+      <li class="index-tab"><a>表示順：</a></li>
+      <li class="is-active"><a href="/list?{{ param_p }}={{ param }}&page=1&sort=1">口コミ数</a></li>
+      <li><a href="/list?{{ param_p }}={{ param }}&page=1&sort=2">ランキング</a></li>
+    </ul>
+  </div>
+  {% elif sort == '2' %}
+  <div class="tabs is-medium">
+    <ul>
+      <li class="index-tab"><a>表示順：</a></li>
+      <li><a href="/list?{{ param_p }}={{ param }}&page=1&sort=1">口コミ数</a></li>
+      <li class="is-active"><a href="/list?{{ param_p }}={{ param }}&page=1&sort=2">ランキング</a></li>
+    </ul>
+  </div>
+  {% endif %}
   <div class="side-wrap">
     <!--p class="advertise">広告枠</p-->
     {% if judge == True %}
