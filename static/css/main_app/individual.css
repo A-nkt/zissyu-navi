@@ -410,7 +410,7 @@
   }
   #nav li {
     color:gray;
-    width: 47% ;
+    width: 30em;
     margin:5px; padding:10px;
     border:2px solid rgb(106,191,176,0.7);
     border-radius: 30px;
@@ -418,7 +418,7 @@
     padding-left: 3%;
   }
   .nav-com {
-    width:60% !important;
+    width:35em !important;
   }
   #nav li:hover{
     background-color:rgb(76,161,146,0.7);
@@ -464,7 +464,7 @@
     list-style: none;
   }
   #nav_ptn_2 li {
-    width:60%;
+    width:35em;
     height:70px;
     text-align: center;
     border-radius: 30px;
