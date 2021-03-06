@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block css_file %}<link rel="stylesheet" href="{% static 'css/footer-content.css' %}">{% endblock %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/main_app/footer-content.css' %}">{% endblock %}
 {% block title %}
   {% if pattern == 'rule' %}利用規約
   {% elif pattern == 'privacy' %}プライバシーポリシー
@@ -40,7 +40,7 @@
   </div>
   {% elif pattern == 'privacy' %}
   <div class="rule-content">
-  Hospee（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。 
+  Hospee（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
 	  {% for index, row in cp.iterrows %}
     <div class="chapter">
         <b>{{ row.chapeter_return }}</b>

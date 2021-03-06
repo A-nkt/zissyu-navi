@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/about_me/about.css' %}">{% endblock %}
+{% block title %}Hospeeとは{% endblock %}
+{% block meta_description %}<meta name="description" content="Hospeeは、病院実習クチコミサイトとして医療系学生のためのWebサービスです。">{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <img src="{% static 'img/Card1.PNG' %}" alt="">
+</div>
+{% endblock %}

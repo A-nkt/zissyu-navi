@@ -28,6 +28,7 @@ sitemaps = {
 urlpatterns = [
     path('host-admin/', admin.site.urls),
     path('', include('main_app.urls')),
+    path('hospee/',include('about_me.urls')),
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}, name='sitemap'),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt',content_type='text/plain')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
