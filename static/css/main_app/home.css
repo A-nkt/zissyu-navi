@@ -307,6 +307,13 @@
   br {
     display: none;
   }
+  .main-content-bk:hover{
+    box-shadow: 0 0 25px rgba(0,0,0,.45);
+    font-weight: bold;
+  }
+  .top-content-bk:hover{
+    box-shadow: 0 0 25px rgba(0,0,0,.45);
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
@@ -460,6 +467,13 @@
   .all-section{
     padding-top: 2vw;
   }
+  .main-content-bk:hover{
+    box-shadow: 0 0 25px rgba(0,0,0,.45);
+    font-weight: bold;
+  }
+  .top-content-bk:hover{
+    box-shadow: 0 0 25px rgba(0,0,0,.45);
+  }
 }
 .main-section i{
   margin-top: -0.2em;
@@ -484,13 +498,7 @@
   padding: 0px;
 }
 
-.main-content-bk:hover{
-  box-shadow: 0 0 25px rgba(0,0,0,.45);
-  font-weight: bold;
-}
-.top-content-bk:hover{
-  box-shadow: 0 0 25px rgba(0,0,0,.45);
-}
+
 .main-sub-text{
   position: absolute;
   bottom: 5%;
