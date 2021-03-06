@@ -1,23 +1,29 @@
+# Public Django
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Record,Major,Chapter,Article,Contact
-from .forms import RecordForm,ContactForm
-from django_pandas.io import read_frame
-import pandas as pd
-import numpy as np
 from django.utils import timezone
 from django.core.paginator import Paginator
-import math
+from django_pandas.io import read_frame
 from django.db.models import Q
 from django.core.mail import send_mail
-import slackweb
 from django.conf import settings
 from django.contrib import messages
+from django.views import View
+from django.views.generic import  TemplateView
+# Public Python
+import pandas as pd
+import numpy as np
+import slackweb
+import math
 import requests
+#Private Django
+from .models import Record,Major,Chapter,Article,Contact
+from .forms import RecordForm,ContactForm
 from .image import *
 from .sub_function import *
 import urllib.parse
 from .error_views import *
+
 
 PLACE_CHOISE = (
             ('hokkaido', '北海道'), ('aomori', '青森'), ('iwate', '岩手'), ('akita', '秋田'),
@@ -71,46 +77,43 @@ def home(request):
 
     return render(request, 'main_app/home.html' ,{'datas': datas,'df_list':df_list})
 
-def form(request):
-    if request.method == 'POST': #POSTがされた時
-        form = RecordForm(request.POST)
-        if form.is_valid(): #投稿されたフォームが有効だった時
-            ''' Begin reCAPTCHA validation '''
-            recaptcha_response = request.POST.get('g-recaptcha-response')
-            data = {
-                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
-                'response': recaptcha_response
-            }
-            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
-            result = r.json()
-            ''' End reCAPTCHA validation '''
-
-            if result['success']:
-                #for slack
-                hospital_name = request.POST['hospital_name']
-                major = major_jp(request.POST['major'])
-                place = place_jp(request.POST['place'])
-                review = request.POST['review']
-                review_people = request.POST['review_people']
-                review_report = request.POST['review_report']
-                review_communication = request.POST['review_communication']
-                slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
-                text = hospital_name + '\n' +'専攻：'+ major +'　県：' + place + '\n総合評価：' + review +'\n実習担当者について：' + \
-                        review_people + '\nレポートについて：' + review_report + '\nコミュニケーションについて：' + review_communication
-                slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + text)
-
-                post = form.save(commit=False) #フォームを保存
-                post.save()
-                form = RecordForm()
-                text = "投稿しました！"
-                return render(request, 'main_app/form.html',{'text':text,'form':form})
-            else:
-                return HttpResponse("reCAPTCHAが適切に反映されていません。やり直してください")
-
-    else:
+class FormView(View):
+    def get(self,request,*args,**kwargs):
         form = RecordForm()
-    return render(request, 'main_app/form.html', {'form': form})
+        return render(request, 'main_app/form.html', {'form': form})
+    def post(self,request,*args,**kwargs):
+        form = RecordForm(request.POST)
+        if not form.is_valid:
+            return render(request, 'main_app/form.html', {'form': form})
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        data = {
+            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+        result = r.json()
+        if not result['success']:
+            return HttpResponse("reCAPTCHAが適切に反映されていません。やり直してください")
 
+        hospital_name = request.POST['hospital_name']
+        major = major_jp(request.POST['major'])
+        place = place_jp(request.POST['place'])
+        review = request.POST['review']
+        review_people = request.POST['review_people']
+        review_report = request.POST['review_report']
+        review_communication = request.POST['review_communication']
+        slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+        text = hospital_name + '\n' +'専攻：'+ major +'　県：' + place + '\n総合評価：' + review +'\n実習担当者について：' + \
+                review_people + '\nレポートについて：' + review_report + '\nコミュニケーションについて：' + review_communication
+        slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + text)
+
+        post = form.save(commit=False) #フォームを保存
+        post.save()
+        form = RecordForm()
+        text = "投稿しました！"
+        return render(request, 'main_app/form.html',{'text':text,'form':form})
+
+form = FormView.as_view()
 
 def search(request):
     #Majorに初期値0を付与
@@ -318,7 +321,7 @@ def individual(request):
 
     related_df = individual_related_df(pref_query,hp_query)
 
-    image_card(hospital_name)
+    # image_card(hospital_name) #現状、TwitterCardの連携がうまくできないので(2021.3.6)
 
     context = {
         'hospital_name':hospital_name, #病院名
@@ -490,46 +493,47 @@ def user_list(request):
     }
     return render(request, 'main_app/user_list.html', context)
 
-def contact(request):
-    if request.method == 'POST': #POSTがされた時
-        form = ContactForm(request.POST)
-        if form.is_valid(): #投稿されたフォームが有効だった時
-            ''' Begin reCAPTCHA validation '''
-            recaptcha_response = request.POST.get('g-recaptcha-response')
-            data = {
-                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
-                'response': recaptcha_response
-            }
-            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
-            result = r.json()
-            ''' End reCAPTCHA validation '''
-            if result['success']:
-                name = request.POST['name']
-                email = request.POST['email']
-                subject = request.POST['subject']
-                content = request.POST['content']
-
-                message = name+"様"+"\n"+"\n"+"お問い合わせありがとうございます。"+"\n"+"近日中にご返信させていただきます。"+"\n"+"----------------------"+ \
-                        "\n"+"件名："+"\n"+subject+"\n"+"\n"+"お問い合わせ内容："+"\n"+content
-                from_email = "information@myproject"
-                recipient_list = [
-                    email,'dsduoa31@gmail.com'
-                ]
-
-                post = form.save(commit=False) #フォームを保存
-                post.save()
-                form = ContactForm()
-
-                send_mail("お問い合わせありがとうございます。", message, from_email, recipient_list)
-                return render(request, 'main_app/form-complete.html')
-            else:
-                return HttpResponse("reCAPTCHAが適切に反映されていません。やり直してください")
-    else:
+class ContactView(View):
+    def get(self,request,*args,**kwargs):
         form = ContactForm()
-    return render(request, 'main_app/contact.html', {'form': form})
+        return render(request, 'main_app/contact.html', {'form': form})
 
-def user(request):
-    return render(request, 'main_app/user.html')
+    def post(self,request,*args,**kwargs):
+        form = ContactForm(request.POST)
+        if not form.is_valid():
+             return render(request, 'main_app/contact.html', {'form': form})
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        data = {
+            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+        result = r.json()
+        if not result['success']:
+            return HttpResponse("reCAPTCHAが適切に反映されていません。やり直してください")
 
-def mypage(request):
-    return render(request, 'main_app/mypage.html')
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        content = request.POST['content']
+
+        slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+        text = 'お名前：'+ name +'\nEmail：' + email + '\n題名：' + subject +'\nお問い合わせ内容：' + content
+        slack.notify(text="-----お問い合わせのお知らせ-----" + '\n' + text)
+
+        post = form.save(commit=False) #フォームを保存
+        post.save()
+        form = ContactForm()
+        return render(request, 'main_app/form-complete.html')
+
+contact = ContactView.as_view()
+
+class UserView(TemplateView):
+    template_name = 'main_app/user.html'
+
+user = UserView.as_view()
+
+class MyPageView(TemplateView):
+    template_name = 'main_app/mypage.html'
+
+mypage = MyPageView.as_view()
