@@ -156,7 +156,9 @@
   .img-text-section h2 {
       margin-top: -5px !important;
   }
-
+  #content-no3{
+    margin-top: 4em !important;
+  }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -302,6 +304,9 @@
     margin-left: 10px;
     margin-top: 5px;
   }
+  br {
+    display: none;
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
@@ -309,11 +314,17 @@
     width:100%;
     height:100%;
   }
+  br {
+    display: none;
+  }
   .img-section {
     position: relative;
     display:inline-block;
     z-index:0;
     margin-top: -5% !important;
+  }
+  .main-sub-text{
+    font-size: 1.1em;
   }
   .img-text-section{
     position: absolute;
@@ -450,6 +461,10 @@
     padding-top: 2vw;
   }
 }
+.main-section i{
+  margin-top: -0.2em;
+}
+
 .rank45{
   color:gray;
 }
