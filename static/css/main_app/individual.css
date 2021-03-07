@@ -88,6 +88,9 @@
     float: left;
     margin-top: -1em;
   }
+  .header-sub{
+    margin-bottom: 0.5em;
+  }
   #nav li:hover{
     background-color:rgb(76,161,146,0.7);
     color:white;
@@ -201,7 +204,7 @@
     list-style: none;
     overflow: hidden;
     margin-bottom: 20px;
-    margin-top: -2em;
+    margin-top: -1em;
   }
   .recommend-box{
     border:2px solid rgb(106,191,176);
