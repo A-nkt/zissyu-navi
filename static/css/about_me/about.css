@@ -6,13 +6,13 @@
     padding-top: 2vw !important;
   }
   .is-1{
-    font-size: 2em !important;
+    font-size: 1.5em !important;
   }
   .is-2{
-    font-size: 1.75em !important;
+    font-size: 1.25em !important;
   }
   .is-2:after {
-    margin-bottom: -1% !important;
+    margin-bottom: -1.5% !important;
   }
 
 }
