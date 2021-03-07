@@ -219,12 +219,6 @@ def list(request):
                         result.loc[j,'major_'+str(t)+'_name'] = MAJOR_CHOICE[x][0]
         for j in range(len(result)):
             result.loc[j,'txt'] = txt
-        page = int(page)
-        previous_page = page - 1
-        next_page = page + 1
-        last_page = math.ceil(len(result) / 5)
-        last_previous_page = last_page -1
-        result = result[5*(page - 1):5*page]
         if sort == "1":
             for inx in range(len(result)):
                 result.loc[inx,'count'] = int(result.loc[inx,'count'])
@@ -239,6 +233,12 @@ def list(request):
             result = result.reset_index(drop=True)
             for inx in range(len(result)):
                 result.loc[inx,'review'] = str(result.loc[inx,'review'])
+        page = int(page)
+        previous_page = page - 1
+        next_page = page + 1
+        last_page = math.ceil(len(result) / 5)
+        last_previous_page = last_page -1
+        result = result[5*(page - 1):5*page]
         if param_p == "pref":
             related_df = list_related_df(use_pref)
             judge = True
