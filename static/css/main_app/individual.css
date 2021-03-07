@@ -86,7 +86,7 @@
   #nav {
     list-style: none;
     float: left;
-    margin-top: -1.5em;
+    margin-top: -1em;
   }
   #nav li:hover{
     background-color:rgb(76,161,146,0.7);
