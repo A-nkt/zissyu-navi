@@ -4,12 +4,12 @@
       display: none;
     }
     .side-wrap2{
+      margin-top: 18em!important;
       width: 90%;
       margin: auto;
-      margin-top: 250px;
     }
     .recommend{
-      width : 100% ;
+      width : 80% ;
       border-radius: 5px;
       margin:auto;
       color: black;
@@ -19,6 +19,7 @@
       padding: 0.25em 1em;
       border: solid 2px rgb(106,191,176,0.7);
       border-radius: 3px 0 3px 0;
+      margin: 0 auto;
     }
     .recommend:before,.recommend:after{
       content: '';
@@ -51,12 +52,12 @@
       display: inline-block;
     }
     .rcd-hospital-name{
-      font-size: 16px;
+      font-size: 1em;
       margin-left: 10px;
     }
     .rcd-place{
       margin-left: 10px;
-      font-size: 15px;
+      font-size: 1em;
       margin-bottom: 5px;
     }
     .rcd-count{
@@ -118,21 +119,22 @@
     #nav_gender{
       margin-bottom: 0px;
       margin-top: -10px;
-      font-size: 16px;
+      /*font-size: 16px;*/
     }
 
     #nav_ptn_2 {
       list-style: none;
-      font-size: 10px !important;
+      /*font-size: 10px !important;*/
     }
     #nav_ptn_2 li {
       width:90%;
-      height:70px;
+      height:4em;
       text-align: center;
       border-radius: 30px;
       margin-top: 3%;
       border:2px solid rgb(106,191,176,0.7);
       color:gray;
+      padding-top: 2px;
     }
     #nav_ptn_2 li a {
       text-decoration: none;
@@ -155,11 +157,11 @@
       display: inline;
      }
     .personal_major{
-      font-size: 18px;
+      font-size: 1em;
       font-weight:bold;
     }
     .personal_gender{
-      font-size: 16px;
+      font-size: 1em;
     }
     .personal_gender{
       padding-left: 1%;
@@ -170,11 +172,11 @@
     .personal_own_2{
       padding-top: 0.5%;
       padding-left: 2%;
-      font-size: 18px;
+      font-size: 1em;
     }
     .personal_date{
       padding-left:3%;
-      font-size: 16px;
+      font-size: 1em;
       display: inline-block;
     }
     .personal_group{
@@ -185,8 +187,7 @@
       float:right;
       color:rgb(170,170,170);
       padding-right: 15px;
-      padding-top: 25px;
-      padding-bottom: 15px;
+      padding-top: 15px;
     }
 
     .back-hospital-page{
@@ -255,6 +256,7 @@
       padding-top: 0px;
       padding-right: 2%;
       padding-left: 2%;
+      font-size: 0.85em;
     }
     .advertise{
       width : 100% ;

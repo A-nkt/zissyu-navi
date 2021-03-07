@@ -4,12 +4,14 @@
     padding-top: 20px;
     padding-right: 2%;
     padding-left: 2%;
+    font-size: 0.85em;
   }
   .left-wrap{
     display: none;
   }
   .left-wrap2{
     margin-top: 100px;
+    text-align: center;
   }
   .twitter-icon{
     font-size: 1.5em;
@@ -157,7 +159,7 @@
   .bottom-wrap{
     position: relative;
     padding: 0.5em 1em;
-    margin-top: 150px;
+    margin-top: 5em;
     border-radius: 8px;
     width:100%;
   }
@@ -185,13 +187,14 @@
   }
   #nav_ptn_2 li {
     width:100%;
-    height:70px;
+    height:4em;
     text-align: center;
     border-radius: 30px;
     margin-top: 1%;
     border:2px solid rgb(51,153,204);
     margin-bottom: 15px;
     color:gray;
+    padding-top: 2px;
   }
   #nav_ptn_2 li a {
     text-decoration: none;
@@ -214,42 +217,41 @@
     text-align:left;
     padding-left: 5%;
     width:100%;
-    font-size: 16px !important;
+    font-size: 1em !important;
   }
   .i_mark{
     float:right;
     padding-right: 15px;
     color:rgb(170,170,170);
-    font-size: 20px;
   }
   .personal_own p {
     display: inline;
    }
    .personal_own{
      padding-top: 0.5%;
-     font-size: 16px;
+     /*font-size: 16px;*/
    }
    .personal_own_2{
      padding-left: 2%;
-     font-size: 16px;
+     /*font-size: 16px;*/
      margin-top: -10px;
    }
    .star5_rating,.personal_date{
      display:inline-block;
    }
    .personal_major{
-     font-size: 18px;
+     /*font-size: 18px;*/
      font-weight:bold;
    }
    .personal_gender{
-     font-size: 16px;
+     /*font-size: 16px;*/
    }
    .personal_gender{
      padding-left: 1%;
    }
    .personal_date{
      padding-left:3%;
-     font-size: 16px;
+     /*font-size: 16px;*/
    }
    .recommend-text{
      text-align: center;
@@ -257,10 +259,10 @@
    .side-wrap2{
      width: 90%;
      margin: auto;
-     margin-top: 120px;
+     margin-top: 7em!important;
    }
    .recommend{
-     width : 100% ;
+     width : 80% ;
      border-radius: 5px;
      margin:auto;
      color: black;
@@ -270,6 +272,7 @@
      padding: 0.25em 1em;
      border: solid 2px rgb(106,191,176,0.7);
      border-radius: 3px 0 3px 0;
+     margin: 0 auto;
    }
    .recommend:before,.recommend:after{
      content: '';
@@ -302,12 +305,12 @@
      display: inline-block;
    }
    .rcd-hospital-name{
-     font-size: 16px;
+     /*font-size: 16px;*/
      margin-left: 10px;
    }
    .rcd-place{
      margin-left: 10px;
-     font-size: 15px;
+     /*font-size: 15px;*/
      margin-bottom: 5px;
    }
    .rcd-count{
