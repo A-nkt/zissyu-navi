@@ -11,7 +11,7 @@
   <img src="{% static 'img/home.jpg' %}" alt="">
   <div class="img-text-section">
     <div class="header-text">Hospee</div>
-    <h2><p>病院実習のための総合情報サイト</p></h2>
+    <h2><p>病院実習のための情報サイト</p></h2>
   </div>
 </div>
 
@@ -25,11 +25,9 @@
           <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
             <div class="top-content-bk">
               <div class="main-top-text">
-                {{ row.hospital_name }}
-                <div class="box-sub-text">
-                  {{ row.place }},{{ row.major }}
-                </div>
-                投稿日：{{ row.date }}
+                <div class="hospital-name">{{ row.hospital_name }}</div>
+                <div class="box-sub-text">{{ row.place }},{{ row.major }}</div>
+                <div class="post-date">投稿日：</div>{{ row.date }}
               </div>
             </div>
           </a>

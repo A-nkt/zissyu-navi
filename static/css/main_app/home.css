@@ -4,9 +4,10 @@
     padding-right: 2%;
     padding-left: 2%;
     z-index:0;
+    font-size: 1em;
   }
   .img-section img{
-    height: 300px;
+    height: 200px;
     object-fit: cover;
     object-position: 67.5% 0%;
   }
@@ -18,7 +19,7 @@
   }
   .img-text-section{
     position: absolute;
-    top: 100px;
+    top: 40px;
     /*max-width: 100%;*/
     max-height: 100%;
     padding-left: 5%;
@@ -43,13 +44,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
-
   .top-content-bk{
-    font-size: 16px;
-    width: 175px;
-    height: 175px;
-    margin-right:3px;
-    margin-left: 15px;
     border-radius:40px;
     background-color: white;
     text-decoration: none;
@@ -59,10 +54,18 @@
     position: relative;
     transform: translateY(0%) translateX(-50%);
     -webkit- transform: translateY(0%) translateX(-50%);
+    font-size: 1em;
+    width: 155px;
+    height: 155px;
   }
+  .post-date::after{
+    content: "\A" ;
+	   white-space: pre ;
+  }
+
   .top-block {
     text-align: center;
-    height:200px;
+    height:170px;
   }
   .content-header-text{
     text-align: center;
@@ -74,9 +77,19 @@
   .main-section{
     margin-top: 40px;
   }
+  .main-top-text{
+    width: 80%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+  .main-sub-text{
+    width: 85%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
   .main-content-bk{
-    width: 170px;
-    height: 170px;
+    width: 155px;
+    height: 155px;
     background: white;
     margin-right:3px;
     border-radius:40px;
@@ -91,6 +104,12 @@
     transform: translateY(0%) translateX(-50%);
     -webkit- transform: translateY(0%) translateX(-50%);
   }
+  .main-content-bk i{
+    font-size: 4.5em;
+  }
+  #content-no3 i{
+    padding-bottom: 15px;
+  }
   #content-no1{
     margin-right: 100px;
     margin-left: 0px;
@@ -103,8 +122,8 @@
     width: 50px;
     height: 50px;
     padding: 0px;
-    margin-right: 70px;
-    margin-left: 70px;
+    margin-right: 60px;
+    margin-left: 60px;
   }
   .main-section li {
     width: 0px;
@@ -162,6 +181,14 @@
     float: left;
     margin-left: 4em;
   }
+  .box-sub-text{
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  .lank-top-text{
+    font-weight: bold;
+  }
+
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -316,6 +343,16 @@
   }
   .top-content-bk:hover{
     box-shadow: 0 0 25px rgba(0,0,0,.45);
+  }
+  .box-sub-text{
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  .lank-top-text{
+    font-size: 18px;
+    margin-bottom:5px;
+    margin-top: 5px;
+    font-weight: bold;
   }
 }
 /*PC*/
@@ -477,15 +514,25 @@
   .top-content-bk:hover{
     box-shadow: 0 0 25px rgba(0,0,0,.45);
   }
+  .box-sub-text{
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  .lank-top-text{
+    font-size: 18px;
+    margin-bottom:5px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
 }
+
+
 .main-section i{
   margin-top: -0.2em;
 }
-
 .rank45{
   color:gray;
 }
-
 .rank1{
   color: #dab300;
 }
@@ -500,8 +547,6 @@
   margin: 0px;
   padding: 0px;
 }
-
-
 .main-sub-text{
   position: absolute;
   bottom: 5%;
@@ -518,20 +563,10 @@ ul {
 .top-content-bk :hover{
   font-weight: bold;
 }
-.box-sub-text{
-  padding-top: 10px;
-  padding-bottom: 30px;
-}
 .img-text-section h2 {
   font-weight: normal;
 }
 
-.lank-top-text{
-  font-size: 18px;
-  margin-bottom:5px;
-  margin-top: 5px;
-  font-weight: bold;
-}
 .lank-count{
   margin-bottom:5px;
   padding-left: 10px;
