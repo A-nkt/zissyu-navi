@@ -219,6 +219,8 @@ def list(request):
                         result.loc[j,'major_'+str(t)+'_name'] = MAJOR_CHOICE[x][0]
         for j in range(len(result)):
             result.loc[j,'txt'] = txt
+        
+        #sort 
         if sort == "1":
             for inx in range(len(result)):
                 result.loc[inx,'count'] = int(result.loc[inx,'count'])
@@ -228,7 +230,7 @@ def list(request):
                 result.loc[inx,'count'] = str(result.loc[inx,'count'])
         elif sort == "2":
             for inx in range(len(result)):
-                result.loc[inx,'review'] = int(result.loc[inx,'review'])
+                result.loc[inx,'review'] = float(result.loc[inx,'review'])
             result = result.sort_values('review', ascending=False)
             result = result.reset_index(drop=True)
             for inx in range(len(result)):
