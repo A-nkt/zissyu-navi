@@ -31,6 +31,13 @@ def major_jp(word):
             rword = MAJOR_CHOICE[i][1]
     return rword
 
+def inte(value):
+    if int(value) <= 9:
+        value = '0' + str(value)
+    else:
+        value = str(value)
+    return value
+
 def place_jp(word):
     for i in range(len(PLACE_CHOISE)):
         if PLACE_CHOISE[i][0] == word:

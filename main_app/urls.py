@@ -13,6 +13,7 @@ urlpatterns = [
     path('list/individual/user_answer/',views.user_answer,name='user_answer'),
     path('list/individual/user_list/',views.user_list,name='user_list'),
     path('contact/',views.contact,name="contact"),
+    path('download/',views.download,name="download"),
     #path('user/',views.user,name='user'),
     #path('mypage/',views.mypage,name='mypage'),
 ]

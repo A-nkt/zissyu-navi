@@ -10,12 +10,14 @@ from django.conf import settings
 from django.contrib import messages
 from django.views import View
 from django.views.generic import  TemplateView
+from django.contrib.auth.decorators import permission_required
 # Public Python
 import pandas as pd
 import numpy as np
 import slackweb
 import math
 import requests
+import datetime as dt
 #Private Django
 from .models import Record,Major,Chapter,Article,Contact
 from .forms import RecordForm,ContactForm
@@ -556,3 +558,15 @@ class MyPageView(TemplateView):
     template_name = 'main_app/mypage.html'
 
 mypage = MyPageView.as_view()
+
+@permission_required('admin.can_add_log_entry')
+def download(request):
+    datas = Record.objects.all()
+    dx = read_frame(datas)
+    dt_now = dt.datetime.now()
+
+    file_name = str(dt_now.year) + inte(dt_now.month) + inte(dt_now.day) + inte(dt_now.hour) + inte(dt_now.minute) + inte(dt_now.second) + ".csv"
+    response = HttpResponse(content_type='text/csv',charset='Shift-JIS')
+    response['Content-Disposition'] = 'attachment; filename="{}"'.format(urllib.parse.quote(file_name))
+    dx.to_csv(path_or_buf=response, sep=',', index=False,encoding='shift_jis')
+    return response
