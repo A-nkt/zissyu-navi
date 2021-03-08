@@ -53,7 +53,7 @@ def home(request):
     datas = read_frame(datas) #DataFrameに格納
     all_record = len(datas)
     datas = datas[["hospital_name","place",'date','major']] #特定のcolumnsのみ抽出
-    datas = datas[:7] #最新の7項目を抽出
+    datas = datas[:12] #最新の12項目を抽出
     #datasにplace_nameを追加
     for j in range(len(datas)):
         for k in range(len(PLACE_CHOISE)):
