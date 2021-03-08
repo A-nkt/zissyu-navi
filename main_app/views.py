@@ -129,7 +129,7 @@ def search(request):
         Major.objects.filter(db_major_name=major).update(count=len(Record.objects.all().filter(major=major)))
     datas = Major.objects.all()
     return render(request, 'main_app/search.html', {'datas':datas})
-
+"""
 def list(request):
     page = request.GET['page'];page = int(page)
     sort = request.GET['sort']
@@ -244,6 +244,102 @@ def list(request):
     last_page = math.ceil(len(result) / 5)
     last_previous_page = last_page -1
     result = result[5*(page - 1):5*page]
+    if param_p == "pref":
+        related_df = list_related_df(use_pref)
+        judge = True
+    else:
+        related_df = ""
+        judge = False
+    context = {
+        'result':result,
+        'content':True,
+        'param':param, #pref or major
+        'param_p':param_p, #pref or major
+        'page':page, #今いるページ
+        'previous_page':previous_page, #一個前のページ
+        'next_page':next_page, #一個次のページ
+        'last_page':last_page, #最後のページ
+        'last_previous_page':last_previous_page,#最後の一個前
+        'related_df':related_df,
+        'judge':judge,
+        'sort':sort,
+    }
+    return render(request, 'main_app/list.html', context)
+"""
+def list(request):
+    page = request.GET['page'];page = int(page)
+    sort = request.GET['sort']
+    txt = "病院平均評価"
+    #全記録を取得
+    row = Record.objects.all();row = read_frame(row)
+    try:#指定した都道府県の病院一覧でフィルター
+        param = request.GET['pref']
+        param_p = "pref"
+        for j in range(len(PLACE_CHOISE)):
+            if PLACE_CHOISE[j][0] == param:
+                use_pref = PLACE_CHOISE[j][1]
+        datas_o = row[row['place'] == use_pref]
+    except:#指定した専攻でフィルター
+        param = request.GET['major']
+        param_p = "major"
+        for j in range(len(MAJOR_CHOICE)):
+            if MAJOR_CHOICE[j][0] == param:
+                use_major = MAJOR_CHOICE[j][1]
+        datas_o = row[row['major'] == use_major]
+    # only hospital name & prefecture
+    if len(datas_o) == 0:
+        return render(request, 'main_app/list.html', {'content':False}) #contentがなかった時
+    datas_o = datas_o[~datas_o.duplicated(subset=['hospital_name', 'place'])] #重複を削除
+    datas_o = datas_o[["hospital_name","place",'major']] #use hospital name & place
+    datas_o = datas_o.reset_index(drop=True);lengths = len(datas_o)
+    # score data length & average score
+    for inx in range(len(datas_o)):
+        average = [];count = 0
+        for scd in range(len(row)):
+            if row.loc[scd,'hospital_name'] == datas_o.loc[inx,'hospital_name'] and row.loc[scd,'place'] == datas_o.loc[inx,'place']:
+                average.append(row.loc[scd,'review'])
+                count += 1
+        datas_o.loc[inx,'review'] = round(sum(average)/len(average),1)
+        datas_o.loc[inx,'count'] = str(int(count))
+    #sort
+    if sort == "1":
+        for inx in range(len(datas_o)):
+            datas_o.loc[inx,'count'] = int(datas_o.loc[inx,'count'])
+        datas_o = datas_o.sort_values('count', ascending=False)
+        datas_o = datas_o.reset_index(drop=True)
+    elif sort == "2":
+        for inx in range(len(datas_o)):
+            datas_o.loc[inx,'review'] = float(datas_o.loc[inx,'review'])
+        datas_o = datas_o.sort_values('review', ascending=False)
+        datas_o = datas_o.reset_index(drop=True)
+    # pic one page data
+    result = datas_o[5*(page - 1):5*page]
+    result = result.reset_index(drop=True)
+    # other infomation
+    majors = row[~row.duplicated(subset=['hospital_name', 'place','major'])] #重複を削除
+    majors = majors.reset_index(drop=True)
+    for inx in range(len(result)):
+        x = 0
+        for scd in range(len(majors)):
+            if majors.loc[scd,'hospital_name'] == result.loc[inx,'hospital_name'] and majors.loc[scd,'place'] == result.loc[inx,'place']:
+                result.loc[inx,'major_'+str(x)] = majors.loc[scd,'major']
+                for y in range(len(MAJOR_CHOICE)):
+                    if majors.loc[scd,'major'] == MAJOR_CHOICE[y][1]:
+                        result.loc[inx,'major_'+str(x)+"_name"] = MAJOR_CHOICE[y][0]
+                x+=1
+
+    result = result.fillna(0) #nan -> 0
+    for j in range(len(result)):
+        result.loc[j,'txt'] = txt
+    #resultにplace_nameを追加
+    for j in range(len(result)):
+        for k in range(len(PLACE_CHOISE)):
+            if PLACE_CHOISE[k][1] == result.loc[j,'place']:
+                result.loc[j,'place_name'] = PLACE_CHOISE[k][0]
+    previous_page = page - 1
+    next_page = page + 1
+    last_page = math.ceil(lengths / 5)
+    last_previous_page = last_page -1
     if param_p == "pref":
         related_df = list_related_df(use_pref)
         judge = True
