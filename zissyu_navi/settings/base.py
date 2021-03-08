@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'axes',
+    #'axes',
     #'django.contrib.sites',
     'django.contrib.sitemaps',
 ]
@@ -57,11 +57,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'axes.middleware.AxesMiddleware', #login rate limit
+    #'axes.middleware.AxesMiddleware', #login rate limit
 ]
 
 AUTHENTICATION_BACKENDS = [
-    'axes.backends.AxesBackend', #login rate limit
+    #'axes.backends.AxesBackend', #login rate limit
     'django.contrib.auth.backends.ModelBackend',
 ]
 
