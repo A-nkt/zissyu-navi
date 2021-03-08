@@ -354,12 +354,32 @@
     margin-top: 5px;
     font-weight: bold;
   }
+  .main-top-text{
+    width: 80%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+  .main-sub-text{
+    width: 85%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
   .img-section img{
     width:100%;
     height:100%;
+  }
+  .main-top-text{
+    width: 80%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+  .main-sub-text{
+    width: 85%;
+    overflow:hidden;
+    text-overflow: ellipsis;
   }
   br {
     display: none;
