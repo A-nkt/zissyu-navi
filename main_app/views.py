@@ -129,7 +129,7 @@ def search(request):
     return render(request, 'main_app/search.html', {'datas':datas})
 
 def list(request):
-    page = request.GET['page']
+    page = request.GET['page'];page = int(page)
     sort = request.GET['sort']
     result = pd.DataFrame()
     txt = "病院平均評価"
@@ -164,7 +164,7 @@ def list(request):
     try:
         df = df_o[["hospital_name","place",'review','major']]
     except KeyError:
-        return render(request, 'main_app/list.html', {'content':False})
+        return render(request, 'main_app/list.html', {'content':False}) #contentがなかった時
     dx = df[["hospital_name","place",'review','major']]
     #病院名の重複を削除 df
     for i in range(len(df)):
@@ -204,66 +204,66 @@ def list(request):
             result.loc[f,'review'] = round(score.mean(),1)
             result.loc[f,'count'] = str(len(score))
     result = result.fillna(0) #nan -> 0
+    result = result[5*(page - 1):5*page]
     #resultにplace_nameを追加
     for j in range(len(result)):
         for k in range(len(PLACE_CHOISE)):
             if PLACE_CHOISE[k][1] == result.loc[j,'place']:
                 result.loc[j,'place_name'] = PLACE_CHOISE[k][0]
 
-    if len(result) != 0:
-        leng = len(result.loc[0])-6 #majorの項目数
-        for j in range(len(result)):
-            for t in range(leng):
-                for x in range(len(MAJOR_CHOICE)):
-                    if MAJOR_CHOICE[x][1] == result.loc[j,'major_'+str(t)]:
-                        result.loc[j,'major_'+str(t)+'_name'] = MAJOR_CHOICE[x][0]
-        for j in range(len(result)):
-            result.loc[j,'txt'] = txt
-        
-        #sort 
-        if sort == "1":
-            for inx in range(len(result)):
-                result.loc[inx,'count'] = int(result.loc[inx,'count'])
-            result = result.sort_values('count', ascending=False)
-            result = result.reset_index(drop=True)
-            for inx in range(len(result)):
-                result.loc[inx,'count'] = str(result.loc[inx,'count'])
-        elif sort == "2":
-            for inx in range(len(result)):
-                result.loc[inx,'review'] = float(result.loc[inx,'review'])
-            result = result.sort_values('review', ascending=False)
-            result = result.reset_index(drop=True)
-            for inx in range(len(result)):
-                result.loc[inx,'review'] = str(result.loc[inx,'review'])
-        page = int(page)
-        previous_page = page - 1
-        next_page = page + 1
-        last_page = math.ceil(len(result) / 5)
-        last_previous_page = last_page -1
-        result = result[5*(page - 1):5*page]
-        if param_p == "pref":
-            related_df = list_related_df(use_pref)
-            judge = True
-        else:
-            related_df = ""
-            judge = False
-        context = {
-            'result':result,
-            'content':True,
-            'param':param, #pref or major
-            'param_p':param_p, #pref or major
-            'page':page, #今いるページ
-            'previous_page':previous_page, #一個前のページ
-            'next_page':next_page, #一個次のページ
-            'last_page':last_page, #最後のページ
-            'last_previous_page':last_previous_page,#最後の一個前
-            'related_df':related_df,
-            'judge':judge,
-            'sort':sort,
-        }
-        return render(request, 'main_app/list.html', context)
-    else:
+    if len(result) == 0:
         return render(request, 'main_app/list.html', {'content':False})
+
+    leng = len(result.loc[0])-6 #majorの項目数
+    for j in range(len(result)):
+        for t in range(leng):
+            for x in range(len(MAJOR_CHOICE)):
+                if MAJOR_CHOICE[x][1] == result.loc[j,'major_'+str(t)]:
+                    result.loc[j,'major_'+str(t)+'_name'] = MAJOR_CHOICE[x][0]
+    for j in range(len(result)):
+        result.loc[j,'txt'] = txt
+
+    #sort
+    if sort == "1":
+        for inx in range(len(result)):
+            result.loc[inx,'count'] = int(result.loc[inx,'count'])
+        result = result.sort_values('count', ascending=False)
+        result = result.reset_index(drop=True)
+        for inx in range(len(result)):
+            result.loc[inx,'count'] = str(result.loc[inx,'count'])
+    elif sort == "2":
+        for inx in range(len(result)):
+            result.loc[inx,'review'] = float(result.loc[inx,'review'])
+        result = result.sort_values('review', ascending=False)
+        result = result.reset_index(drop=True)
+        for inx in range(len(result)):
+            result.loc[inx,'review'] = str(result.loc[inx,'review'])
+    previous_page = page - 1
+    next_page = page + 1
+    last_page = math.ceil(len(result) / 5)
+    last_previous_page = last_page -1
+    if param_p == "pref":
+        related_df = list_related_df(use_pref)
+        judge = True
+    else:
+        related_df = ""
+        judge = False
+    context = {
+        'result':result,
+        'content':True,
+        'param':param, #pref or major
+        'param_p':param_p, #pref or major
+        'page':page, #今いるページ
+        'previous_page':previous_page, #一個前のページ
+        'next_page':next_page, #一個次のページ
+        'last_page':last_page, #最後のページ
+        'last_previous_page':last_previous_page,#最後の一個前
+        'related_df':related_df,
+        'judge':judge,
+        'sort':sort,
+    }
+    return render(request, 'main_app/list.html', context)
+
 
 def footer_content(request):
     pattern = request.GET['pattern']

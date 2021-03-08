@@ -208,7 +208,7 @@
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 250px;
+  display:inline-block;
   margin-bottom: 0px;
   }
   .hospital-name-bg::before,.hospital-name-bg::after {
@@ -233,6 +233,8 @@
   .name {
   font-size: 16px;
   font-weight: bold;
+  padding-right: 30px !important;
+  padding-left: 30px !important;
   }
   .name {
   background: #8dce41;
@@ -366,8 +368,17 @@
   .index-tab{
     background-color: rgb(110,110,110,0.2);
   }
+  .hospital-name-bg{
+    width: 80% !important;
+  }
+  .name{
+    white-space: nowrap; /* 横幅のMAXに達しても改行しない */
+    overflow: hidden; /* ハミ出した部分を隠す */
+    text-overflow: ellipsis; /* 「…」と省略 */
+    -webkit-text-overflow: ellipsis; /* Safari */
+    -o-text-overflow: ellipsis; /* Opera */
 
-
+  }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -579,7 +590,7 @@
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 300px;
+    display:inline-block;
   }
   .hospital-name-bg::before,.hospital-name-bg::after {
   border-color: #73c01a;
@@ -603,6 +614,8 @@
   .name {
   font-size: 16px;
   font-weight: bold;
+  padding-right: 30px !important;
+  padding-left: 30px !important;
   }
   .name {
   background: #8dce41;
@@ -728,7 +741,17 @@
   .index-tab{
     background-color: rgb(110,110,110,0.2);
   }
+  .hospital-name-bg{
+    width: 50% !important;
+  }
+  .name{
+    white-space: nowrap; /* 横幅のMAXに達しても改行しない */
+    overflow: hidden; /* ハミ出した部分を隠す */
+    text-overflow: ellipsis; /* 「…」と省略 */
+    -webkit-text-overflow: ellipsis; /* Safari */
+    -o-text-overflow: ellipsis; /* Opera */
 
+  }
 
 }
 /*PC*/
@@ -935,13 +958,13 @@
     color:gray;
   }
   .hospital-name-bg {
+  display:inline-block;
   box-sizing: border-box;
   height: 45px;
   margin: 5px auto;
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 300px;
   }
   .hospital-name-bg::before,.hospital-name-bg::after {
   border-color: #73c01a;
@@ -971,6 +994,8 @@
   color: #fff;
   padding: 6px 10px;
   position: relative;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
   }
   .name::before,.name::after {
   border: none;
@@ -1088,5 +1113,15 @@
   .index-tab{
     background-color: rgb(110,110,110,0.2);
   }
+  .hospital-name-bg{
+    width: 50% !important;
+  }
+  .name{
+    white-space: nowrap; /* 横幅のMAXに達しても改行しない */
+    overflow: hidden; /* ハミ出した部分を隠す */
+    text-overflow: ellipsis; /* 「…」と省略 */
+    -webkit-text-overflow: ellipsis; /* Safari */
+    -o-text-overflow: ellipsis; /* Opera */
 
+  }
 }
