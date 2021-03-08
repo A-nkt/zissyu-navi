@@ -566,7 +566,7 @@ def download(request):
     dt_now = dt.datetime.now()
 
     file_name = str(dt_now.year) + inte(dt_now.month) + inte(dt_now.day) + inte(dt_now.hour) + inte(dt_now.minute) + inte(dt_now.second) + ".csv"
-    response = HttpResponse(content_type='text/csv',charset='Shift-JIS')
+    response = HttpResponse(content_type='text/csv; charset=CP932')
     response['Content-Disposition'] = 'attachment; filename="{}"'.format(urllib.parse.quote(file_name))
-    dx.to_csv(path_or_buf=response, sep=',', index=False,encoding='shift_jis')
+    dx.to_csv(path_or_buf=response, sep=",", encoding='shift_jis',index=False)
     return response
