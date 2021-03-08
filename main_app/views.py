@@ -204,7 +204,6 @@ def list(request):
             result.loc[f,'review'] = round(score.mean(),1)
             result.loc[f,'count'] = str(len(score))
     result = result.fillna(0) #nan -> 0
-    result = result[5*(page - 1):5*page]
     #resultにplace_nameを追加
     for j in range(len(result)):
         for k in range(len(PLACE_CHOISE)):
@@ -242,6 +241,7 @@ def list(request):
     next_page = page + 1
     last_page = math.ceil(len(result) / 5)
     last_previous_page = last_page -1
+    result = result[5*(page - 1):5*page]
     if param_p == "pref":
         related_df = list_related_df(use_pref)
         judge = True
