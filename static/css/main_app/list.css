@@ -9,7 +9,7 @@
     display: none;
   }
   .side-wrap2{
-    margin-top: 120em;
+    margin-top: 170em;
     margin-right: 5%;
     margin-left: 5%;
     font-size: 13px;
@@ -27,7 +27,17 @@
     border-radius: 3px 0 3px 0;
     margin-top:5em;
   }
-  .midashi {
+  .midashi{
+    padding: 0.5em;/*文字周りの余白*/
+    color: gray;/*文字色*/
+    background: rgb(106,191,176,0.3);
+    border-left: solid 5px rgb(106,191,176,0.8);
+    font-size: 18px;
+    float: left;
+    margin-left: 0.5em;
+    margin-top: -1em;
+  }
+  /*.midashi {
     position: relative;
     padding: 0.5em;
     background: #a6d3c8;
@@ -45,7 +55,7 @@
     border: none;
     border-bottom: solid 15px transparent;
     border-right: solid 20px rgb(149, 158, 155);
-  }
+  }*/
   .hospital-wrap{
     float: left;
     width: 100%;
@@ -355,8 +365,8 @@
   .is-medium{
     margin-top: 0em;
     float: left !important;
-    margin-left: -1em;
-    font-size: 1em !important;
+    margin-left: -1.5em;
+    font-size: 0.9em !important;
   }
   .is-medium  ul {
     border-top: 1px solid rgb(110,110,110,0.2);
@@ -377,7 +387,38 @@
     text-overflow: ellipsis; /* 「…」と省略 */
     -webkit-text-overflow: ellipsis; /* Safari */
     -o-text-overflow: ellipsis; /* Opera */
-
+  }
+  .search_container{
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+  }
+  .search_container input[type="text"]{
+    background: rgb(106,191,176,0.3);
+    border: none;
+    height: 2.1em;
+    font-size: 0.95em;
+  }
+  .search_container input[type="text"]:focus {
+    outline: 0;
+    color: gray;
+    font-size: 0.95em;
+  }
+  .search_container input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    background: rgb(106,191,176,0.9);
+    color: white;
+    outline : none;
+    height: 2.3em;
+    font-size: 0.95em;
+  }
+  .search_container ::-webkit-input-placeholder {
+    color: gray;
+    font-size: 0.95em;
+  }
+  #midashi2{
+    margin-bottom: 1em;
   }
 }
 /*Tablet*/
@@ -391,7 +432,7 @@
     display: none;
   }
   .side-wrap2{
-    margin-top: 100em;
+    margin-top: 140em;
     margin-right: 20%;
     margin-left: 20%;
   }
@@ -408,7 +449,17 @@
     border-radius: 3px 0 3px 0;
     margin-top:6em;
   }
-  .midashi {
+  .midashi{
+    padding: 0.5em;/*文字周りの余白*/
+    color: gray;/*文字色*/
+    background: rgb(106,191,176,0.3);
+    border-left: solid 5px rgb(106,191,176,0.8);
+    font-size: 18px;
+    float: left;
+    margin-left: 5%;
+    margin-top: -2em;
+  }
+  /*.midashi {
     position: relative;
     padding: 0.5em;
     background: #a6d3c8;
@@ -426,7 +477,7 @@
     border: none;
     border-bottom: solid 15px transparent;
     border-right: solid 20px rgb(149, 158, 155);
-  }
+  }*/
   .hospital-wrap{
     float: left;
     width: 90%;
@@ -726,9 +777,9 @@
     font-size: 18px;
   }
   .is-medium{
-    margin-top: 3em;
+    margin-top: 0em;
     float: left !important;
-    margin-left: -7em;
+    margin-left: -9em;
     font-size: 1em !important;
   }
   .is-medium  ul {
@@ -750,9 +801,40 @@
     text-overflow: ellipsis; /* 「…」と省略 */
     -webkit-text-overflow: ellipsis; /* Safari */
     -o-text-overflow: ellipsis; /* Opera */
-
   }
-
+  .search_container{
+    box-sizing: border-box;
+    width: 97%;
+    text-align: right;
+  }
+  .search_container input[type="text"]{
+    background: rgb(106,191,176,0.3);
+    border: none;
+    height: 2.55em;
+    font-size: 0.95em;
+    padding-right: 1em;
+  }
+  .search_container input[type="text"]:focus {
+    outline: 0;
+    color: gray;
+    font-size: 0.95em;
+  }
+  .search_container input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    background: rgb(106,191,176,0.9);
+    color: white;
+    outline : none;
+    height: 2.65em;
+    font-size: 0.95em;
+  }
+  .search_container ::-webkit-input-placeholder {
+    color: gray;
+    font-size: 0.95em;
+  }
+  #midashi2{
+    margin-bottom: 1em;
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
@@ -767,6 +849,7 @@
     width: 15em !important;
     float: right;
     margin-left: 10px;
+    margin-top: -6em;
   }
   .recommend{
     width : 100% ;
@@ -781,24 +864,14 @@
     border-radius: 3px 0 3px 0;
     margin-top:6em;
   }
-  .midashi {
-    position: relative;
-    padding: 0.5em;
-    background: #a6d3c8;
-    color: white;
-    float: left;
-    /*margin-bottom: 30px;*/
+  .midashi{
+    padding: 0.5em;/*文字周りの余白*/
+    color: gray;/*文字色*/
+    background: rgb(106,191,176,0.3);
+    border-left: solid 5px rgb(106,191,176,0.8);
     font-size: 22px;
-    font-weight: bold;
-  }
-  .midashi:before {
-    position: absolute;
-    content: '';
-    top: 100%;
-    left: 0;
-    border: none;
-    border-bottom: solid 15px transparent;
-    border-right: solid 20px rgb(149, 158, 155);
+    float: left;
+    margin-top: -2em;
   }
   .hospital-wrap-g{
     margin-top: 100px;
@@ -1098,7 +1171,7 @@
     text-align: center;
   }
   .is-medium{
-    margin-top: 4em;
+    margin-top: 0.5em;
     float: left !important;
     margin-left: -10.5em;
     font-size: 1em !important;
@@ -1122,6 +1195,38 @@
     text-overflow: ellipsis; /* 「…」と省略 */
     -webkit-text-overflow: ellipsis; /* Safari */
     -o-text-overflow: ellipsis; /* Opera */
-
+  }
+  .search_container{
+    box-sizing: border-box;
+    width: 71%;
+    text-align: right;
+  }
+  .search_container input[type="text"]{
+    background: rgb(106,191,176,0.3);
+    border: none;
+    height: 3.1em;
+    font-size: 0.95em;
+    padding-right: 1em;
+  }
+  .search_container input[type="text"]:focus {
+    outline: 0;
+    color: gray;
+    font-size: 0.95em;
+  }
+  .search_container input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    background: rgb(106,191,176,0.9);
+    color: white;
+    outline : none;
+    height: 3.3em;
+    font-size: 0.95em;
+  }
+  .search_container ::-webkit-input-placeholder {
+    color: gray;
+    font-size: 0.95em;
+  }
+  #midashi2{
+    margin-bottom: -1em;
   }
 }
