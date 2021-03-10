@@ -129,143 +129,7 @@ def search(request):
         Major.objects.filter(db_major_name=major).update(count=len(Record.objects.all().filter(major=major)))
     datas = Major.objects.all()
     return render(request, 'main_app/search.html', {'datas':datas})
-"""
-def list(request):
-    page = request.GET['page'];page = int(page)
-    sort = request.GET['sort']
-    result = pd.DataFrame()
-    txt = "病院平均評価"
-    try:
-        param = request.GET['pref']
-        param_p = "pref"
-        for j in range(len(PLACE_CHOISE)):
-            if PLACE_CHOISE[j][0] == param:
-                use_pref = PLACE_CHOISE[j][1]
-        datas = Record.objects.all().filter(place=param) #指定した都道府県の病院一覧でフィルター
-        df_o = read_frame(datas)
-    except:
-        param = request.GET['major']
-        param_p = "major"
-        datas = Record.objects.all().filter(major=param) #指定した専攻でフィルター
-        datas_o = read_frame(datas)
-        datas_all = Record.objects.all() #全記録を取得
-        datas_all = read_frame(datas_all)
-        df_o = pd.DataFrame();k = 0
-        datas_o = datas_o[~datas_o.duplicated(subset=['hospital_name', 'place'])] #重複を削除
-        datas_o = datas_o.reset_index(drop=True)
-        #病院の県と名前から記録を抽出
-        for i in range(len(datas_o)):
-            for j in range(len(datas_all)):
-                if (datas_all.loc[j,'hospital_name'] == datas_o.loc[i,'hospital_name']) and (datas_all.loc[j,'place'] == datas_o.loc[i,'place']):
-                    df_o.loc[k,'hospital_name'] = datas_all.loc[j,'hospital_name']
-                    df_o.loc[k,'place'] = datas_all.loc[j,'place']
-                    df_o.loc[k,'review'] = datas_all.loc[j,'review']
-                    df_o.loc[k,'major'] = datas_all.loc[j,'major']
-                    k += 1
-    #変数定義
-    try:
-        df = df_o[["hospital_name","place",'review','major']]
-    except KeyError:
-        return render(request, 'main_app/list.html', {'content':False}) #contentがなかった時
-    dx = df[["hospital_name","place",'review','major']]
-    #病院名の重複を削除 df
-    for i in range(len(df)):
-        if df.duplicated(subset='hospital_name')[i] == True:
-            df = df.drop(index=i)
-    df = df.reset_index(drop=True)
-    for f in range(len(df)):
-        dz = df_o
-        dz = dz[["hospital_name","place",'review','major']]
-        #一つの病院に限定 dz
-        for j in range(len(dz)):
-            if df.loc[f,'hospital_name'] != dz.loc[j,'hospital_name']:
-                dz = dz.drop(index=j)
-        dz = dz.reset_index(drop=True)
-        #重複のある専攻を削除
-        for i in range(len(dz)):
-            if dz.duplicated(subset='major')[i] == True:
-                dz = dz.drop(index=i)
-        dz = dz.reset_index(drop=True)
-        #同じ病院名において、データのある専攻を記載
-        for x in range(len(dx)):
-            for z in range(len(dz)):
-                if dx.loc[x,'hospital_name'] == dz.loc[z,'hospital_name']:
-                    dx.loc[x,'major_'+str(z)] = dz.loc[z,'major']
-        result = dx
-        #病院名の重複を削除 dx
-        for i in range(len(result)):
-            if result.duplicated(subset='hospital_name')[i] == True:
-                result = result.drop(index=i)
-        #スコアの導出
-        result = result.reset_index(drop=True)
-        for f in range(len(result)):
-            score = np.zeros(0)
-            for x in range(len(dx)):
-                if result.loc[f,'hospital_name'] == dx.loc[x,'hospital_name']:
-                    score = np.append(score, dx.loc[x,'review'])
-            result.loc[f,'review'] = round(score.mean(),1)
-            result.loc[f,'count'] = str(len(score))
-    result = result.fillna(0) #nan -> 0
-    #resultにplace_nameを追加
-    for j in range(len(result)):
-        for k in range(len(PLACE_CHOISE)):
-            if PLACE_CHOISE[k][1] == result.loc[j,'place']:
-                result.loc[j,'place_name'] = PLACE_CHOISE[k][0]
 
-    if len(result) == 0:
-        return render(request, 'main_app/list.html', {'content':False})
-
-    leng = len(result.loc[0])-6 #majorの項目数
-    for j in range(len(result)):
-        for t in range(leng):
-            for x in range(len(MAJOR_CHOICE)):
-                if MAJOR_CHOICE[x][1] == result.loc[j,'major_'+str(t)]:
-                    result.loc[j,'major_'+str(t)+'_name'] = MAJOR_CHOICE[x][0]
-    for j in range(len(result)):
-        result.loc[j,'txt'] = txt
-
-    #sort
-    if sort == "1":
-        for inx in range(len(result)):
-            result.loc[inx,'count'] = int(result.loc[inx,'count'])
-        result = result.sort_values('count', ascending=False)
-        result = result.reset_index(drop=True)
-        for inx in range(len(result)):
-            result.loc[inx,'count'] = str(result.loc[inx,'count'])
-    elif sort == "2":
-        for inx in range(len(result)):
-            result.loc[inx,'review'] = float(result.loc[inx,'review'])
-        result = result.sort_values('review', ascending=False)
-        result = result.reset_index(drop=True)
-        for inx in range(len(result)):
-            result.loc[inx,'review'] = str(result.loc[inx,'review'])
-    previous_page = page - 1
-    next_page = page + 1
-    last_page = math.ceil(len(result) / 5)
-    last_previous_page = last_page -1
-    result = result[5*(page - 1):5*page]
-    if param_p == "pref":
-        related_df = list_related_df(use_pref)
-        judge = True
-    else:
-        related_df = ""
-        judge = False
-    context = {
-        'result':result,
-        'content':True,
-        'param':param, #pref or major
-        'param_p':param_p, #pref or major
-        'page':page, #今いるページ
-        'previous_page':previous_page, #一個前のページ
-        'next_page':next_page, #一個次のページ
-        'last_page':last_page, #最後のページ
-        'last_previous_page':last_previous_page,#最後の一個前
-        'related_df':related_df,
-        'judge':judge,
-        'sort':sort,
-    }
-    return render(request, 'main_app/list.html', context)
-"""
 def list(request):
     txt = "病院平均評価"
     q_word = request.GET.get('query')
@@ -402,7 +266,7 @@ def list(request):
                     result.loc[j,'place_name'] = PLACE_CHOISE[k][0]
         previous_page = page - 1
         next_page = page + 1
-        last_page = math.ceil(lengths / 5)
+        last_page = math.ceil(lengths / 8)
         last_previous_page = last_page -1
         if param_p == "pref":
             related_df = list_related_df(use_pref)
