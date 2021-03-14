@@ -47,6 +47,7 @@ MAJOR_CHOICE = (
             ('dental_hygienist','歯科衛生士'), ('caregiver','介護士'), ('paramedic', '救急救命士'), ('psychiatric_social_worker', '精神保健福祉士'),
             ('radiation_technician','放射線検査技師'),('clinical_laboratory_technician','臨床検査技師'),('speech_language_hearing_therapist','言語聴覚士'),
             ('public_health_nurse','保健師'),('clinical_psychologist','臨床心理士'),('medical_information_manager','診療情報管理士'),('care_manager','ケアマネジャー'),
+            ('orthoptist','視能訓練士'),
 )
 
 # Create your views here.
