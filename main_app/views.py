@@ -368,6 +368,9 @@ def individual(request):
 
     related_df = individual_related_df(pref_query,hp_query)
 
+    for k in range(len(PLACE_CHOISE)):
+        if PLACE_CHOISE[k][0] == pref_query:
+            pref_name = PLACE_CHOISE[k][1]
     # image_card(hospital_name) #現状、TwitterCardの連携がうまくできないので(2021.3.6)
 
     context = {
@@ -385,6 +388,7 @@ def individual(request):
         'category_count':category_count, #実習担当者数+レポート数+コミュニケーション数
         'df_date':df_date,
         'pref_query':pref_query,
+        'pref_name':pref_name,
         'related_df':related_df,
         'encode_name':urllib.parse.quote(hospital_name),
     }
