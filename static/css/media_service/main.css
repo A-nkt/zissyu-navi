@@ -1,7 +1,7 @@
 /*SmartPhone*/
 @media screen and (max-width:560px){
   .card {
-    width: 325px;
+    width: 100%;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 3px 6px #ccc;
@@ -32,7 +32,7 @@
     font-size: 24px !important;
   }
   .card-section{
-    width: 97.5%;
+    width: 100%;
   }
   h2{
     color: black !important;
@@ -74,12 +74,12 @@
     color: #818181;
   }
   .card-list {
-      width: calc(100% / 1);
+      width: 100%;
   }
   #cardlayout-wrap::after{
       content: "";
       display: block;
-      width: calc(100% / 1);
+      width: 100%;
   }
   .card:hover {
   	box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
