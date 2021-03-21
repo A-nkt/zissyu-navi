@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/media_service/making_now.css' %}">{% endblock %}
+{% block title %}ホーム{% endblock %}
+{% block meta_description %}
+<meta name="description" content="このページは、現在開発中です。申し訳ありませんが、ご理解いただければ幸いです。">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <h1>申し訳ありません。現在メンテナンス中です。</h1>
+  <div class="img"><img src="{% static 'img/ojigi.png' %}" alt=""></div>
+  <a href="{% url 'main_app:home' %}">トップページに戻る</a>
+</div>
+{% endblock %}

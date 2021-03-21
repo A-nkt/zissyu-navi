@@ -1,0 +1,49 @@
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  .main-content{
+    margin-top: 2.5rem;
+  }
+  img{
+    width: auto;
+    height: 10rem;
+  }
+  .img{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+  }
+}
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+  .main-content{
+    margin-top: 2.5rem;
+  }
+  img{
+    width: auto;
+    height: 15rem;
+  }
+  .img{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+  }
+}
+/*PC*/
+@media screen and (min-width:960px){
+  .main-content{
+    margin-left: 22.5rem;
+    margin-right: 22.5rem;
+  }
+  img{
+    width: auto;
+    height: 15rem;
+  }
+  .img{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+  }
+}
+.main-content{
+  text-align: center;
+}

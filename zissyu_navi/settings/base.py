@@ -37,6 +37,7 @@ DEBUG = False
 INSTALLED_APPS = [
     'main_app',
     'about_me',
+    'media_service',
     'widget_tweaks',#フォームのcssを可変的にする
     'django.contrib.admin',
     'django.contrib.auth',
