@@ -12,7 +12,6 @@
     object-position: 67.5% 0%;
   }
   .img-section {
-    /*width: 100%;*/
     position: relative;
     display:inline-block;
     z-index:0;
@@ -20,14 +19,12 @@
   .img-text-section{
     position: absolute;
     top: 40px;
-    /*max-width: 100%;*/
     max-height: 100%;
     padding-left: 5%;
     text-align: left;
   }
   .header-text{
     color: white;
-    /*-webkit-text-stroke: 0.75px rgb(106,191,176);*/
     text-shadow:2px 2px 0 rgb(106,191,176);
     font-size: 50px;
     font-weight: bold;
