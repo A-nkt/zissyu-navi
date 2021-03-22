@@ -7,6 +7,15 @@
 医療系学生の疑問を解決できるようなメディアです。">
 {% endblock %}
 
+{% block twitter_card %}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@To_Hospee" />
+<meta property="og:url" content="{{ request.get_full_path }}" />
+<meta property="og:title" content="HospeeBlog | 病院実習クチコミサイト" />
+<meta property="og:description" content="HospeeBlogでは、医療系を専攻している学生に向けて入学から卒業まで有意義な情報を発信していきたいと考えています。" />
+<meta property="og:image" content="https://hospeee.com/media/media/Hospee-blog-card.png"/>
+{% endblock %}
+
 {% block content %}
 <div class="main-content">
   <div id="cardlayout-wrap">
