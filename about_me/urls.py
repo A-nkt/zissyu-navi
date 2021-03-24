@@ -4,5 +4,5 @@ from django.urls import path
 app_name="main_app"
 
 urlpatterns = [
-    path('',views.about,name='about'),
+    path('about_us',views.about,name='about'),
 ]

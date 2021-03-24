@@ -1,5 +1,12 @@
 /*SmartPhone*/
 @media screen and (max-width:560px){
+  .main-content{
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    margin-top: 0.25rem;
+    background-color: white;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.12),0 2px 3px 0 rgba(0,0,0,.22);
+  }
   .card {
     width: 100%;
     border-radius: 5px;
@@ -91,6 +98,13 @@
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
+  .main-content{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    background-color: white;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.12),0 2px 3px 0 rgba(0,0,0,.22);
+  }
   .card {
     width: 325px;
     border-radius: 5px;
@@ -183,13 +197,13 @@
 /*PC*/
 @media screen and (min-width:960px){
   .main-content{
-    margin-left: 22.5rem;
-    margin-right: 22.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
     background-color: white;
     box-shadow: 0 0 3px 0 rgba(0,0,0,.12),0 2px 3px 0 rgba(0,0,0,.22);
   }
   .card {
-    width: 325px;
+    width: 355px;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 3px 6px #ccc;
@@ -219,7 +233,7 @@
     color:white !important;
   }
   .card-section{
-    width: 97.5%;
+    width: 1120px;
   }
   h2{
     color: black !important;

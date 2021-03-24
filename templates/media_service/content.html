@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/media_service/content.css' %}">{% endblock %}
+{% block title %}メディア{% endblock %}
+{% block meta_description %}
+<meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)のwebメディアです。
+医療系学生の疑問を解決できるようなメディアです。">
+{% endblock %}
+
+{% block twitter_card %}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@To_Hospee" />
+<meta property="og:url" content="{{ request.get_full_path }}" />
+<meta property="og:title" content="HospeeBlog | 病院実習クチコミサイト" />
+<meta property="og:description" content="HospeeBlogでは、医療系を専攻している学生に向けて入学から卒業まで有意義な情報を発信していきたいと考えています。" />
+<meta property="og:image" content="https://hospeee.com/media/media/Hospee-blog-card.png"/>
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <!--div class="blog-content">
+    <p class="date"><i class="far fa-clock"></i>2021.03.25</p>
+    <h1>副業で稼げない人必見！！今より稼ぐために絶対に知っておくべきコツ5選！</h1>
+
+    <div class="card">
+      <img src="{% static 'img/img1.jpg' %}" class="image">
+    </div>
+
+  </div>
+
+  <div class="blog-sub">
+    <h3>カテゴリー</h3>
+
+  </div-->
+  <div class="wrap">
+    <main>
+      <p class="date"><i class="far fa-clock"></i>2021.03.25</p>
+      <h1>副業で稼げない人必見！！今より稼ぐために絶対に知っておくべきコツ5選！</h1>
+
+      <div class="card">
+        <img src="{% static 'img/img1.jpg' %}" class="image">
+      </div>
+    </main>
+
+  <aside class="right-bar">
+    <!-- 広告スペース -->
+    <!--div class="aside-box aside-ads-box" style="width:310px;height:160px;border: 1px solid black;">
+      <p>広告</p>
+    </div-->
+
+    <div class="aside-prof-box">
+      <div class="aside-inside-box">
+        <h2>プロフィール</h2>
+        <p>当サイト・Hospee(ホスピ―)は、医療系専攻の学生のためのwebサービス・webメディアです<br/>
+          当サイトの詳細は<a href="/hospee/about_us" target="_blank">こちら</a>からどうぞ<br/>
+          医療系学生が入学～就業までの間に抱える悩みを解決するような記事をお届けします。</p>
+      </div>
+    </div>
+
+    <div class="aside-prof-box-p2">
+      <div class="aside-inside-box">
+        <h2>カテゴリー</h2>
+        <div class="cp_ipselect cp_sl01">
+          <select required>
+          	<option value="" hidden>カテゴリーを選択</option>
+          	<option value="1">FXの解説（1）</option>
+          	<option value="2">セミナー（3）</option>
+          	<option value="3">不動産＆不動産投資（100）</option>
+          	<option value="4">資産運用（49）</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="aside-prof-box">
+      <div class="aside-inside-box">
+        <h2>最近30日間の人気記事</h2>
+        <a href="#">
+          <div class="card3">
+            <div class="box3">
+              <img src="{% static 'img/img1.jpg' %}" class="image3">
+                <div><p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 関連コンテンツ -->
+    <div class="aside-box aside-box-link">
+      <!--a href="#" target="_blank">
+        <div class="aside-inside-box related-content-wrap">
+          <img alt="" src="./img/test-image2.png" />
+          <p>
+            JavaScriptの構文を問題としたタイピングゲームを作ってみました。
+          </p>
+        </div>
+      </a-->
+    </div>
+
+    <div class="aside-box aside-box-link">
+      <!--a href="#" target="_blank">
+        <div class="aside-inside-box related-content-wrap">
+          <img alt="" src="./img/test-image2.png" />
+          <p>
+            JavaScriptの構文を問題としたタイピングゲームを作ってみました。
+          </p>
+        </div>
+      </a-->
+    </div>
+
+    <div class="aside-box aside-box-link">
+      <!--a href="#" target="_blank">
+        <div class="aside-inside-box related-content-wrap">
+          <img alt="" src="./img/test-image2.png" />
+          <p>
+            JavaScriptの構文を問題としたタイピングゲームを作ってみました。
+          </p>
+        </div>
+      </a-->
+    </div>
+
+    <!-- 広告スペース -->
+    <!--div class="aside-box aside-ads-box" style="width:310px;height:75px;border: 1px solid black;">
+      <p>広告</p>
+    </div-->
+  </aside>
+</div>
+
+
+</div>
+{% endblock %}

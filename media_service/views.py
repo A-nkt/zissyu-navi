@@ -12,3 +12,7 @@ def main(request):
 
 def making_now(request):
     return render(request,'media_service/making_now.html')
+
+@permission_required('admin.can_add_log_entry')
+def content(request):
+    return render(request,'media_service/content.html')
