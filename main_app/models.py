@@ -1,11 +1,15 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
+from django.utils.translation import gettext as _
 # Create your models here.
 
 class Record(models.Model):
     class Meta:
         db_table = 'Record'
+        verbose_name = _('クチコミ情報')
+        verbose_name_plural = _('クチコミ情報')
+
     SEX_CHOICE = (
                 ('man', '男性'), ('woman', '女性')
             )
@@ -57,6 +61,8 @@ class Record(models.Model):
 class Contact(models.Model):
     class Meta:
         db_table = 'Contact'
+        verbose_name = _('お問い合わせ')
+        verbose_name_plural = _('お問い合わせ')
 
     name = models.CharField(verbose_name='氏名',blank=False,null=False,max_length=100)
     email = models.EmailField(verbose_name='Email',blank=False,null=False)
@@ -71,6 +77,8 @@ class Contact(models.Model):
 class Major(models.Model):
     class Meta:
         db_table = 'Major'
+        verbose_name = _('専攻')
+        verbose_name_plural = _('専攻')
 
     image = models.ImageField(upload_to='media/',blank=False,null=True)
     major_name = models.CharField(verbose_name='専攻名',blank=True,null=True,max_length=100)
@@ -88,6 +96,10 @@ class Category(models.Model):
     def __str__(self):
         return self.category_tag
 
+    class Meta:
+        verbose_name = _('利用規約・プライバシーポリシー　カテゴリー')
+        verbose_name_plural = _('利用規約/プライバシーポリシー：カテゴリー')
+
 class Chapter(models.Model):
     category_tag = models.CharField(verbose_name='カテゴリー',blank=True,null=True,max_length=100)
     chapeter_tag = models.CharField(verbose_name='条',blank=True,null=True,max_length=100)
@@ -97,6 +109,10 @@ class Chapter(models.Model):
     def __str__(self):
         return str(self.chapeter_tag)+'条'+':'+str(self.chapeter_name)
 
+    class Meta:
+        verbose_name = _('利用規約・プライバシーポリシー　章')
+        verbose_name_plural = _('利用規約/プライバシーポリシー：章')
+
 class Article(models.Model):
     article_category = models.ForeignKey(Category, on_delete=models.CASCADE,verbose_name='カテゴリー')
     article_chapter = models.ForeignKey(Chapter,blank=True,null=True, on_delete=models.CASCADE,verbose_name='章')
@@ -105,3 +121,7 @@ class Article(models.Model):
 
     def __str__(self):
         return str(self.article_category)+' '+str(self.article_chapter)+' '+str(self.article_tg)
+
+    class Meta:
+        verbose_name = _('利用規約・プライバシーポリシー　コンテンツ')
+        verbose_name_plural = _('利用規約/プライバシーポリシー：コンテンツ')

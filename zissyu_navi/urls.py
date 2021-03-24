@@ -33,3 +33,8 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}, name='sitemap'),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt',content_type='text/plain')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+#管理者画面カスタマイズ
+admin.site.site_title = 'Hospee'
+admin.site.site_header = 'Hospee管理者ページ'
+admin.site.index_title = 'サイトコンテンツ'
