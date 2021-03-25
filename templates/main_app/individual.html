@@ -14,6 +14,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="main-content">
 <div class="left-wrap">
   <a href="https://twitter.com/share?url=https://hospeee.com&hashtags=hospee" target="_blank">
   <!--a href="https://twitter.com/share?url=https://hospeee.com/list/individual/?pref={{ pref_query }}%26hospital_name={{ encode_name }}&hashtags=hospee" target="_blank"-->
@@ -23,7 +24,7 @@
     <i class="fab fa-facebook-f facebook-icon"></i>
   </a-->
 </div>
-<div class="main-content">
+
   <div class="side-wrap">
     <!--a href="#">
       <div class="ads-group">
@@ -58,7 +59,7 @@
       {% endfor %}
     </div>
   </div>
-
+  <main>
   <h1><div class="header-tab">
     <p class="header-top">病院評価スコア - </p>
     <p class="header-sub">{{ hospital_name }}</p>
@@ -179,6 +180,7 @@
     </a>
     {% endif %}
   </div>
+  </main>
 
   <div class="left-wrap2">
     <a href="https://twitter.com/share?url=https://hospeee.com&hashtags=hospee" target="_blank">

@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block css_file %}<link rel="stylesheet" href="{% static 'css/main_app/user_list.css' %}">{% endblock %}
+{% block css_file %}
+<link rel="stylesheet" href="{% static 'css/main_app/user_list.css' %}">
+{% endblock %}
 {% block title %}{{ hospital_name }}のクチコミ一覧{% endblock %}
 {% block meta_description %}<meta name="description" content="{{ hospital_name }}のクチコミ一覧">{% endblock %}
 
@@ -33,6 +35,7 @@
       {% endfor %}
     </div>
   </div>
+  <main>
   <h2><div class="header-tab">
     <p class="header-top">{{ hospital_name }}</p>
     <div class="star-category" id="star-all">
@@ -114,6 +117,7 @@
       {% endfor %}
     </ul>
   </div>
+
 
   <div class="paginator">
     {% if about != "" %}
@@ -210,7 +214,7 @@
       </div>
     </a>
   </div>
-
+  </main>
   <div class="side-wrap2">
     <!--p class="advertise">広告枠</p-->
     <div class="recommend">

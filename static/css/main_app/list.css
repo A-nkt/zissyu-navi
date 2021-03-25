@@ -842,8 +842,9 @@
     display: none;
   }
   .main-content{
-    padding-left: 22vw;
-    padding-right: 12em;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-left: 10rem;
   }
   .side-wrap{
     width: 15em !important;

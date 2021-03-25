@@ -450,12 +450,16 @@
 /*PC*/
 @media screen and (min-width:960px){
   .main-content{
-    padding-top: 1vw;
+    /*padding-top: 1vw;
     padding-left: 22vw;
-    padding-right: 12em;
+    padding-right: 12em;*/
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: white;
+    padding-left: 5rem;
   }
   .side-wrap{
-    width: 15em !important;
+    width: 15rem !important;
     float: right;
     margin-left: 10px;
   }
@@ -470,7 +474,7 @@
     margin-top: 10px;
     padding-top: 10px;
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.33);
-    width:70%;
+    width:67.5%;
     height:220px;
     border:2.5px solid rgb(106,191,176,0.6);;
   }
@@ -492,11 +496,14 @@
     display: none;
   }
   .left-wrap{
-    width: 3vw;
+    width: 4rem;
     float: left;
-    margin-left: 16vw;
+    /*margin-left: 16vw;*/
     position: fixed;
-    margin-top: 10vw;
+    margin-top: 12.5rem;
+  }
+  main{
+    padding-left: 7.5rem;
   }
   .twitter-icon,.facebook-icon{
     font-size: 1.5em;
@@ -524,7 +531,7 @@
   }
   #nav li {
     color:gray;
-    width: 30em;
+    width: 22.5rem;
     margin:5px; padding:10px;
     border:2px solid rgb(106,191,176,0.7);
     border-radius: 30px;
@@ -532,7 +539,7 @@
     padding-left: 3%;
   }
   .nav-com {
-    width:35em !important;
+    width:25rem !important;
   }
   #nav li:hover{
     background-color:rgb(76,161,146,0.7);
@@ -713,9 +720,13 @@
     border:2px solid rgb(106,191,176);
     padding: 10px;
     border-radius: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     margin-bottom: 15px;
     margin-top:10px;
+  }
+  .rcd-content{
+    overflow:hidden;
+    text-overflow: ellipsis;
   }
   .recommend{
     width : 100% ;

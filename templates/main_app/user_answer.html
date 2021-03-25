@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block css_file %}<link rel="stylesheet" href="{% static 'css/main_app/user_answer.css' %}">{% endblock %}
+{% block css_file %}
+<link rel="stylesheet" href="{% static 'css/main_app/user_answer.css' %}">
+{% endblock %}
 {% block title %}{{ hospital_name }}の投稿者別口コミ{% endblock %}
 {% block meta_description %}<meta name="description" content="{{ hospital_name }}のクチコミ">{% endblock %}
 
 {% block content %}
+<div class="main-content">
 <div class="left-wrap">
   <a href="https://twitter.com/share?url=https://hospeee.com&hashtags=hospee" target="_blank">
     <i class="fab fa-twitter twitter-icon"></i>
@@ -13,7 +16,6 @@
     <i class="fab fa-facebook-f facebook-icon"></i>
   </a-->
 </div>
-<div class="main-content">
   <div class="side-wrap">
     <!--p class="advertise">広告枠</p-->
     <div class="recommend">
@@ -41,6 +43,7 @@
       {% endfor %}
     </div>
   </div>
+  <main>
   <div class="header-tab">
     <h2><p class="header-top">{{ hospital_name }}</p></h2>
     <div class="star-category" id="star-all">
@@ -161,6 +164,7 @@
     </ul>
   </div>
   {% endif %}
+  </main>
 
   <div class="side-wrap2">
     <!--p class="advertise">広告枠</p-->
