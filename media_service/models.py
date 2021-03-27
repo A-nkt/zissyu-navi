@@ -10,7 +10,7 @@ class Article(models.Model):
         verbose_name = _('メディア記事')
         verbose_name_plural = _('メディア記事')
 
-    title = models.CharField(verbose_name='タイトル',max_length=50,blank=True,null=True)
+    title = models.CharField(verbose_name='タイトル',max_length=40,blank=True,null=True)
     image = models.ImageField(upload_to='media/',blank=True,null=True)
     body = RichTextField(blank=True,null=True)
     date = models.DateField(verbose_name='更新日',blank=True,null=True,default=timezone.now)
