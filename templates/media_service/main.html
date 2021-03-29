@@ -23,6 +23,18 @@
       <h1 class="card-h1">New</h1>
     </section>
 
+    {% for post in posts %}
+    <section class="card-list">
+      <a class="card-link" href="/blog/article/{{ post.id }}" target="_blank">
+        <div class="card">
+          <img src="{% static 'img/img1.jpg' %}" class="image">
+          <h2 class="title">{{ post.title }}</h2>
+          <p class="date"><i class="far fa-clock"></i>{{ post.date }}</p>
+        </div>
+      </a>
+    </section>
+    {% endfor %}
+    <!--
     <section class="card-list">
       <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
         <div class="card">
@@ -136,7 +148,7 @@
         </div>
       </a>
     </section>
-
+    -->
 </div>
 
 </div>
