@@ -37,25 +37,6 @@
     margin-left: 0.5em;
     margin-top: -1em;
   }
-  /*.midashi {
-    position: relative;
-    padding: 0.5em;
-    background: #a6d3c8;
-    color: white;
-    float: left;
-    margin-bottom: 30px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .midashi:before {
-    position: absolute;
-    content: '';
-    top: 100%;
-    left: 0;
-    border: none;
-    border-bottom: solid 15px transparent;
-    border-right: solid 20px rgb(149, 158, 155);
-  }*/
   .hospital-wrap{
     float: left;
     width: 100%;
@@ -842,15 +823,9 @@
     display: none;
   }
   .main-content{
-    max-width: 1160px;
+    max-width: 1160px !important;
     margin: 0 auto;
     padding-left: 10rem;
-  }
-  .side-wrap{
-    width: 15em !important;
-    float: right;
-    margin-left: 10px;
-    margin-top: -6em;
   }
   .recommend{
     width : 100% ;
@@ -877,6 +852,10 @@
   .hospital-wrap-g{
     margin-top: 100px;
   }
+  .hospital-wrap-fake{
+    float: left;
+    width: 44rem;
+  }
 
   .hospital-wrap{
     float: left;
@@ -896,8 +875,11 @@
     color: black;
     margin-bottom: 100px;
   }
-  #if-none{
-    height: 800px;
+  .side-wrap{
+    width: 15em !important;
+    float: right;
+    margin-left: 10px;
+    margin-top: -6em;
   }
 
   .hospital-content{
@@ -1205,7 +1187,7 @@
   .search_container input[type="text"]{
     background: rgb(106,191,176,0.3);
     border: none;
-    height: 3.1em;
+    height: 3.1rem;
     font-size: 0.95em;
     padding-right: 1em;
   }
@@ -1220,7 +1202,7 @@
     background: rgb(106,191,176,0.9);
     color: white;
     outline : none;
-    height: 3.3em;
+    height: 3.2rem;
     font-size: 0.95em;
   }
   .search_container ::-webkit-input-placeholder {
