@@ -10,11 +10,11 @@ class Blog(models.Model):
         verbose_name = _('メディア記事')
         verbose_name_plural = _('メディア記事')
 
-    title = models.CharField(verbose_name='タイトル',max_length=40,blank=True,null=True)
-    image = models.ImageField(upload_to='media/',blank=True,null=True)
-    body = RichTextField(blank=True,null=True)
-    date = models.DateField(verbose_name='更新日',blank=True,null=True,default=timezone.now)
-    discription = models.TextField(blank=True,null=True,max_length=50)
+    title = models.CharField(verbose_name='タイトル',max_length=40,blank=True,null=False)
+    image = models.ImageField(upload_to='media/',blank=True,null=False)
+    body = RichTextField(blank=True,null=False)
+    date = models.DateField(verbose_name='更新日',blank=True,null=False,default=timezone.now)
+    discription = models.TextField(blank=True,null=False,max_length=50)
 
     def __str__(self):
         template = '更新日：'+'{0.date} '+',　タイトル：'+'{0.title}'
