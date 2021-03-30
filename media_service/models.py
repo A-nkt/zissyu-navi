@@ -17,5 +17,5 @@ class Blog(models.Model):
     discription = models.TextField(blank=True,null=False,max_length=300)
 
     def __str__(self):
-        template = '更新日：'+'{0.date} '+',　タイトル：'+'{0.title}'
+        template = 'タイトル：'+'{0.title}'+',　更新日：'+'{0.date}'
         return template.format(self)
