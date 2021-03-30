@@ -23,10 +23,28 @@
       <p class="date"><i class="far fa-clock"></i>{{ post.date }}</p>
       <h1>{{ post.title }}</h1>
       <div class="card">
-        <!--img src="{% static 'img/img1.jpg' %}" class="image"-->
         <img src="/media/{{ post.image }}" class="image">
       </div>
-    {{ post.body | safe }}
+      <ul class="shareList">
+        <li class="shareList__item">
+          <a class="shareList__link icon-twitter" href="https://twitter.com/share?url={{ request.get_full_path }}&via=To_Hospee&text={{ post.title }}" rel="nofollow" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="shareList__item">
+          <a class="shareList__link icon-facebook" href="http://www.facebook.com/share.php?u={{ request.get_full_path }}" rel="nofollow" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="shareList__item">
+          <a class="shareList__link icon-line" href="http://line.me/R/msg/text/?{{ request.get_full_path }}" target="_blank" title="Line">
+            <i class="fab fa-line"></i>
+          </a>
+        </li>
+      </ul>
+      <div class="body-content">
+        {{ post.body | safe }}
+      </div>
     </main>
 
   <aside class="right-bar">
