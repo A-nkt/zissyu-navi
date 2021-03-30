@@ -24,7 +24,7 @@
       <h1>{{ post.title }}</h1>
       <div class="card">
         <!--img src="{% static 'img/img1.jpg' %}" class="image"-->
-        <img src="{{ post.image }}" class="image">
+        <img src="/media/{{ post.image }}" class="image">
       </div>
     {{ post.body | safe }}
     </main>

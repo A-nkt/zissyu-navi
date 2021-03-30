@@ -28,7 +28,7 @@
       <a class="card-link" href="{% url 'media_service:content_url' post.id %}" target="_blank">
         <div class="card">
           <!-- img src="{% static 'img/img1.jpg' %}" -->
-          <img src="{{ post.image }}" class="image">
+          <img src="/media/{{ post.image }}" class="image">
           <h2 class="title">{{ post.title }}</h2>
           <p class="date"><i class="far fa-clock"></i>{{ post.date }}</p>
         </div>
