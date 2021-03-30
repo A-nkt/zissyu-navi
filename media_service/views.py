@@ -8,6 +8,9 @@ import requests
 from .models import Blog
 
 # Create your views here.
+def making_now(request):
+    return render(request,'media_service/making_now.html')
+
 @permission_required('admin.can_add_log_entry')
 def main(request):
     posts = Blog.objects.all()
@@ -17,9 +20,6 @@ def main(request):
         'posts':Blog.objects.all(),
     }
     return render(request,'media_service/main.html',context)
-
-def making_now(request):
-    return render(request,'media_service/making_now.html')
 
 @permission_required('admin.can_add_log_entry')
 def content(request,id):
