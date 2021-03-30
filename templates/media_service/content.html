@@ -10,10 +10,10 @@
 {% block twitter_card %}
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@To_Hospee" />
-<meta property="og:url" content="https://hospeee.com/media{{ post.image.url }}" />
+<meta property="og:url" content="https://hospeee.com/media/{{ post.image }}" />
 <meta property="og:title" content="HospeeBlog | 病院実習クチコミサイト" />
 <meta property="og:description" content="{{ post.discription }}" />
-<meta property="og:image" content="https://hospeee.com/media{{ post.image.url }}"/>
+<meta property="og:image" content="https://hospeee.com/media/{{ post.image }}"/>
 {% endblock %}
 
 {% block content %}

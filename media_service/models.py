@@ -14,7 +14,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='media/',blank=True,null=False)
     body = RichTextField(blank=True,null=False)
     date = models.DateField(verbose_name='更新日',blank=True,null=False,default=timezone.now)
-    discription = models.TextField(blank=True,null=False,max_length=50)
+    discription = models.TextField(blank=True,null=False,max_length=300)
 
     def __str__(self):
         template = '更新日：'+'{0.date} '+',　タイトル：'+'{0.title}'
