@@ -10,53 +10,23 @@
 {% block twitter_card %}
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@To_Hospee" />
-<meta property="og:url" content="{{ request.get_full_path }}" />
+<meta property="og:url" content="https://hospeee.com/media{{ post.image.url }}" />
 <meta property="og:title" content="HospeeBlog | 病院実習クチコミサイト" />
-<meta property="og:description" content="HospeeBlogでは、医療系を専攻している学生に向けて入学から卒業まで有意義な情報を発信していきたいと考えています。" />
-<meta property="og:image" content="https://hospeee.com/media/media/Hospee-blog-card.png"/>
+<meta property="og:description" content="{{ post.discription }}" />
+<meta property="og:image" content="https://hospeee.com/media{{ post.image.url }}"/>
 {% endblock %}
 
 {% block content %}
 <div class="main-content">
   <div class="wrap">
     <main>
-      <p class="date"><i class="far fa-clock"></i>2021.03.25</p>
-      <h1>副業で稼げない人必見！！今より稼ぐために絶対に知っておくべきコツ5選！</h1>
-
+      <p class="date"><i class="far fa-clock"></i>{{ post.date }}</p>
+      <h1>{{ post.title }}</h1>
       <div class="card">
-        <img src="{% static 'img/img1.jpg' %}" class="image">
+        <!--img src="{% static 'img/img1.jpg' %}" class="image"-->
+        <img src="{{ post.image }}" class="image">
       </div>
-
-      <p><span style="color: #33cccc;"><strong>もふもふ不動産</strong></span>もふです。</p>
-      <p><span data-rich-text-format-boundary="true">僕は<a href="https://www.youtube.com/channel/UCsWTZ4nYODCwlE8rdv7DZzA">YouTube</a>で</span><span data-rich-text-format-boundary="true">登録者数27万人を超える「もふもふ不動産」のチャンネルを運営しており、</span><a href="https://twitter.com/mofmof_investor">Twitter</a>の登録者数についても、7.5万人を超えています。</p>
-      <p>さて、これからの時代、自分自身の力でお金を稼いでいくことが必要だと感じている方は大勢いらっしゃると思います。</p>
-      <p>僕自身も、リーマンショックで会社が倒産しかけたことをきっかけに、自分でお金を稼がな <br>ければいけないと自覚しました。</p>
-      <p>自分で稼ぎたいと思い、不動産投資や株式投資、ブログにYoutubeと様々なことを試してきましたが、成果が出始めたのはつい最近になってのことです。</p>
-      <p>2008年から試行錯誤を繰り返してきたわけですが、副業でお金を稼ぐ場合に絶対にやっておかないといけないことがあることを皆さんはご存知でしょうか。</p>
-      <p>僕はそのことを知らなかったので、ずっと遠回りをしてきました。</p>
-      <p>しかし、これから副業を始める皆さんには、最短距離を駆け抜けて欲しいと思います。</p>
-      <p>ちなみに、役立つ情報を発信してそこから収益を得ており、何か怪しい物を売って儲けている訳ではないですので、安心してくださいね。</p>
-      <p>そういった僕の経験を踏まえ、集大成として絶対に知っておいて欲しいことを5つ、まとめてみました。</p>
-      <h2><span id="i">目標を書き出す</span></h2>
-      <div class="cbox intitle is-style-green_box type_normal"><div class="box_title"><span class="span__box_title">目標の具体例</span></div>
-<ul>
-<li>会社だけでなく自分の力で稼ぎたい</li>
-<li>時間的に余裕が欲しい</li>
-<li>月にこれくらい稼ぎたい</li></ul></div>
-<p>上記のような目標を<span style="background-color: #ffc6d1;"><span style="font-size: 14pt;"><strong>書いて明確にすることが重要</strong></span></span>です。</p>
-<p>そして、<span style="background-color: #ffc6d1;"><span style="font-size: 14pt;"><strong>なぜそれが欲しいのか</strong></span></span>も書き出してみましょう。</p>
-<p>理由を書き出すことによって、その目標がより具体的になっていきます。</p>
-<p>冒頭でも述べた通り、僕は2008年から副業で稼ぐことを目的に行動していた訳ですが、僕は中々書き出すことをしませんでした。</p>
-<p>2005年くらいに、ワタミの社長が出版されている「夢に日付を！」も購入して読んだこともあったにも関わらず、です。</p>
-<div class="cbox intitle is-style-green_box type_normal"><div class="box_title"><span class="span__box_title">あわせて読みたい</span></div>
-<ul>
-<li><a href="https://allabout.co.jp/gm/gc/291293/" target="_blank" rel="noopener noreferrer">ワタミ　渡邉美樹社長の手帳術とは（引用元：All About）</a></li></ul></div>
-<p>周りの人からも「書いた方が良いよ」とは言われていたものの「書くだけで効果なんてないだろう」と考え、その重要性を軽視していたんですね。</p>
-<p>ただ、実際に書き出して<span style="background-color: #ffc6d1;"><span style="font-size: 14pt;"><strong>潜在意識を変えることが目的</strong></span></span>なのです。</p>
-
-<p>その結果として、<span style="background-color: #ffc6d1;"><span style="font-size: 14pt;"><strong>行動が変わってきます</strong></span></span>。</p>
-
-
+    {{ post.body | safe }}
     </main>
 
   <aside class="right-bar">

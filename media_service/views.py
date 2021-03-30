@@ -13,9 +13,6 @@ def making_now(request):
 
 @permission_required('admin.can_add_log_entry')
 def main(request):
-    posts = Blog.objects.all()
-    for post in posts:
-        print(post.id,type(post.id))
     context = {
         'posts':Blog.objects.all(),
     }
@@ -23,5 +20,7 @@ def main(request):
 
 @permission_required('admin.can_add_log_entry')
 def content(request,id):
-    post = Blog.objects.all().filter(id=id)
-    return render(request,'media_service/content.html', {'post': post})
+    context = {
+        'post':Blog.objects.get(id=id)
+    }
+    return render(request,'media_service/content.html',context)

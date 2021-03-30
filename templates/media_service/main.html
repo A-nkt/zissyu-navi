@@ -25,130 +25,16 @@
 
     {% for post in posts %}
     <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' id=post.id %}" target="_blank">
+      <a class="card-link" href="{% url 'media_service:content_url' post.id %}" target="_blank">
         <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
+          <!-- img src="{% static 'img/img1.jpg' %}" -->
+          <img src="{{ post.image }}" class="image">
           <h2 class="title">{{ post.title }}</h2>
           <p class="date"><i class="far fa-clock"></i>{{ post.date }}</p>
         </div>
       </a>
     </section>
     {% endfor %}
-    <!--
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">おすすめガジェット系YouTuber9選とYouTuberになるためのポイント5つを徹底解説</h2>
-          <p class="date"><i class="far fa-clock"></i>2021.03.25</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">【2021年最新】YouTubeのアルゴリズムを徹底解説！関連動画も攻略可能</h2>
-          <p class="date"><i class="far fa-clock"></i>2020.08.23</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">レディース・メンズ別おすすめファッション系YouTuber6選とYouTuberになるためのポイントを徹底解説</h2>
-          <p class="date"><i class="far fa-clock"></i>2019.07.21</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">もふ社長の怖くてやさしい投資相談室が連載スタート！｜東京海上日動あんしん生命</h2>
-          <p class="date"><i class="far fa-clock"></i>2021.03.09</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">リリース配信のお知らせ「Youtubeの学校」がスタートしました
-            リリース配信のお知らせ「Youtubeの学校」がスタートしました
-          リリース配信のお知ら</h2>
-          <p class="date"><i class="far fa-clock"></i>2021.03.09</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">不動産投資の節税方法を不動産投資家が初心者にわかりやすく解説</h2>
-          <p class="date"><i class="far fa-clock"></i>2021.03.09</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">レディース・メンズ別おすすめファッション系YouTuber6選とYouTuberになるためのポイントを徹底解説</h2>
-          <p class="date"><i class="far fa-clock"></i>2021.03.09</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">もふ社長の怖くてやさしい投資相談室が連載スタート！｜東京海上日動あんしん生命</h2>
-          <p class="date"><i class="far fa-clock"></i>2020.10.14</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">リリース配信のお知らせ「Youtubeの学校」がスタートしました
-            リリース配信のお知らせ「Youtubeの学校」がスタートしました
-          リリース配信のお知ら</h2>
-          <p class="date"><i class="far fa-clock"></i>2021.10.14</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">不動産投資の節税方法を不動産投資家が初心者にわかりやすく解説</h2>
-          <p class="date"><i class="far fa-clock"></i>2021.11.10</p>
-        </div>
-      </a>
-    </section>
-
-    <section class="card-list">
-      <a class="card-link" href="{% url 'media_service:content_url' %}" target="_blank">
-        <div class="card">
-          <img src="{% static 'img/img1.jpg' %}" class="image">
-          <h2 class="title">Title</h2>
-          <p class="date"><i class="far fa-clock"></i>2021.09.19</p>
-        </div>
-      </a>
-    </section>
-    -->
 </div>
 
 </div>
