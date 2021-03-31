@@ -1,5 +1,5 @@
 # 運用にあたり
-- <span color="red">単月の黒字化</span>
+- <span style="color:red;">単月の黒字化</span>
 - public repositoryにする際は、.envを環境から外す
 # メディアサービス
 ## 記事コンテンツの作成方法
