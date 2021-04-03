@@ -3,8 +3,7 @@
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/media_service/content.css' %}">{% endblock %}
 {% block title %}メディア{% endblock %}
 {% block meta_description %}
-<meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)のwebメディアです。
-医療系学生の疑問を解決できるようなメディアです。">
+<meta name="description" content="{{ post.discription }}">
 {% endblock %}
 
 {% block twitter_card %}
@@ -27,17 +26,17 @@
       </div>
       <ul class="shareList">
         <li class="shareList__item">
-          <a class="shareList__link icon-twitter" href="https://twitter.com/share?url={{ request.get_full_path }}&via=To_Hospee&text={{ post.title }}" rel="nofollow" target="_blank" title="Twitter">
+          <a class="shareList__link icon-twitter" href="https://twitter.com/share?url=https://hospeee.com{{ request.get_full_path }}&via=To_Hospee&text={{ post.title }}" rel="nofollow" target="_blank" title="Twitter">
             <i class="fab fa-twitter"></i>
           </a>
         </li>
         <li class="shareList__item">
-          <a class="shareList__link icon-facebook" href="http://www.facebook.com/share.php?u={{ request.get_full_path }}" rel="nofollow" target="_blank" title="Facebook">
+          <a class="shareList__link icon-facebook" href="http://www.facebook.com/share.php?u=https://hospeee.com{{ request.get_full_path }}" rel="nofollow" target="_blank" title="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
         </li>
         <li class="shareList__item">
-          <a class="shareList__link icon-line" href="http://line.me/R/msg/text/?{{ request.get_full_path }}" target="_blank" title="Line">
+          <a class="shareList__link icon-line" href="http://line.me/R/msg/text/?https://hospeee.com{{ request.get_full_path }}" target="_blank" title="Line">
             <i class="fab fa-line"></i>
           </a>
         </li>
@@ -80,7 +79,7 @@
     <div class="aside-prof-box">
       <div class="aside-inside-box">
         <h3>最近30日間の人気記事</h3>
-        <a href="#">
+	<a href="#">
           <div class="card3">
             <div class="box3">
               <img src="{% static 'img/img1.jpg' %}" class="image3">
@@ -206,47 +205,23 @@
     <div class="aside-prof-box-p3">
       <div class="aside-inside-box">
         <h3>最新の記事</h3>
-        <a href="#">
+	{% for relate in relations  %}
+	<a href="#">
           <div class="card4">
             <div class="box4">
               <div>
                 <p class="title4">
-                  副業で稼げない人必見！！今より稼ぐために絶対に知っておくべきコツ5選！<br>
-                  <i class="far fa-clock"></i>2021.03.25
+                 {{ relate.title  }}<br>
+		 <i class="far fa-clock"></i>{{ relate.date  }}
                 </p>
               </div>
             </div>
           </div>
         </a>
-
-        <a href="#">
-          <div class="card4">
-            <div class="box4">
-              <div>
-                <p class="title4">
-                  副業で稼げない人必見！！今より稼ぐために絶対に知っておくべきコツ5選！<br>
-                  <i class="far fa-clock"></i>2021.03.25
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="card4">
-            <div class="box4">
-              <div>
-                <p class="title4">
-                  副業で稼げない人必見！！今より稼ぐために絶対に知っておくべきコツ5選！<br>
-                  <i class="far fa-clock"></i>2021.03.25
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-
+	{% endfor  %}
       </div>
     </div>
+
 
     <div class="aside-box aside-box-link">
       <!--a href="#" target="_blank">

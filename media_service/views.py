@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django_pandas.io import read_frame
 from django.contrib.auth.models import User
+from django.db.models import Q
 # Public Python
 import requests
 #Private Django
@@ -20,13 +21,14 @@ def main(request):
     except: #ユーザー認証がない時
         return redirect('/host-admin')
     context = {
-        'posts':Blog.objects.all(),
+        'posts':Blog.objects.order_by('date').reverse(),
     }
     return render(request,'media_service/main.html',context)
 
 @permission_required('admin.can_add_log_entry')
 def content(request,id):
     context = {
-        'post':Blog.objects.get(id=id)
+        'post':Blog.objects.get(id=id),
+        'relations':Blog.objects.filter(~Q(id=id)).order_by('date').reverse(),
     }
     return render(request,'media_service/content.html',context)
