@@ -856,3 +856,6 @@ ul{
   text-decoration: underline; /* 併記しておくほうがベター */
   color: rgb(246,180,105);
 }
+main{
+color:rgb(0,0,0,0.65);
+}
