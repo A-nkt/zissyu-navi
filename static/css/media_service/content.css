@@ -115,11 +115,19 @@
     text-align: center;
     border: none;
   }
-  h2{
+  h3{
     background-color: rgb(106,191,176);
     color: white !important;
     padding: 0.5rem;
     font-size: 1rem !important;
+  }
+  h2{
+    background-color: rgb(106,191,176);
+    color: white !important;
+    padding: 1rem;
+    font-size: 1.25rem !important;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
   .cp_ipselect {
   	overflow: hidden;
@@ -334,11 +342,19 @@
     text-align: center;
     border: none;
   }
-  h2{
+  h3{
     background-color: rgb(106,191,176);
     color: white !important;
     padding: 0.5rem;
     font-size: 1rem !important;
+  }
+  h2{
+    background-color: rgb(106,191,176);
+    color: white !important;
+    padding: 1rem;
+    font-size: 1.5rem !important;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
   .cp_ipselect {
   	overflow: hidden;
@@ -553,11 +569,19 @@
     text-align: center;
     border: none;
   }
-  h2{
+  h3{
     background-color: rgb(106,191,176);
     color: white !important;
     padding: 0.5rem;
     font-size: 1rem !important;
+  }
+  h2{
+    background-color: rgb(106,191,176);
+    color: white !important;
+    padding: 1rem;
+    font-size: 1.5rem !important;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
   .cp_ipselect {
   	overflow: hidden;

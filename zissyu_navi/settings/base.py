@@ -134,6 +134,7 @@ USE_L10N = True
 USE_TZ = True
 
 SITE_ID = 1
+LOGOUT_REDIRECT_URL = 'main_app:home'
 
 
 ##################
