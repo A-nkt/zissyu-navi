@@ -35,6 +35,7 @@ DEBUG = False
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor_uploader',
     'ckeditor',
     'main_app',
     'about_me',
@@ -155,6 +156,10 @@ GOOGLE_RECAPTCHA_SECRET_KEY = env('RECAPTCHA_SECRET_KEY')
 #)
 STATIC_ROOT = '/var/www/mysite'
 
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
+CKEDITOR_IMAGE_BACKEND = "pillow"
 
 #MEDIA_URL = '/media/'
 #MEDIA_ROOT = '/var/www/mysite/media'

@@ -32,6 +32,7 @@ urlpatterns = [
     path('hospee/',include('about_me.urls')),
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}, name='sitemap'),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt',content_type='text/plain')),
+    path('ckeditor/', include('ckeditor_uploader.urls'))
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 #管理者画面カスタマイズ
