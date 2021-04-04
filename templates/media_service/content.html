@@ -67,10 +67,10 @@
         <div class="cp_ipselect cp_sl01">
           <form method="POST">
             {% csrf_token %}
-            <select required>
+            <select required onChange="location.href=value;">
             	<option value="">カテゴリーを選択</option>
               {% for post in category %}
-              	<option value="{{ forloop.counter }}">{{ post.category }} （{{ post.counter }}）</option>
+              	<option value="/blog/category?select={{ post.category }}">{{ post.category }} （{{ post.counter }}）</option>
               {% endfor %}
             </select>
           </form>

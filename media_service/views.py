@@ -25,7 +25,6 @@ def main(request):
     }
     return render(request,'media_service/main.html',context)
 
-@permission_required('admin.can_add_log_entry')
 def content(request,id):
     #閲覧数カウンター
     main_post = Blog.objects.get(id=id)
@@ -36,14 +35,26 @@ def content(request,id):
     for category in categorys:
         count = Blog.objects.all().filter(category=category)
         BlogCategory.objects.all().filter(category=category).update(counter=len(count))
-    if request.method == 'GET':
-        print("GET")
-    elif request.method == 'POST':
-        print("POST")
+
     context = {
         'post':Blog.objects.get(id=id),
-        'relations':Blog.objects.filter(~Q(id=id),is_public=True).order_by('date').reverse(),#最新記事
-        'ranking_post':Blog.objects.filter(~Q(id=id),is_public=True).order_by('views').reverse()[:10],#人気記事 10件
+        'relations':Blog.objects.filter(~Q(id=id),is_public=True).order_by('date').reverse(), #最新記事
+        'ranking_post':Blog.objects.filter(~Q(id=id),is_public=True).order_by('views').reverse()[:10], #人気記事 10件
         'category':BlogCategory.objects.all(),
     }
     return render(request,'media_service/content.html',context)
+
+def category(request):
+    category = request.GET['select']
+
+    categorys = BlogCategory.objects.all()
+    df = read_frame(categorys)
+    for i in range(len(df)):
+        if category == df.loc[i,'category']:
+            id = df.loc[i,'id']
+
+    context = {
+        'posts':Blog.objects.filter(is_public=True,category=id).order_by('date').reverse(),
+        'category':category,
+    }
+    return render(request,'media_service/category.html',context)
