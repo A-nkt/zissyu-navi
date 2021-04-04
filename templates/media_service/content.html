@@ -65,12 +65,15 @@
       <div class="aside-inside-box">
         <h3>カテゴリー</h3>
         <div class="cp_ipselect cp_sl01">
-          <select required>
-          	<option value="">カテゴリーを選択</option>
-            {% for post in category %}
-            	<option value="1">{{ post.category }} （{{ post.counter }}）</option>
-            {% endfor %}
-          </select>
+          <form method="POST">
+            {% csrf_token %}
+            <select required>
+            	<option value="">カテゴリーを選択</option>
+              {% for post in category %}
+              	<option value="{{ forloop.counter }}">{{ post.category }} （{{ post.counter }}）</option>
+              {% endfor %}
+            </select>
+          </form>
         </div>
       </div>
     </div>

@@ -36,7 +36,10 @@ def content(request,id):
     for category in categorys:
         count = Blog.objects.all().filter(category=category)
         BlogCategory.objects.all().filter(category=category).update(counter=len(count))
-        
+    if request.method == 'GET':
+        print("GET")
+    elif request.method == 'POST':
+        print("POST")
     context = {
         'post':Blog.objects.get(id=id),
         'relations':Blog.objects.filter(~Q(id=id),is_public=True).order_by('date').reverse(),#最新記事

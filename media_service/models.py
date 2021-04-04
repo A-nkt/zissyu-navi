@@ -25,7 +25,7 @@ class Blog(models.Model):
         verbose_name_plural = _('メディア記事')
 
     title = models.CharField(verbose_name='タイトル',max_length=40,blank=True,null=False)
-    category = models.ForeignKey(BlogCategory,blank=True,null=True, on_delete=models.CASCADE)
+    category = models.ManyToManyField(BlogCategory,blank=True,null=True)
     image = models.ImageField(upload_to='media/',blank=True,null=False)
     body = RichTextUploadingField(blank=True,null=False)
     date = models.DateField(verbose_name='更新日',blank=True,null=False,default=timezone.now)
