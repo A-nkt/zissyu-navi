@@ -11,7 +11,6 @@
     margin: auto;
     max-width: 460px;
     padding-right: 1rem;
-
   }
   .image {
     width: 100%;
@@ -28,9 +27,9 @@
   .right-bar {
     width: 310px;
     margin: 10px auto;
+    margin-bottom: 500px !important;
+    background-color: red;
   }
-
-  /* サイドバーのプロフィール部分 */
   .aside-prof-box {
     width: 310px;
     margin-top: 25px;
@@ -61,7 +60,6 @@
     line-height: 22px;
   }
 
-  /* 固定される部分のサイドバー */
   .aside-box {
     width: 310px;
     margin-bottom: 20px;
