@@ -66,11 +66,10 @@
         <h3>カテゴリー</h3>
         <div class="cp_ipselect cp_sl01">
           <select required>
-          	<option value="" hidden>カテゴリーを選択</option>
-          	<option value="1">FXの解説（1）</option>
-          	<option value="2">セミナー（3）</option>
-          	<option value="3">不動産＆不動産投資（100）</option>
-          	<option value="4">資産運用（49）</option>
+          	<option value="">カテゴリーを選択</option>
+            {% for post in category %}
+            	<option value="1">{{ post.category }} （{{ post.counter }}）</option>
+            {% endfor %}
           </select>
         </div>
       </div>
@@ -79,125 +78,19 @@
     <div class="aside-prof-box">
       <div class="aside-inside-box">
         <h3>最近30日間の人気記事</h3>
-	<a href="#">
+        {% for post in ranking_post %}
+	       <a href="/blog/{{ post.id }}">
           <div class="card3">
             <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
+              <img src="/media/{{ post.image }}" class="image3">
                 <div>
-                  <p class="number">1</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
+                  <p class="number">{{ forloop.counter }}</p>
+                  <p class="title3">{{ post.title }}</p>
                 </div>
             </div>
           </div>
         </a>
-
-        <a href="#">
-          <div class="card3">
-            <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
-                <div>
-                  <p class="number">2</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
-                </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="card3">
-            <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
-                <div>
-                  <p class="number">3</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
-                </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="card3">
-            <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
-                <div>
-                  <p class="number">4</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
-                </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="card3">
-            <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
-                <div>
-                  <p class="number">5</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
-                </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="card3">
-            <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
-                <div>
-                  <p class="number">6</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
-                </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="card3">
-            <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
-                <div>
-                  <p class="number">7</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
-                </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="card3">
-            <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
-                <div>
-                  <p class="number">8</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
-                </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="card3">
-            <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
-                <div>
-                  <p class="number">9</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
-                </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="card3">
-            <div class="box3">
-              <img src="{% static 'img/img1.jpg' %}" class="image3">
-                <div>
-                  <p class="number">10</p>
-                  <p class="title3">初心者におすすめの不動産投資の本5冊！不動産投資家が厳選！</p>
-                </div>
-            </div>
-          </div>
-        </a>
+        {% endfor %}
       </div>
     </div>
 
@@ -205,20 +98,20 @@
     <div class="aside-prof-box-p3">
       <div class="aside-inside-box">
         <h3>最新の記事</h3>
-	{% for relate in relations  %}
-	<a href="#">
+	       {% for relate in relations %}
+	        <a href="#">
           <div class="card4">
             <div class="box4">
               <div>
                 <p class="title4">
                  {{ relate.title  }}<br>
-		 <i class="far fa-clock"></i>{{ relate.date  }}
+		               <i class="far fa-clock"></i>{{ relate.date  }}
                 </p>
               </div>
             </div>
           </div>
         </a>
-	{% endfor  %}
+	     {% endfor %}
       </div>
     </div>
 

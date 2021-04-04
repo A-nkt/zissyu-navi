@@ -8,7 +8,7 @@ from django.db.models import Q
 # Public Python
 import requests
 #Private Django
-from .models import Blog
+from .models import Blog,BlogCategory
 
 # Create your views here.
 def making_now(request):
@@ -27,8 +27,20 @@ def main(request):
 
 @permission_required('admin.can_add_log_entry')
 def content(request,id):
+    #閲覧数カウンター
+    main_post = Blog.objects.get(id=id)
+    main_post.views +=1
+    main_post.save()
+    #カテゴリー別記事数をカウント
+    categorys = BlogCategory.objects.all()
+    for category in categorys:
+        count = Blog.objects.all().filter(category=category)
+        BlogCategory.objects.all().filter(category=category).update(counter=len(count))
+        
     context = {
         'post':Blog.objects.get(id=id),
-        'relations':Blog.objects.filter(~Q(id=id),is_public=True).order_by('date').reverse(),
+        'relations':Blog.objects.filter(~Q(id=id),is_public=True).order_by('date').reverse(),#最新記事
+        'ranking_post':Blog.objects.filter(~Q(id=id),is_public=True).order_by('views').reverse()[:10],#人気記事 10件
+        'category':BlogCategory.objects.all(),
     }
     return render(request,'media_service/content.html',context)

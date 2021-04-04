@@ -11,6 +11,7 @@ class BlogCategory(models.Model):
         verbose_name_plural = _('記事カテゴリー')
 
     category = models.CharField(max_length=100)
+    counter = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         template = '{0.category}'
@@ -30,6 +31,7 @@ class Blog(models.Model):
     date = models.DateField(verbose_name='更新日',blank=True,null=False,default=timezone.now)
     discription = models.TextField(blank=True,null=False,max_length=300)
     is_public = models.BooleanField('公開する', default=False, help_text='公開する場合はチェックを入れてください')
+    views = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         template = 'タイトル：'+'{0.title}'+',　更新日：'+'{0.date}' + ', 公開状況：' + '{0.is_public}'
