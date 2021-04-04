@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils import timezone
 from django.utils.translation import gettext as _
 # Create your models here.
@@ -12,7 +13,7 @@ class Blog(models.Model):
 
     title = models.CharField(verbose_name='タイトル',max_length=40,blank=True,null=False)
     image = models.ImageField(upload_to='media/',blank=True,null=False)
-    body = RichTextField(blank=True,null=False)
+    body = RichTextUploadingField(blank=True,null=False)
     date = models.DateField(verbose_name='更新日',blank=True,null=False,default=timezone.now)
     discription = models.TextField(blank=True,null=False,max_length=300)
 

@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 ]
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -154,10 +156,10 @@ GOOGLE_RECAPTCHA_SECRET_KEY = env('RECAPTCHA_SECRET_KEY')
 #STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),
 #)
-STATIC_ROOT = '/var/www/mysite'
+#STATIC_ROOT = '/var/www/mysite'
 
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
 CKEDITOR_IMAGE_BACKEND = "pillow"
 
