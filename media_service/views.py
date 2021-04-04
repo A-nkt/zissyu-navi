@@ -21,7 +21,7 @@ def main(request):
     except: #ユーザー認証がない時
         return redirect('/host-admin')
     context = {
-        'posts':Blog.objects.filter(is_publick=True).order_by('date').reverse(),
+        'posts':Blog.objects.filter(is_public=True).order_by('date').reverse(),
     }
     return render(request,'media_service/main.html',context)
 
@@ -29,6 +29,6 @@ def main(request):
 def content(request,id):
     context = {
         'post':Blog.objects.get(id=id),
-        'relations':Blog.objects.filter(~Q(id=id)).order_by('date').reverse(),
+        'relations':Blog.objects.filter(~Q(id=id),is_public=True).order_by('date').reverse(),
     }
     return render(request,'media_service/content.html',context)

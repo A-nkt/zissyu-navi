@@ -16,8 +16,8 @@ class Blog(models.Model):
     body = RichTextUploadingField(blank=True,null=False)
     date = models.DateField(verbose_name='更新日',blank=True,null=False,default=timezone.now)
     discription = models.TextField(blank=True,null=False,max_length=300)
-    is_publick = models.BooleanField('公開する', default=False, help_text='公開する場合はチェックを入れてください')
+    is_public = models.BooleanField('公開する', default=False, help_text='公開する場合はチェックを入れてください')
 
     def __str__(self):
-        template = 'タイトル：'+'{0.title}'+',　更新日：'+'{0.date}'
+        template = 'タイトル：'+'{0.title}'+',　更新日：'+'{0.date}' + ', 公開状況' + '{0.is_public}'
         return template.format(self)
