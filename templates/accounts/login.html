@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/accounts/login.css' %}">{% endblock %}
+{% block title %}ログイン{% endblock %}
+{% block meta_description %}
+<meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)のwebメディアです。
+医療系学生の疑問を解決できるようなメディアです。">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <h1>Log in</h1>
+  <form method="POST">
+      {% csrf_token %}
+  <div class="field">
+    <p class="control has-icons-left">
+      {% render_field form.username class="input" type="name" placeholder="Name" %}
+      {{ form.username.errors }}
+      <span class="icon is-small is-left">
+        <i class="fa fa-user"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control has-icons-left">
+      {% render_field form.password class="input" type="password" placeholder="Password" %}
+      {{ form.password.errors }}
+      <span class="icon is-small is-left">
+        <i class="fa fa-lock"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <button class="button is-success" type="submit">Login</button>
+    </p>
+  </div>
+
+  </form>
+
+  <p class="new-member"><a href="#">新規登録</a></p>
+  <p class="forget-password"><a href="#">パスワードをお忘れですか？</a></p>
+
+</div>
+
+{% endblock %}

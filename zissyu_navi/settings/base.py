@@ -35,6 +35,7 @@ DEBUG = False
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'ckeditor_uploader',
     'ckeditor',
     'main_app',
