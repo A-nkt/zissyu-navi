@@ -21,7 +21,7 @@ def main(request):
     except: #ユーザー認証がない時
         return redirect('/host-admin')
     context = {
-        'posts':Blog.objects.order_by('date').reverse(),
+        'posts':Blog.objects.filter(is_publick=True).order_by('date').reverse(),
     }
     return render(request,'media_service/main.html',context)
 
