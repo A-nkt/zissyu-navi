@@ -25,6 +25,8 @@ sitemaps = {
     'BaseSitemap': BaseSitemap,
 }
 
+
+
 urlpatterns = [
     path('host-admin/', admin.site.urls),
     path('', include('main_app.urls')),

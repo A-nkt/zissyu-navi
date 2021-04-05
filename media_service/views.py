@@ -27,9 +27,11 @@ def main(request):
 
 def content(request,id):
     #閲覧数カウンター
-    main_post = Blog.objects.get(id=id)
-    main_post.views +=1
-    main_post.save()
+    if not request.user.is_staff:
+        main_post = Blog.objects.get(id=id)
+        main_post.views +=1
+        main_post.save()
+
     #カテゴリー別記事数をカウント
     categorys = BlogCategory.objects.all()
     for category in categorys:
