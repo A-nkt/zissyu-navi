@@ -1,0 +1,105 @@
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  .main-content{
+    padding-top: 1rem;
+    padding-left: 1rem;
+    height: auto;
+    margin: 0 auto;
+    background-color: white;
+  }
+  .input{
+    padding-right: 100px;
+  }
+  .main-content h1{
+    border-bottom: 1px solid silver;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+  .button:hover{
+    background-color: white !important ;
+    border-color: rgb(106,191,176) !important;
+    color : rgb(106,191,176) !important;
+  }
+  .button{
+    background-color: rgb(106,191,176) !important ;
+  }
+  .new-member{
+    float: right;
+  }
+  .forget-password{
+    clear:right;
+  }
+}
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+  .main-content{
+    max-width: 780px;
+    height: auto;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.12),0 2px 3px 0 rgba(0,0,0,.22);
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  .input{
+    padding-right: 100px;
+  }
+  .main-content h1{
+    border-bottom: 1px solid silver;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+  .button:hover{
+    background-color: white !important ;
+    border-color: rgb(106,191,176) !important;
+    color : rgb(106,191,176) !important;
+  }
+  .button{
+    background-color: rgb(106,191,176) !important ;
+  }
+  .new-member{
+    float: right;
+  }
+  .forget-password{
+    clear:right;
+  }
+}
+/*PC*/
+@media screen and (min-width:960px){
+  .main-content{
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.12),0 2px 3px 0 rgba(0,0,0,.22);
+    border-radius: 5%;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+  }
+  .input{
+    padding-right: 100px;
+  }
+  .main-content h1{
+    border-bottom: 1px solid silver;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+  .button:hover{
+    background-color: white !important ;
+    border-color: rgb(106,191,176) !important;
+    color : rgb(106,191,176) !important;
+  }
+  .button{
+    background-color: rgb(106,191,176) !important ;
+  }
+  .new-member{
+    float: right;
+  }
+  .forget-password{
+    clear:right;
+  }
+}
+.new-member:hover a,.forget-password:hover a{
+  color: rgb(239,182,117) !important;
+}

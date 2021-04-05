@@ -10,6 +10,7 @@
 
 {% block content %}
 <div class="main-content">
+  {% if not user.is_authenticated %}
   <h1>Log in</h1>
   <form method="POST">
       {% csrf_token %}
@@ -41,8 +42,12 @@
 
   </form>
 
-  <p class="new-member"><a href="#">新規登録</a></p>
+  <p class="new-member"><a href="{% url 'accounts:create' %}">新規登録</a></p>
   <p class="forget-password"><a href="#">パスワードをお忘れですか？</a></p>
+  {% else %}
+  <h1>You Logged in</h1>
+  {% endif %}
+
 
 </div>
 

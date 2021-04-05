@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/accounts/create.css' %}">{% endblock %}
+{% block title %}新規登録{% endblock %}
+{% block meta_description %}
+<meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)のwebメディアです。
+医療系学生の疑問を解決できるようなメディアです。">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  {% if not user.is_authenticated %}
+  <h1>アカウント登録</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="field">
+      <p class="control has-icons-left">
+        {% render_field form.username class="input" type="name" placeholder="Name" %}
+        {{ form.username.errors }}
+        <span class="icon is-small is-left">
+          <i class="fa fa-user"></i>
+        </span>
+      </p>
+    </div>
+
+  <div class="field">
+    <p class="control has-icons-left">
+      {% render_field form.password1 class="input" type="password" placeholder="Password" %}
+      {{ form.password1.errors }}
+      <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control has-icons-left">
+      {% render_field form.password2 class="input" type="password" placeholder="Password (Retype)" %}
+      {{ form.password2.errors }}
+      <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <button class="button is-success" type="submit">登録</button>
+    </p>
+  </div>
+  </form>
+  {% else %}
+  <h1>You Logged in</h1>
+  {% endif %}
+
+</div>
+
+{% endblock %}
