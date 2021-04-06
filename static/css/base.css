@@ -8,7 +8,7 @@ body,h1,h2,h3,h4,h5,h6{
   .over-trim label{
     position: absolute;
     left:2%;
-    top:20%;
+    top:10%;
     list-style-type: none;
   }
   #sample label .trim i{
@@ -41,16 +41,17 @@ body,h1,h2,h3,h4,h5,h6{
     background-color: rgb(106,191,176);
     position: absolute;
     left:0%;
-    top:88%;
+    top:100%;
     list-style-type: none;
     color: white;
     font-size: 18px;
     text-align: center;
-    border-radius: 5%;
+    border-radius: 0%;
   }
   .trim-2 li{
     padding-top: 5px;
     padding: 10px;
+    border-bottom: white 1px solid;
   }
   .trim-2 li:hover{
     background-color: white;
@@ -76,10 +77,10 @@ body,h1,h2,h3,h4,h5,h6{
     display : block;
     position: fixed;
     z-index : 3;
-    right : 23px;
+    right : 18px;
     top   : 12px;
-    width : 42px;
-    height: 42px;
+    width : 36px;
+    height: 36px;
     cursor: pointer;
     text-align: center;
   }
@@ -170,7 +171,7 @@ body,h1,h2,h3,h4,h5,h6{
   header {
     display: flex;
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: rgb(106,191,176);
     align-items: center;
     position: fixed;
@@ -180,7 +181,7 @@ body,h1,h2,h3,h4,h5,h6{
     text-align: center;
   }
   header h1 img{
-    width:38%;
+    width:35%;
     height: auto;
   }
   .globalMenuSp a:link { color: white; }

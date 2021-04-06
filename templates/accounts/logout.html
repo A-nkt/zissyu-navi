@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/accounts/login.css' %}">{% endblock %}
+{% block title %}ログイン{% endblock %}
+{% block meta_description %}
+<meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)のwebメディアです。
+医療系学生の疑問を解決できるようなメディアです。">
+<meta http-equiv="refresh" content="2; url=/">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <h1>ログアウトしました</h1>
+  <p>数秒後に画面は切り替わります</p>
+</div>
+
+{% endblock %}

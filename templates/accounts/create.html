@@ -14,19 +14,25 @@
   <h1>アカウント登録</h1>
   <form method="POST">
     {% csrf_token %}
-    <div class="field">
-      <p class="control has-icons-left">
-        {% render_field form.username class="input" type="name" placeholder="Name" %}
-        {{ form.username.errors }}
-        <span class="icon is-small is-left">
-          <i class="fa fa-user"></i>
-        </span>
+  <div class="field">
+    <p class="control has-icons-left">
+      {% render_field form.username class="input" type="name" placeholder="ユーザーネーム" %}
+      <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
+      {{ form.username.errors }}
+    </p>
+  </div>
+
+  <div class="field">
+      <p class="control has-icons-left has-icons-right">
+        {% render_field form.email class="input" type="email" placeholder="Emailアドレス" %}
+        <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+        {{ form.email.errors }}
       </p>
     </div>
 
   <div class="field">
     <p class="control has-icons-left">
-      {% render_field form.password1 class="input" type="password" placeholder="Password" %}
+      {% render_field form.password1 class="input" type="password" placeholder="パスワード" %}
       {{ form.password1.errors }}
       <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
     </p>
@@ -34,9 +40,9 @@
 
   <div class="field">
     <p class="control has-icons-left">
-      {% render_field form.password2 class="input" type="password" placeholder="Password (Retype)" %}
-      {{ form.password2.errors }}
+      {% render_field form.password2 class="input" type="password" placeholder="パスワード (確認)" %}
       <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+      {{ form.password2.errors }}
     </p>
   </div>
 

@@ -50,13 +50,15 @@
         <div class="trim-2">
           <nav>
             <a href="#"><li><i class="far fa-envelope"></i>メール設定</li></a>
-            <a href="#"><li><i class="fas fa-sign-out-alt"></i>ユーザー情報の変更・退会</li></a>
+            <a href="/accounts/mypage"><li><i class="fas fa-cog"></i></i>ユーザー情報の変更・退会</li></a>
             {% if user.is_superuser %}
             <a href="/host-admin" target="_blank" ><li><i class="fas fa-user-cog"></i></i>管理者ページへ</li></a>
             {% endif %}
+            <a href="/accounts/logout/"><li><i class="fas fa-sign-out-alt"></i>ログアウト</li></a>
           </nav>
         </div>
       </div>
+      {% else %}
       {% endif %}
 
       <div class="hamburger">
