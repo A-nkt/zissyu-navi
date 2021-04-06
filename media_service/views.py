@@ -16,10 +16,6 @@ def making_now(request):
 
 def main(request):
     #ユーザのログイン状態を調べる
-    try:
-        user = User.objects.get(username=request.user)
-    except: #ユーザー認証がない時
-        return redirect('/host-admin')
     context = {
         'posts':Blog.objects.filter(is_public=True).order_by('date').reverse(),
     }
