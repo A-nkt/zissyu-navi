@@ -330,7 +330,7 @@ body,h1,h2,h3,h4,h5,h6{
     border: solid 1px white;
     padding-left: 20%;
     padding-top: 10%;
-    font-size: 3em !important;
+    font-size: 2.5em !important;
   }
   #sample input{
     display: none;

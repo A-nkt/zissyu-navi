@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_file %}
+<link rel="stylesheet" href="{% static 'css/accounts/mypage_base.css' %}">
+{% endblock %}
+{% block title %}{{ user }}さんのマイページ{% endblock %}
+{% block meta_description %}
+<meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)のwebメディアです。
+医療系学生の疑問を解決できるようなメディアです。">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="wrap">
+      <main>
+        {% block mypage_content %}
+        {% endblock %}
+      </main>
+
+    <aside class="right-bar">
+      <nav>
+        <ul>
+          {% if request.get_full_path == '/accounts/mypage/' %}
+            <li class="now"><a href="/accounts/mypage"><i class="fas fa-user fa-1x"></i>マイページトップ</a></li>
+          {% else %}
+            <li class="else"><a href="/accounts/mypage"><i class="fas fa-user fa-1x"></i>マイページトップ</a></li>
+          {% endif %}
+
+          {% if request.get_full_path == '/accounts/mypage/about_email/' %}
+            <li class="now"><a href="/accounts/mypage/about_email"><i class="far fa-envelope"></i>メール配信設定</a></li>
+          {% else %}
+            <li class="else"><a href="/accounts/mypage/about_email"><i class="far fa-envelope"></i>メール配信設定</a></li>
+          {% endif %}
+
+          {% if request.get_full_path == '/accounts/mypage/user_info/' %}
+            <li class="now"><a href="/accounts/mypage/user_info"><i class="fas fa-user-edit"></i>ユーザー設定</a></li>
+          {% else %}
+            <li class="else"><a href="/accounts/mypage/user_info"><i class="fas fa-user-edit"></i>ユーザー設定</a></li>
+          {% endif %}
+
+          {% if request.get_full_path == '/accounts/mypage/password_change/' or request.get_full_path == '/accounts/mypage/password_change/done/' %}
+            <li class="now"><a href="/accounts/mypage/password_change"><i class="fas fa-lock"></i>パスワード変更</a></li>
+          {% else %}
+            <li class="else"><a href="/accounts/mypage/password_change"><i class="fas fa-lock"></i>パスワード変更</a></li>
+          {% endif %}
+
+          {% if request.get_full_path == '/accounts/mypage/exit/' %}
+            <li class="now"><a href="/accounts/mypage/exit/"><i class="fas fa-external-link-square-alt"></i>退会の手続き</a></li>
+          {% else %}
+            <li class="else"><a href="/accounts/mypage/exit/"><i class="fas fa-external-link-square-alt"></i>退会の手続き</a></li>
+          {% endif %}
+
+          {% if request.get_full_path == '/accounts/logout/' %}
+            <li class="now"><a href="/accounts/logout/"><i class="fas fa-sign-out-alt"></i>ログアウト</a></li>
+          {% else %}
+            <li class="else"><a href="/accounts/logout/"><i class="fas fa-sign-out-alt"></i>ログアウト</a></li>
+          {% endif %}
+
+          {% if user.is_superuser %}
+          <li class="else"><a href="/host-admin" target="_blank"><i class="fas fa-user-cog"></i>管理者ページへ</a></li>
+          {% endif %}
+
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+</div>
+
+{% endblock %}

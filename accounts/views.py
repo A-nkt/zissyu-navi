@@ -48,16 +48,25 @@ class CreateView(CreateView):
         return  render(request, 'accounts/create.html', {'form': form})
 
 class CustomLogoutView(LogoutView):
-    template_name = 'accounts/logout.html'
+    template_name = 'accounts/mypage/logout.html'
 
 class PasswordChange(PasswordChangeView):
     form_class = MyPasswordChangeForm
     success_url = reverse_lazy('accounts:password_change_done')
-    template_name = 'accounts/password_change.html'
+    template_name = 'accounts/mypage/password_change.html'
 
 
 class PasswordChangeDone(PasswordChangeDoneView):
-    template_name = 'accounts/password_change_done.html'
+    template_name = 'accounts/mypage/password_change_done.html'
 
 class MyPageView(TemplateView):
     template_name = 'accounts/mypage.html'
+
+class AboutEmailView(TemplateView):
+    template_name = 'accounts/mypage/about_email.html'
+
+class UserInfoView(TemplateView):
+    template_name = 'accounts/mypage/user_info.html'
+
+class ExitView(TemplateView):
+    template_name = 'accounts/mypage/exit.html'

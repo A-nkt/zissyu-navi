@@ -4,26 +4,6 @@
     padding-top: 1rem;
     padding-left: 1rem;
   }
-  .input{
-    padding-right: 100px;
-  }
-  h1{
-    font-size: 1.5rem !important;
-  }
-  .button:hover{
-    background-color: white !important ;
-    border-color: rgb(106,191,176) !important;
-    color : rgb(106,191,176) !important;
-  }
-  .button{
-    background-color: rgb(106,191,176) !important ;
-  }
-  .new-member{
-    float: right;
-  }
-  .forget-password{
-    clear:right;
-  }
   .wrap {
     display: flex;
     flex-wrap: wrap;
@@ -39,7 +19,9 @@
     background-color: rgb(245,245,245);
     margin-left: 30px;
     padding-bottom: 10px;
-    margin-top: 10px;
+  }
+  .side-content{
+    background-color: white;
   }
   .right-bar ul{
     list-style: none;
@@ -69,6 +51,9 @@
   .right-bar i{
     margin-right: 7.5px;
   }
+  h1{
+    font-size: 1.5rem !important;
+  }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -77,23 +62,6 @@
     margin: 0 auto;
     padding: 1rem;
     height: auto;
-  }
-  .input{
-    width: 400px;
-  }
-  .button:hover{
-    background-color: white !important ;
-    border-color: rgb(106,191,176) !important;
-    color : rgb(106,191,176) !important;
-  }
-  .button{
-    background-color: rgb(106,191,176) !important ;
-  }
-  .new-member{
-    float: right;
-  }
-  .forget-password{
-    clear:right;
   }
   .wrap {
     display: flex;
@@ -145,6 +113,7 @@
   h1{
     font-size: 1.5rem !important;
   }
+
 }
 /*PC*/
 @media screen and (min-width:960px){
@@ -153,28 +122,6 @@
     margin: 0 auto;
     padding: 1rem;
     height: auto;
-  }
-  .input{
-    width: 400px;
-  }
-  .button:hover{
-    background-color: white !important ;
-    border-color: rgb(106,191,176) !important;
-    color : rgb(106,191,176) !important;
-  }
-  .button{
-    background-color: rgb(106,191,176) !important ;
-    margin-left: 100px;
-  }
-  .new-member{
-    float: right;
-  }
-  .forget-password{
-    clear:right;
-  }
-  .form-group{
-    margin-left: 100px;
-    margin-top: 30px;
   }
   .wrap {
     display: flex;
@@ -226,11 +173,5 @@
   h1{
     font-size: 1.5rem !important;
   }
-}
-.new-member:hover a,.forget-password:hover a{
-  color: rgb(239,182,117) !important;
-}
-ul {
-  list-style: none !important;
-  color:red;
+
 }

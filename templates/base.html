@@ -16,7 +16,7 @@
    </script>
    <!-- End User Heat Tag -->
     <meta charset="utf-8">
-    <title>Hospee(ホスピー) | {% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %} | Hospee(ホスピー) </title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/minty/bulmaswatch.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -43,10 +43,12 @@
       {# if you have account and login now #}
       {% if user.is_authenticated %}
       <div class="over-trim" id="sample">
-        <label for="toggle">
-          <div class="trim"><i class="fas fa-user fa-3x"></i></div>
-        </label>
-        <input type="checkbox" id="toggle">
+        <a href="/accounts/mypage">
+          <label for="toggle">
+            <div class="trim"><i class="fas fa-user fa-3x"></i></div>
+          </label>
+        </a>
+        <!--input type="checkbox" id="toggle">
         <div class="trim-2">
           <nav>
             <a href="#"><li><i class="far fa-envelope"></i>メール設定</li></a>
@@ -56,7 +58,7 @@
             {% endif %}
             <a href="/accounts/logout/"><li><i class="fas fa-sign-out-alt"></i>ログアウト</li></a>
           </nav>
-        </div>
+        </div-->
       </div>
       {% else %}
       {% endif %}
