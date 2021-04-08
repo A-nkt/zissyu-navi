@@ -27,6 +27,11 @@
             <li class="else"><a href="/accounts/mypage"><i class="fas fa-user fa-1x"></i>マイページトップ</a></li>
           {% endif %}
 
+          <li class="else"><a href="#" target="_blank"><i class="far fa-address-card"></i>ユーザー情報</a></li>
+
+          <li class="else"><a href="#" target="_blank"><i class="fas fa-comments"></i>コメント履歴</a></li>
+
+
           {% if request.get_full_path == '/accounts/mypage/about_email/' %}
             <li class="now"><a href="/accounts/mypage/about_email"><i class="far fa-envelope"></i>メール配信設定</a></li>
           {% else %}
@@ -34,9 +39,9 @@
           {% endif %}
 
           {% if request.get_full_path == '/accounts/mypage/user_info/' %}
-            <li class="now"><a href="/accounts/mypage/user_info"><i class="fas fa-user-edit"></i>ユーザー設定</a></li>
+            <li class="now"><a href="/accounts/mypage/user_info"><i class="fas fa-user-edit"></i>アカウント設定</a></li>
           {% else %}
-            <li class="else"><a href="/accounts/mypage/user_info"><i class="fas fa-user-edit"></i>ユーザー設定</a></li>
+            <li class="else"><a href="/accounts/mypage/user_info"><i class="fas fa-user-edit"></i>アカウント設定</a></li>
           {% endif %}
 
           {% if request.get_full_path == '/accounts/mypage/password_change/' or request.get_full_path == '/accounts/mypage/password_change/done/' %}
