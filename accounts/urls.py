@@ -12,5 +12,6 @@ urlpatterns = [
     path('mypage/password_change/', views.PasswordChange.as_view(), name='password_change'),
     path('mypage/password_change/done/', views.PasswordChangeDone.as_view(), name='password_change_done'),
     path('mypage/exit/' ,views.ExitView.as_view(), name='exit'),
+    path('mypage/exit/done/' ,views.ExitDoneView.as_view(), name='exit'),
     path('logout/' ,views.CustomLogoutView.as_view(), name='logout'),
 ]

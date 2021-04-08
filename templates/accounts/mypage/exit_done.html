@@ -3,19 +3,17 @@
 {% load widget_tweaks %}
 {% block css_file %}
 <link rel="stylesheet" href="{% static 'css/accounts/mypage_base.css' %}">
+<link rel="stylesheet" href="{% static 'css/accounts/password_change.css' %}">
 {% endblock %}
 {% block title %}退会手続き{% endblock %}
 {% block meta_description %}
 <meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)のwebメディアです。
 医療系学生の疑問を解決できるようなメディアです。">
+<meta http-equiv="refresh" content="2; url=/">
 {% endblock %}
 
 {% block mypage_content %}
-<h1>退会の手続き</h1>
-<form role="form" method="post">
-  {% csrf_token %}
-  <p>あなたのアカウント「{{ user.username }}」を、本当に削除してもよろしいですか？</p>
-  <button class="button is-success" type="submit" >削除</button>
-  <a href="/accounts/mypage/" class="button is-text">キャンセル</a>
-</form>
+  <h1>アカウントを削除しました</h1><br>
+  <p>ありがとうございました。</p>
+  <a class="btn btn-primary btn-lg" href="{% url 'main_app:home' %}">ホームに戻る</a>
 {% endblock %}

@@ -173,5 +173,12 @@
   h1{
     font-size: 1.5rem !important;
   }
-
+}
+.is-success{
+  background-color: rgb(106,191,176) !important;
+}
+.is-success:hover{
+  border-color: rgb(106,191,176) !important;
+  color : rgb(106,191,176) !important;
+  background-color: white !important;
 }

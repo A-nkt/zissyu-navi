@@ -4,7 +4,7 @@ from django.views.generic import  View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LogoutView, PasswordChangeView, PasswordChangeDoneView
-from django.views.generic import  TemplateView
+from django.views.generic import  TemplateView,DeleteView
 from django.contrib.auth import login,logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.views.generic import CreateView
@@ -67,6 +67,12 @@ class AboutEmailView(TemplateView):
 
 class UserInfoView(TemplateView):
     template_name = 'accounts/mypage/user_info.html'
-
+"""
+class ExitView(DeleteView):
+    template_name = 'accounts/mypage/exit.html'
+"""
 class ExitView(TemplateView):
     template_name = 'accounts/mypage/exit.html'
+
+class ExitDoneView(TemplateView):
+    template_name = 'accounts/mypage/exit_done.html'
