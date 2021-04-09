@@ -1,11 +1,45 @@
 /*SmartPhone*/
 @media screen and (max-width:560px){
+  h2{
+    font-size: 1.25rem !important;
+    margin-top: 30px !important;
+  }
+  .date_joined{
+    text-align: center;
+    border: 1px solid rgb(106,191,176);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
-
+  h2{
+    font-size: 1.25rem !important;
+    margin-top: 30px !important;
+  }
+  .date_joined{
+    text-align: center;
+    border: 1px solid rgb(106,191,176);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
 }
 /*PC*/
 @media screen and (min-width:960px){
-
+  h2{
+    font-size: 1.25rem !important;
+    margin-top: 30px !important;
+  }
+  .date_joined{
+    text-align: center;
+    border: 1px solid rgb(106,191,176);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
 }

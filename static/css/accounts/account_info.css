@@ -1,0 +1,43 @@
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  .form-group{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  h2{
+    font-size: 1.25rem !important;
+    margin-top: 40px !important;
+  }
+}
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+  .form-group{
+    margin-top: 30px;
+  }
+  h2{
+    font-size: 1.25rem !important;
+    margin-top: 40px !important;
+  }
+  .input{
+    width: 400px;
+  }
+  .now-username{
+    font-size: 16px;
+  }
+}
+/*PC*/
+@media screen and (min-width:960px){
+  .form-group{
+    margin-top: 30px;
+  }
+  h2{
+    font-size: 1.25rem !important;
+    margin-top: 40px !important;
+  }
+  .input{
+    width: 400px;
+  }
+  .now-username{
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,34 @@
+{% extends 'accounts/mypage_base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_file %}
+<link rel="stylesheet" href="{% static 'css/accounts/mypage_base.css' %}">
+<link rel="stylesheet" href="{% static 'css/accounts/account_info.css' %}">
+{% endblock %}
+{% block title %}アカウント設定{% endblock %}
+{% block meta_description %}
+<meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)のwebメディアです。
+医療系学生の疑問を解決できるようなメディアです。">
+{% endblock %}
+
+{% block mypage_content %}
+<h1>アカウント設定</h1>
+<h2 class="label">ユーザーネームの変更</h2>
+<form method="POST">
+    {% csrf_token %}
+  <div class="form-group">
+    <p class="now-username">現在のユーザーネーム：<b>{{ user }}</b></p>
+    <div class="field">
+      <p class="control has-icons-left">
+        {% render_field form.username class="input" type="text" placeholder="新しいユーザーネーム" %}
+        <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
+        {{ form.username.errors }}
+      </p>
+    </div>
+    <div class="field">
+      <p class="control"><button class="button is-success" type="submit">送信</button></p>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

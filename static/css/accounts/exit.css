@@ -1,0 +1,12 @@
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  form{
+    margin-bottom: 30px;
+  }
+}
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+}
+/*PC*/
+@media screen and (min-width:960px){
+}
