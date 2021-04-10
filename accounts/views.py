@@ -13,6 +13,7 @@ from django_pandas.io import read_frame
 from django.contrib.auth.decorators import login_required
 # Public Python
 import sys
+import slackweb
 # Private Django
 from .forms import LoginForm,UserCreateForm, MyPasswordChangeForm, UsernameChangeForm
 from .sub_function import *
@@ -44,6 +45,8 @@ class CreateView(CreateView):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username,email=email ,password=password, request=request)
             login(request, user)
+            slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+            slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + "新しいユーザーが作成されました" + '\n' +str(username))
             return redirect('/')
         return render(request, 'accounts/create.html', {'form': form})
 
