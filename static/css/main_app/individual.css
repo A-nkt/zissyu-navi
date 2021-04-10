@@ -857,7 +857,7 @@
     font-size: 2.5em !important;
   }
   .Odd{
-    border: 2px solid rgb(218,165,32,0.7)
+    border: 2px solid rgb(218,165,32,0.7);
   }
   .Odd .icon i{
     color: rgb(218,165,32,0.7);
@@ -1145,4 +1145,26 @@ div p {
 }
 h1 {
    color:rgb(111,111,111)  !important;
+}
+.mouse {
+  position:relative;
+}
+.mouse:hover .word {
+  display: inline;
+}
+
+.word {
+  position:absolute;
+  display: none;
+  padding: 2px;
+  color: aliceblue;
+  border-radius: 5px;
+  background-color:rgb(106,191,176);
+  width:250px;
+  top: 30px;
+  left: 0px;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  z-index: 1;
 }

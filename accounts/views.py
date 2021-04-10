@@ -17,6 +17,7 @@ import slackweb
 # Private Django
 from .forms import LoginForm,UserCreateForm, MyPasswordChangeForm, UsernameChangeForm
 from .sub_function import *
+from main_app.models import OtherRecord
 # Create your views here.
 #class LoginView(LoginRequiredMixin,View):
 class LoginView(View):
@@ -106,5 +107,11 @@ def Exit(request):
 class UserInfoView(LoginRequiredMixin,TemplateView):
     template_name = 'accounts/mypage/user_info.html'
 
-class CommentsView(LoginRequiredMixin,TemplateView):
-    template_name = 'accounts/mypage/comments.html'
+
+@login_required
+def Comment(request):
+    obj = OtherRecord.objects.all().filter(username=request.user)
+    context = {
+        'obj':obj,
+    }
+    return render(request,'accounts/mypage/comments.html',context)

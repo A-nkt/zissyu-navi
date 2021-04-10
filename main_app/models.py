@@ -134,7 +134,7 @@ class OtherRecord(models.Model):
     info = models.TextField(blank=True,null=True,max_length=3000)
 
     def __str__(self):
-        return str(self.username) + '日付：' + str(self.date)
+        return '氏名： '+ str(self.username) + '　日付：' + str(self.date)
 
     class Meta:
         verbose_name = _('その他のクチコミ情報')

@@ -383,6 +383,9 @@ def individual(request):
             obj.username = request.user
             obj.info = request.POST['info']
             obj.save()
+            slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+            slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + "その他のクチコミが投稿されました")
+
     database = OtherRecord.objects.all().filter(hospital_name=hospital_name)
 
     context = {

@@ -235,7 +235,13 @@
           <p class="must-or-not"></p>
        </div>
        <p><b>その他のクチコミ情報を投稿する</b></p>
-       <p class="index"><a href="/blog/making_now">こちら</a>を参考にどうぞ</p>
+       <!--div class="index mouse">こちらを参考にどうぞ
+         <span class="word">文字出ます</span>
+       </div-->
+       <p class="index mouse">
+         <a>例えばこんなクチコミ...</a>
+         <span class="word"><b>”実習先への交通手段”</b>や<br><b>”就業と実習時の違い”</b>など</span>
+       </p>
        <form method="POST">
            {% csrf_token %}
        {% render_field form.info class="input is-primary" type="password" id="id_review_people_comment" %}
