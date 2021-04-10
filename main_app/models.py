@@ -125,3 +125,17 @@ class Article(models.Model):
     class Meta:
         verbose_name = _('利用規約・プライバシーポリシー　コンテンツ')
         verbose_name_plural = _('利用規約/プライバシーポリシー：コンテンツ')
+
+
+class OtherRecord(models.Model):
+    hospital_name = models.CharField(max_length=100,blank=True)
+    username = models.CharField(max_length=100,blank=True)
+    date = models.DateField(verbose_name='打刻日',blank=True,null=True,default=timezone.now)
+    info = models.TextField(blank=True,null=True,max_length=3000)
+
+    def __str__(self):
+        return str(self.username) + '日付：' + str(self.date)
+
+    class Meta:
+        verbose_name = _('その他のクチコミ情報')
+        verbose_name_plural = _('その他のクチコミ情報')

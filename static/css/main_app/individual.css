@@ -227,6 +227,55 @@
     border-radius: 3px 0 3px 0;
     margin: 0 auto;
   }
+  .info-box{
+    margin-left: 30px;
+  }
+  .info-topic{
+    max-width: 700px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    position: relative;
+    height:auto;
+    margin-top: 5px;
+  }
+  .Even{
+    border: 2px solid rgb(106,191,176,0.7);
+  }
+  .Even .icon i{
+    color: rgb(106,191,176,0.7);
+    font-size: 2.5em !important;
+  }
+  .Odd{
+    border: 2px solid rgb(218,165,32,0.7)
+  }
+  .Odd .icon i{
+    color: rgb(218,165,32,0.7);
+    font-size: 2.5em !important;
+  }
+  .info-topic li{
+    display: inline-block;
+  }
+  .info-topic .left-group, .info-topic .right-group{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .info-topic .right-group{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .info-topic .left-group{
+    padding-left: 5px;
+  }
+  .info-topic ul{
+    position: absolute;
+    float: right;
+    bottom:0;
+    right: 0;
+  }
+  .info-topic .date{
+    margin-left: 10px;
+    margin-right: 20px;
+  }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -444,6 +493,55 @@
     padding: 0.25em 1em;
     border: solid 2px rgb(106,191,176,0.7);
     border-radius: 3px 0 3px 0;
+  }
+  .info-box{
+    margin-left: 30px;
+  }
+  .info-topic{
+    max-width: 700px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    position: relative;
+    height:auto;
+    margin-top: 5px;
+  }
+  .Even{
+    border: 2px solid rgb(106,191,176,0.7);
+  }
+  .Even .icon i{
+    color: rgb(106,191,176,0.7);
+    font-size: 2.5em !important;
+  }
+  .Odd{
+    border: 2px solid rgb(218,165,32,0.7)
+  }
+  .Odd .icon i{
+    color: rgb(218,165,32,0.7);
+    font-size: 2.5em !important;
+  }
+  .info-topic li{
+    display: inline-block;
+  }
+  .info-topic .left-group, .info-topic .right-group{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .info-topic .right-group{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .info-topic .left-group{
+    padding-left: 5px;
+  }
+  .info-topic ul{
+    position: absolute;
+    float: right;
+    bottom:0;
+    right: 0;
+  }
+  .info-topic .date{
+    margin-left: 10px;
+    margin-right: 20px;
   }
 
 }
@@ -739,6 +837,103 @@
     padding: 0.25em 1em;
     border: solid 2px rgb(106,191,176,0.7);
     border-radius: 3px 0 3px 0;
+  }
+  .info-box{
+    margin-left: 30px;
+  }
+  .info-topic{
+    max-width: 700px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    position: relative;
+    height:auto;
+    margin-top: 5px;
+  }
+  .Even{
+    border: 2px solid rgb(106,191,176,0.7);
+  }
+  .Even .icon i{
+    color: rgb(106,191,176,0.7);
+    font-size: 2.5em !important;
+  }
+  .Odd{
+    border: 2px solid rgb(218,165,32,0.7)
+  }
+  .Odd .icon i{
+    color: rgb(218,165,32,0.7);
+    font-size: 2.5em !important;
+  }
+  .info-topic li{
+    display: inline-block;
+  }
+  .info-topic .left-group, .info-topic .right-group{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .info-topic .right-group{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .info-topic .left-group{
+    padding-left: 5px;
+  }
+  .info-topic ul{
+    position: absolute;
+    float: right;
+    bottom:0;
+    right: 0;
+  }
+  .info-topic .date{
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  .info-box-submit{
+    margin-left: 30px;
+    position: relative;
+  }
+  .info-box-submit textarea{
+    max-width: 700px;
+    height: 125px;
+  }
+  .info-box-submit .button{
+    background-color: rgb(106,191,176);
+  }
+  .info-box-submit .button:hover{
+    background-color: white;
+    color: rgb(106,191,176);
+    border: 1px solid rgb(106,191,176);
+  }
+  .info-box-submit .index{
+    margin-left: 30px;
+  }
+  .blur-group{
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+  }
+  .blur-group-text{
+    display: absolute;
+    color:red;
+  }
+  .info-box-submit {
+  position: relative;
+  }
+  .info-box-submit .p1 {
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  left: 15%;
+  color:black;
+  }
+  .info-box-submit .p2 {
+  position: absolute;
+  top: 45%;
+  z-index: 1;
+  left: 15%;
+  color:black;
+  }
+  .info-box-submit img{
+    -ms-filter: blur(4px);
+    filter: blur(4px);
   }
 }
 

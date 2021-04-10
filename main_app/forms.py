@@ -1,5 +1,5 @@
 from django import forms
-from .models import Record,Contact
+from .models import Record,Contact,OtherRecord
 
 class RecordForm(forms.ModelForm):
     class Meta:
@@ -28,4 +28,10 @@ class ContactForm(forms.ModelForm):
             'email',
             'subject',
             'content',
+        )
+class OtherRecordForm(forms.ModelForm):
+    class Meta:
+        model = OtherRecord
+        fields = (
+            'info',
         )

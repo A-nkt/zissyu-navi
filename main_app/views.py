@@ -19,8 +19,8 @@ import math
 import requests
 import datetime as dt
 #Private Django
-from .models import Record,Major,Chapter,Article,Contact
-from .forms import RecordForm,ContactForm
+from .models import Record,Major,Chapter,Article,Contact,OtherRecord
+from .forms import RecordForm,ContactForm,OtherRecordForm
 from .image import *
 from .sub_function import *
 import urllib.parse
@@ -373,6 +373,18 @@ def individual(request):
             pref_name = PLACE_CHOISE[k][1]
     # image_card(hospital_name) #現状、TwitterCardの連携がうまくできないので(2021.3.6)
 
+    #その他のクチコミ情報に関して
+    if request.POST:
+        form = OtherRecordForm(request.POST)
+        if form.is_valid():
+            form.save()
+            obj = OtherRecord()
+            obj.hospital_name = hospital_name
+            obj.username = request.user
+            obj.info = request.POST['info']
+            obj.save()
+    database = OtherRecord.objects.all().filter(hospital_name=hospital_name)
+
     context = {
         'hospital_name':hospital_name, #病院名
         'all_count':all_count, #回答者数
@@ -391,6 +403,8 @@ def individual(request):
         'pref_name':pref_name,
         'related_df':related_df,
         'encode_name':urllib.parse.quote(hospital_name),
+        'form':OtherRecordForm(),
+        'database':database,
     }
     return render(request, 'main_app/individual.html',context)
 

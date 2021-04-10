@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/main_app/individual.css' %}">{% endblock %}
 {% block js_file %}<script type="text/javascript" src="{% static 'js/individual.js' %}"></script>{% endblock %}
 {% block title %}{{ hospital_name }}のクチコミ{% endblock %}
@@ -183,7 +184,77 @@
     </a>
     {% endif %}
   </div>
+
+  <h1><div class="header-tab" id="second-g">
+    <p class="header-top">{{ hospital_name }} におけるその他のクチコミ情報</p>
+  </div></h1>
+  <div class="info-box">
+    {% for obj in database %}
+      {% if forloop.counter|divisibleby:2 %}
+      <div class="info-topic Even">
+        <div class="icon left-group"><i class="fas fa-user fa-3x"></i></div>
+        <div class="right-group">
+          <div class="comment">
+            {{ obj.info }}
+          </div>
+          <ul>
+            <li class="username">{{ obj.username }}さん</li>
+            <li class="date">{{ obj.date }}に投稿</li>
+          </ul>
+        </div>
+      </div>
+      {% else %}
+      <div class="info-topic Odd">
+        <div class="icon left-group"><i class="fas fa-user fa-3x"></i></div>
+        <div class="right-group">
+          <div class="comment">
+            {{ obj.info }}
+          </div>
+          <ul>
+            <li class="username">{{ obj.username }}さん</li>
+            <li class="date">{{ obj.date }}に投稿</li>
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+
+  </div>
+  {% if not user.is_authenticated %}
+    <div class="info-box-submit">
+      <p class="p1">クチコミ情報の投稿はログインしてから使用できます</p>
+      <p class="p2"><a href="/accounts/login/">こちらから</a>どうぞ</p>
+      <img src="{% static 'img/blur.png' %}" alt="">
+    </div>
+
+  {% else %}
+    <div class="info-box-submit">
+      <div class="form-group">
+       <div class="form-header">
+         <div class="form-title"></div>
+          <p class="must-or-not"></p>
+       </div>
+       <p><b>その他のクチコミ情報を投稿する</b></p>
+       <p class="index"><a href="#">こちら</a>を参考にどうぞ</p>
+       <form method="POST">
+           {% csrf_token %}
+       {% render_field form.info class="input is-primary" type="password" id="id_review_people_comment" %}
+        <br>
+       </div>
+       <div class="field">
+          <p class="control">
+            <button class="button is-success" type="submit">送信</button>
+          </p>
+        </div>
+      </form>
+    </div>
+  {% endif %}
   </main>
+
+
+
+
+
 
   <div class="left-wrap2">
     <a href="https://twitter.com/share?url=https://hospeee.com&hashtags=hospee" target="_blank">
@@ -201,9 +272,11 @@
       	</div>
       </div>
     </a-->
+    <center>
     <a href="https://px.a8.net/svt/ejp?a8mat=3H82TQ+8P642A+50+2HH0SH" rel="nofollow">
     <img border="0" width="300" height="300" alt="" src="https://www21.a8.net/svt/bgt?aid=210328910526&wid=005&eno=01&mid=s00000000018015028000&mc=1"></a>
     <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=3H82TQ+8P642A+50+2HH0SH" alt="">
+    </center>
 
     <div class="recommend">
       <div class="recommend-text"><u>あなたへのおすすめ</u></div>
