@@ -377,7 +377,7 @@ def individual(request):
     if request.POST:
         form = OtherRecordForm(request.POST)
         if form.is_valid():
-            form.save()
+            #form.save()
             obj = OtherRecord()
             obj.hospital_name = hospital_name
             obj.username = request.user
