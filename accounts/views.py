@@ -11,6 +11,8 @@ from django.views.generic import CreateView
 from django.contrib.auth.models import User
 from django_pandas.io import read_frame
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+from django.core.mail import send_mail
 # Public Python
 import sys
 import slackweb
@@ -115,3 +117,20 @@ def Comment(request):
         'obj':obj,
     }
     return render(request,'accounts/mypage/comments.html',context)
+
+import sendgrid
+from sendgrid.helpers.mail import *
+
+@login_required
+def test_email(request):
+    SENDGRID_API    = "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"
+
+    sg          = sendgrid.SendGridAPIClient(api_key=SENDGRID_API)
+    from_email  = Email("hospee.com@gmail.com")
+    #from_email  = Email("dsduoa31@gmail.com")
+    to_email    = To("dsduoa31@gmail.com")
+    subject     = "メールの件名"
+    content     = Content("text/plain", "ここに本文")
+    mail        = Mail(from_email, to_email, subject, content)
+    response    = sg.client.mail.send.post(request_body=mail.get())
+    return HttpResponse("it is test.")
