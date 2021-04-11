@@ -61,9 +61,7 @@ MEDIA_ROOT = '/var/www/mysite/media'
 ####################
 ## Email Settings ##
 ####################
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = env("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-EMAIL_USE_TLS = True
+EMAIL_BACKEND       = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY    = env('SENDGRID_APIKEY')
+
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
