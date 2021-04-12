@@ -4,4 +4,4 @@
 まだ会員登録手続きは完了しておりませんので、ご注意ください。
 
 本登録用URL
-{{ protocol }}://{{ domain }}{% url 'accounts:user_create_complete' token %}
+https://hospeee.com{% url 'accounts:user_create_complete' token %}
