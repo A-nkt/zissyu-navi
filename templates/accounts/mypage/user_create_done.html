@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block css_file %}<link rel="stylesheet" href="{% static 'css/accounts/create.css' %}">{% endblock %}
+{% block title %}新規登録{% endblock %}
+{% block meta_description %}
+<meta name="description" content="病院実習クチコミサイトHospee(ほすぴー)のwebメディアです。
+医療系学生の疑問を解決できるようなメディアです。">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <h1>Emailを送信しました</h1>
+  <div class="text">
+    ご登録いただいたEmailアドレスにメールをお送り致しました。<br>
+    ご確認ください。
+  </div>
+</div>
+
+{% endblock %}

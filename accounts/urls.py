@@ -5,7 +5,7 @@ app_name="accounts"
 
 urlpatterns = [
     path('login/' ,views.LoginView.as_view(), name='login'),
-    path('create/' ,views.CreateView.as_view(), name='create'),
+    path('create/' ,views.UserCreate.as_view(), name='create'),
     path('mypage/' ,views.MyPage, name='create'),
     path('mypage/about_email/' ,views.AboutEmailView.as_view(), name='about_email'),
     path('mypage/account_info/' ,views.AccountInfoView.as_view(), name='account_info'),
@@ -16,4 +16,6 @@ urlpatterns = [
     path('mypage/exit/' ,views.Exit, name='exit'),
     path('logout/' ,views.CustomLogoutView.as_view(), name='logout'),
     path('test_email/', views.test_email, name='test_email'),
+    path('create/<token>/', views.UserCreateComplete.as_view(), name='user_create_complete'),
+    path('user_create_done/', views.UserCreateDone.as_view(), name='user_create_done'),
 ]

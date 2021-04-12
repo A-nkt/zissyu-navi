@@ -13,6 +13,10 @@ from django_pandas.io import read_frame
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.signing import BadSignature, SignatureExpired, loads, dumps
+from django.template.loader import render_to_string
 # Public Python
 import sys
 import slackweb
@@ -38,24 +42,76 @@ class LoginView(View):
         return render(request, 'accounts/login.html', {'form': form})
 
 #アカウント作成
-class CreateView(CreateView):
-    def post(self, request, *args, **kwargs):
-        form = UserCreateForm(data=request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            email = form.cleaned_data.get('email')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(username=username,email=email ,password=password, request=request)
-            login(request, user)
-            slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
-            slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + "新しいユーザーが作成されました" + '\n' +str(username))
-            return redirect('/')
-        return render(request, 'accounts/create.html', {'form': form})
+class UserCreate(CreateView):
+    """ユーザー仮登録"""
+    template_name = 'accounts/create.html'
+    form_class = UserCreateForm
 
-    def get(self, request, *args, **kwargs):
-        form = UserCreateForm()
-        return  render(request, 'accounts/create.html', {'form': form})
+    def form_valid(self, form):
+        """仮登録と本登録用メールの発行."""
+        user = form.save(commit=False)
+        user.is_active = False
+        user.save()
+
+        # アクティベーションURLの送付
+        current_site = get_current_site(self.request)
+        domain = current_site.domain
+        context = {
+            'protocol': self.request.scheme,
+            'domain': domain,
+            'token': dumps(user.pk),
+            'user': user,
+        }
+
+        subject = render_to_string('for_email_txt/subject.txt', context)
+        message = render_to_string('for_email_txt/message.txt', context)
+
+        user.email_user(subject, message)
+        SENDGRID_API    = "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"
+
+        sg          = sendgrid.SendGridAPIClient(api_key=SENDGRID_API)
+        from_email  = Email("hospee.com@gmail.com")
+        to_email    = To(user.email)
+        subject     = subject
+        content     = Content("text/plain", message)
+        mail        = Mail(from_email, to_email, subject, content)
+        response    = sg.client.mail.send.post(request_body=mail.get())
+        return redirect('accounts:user_create_done')
+
+class UserCreateDone(TemplateView):
+    """ユーザー仮登録したよ"""
+    template_name = 'accounts/mypage/user_create_done.html'
+
+class UserCreateComplete(TemplateView):
+    """メール内URLアクセス後のユーザー本登録"""
+    template_name = 'accounts/mypage/user_create_complete.html'
+    timeout_seconds = getattr(settings, 'ACTIVATION_TIMEOUT_SECONDS', 60*60*24)  # デフォルトでは1日以内
+
+    def get(self, request, **kwargs):
+        """tokenが正しければ本登録."""
+        token = kwargs.get('token')
+        try:
+            user_pk = loads(token, max_age=self.timeout_seconds)
+        # 期限切れ
+        except SignatureExpired:
+            return HttpResponseBadRequest()
+        # tokenが間違っている
+        except BadSignature:
+            return HttpResponseBadRequest()
+        # tokenは問題なし
+        else:
+            try:
+                user = User.objects.get(pk=user_pk)
+            except User.DoesNotExist:
+                return HttpResponseBadRequest()
+            else:
+                if not user.is_active:
+                    # 問題なければ本登録とする
+                    user.is_active = True
+                    user.save()
+                    return super().get(request, **kwargs)
+
+        return HttpResponseBadRequest()
 
 class CustomLogoutView(LoginRequiredMixin,LogoutView):
     template_name = 'accounts/mypage/logout.html'
@@ -123,6 +179,7 @@ from sendgrid.helpers.mail import *
 
 @login_required
 def test_email(request):
+    """
     SENDGRID_API    = "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"
 
     sg          = sendgrid.SendGridAPIClient(api_key=SENDGRID_API)
@@ -133,4 +190,17 @@ def test_email(request):
     content     = Content("text/plain", "ここに本文")
     mail        = Mail(from_email, to_email, subject, content)
     response    = sg.client.mail.send.post(request_body=mail.get())
+    """
+    """題名"""
+    subject = "題名"
+    """本文"""
+    message = "本文です\nこんにちは。メールを送信しました"
+    """送信元メールアドレス"""
+    from_email = "information@myproject"
+    """宛先メールアドレス"""
+    recipient_list = [
+        "apptest@apptest.com"
+    ]
+
+    send_mail(subject, message, from_email, recipient_list)
     return HttpResponse("it is test.")
