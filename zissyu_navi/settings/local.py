@@ -42,10 +42,9 @@ MEDIA_ROOT = "/media/"
 ####################
 ## Email Settings ##
 ####################
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-"""
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 EMAIL_BACKEND       = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY    = env('SENDGRID_APIKEY')
 
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
-"""

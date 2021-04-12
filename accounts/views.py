@@ -66,7 +66,7 @@ class UserCreate(CreateView):
         subject = render_to_string('for_email_txt/subject.txt', context)
         message = render_to_string('for_email_txt/message.txt', context)
 
-        user.email_user(subject, message)
+        #user.email_user(subject, message)
         SENDGRID_API    = "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"
 
         sg          = sendgrid.SendGridAPIClient(api_key=SENDGRID_API)
