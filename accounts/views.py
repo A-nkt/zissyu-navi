@@ -86,7 +86,7 @@ class UserCreateDone(TemplateView):
 class UserCreateComplete(TemplateView):
     """メール内URLアクセス後のユーザー本登録"""
     slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
-    slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + "新しいユーザーが作成されました"
+    slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + "新しいユーザーが作成されました")
 
     template_name = 'accounts/mypage/user_create_complete.html'
     timeout_seconds = getattr(settings, 'ACTIVATION_TIMEOUT_SECONDS', 60*60*24)  # デフォルトでは1日以内
