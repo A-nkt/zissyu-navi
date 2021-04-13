@@ -12,6 +12,10 @@
 {% endblock %}
 
 {% block mypage_content %}
+  {% if type == "username" %}
   <h1>ユーザーネームを変更しました</h1><br>
+  {% elif type == "email" %}
+    <h1>Emailアドレスを変更しました</h1><br>
+  {% endif %}
   <a class="btn btn-primary btn-lg" href="{% url 'accounts:create' %}">ホームに戻る</a>
 {% endblock %}

@@ -17,11 +17,12 @@ from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.signing import BadSignature, SignatureExpired, loads, dumps
 from django.template.loader import render_to_string
+from django.conf import settings
 # Public Python
 import sys
 import slackweb
 # Private Django
-from .forms import LoginForm,UserCreateForm, MyPasswordChangeForm, UsernameChangeForm
+from .forms import LoginForm,UserCreateForm, MyPasswordChangeForm, UsernameChangeForm, EmailChangeForm
 from .sub_function import *
 from main_app.models import OtherRecord
 # Create your views here.
@@ -63,20 +64,26 @@ class UserCreate(CreateView):
             'user': user,
         }
 
-        subject = render_to_string('for_email_txt/subject.txt', context)
-        message = render_to_string('for_email_txt/message.txt', context)
+        DEBUG = settings.DEBUG
+        if DEBUG:
+            subject = render_to_string('for_email_txt/subject.txt', context)
+            message = render_to_string('for_email_txt/message_dev.txt', context)
 
-        #user.email_user(subject, message)
-        SENDGRID_API    = "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"
+            user.email_user(subject, message)
+        else:
+            subject = render_to_string('for_email_txt/subject.txt', context)
+            message = render_to_string('for_email_txt/message.txt', context)
 
-        sg          = sendgrid.SendGridAPIClient(api_key=SENDGRID_API)
-        from_email  = Email("hospee.com@gmail.com")
-        to_email    = To(user.email)
-        subject     = subject
-        content     = Content("text/plain", message)
-        mail        = Mail(from_email, to_email, subject, content)
-        response    = sg.client.mail.send.post(request_body=mail.get())
-        
+            SENDGRID_API    = "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"
+
+            sg          = sendgrid.SendGridAPIClient(api_key=SENDGRID_API)
+            from_email  = Email("hospee.com@gmail.com")
+            to_email    = To(user.email)
+            subject     = subject
+            content     = Content("text/plain", message)
+            mail        = Mail(from_email, to_email, subject, content)
+            response    = sg.client.mail.send.post(request_body=mail.get())
+
         return redirect('accounts:user_create_done')
 
 class UserCreateDone(TemplateView):
@@ -85,15 +92,17 @@ class UserCreateDone(TemplateView):
 
 class UserCreateComplete(TemplateView):
     """メール内URLアクセス後のユーザー本登録"""
-    slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
-    slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + "新しいユーザーが作成されました")
-
     template_name = 'accounts/mypage/user_create_complete.html'
     timeout_seconds = getattr(settings, 'ACTIVATION_TIMEOUT_SECONDS', 60*60*24)  # デフォルトでは1日以内
 
     def get(self, request, **kwargs):
         """tokenが正しければ本登録."""
         token = kwargs.get('token')
+        DEBUG = settings.DEBUG
+        if not DEBUG:
+            slack = slackweb.Slack(url="https://hooks.slack.com/services/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")
+            slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + "新しいユーザーが作成されました")
+
         try:
             user_pk = loads(token, max_age=self.timeout_seconds)
         # 期限切れ
@@ -147,17 +156,30 @@ class AboutEmailView(LoginRequiredMixin,TemplateView):
 
 class AccountInfoView(LoginRequiredMixin,View):
     def get(self,request,*args,**kwargs):
-        form = UsernameChangeForm()
-        return render(request, 'accounts/mypage/account_info.html', {'form': form})
+        usernameform = UsernameChangeForm()
+        emailform = EmailChangeForm()
+        context = {
+            'usernameform': usernameform,
+            'emailform': emailform,
+        }
+        return render(request, 'accounts/mypage/account_info.html', context)
     def post(self,request,*args,**kwargs):
-        form = UsernameChangeForm(request.POST)
-        if not form.is_valid:
-            return render(request, 'main_app/form.html', {'form': form})
-        user_obj = User.objects.get(username=request.user)
-        user_obj.username = request.POST['username']
-        user_obj.save()
+        try:
+            form = UsernameChangeForm(request.POST)
+            user_obj = User.objects.get(username=request.user)
+            new_username = request.POST['username']
+            user_obj.username = new_username
+            #コメントのusernameをチェンジ
+            OtherRecord.objects.all().filter(username=request.user).update(username=new_username)
+            type = "username"
+        except:
+            form = EmailChangeForm(request.POST)
+            user_obj = User.objects.get(username=request.user)
+            user_obj.email = request.POST['email']
+            type = "email"
 
-        return render(request, 'accounts/mypage/account_info_done.html', {'form': form})
+        user_obj.save()
+        return render(request, 'accounts/mypage/account_info_done.html', {'type': type})
 
 @login_required
 def Exit(request):
@@ -180,31 +202,3 @@ def Comment(request):
 
 import sendgrid
 from sendgrid.helpers.mail import *
-
-@login_required
-def test_email(request):
-    """
-    SENDGRID_API    = "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"
-
-    sg          = sendgrid.SendGridAPIClient(api_key=SENDGRID_API)
-    from_email  = Email("hospee.com@gmail.com")
-    #from_email  = Email("dsduoa31@gmail.com")
-    to_email    = To("dsduoa31@gmail.com")
-    subject     = "メールの件名"
-    content     = Content("text/plain", "ここに本文")
-    mail        = Mail(from_email, to_email, subject, content)
-    response    = sg.client.mail.send.post(request_body=mail.get())
-    """
-    """題名"""
-    subject = "題名"
-    """本文"""
-    message = "本文です\nこんにちは。メールを送信しました"
-    """送信元メールアドレス"""
-    from_email = "information@myproject"
-    """宛先メールアドレス"""
-    recipient_list = [
-        "apptest@apptest.com"
-    ]
-
-    send_mail(subject, message, from_email, recipient_list)
-    return HttpResponse("it is test.")

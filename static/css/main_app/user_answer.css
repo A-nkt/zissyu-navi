@@ -668,7 +668,7 @@
     font-size: 24px;
   }
   .header-tab{
-    padding-bottom: 50px;
+    padding-bottom: 15px;
     border-bottom: 1px solid silver;
     width:100%;
   }
@@ -992,6 +992,15 @@
    }
    .recommend-text{
      text-align: center;
+   }
+   .like-button{
+     float: left;
+     font-size: 1.25rem;
+     margin-top: -20px;
+     margin-left: 10px;
+   }
+   .already i{
+     color: red;
    }
 
 }

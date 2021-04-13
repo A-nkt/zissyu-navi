@@ -15,7 +15,6 @@ urlpatterns = [
     path('mypage/password_change/done/', views.PasswordChangeDone.as_view(), name='password_change_done'),
     path('mypage/exit/' ,views.Exit, name='exit'),
     path('logout/' ,views.CustomLogoutView.as_view(), name='logout'),
-    path('test_email/', views.test_email, name='test_email'),
     path('create/<token>/', views.UserCreateComplete.as_view(), name='user_create_complete'),
     path('user_create_done/', views.UserCreateDone.as_view(), name='user_create_done'),
 ]

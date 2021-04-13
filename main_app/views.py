@@ -1,6 +1,6 @@
 # Public Django
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.utils import timezone
 from django.core.paginator import Paginator
 from django_pandas.io import read_frame
@@ -11,6 +11,7 @@ from django.contrib import messages
 from django.views import View
 from django.views.generic import  TemplateView
 from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.models import User
 # Public Python
 import pandas as pd
 import numpy as np
@@ -19,7 +20,7 @@ import math
 import requests
 import datetime as dt
 #Private Django
-from .models import Record,Major,Chapter,Article,Contact,OtherRecord
+from .models import Record,Major,Chapter,Article,Contact,OtherRecord,Like
 from .forms import RecordForm,ContactForm,OtherRecordForm
 from .image import *
 from .sub_function import *
@@ -416,6 +417,7 @@ def user_answer(request):
     pref_query = request.GET['pref']
     hp_query = request.GET['hospital_name']
     datas = Record.objects.all().filter(id=id);datas_o = read_frame(datas) #特定のidを抽出
+    record_id = datas_o.loc[0,'id']
     hospital_name = datas_o.loc[0,'hospital_name'];place = datas_o.loc[0,'place'] #病院名と県を取得
     #placeを元にplace_nameを決める
     for j in range(len(PLACE_CHOISE)):
@@ -431,6 +433,15 @@ def user_answer(request):
     related_df = individual_related_df(pref_query,hp_query)
     related_df2 = bottom_related_df(place_name,hp_query,id)
 
+    #For like
+    SelectedRecord = Record.objects.get(id=id)
+    SelectedUser = User.objects.get(username=request.user)
+    Likes = len(Like.objects.all().filter(hospital=SelectedRecord,user=SelectedUser))
+    if Likes == 1:
+        liked = True
+    else:
+        liked = False
+
     context = {
         'datas_o':datas_o,
         'hospital_name':hospital_name,
@@ -443,8 +454,25 @@ def user_answer(request):
         'judge':related_df2[1],
         'id':id,
         'encode_name':urllib.parse.quote(hospital_name),
+        'record_id':record_id,
+        'liked':liked,
+        'likes_cnt':len(Like.objects.all().filter(hospital=SelectedRecord)),
     }
     return render(request, 'main_app/user_answer.html',context)
+
+def likes(request, user, record):
+    """いいねボタンをクリック"""
+    SelectedRecord = Record.objects.get(id=record)
+    SelectedUser = User.objects.get(username=user)
+    if request.method == 'POST':
+        like = len(Like.objects.all().filter(hospital=SelectedRecord,user=SelectedUser))
+        print(like)
+        if like == 0:
+            Like.objects.create(hospital=SelectedRecord,user=SelectedUser)
+        else:
+            Like.objects.delete(hospital=SelectedRecord,user=SelectedUser)
+
+    return JsonResponse({"status": "responded by views.py"})
 
 def user_list(request):
     pref_query = request.GET['pref']

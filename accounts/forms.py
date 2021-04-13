@@ -31,3 +31,6 @@ class MyPasswordChangeForm(PasswordChangeForm):
 
 class UsernameChangeForm(forms.Form):
     username = forms.CharField(max_length=100)
+
+class EmailChangeForm(forms.Form):
+    email = forms.EmailField(max_length=100)

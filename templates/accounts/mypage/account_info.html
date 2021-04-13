@@ -20,7 +20,7 @@
     <p class="now-username">現在のユーザーネーム：<b>{{ user }}</b></p>
     <div class="field">
       <p class="control has-icons-left">
-        {% render_field form.username class="input" type="text" placeholder="新しいユーザーネーム" %}
+        {% render_field usernameform.username class="input" type="text" placeholder="新しいユーザーネーム" %}
         <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
         {{ form.username.errors }}
       </p>
@@ -30,5 +30,21 @@
     </div>
   </div>
 </form>
+<h2 class="label">Emailの変更</h2>
+<form method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          {% render_field emailform.email class="input" type="text" placeholder="新しいEmailアドレス" %}
+          <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+          {{ emailform.email.errors }}
+        </p>
+      </div>
 
+    <div class="field">
+      <p class="control"><button class="button is-success" type="submit">送信</button></p>
+    </div>
+  </div>
+</form>
 {% endblock %}

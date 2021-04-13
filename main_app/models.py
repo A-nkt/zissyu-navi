@@ -2,8 +2,8 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
 from django.utils.translation import gettext as _
+from django.contrib.auth import get_user_model
 # Create your models here.
-
 class Record(models.Model):
     class Meta:
         db_table = 'Record'
@@ -57,6 +57,15 @@ class Record(models.Model):
     def __str__(self):
         template='{0.hospital_name} '+','+'{0.major}'+','+'{0.date}'+','+'{0.sex}'+','+'{0.year}'+','+'{0.place}'
         return template.format(self)
+
+class Like(models.Model):
+    class Meta:
+        verbose_name = _('いいね')
+        verbose_name_plural = _('いいね')
+
+    hospital = models.ForeignKey(Record, on_delete=models.CASCADE,blank=True,null=True)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,blank=True,null=True)
+
 
 class Contact(models.Model):
     class Meta:
