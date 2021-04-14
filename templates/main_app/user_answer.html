@@ -10,7 +10,9 @@
 <script>let myurl = {"base": "{% url 'main_app:home' %}"};</script>
 {% endblock %}
 {% block title %}{{ hospital_name }}の投稿者別口コミ{% endblock %}
-{% block meta_description %}<meta name="description" content="{{ hospital_name }}のクチコミ">{% endblock %}
+{% block meta_description %}
+<meta name="description" content="{{ hospital_name }}のクチコミ">
+{% endblock %}
 
 {% block content %}
 <div class="main-content">
@@ -64,15 +66,15 @@
     </div><br><br>
 
       {% if liked == True %}
-      <div class="like-button already">
-        <a role="button" aria-pressed="true" onclick="likes(event, '{{ user }}', '{{ record_id }}')">
-          <i class="fas fa-thumbs-up">({{ likes_cnt }})</i>
+      <div id="LikeMain" class="btn like-button active">
+        <a ole="button" aria-pressed="true" onclick="likes(event, '{{ user }}', '{{ record_id }}')">
+          <i class="fas fa-thumbs-up">(<span class="watashi2" id="Sample">{{ likes_cnt }}</span>)</i>
         </a>
       </div>
       {% else %}
-      <div class="like-button">
-        <a role="button" aria-pressed="false" onclick="likes(event, '{{ user }}', '{{ record_id }}')">
-          <i class="fas fa-thumbs-up">({{ likes_cnt }})</i>
+      <div id="LikeMain" class="btn like-button">
+        <a aria-pressed="false" onclick="likes(event, '{{ user }}', '{{ record_id }}')">
+          <i class="fas fa-thumbs-up">(<span class="watashi1" id="Sample">{{ likes_cnt }}</span>)</i>
         </a>
       </div>
       {% endif  %}

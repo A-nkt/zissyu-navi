@@ -999,12 +999,13 @@
      margin-top: -20px;
      margin-left: 10px;
    }
-   .already i{
-     color: red;
+   .btn i{
+     color:rgb(109,144,214);
    }
-
+   .btn.active i {
+     color: red !important;
+   }
 }
-
 
 .star5_rating[data-rate="5.0"]:after{ width: 100%; }
 .star5_rating[data-rate="5"]:after{ width: 100%; }

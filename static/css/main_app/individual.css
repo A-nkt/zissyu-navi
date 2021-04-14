@@ -276,6 +276,31 @@
     margin-left: 10px;
     margin-right: 20px;
   }
+  .info-box-submit img{
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+  }
+  .blur-group-text{
+    display: absolute;
+    color:red;
+  }
+  .info-box-submit {
+  position: relative;
+  }
+  .info-box-submit .p1 {
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  left: 5%;
+  color:black;
+  }
+  .info-box-submit .p2 {
+  position: absolute;
+  top: 45%;
+  z-index: 1;
+  left: 5%;
+  color:black;
+  }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -542,6 +567,31 @@
   .info-topic .date{
     margin-left: 10px;
     margin-right: 20px;
+  }
+  .info-box-submit img{
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+  }
+  .blur-group-text{
+    display: absolute;
+    color:red;
+  }
+  .info-box-submit {
+  position: relative;
+  }
+  .info-box-submit .p1 {
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  left: 15%;
+  color:black;
+  }
+  .info-box-submit .p2 {
+  position: absolute;
+  top: 45%;
+  z-index: 1;
+  left: 15%;
+  color:black;
   }
 
 }

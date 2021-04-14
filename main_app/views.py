@@ -434,13 +434,20 @@ def user_answer(request):
     related_df2 = bottom_related_df(place_name,hp_query,id)
 
     #For like
+    # this pattern is not user is logged in
     SelectedRecord = Record.objects.get(id=id)
-    SelectedUser = User.objects.get(username=request.user)
-    Likes = len(Like.objects.all().filter(hospital=SelectedRecord,user=SelectedUser))
-    if Likes == 1:
-        liked = True
-    else:
-        liked = False
+    liked = False
+
+    # this pattern is user is logged in
+    if request.user != 'AnonymousUser':
+        SelectedUser = User.objects.get(username=request.user)
+        Likes = len(Like.objects.all().filter(hospital=SelectedRecord,user=SelectedUser))
+        if Likes == 1:
+            liked = True
+        else:
+            liked = False
+
+
 
     context = {
         'datas_o':datas_o,
@@ -466,11 +473,10 @@ def likes(request, user, record):
     SelectedUser = User.objects.get(username=user)
     if request.method == 'POST':
         like = len(Like.objects.all().filter(hospital=SelectedRecord,user=SelectedUser))
-        print(like)
         if like == 0:
             Like.objects.create(hospital=SelectedRecord,user=SelectedUser)
         else:
-            Like.objects.delete(hospital=SelectedRecord,user=SelectedUser)
+            Like.objects.all().filter(hospital=SelectedRecord,user=SelectedUser).delete()
 
     return JsonResponse({"status": "responded by views.py"})
 

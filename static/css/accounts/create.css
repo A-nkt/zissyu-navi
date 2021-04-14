@@ -34,11 +34,14 @@
 @media screen and (min-width:561px) and (max-width:960px){
   .main-content{
     max-width: 780px;
-    height: auto;
     margin: 0 auto;
     background-color: white;
+    border-radius: 5%;
     box-shadow: 0 0 3px 0 rgba(0,0,0,.12),0 2px 3px 0 rgba(0,0,0,.22);
-    padding: 1rem;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 100px;
+    padding-top: 50px;
     margin-top: 1rem;
   }
   .input{
@@ -106,4 +109,11 @@
 ul {
   list-style: none !important;
   color:red;
+}
+.for_login{
+  float: right;
+  margin-bottom: 1rem;
+}
+.merit{
+  float: left;
 }
