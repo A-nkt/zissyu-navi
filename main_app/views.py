@@ -439,15 +439,13 @@ def user_answer(request):
     liked = False
 
     # this pattern is user is logged in
-    if request.user != 'AnonymousUser':
+    if str(request.user) != 'AnonymousUser':
         SelectedUser = User.objects.get(username=request.user)
         Likes = len(Like.objects.all().filter(hospital=SelectedRecord,user=SelectedUser))
         if Likes == 1:
             liked = True
         else:
             liked = False
-
-
 
     context = {
         'datas_o':datas_o,

@@ -66,14 +66,14 @@
     </div><br><br>
 
       {% if liked == True %}
-      <div id="LikeMain" class="btn like-button active">
-        <a ole="button" aria-pressed="true" onclick="likes(event, '{{ user }}', '{{ record_id }}')">
+      <div class="like-button">
+        <a id="LikeMain" class="btn1" role="button" aria-pressed="true" onclick="likes(event, '{{ user }}', '{{ record_id }}')">
           <i class="fas fa-thumbs-up">(<span class="watashi2" id="Sample">{{ likes_cnt }}</span>)</i>
         </a>
       </div>
       {% else %}
-      <div id="LikeMain" class="btn like-button">
-        <a aria-pressed="false" onclick="likes(event, '{{ user }}', '{{ record_id }}')">
+      <div class="like-button">
+        <a id="LikeMain" class="btn2" aria-pressed="false" onclick="likes(event, '{{ user }}', '{{ record_id }}')">
           <i class="fas fa-thumbs-up">(<span class="watashi1" id="Sample">{{ likes_cnt }}</span>)</i>
         </a>
       </div>
