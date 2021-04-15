@@ -33,7 +33,7 @@
     font-size: 20px;
   }
   .header-tab{
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     border-bottom: 1px solid silver;
     width:90%;
   }
@@ -294,7 +294,7 @@
      border:2px solid rgb(106,191,176);
      padding: 10px;
      border-radius: 20px;
-     padding-bottom: 60px;
+     padding-bottom: 10px;
      margin-bottom: 15px;
      margin-top:10px;
    }
@@ -322,6 +322,16 @@
    .recommend a:visited { color: gray; }
    .recommend a:hover { color: gray; }
    .recommend a:active { color: gray; }
+   .like-button{
+     float: left;
+     font-size: 1.1rem;
+     margin-top: -20px;
+     margin-left: 10px;
+   }
+   .rcd-content{
+     overflow:hidden;
+     text-overflow: ellipsis;
+   }
 }
 
 
@@ -358,7 +368,7 @@
     font-size: 24px;
   }
   .header-tab{
-    padding-bottom: 30px;
+    padding-bottom: 15px;
     border-bottom: 1px solid silver;
     width:90%;
   }
@@ -618,7 +628,7 @@
      border:2px solid rgb(106,191,176);
      padding: 10px;
      border-radius: 20px;
-     padding-bottom: 60px;
+     padding-bottom: 10px;
      margin-bottom: 15px;
      margin-top:10px;
    }
@@ -646,6 +656,16 @@
    .recommend a:visited { color: gray; }
    .recommend a:hover { color: gray; }
    .recommend a:active { color: gray; }
+   .like-button{
+     float: left;
+     font-size: 1.25rem;
+     margin-top: -20px;
+     margin-left: 10px;
+   }
+   .rcd-content{
+     overflow:hidden;
+     text-overflow: ellipsis;
+   }
 }
 
 /*PC*/
