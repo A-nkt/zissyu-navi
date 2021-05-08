@@ -90,7 +90,7 @@ class FormView(View):
     def post(self,request,*args,**kwargs):
         form = RecordForm(request.POST)
         if not form.is_valid:
-            return render(request, 'main_app/form.html', {'form': form})
+            return render(request, 'main_app/form.html', {'text':'','form': form})
         recaptcha_response = request.POST.get('g-recaptcha-response')
         data = {
             'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
@@ -117,7 +117,8 @@ class FormView(View):
         post.save()
         form = RecordForm()
         text = "投稿しました！"
-        time.sleep(15)
+        text = ""
+        #time.sleep(15)
         return render(request, 'main_app/form.html',{'text':text,'form':form})
 
 form = FormView.as_view()

@@ -49,7 +49,7 @@
       </div>
       <div class="g-recaptcha" data-sitekey="6LffvWgaAAAAAEwCrsrcNLJr8DyjgnUx4p5JMLed"></div>
       <button id="open" class="button is-primary for-submit" type="submit" onclick="return check()" disabled>投稿する</button>
-      <div style="color:red">{{text}}</div>
+      <div id="submited" style="color:red">{{text}}</div>
   </form>
 </div>
 <div class="form-content">
@@ -58,8 +58,7 @@
     <section id="modal" class="hidden">
       <img src="{% static 'img/handclap.jpg' %}" alt="">
       <div class="thnk">ありがとうございます！</div>
-      <p>この度は、投稿していただきありがとうございます。<br>
-      ぜひ、SNSでシェアしてください。</p>
+      <p>この度は、投稿していただきありがとうございます。<br>ぜひ、SNSでシェアしてください。</p>
 
       <ul class="shareList">
         <li class="shareList__item">
