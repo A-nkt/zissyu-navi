@@ -19,6 +19,7 @@ import slackweb
 import math
 import requests
 import datetime as dt
+import time
 #Private Django
 from .models import Record,Major,Chapter,Article,Contact,OtherRecord,Like
 from .forms import RecordForm,ContactForm,OtherRecordForm
@@ -116,6 +117,7 @@ class FormView(View):
         post.save()
         form = RecordForm()
         text = "投稿しました！"
+        time.sleep(15)
         return render(request, 'main_app/form.html',{'text':text,'form':form})
 
 form = FormView.as_view()

@@ -9,6 +9,15 @@
 {% block title %}口コミを投稿する{% endblock %}
 {% block meta_description %}<meta name="description" content="新規のクチコミは随時受け付けております！">{% endblock %}
 
+{% block twitter_card %}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@To_Hospee" />
+<meta property="og:url" content="https://hospeee.com/media/{{ post.image }}" />
+<meta property="og:title" content="HospeeBlog | 病院実習クチコミサイト" />
+<meta property="og:description" content="{{ post.discription }}" />
+<meta property="og:image" content="{% static 'img/Hospeee-thankyou.png' %}"/>
+{% endblock %}
+
 {% block content %}
 <div class="form-content">
   <form method="POST">
@@ -39,9 +48,36 @@
           に同意する</label>
       </div>
       <div class="g-recaptcha" data-sitekey="6LffvWgaAAAAAEwCrsrcNLJr8DyjgnUx4p5JMLed"></div>
-      <button class="button is-primary for-submit" type="submit" onclick="return check()">投稿する</button>
+      <button id="open" class="button is-primary for-submit" type="submit" onclick="return check()" disabled>投稿する</button>
       <div style="color:red">{{text}}</div>
   </form>
 </div>
+<div class="form-content">
+  <!--div id="open">詳細をみる</div-->
+    <div id="mask" class="hidden"></div>
+    <section id="modal" class="hidden">
+      <img src="{% static 'img/handclap.jpg' %}" alt="">
+      <div class="thnk">ありがとうございます！</div>
+      <p>この度は、投稿していただきありがとうございます。<br>
+      ぜひ、SNSでシェアしてください。</p>
 
+      <ul class="shareList">
+        <li class="shareList__item">
+          <a class="shareList__link icon-twitter" href="https://twitter.com/share?url=https://hospeee.com{{ request.get_full_path }}&via=To_Hospee&text={{ post.title }}" rel="nofollow" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="shareList__item">
+          <a class="shareList__link icon-facebook" href="http://www.facebook.com/share.php?u=https://hospeee.com{{ request.get_full_path }}" rel="nofollow" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+      </ul>
+      <div id="close">
+        閉じる
+      </div>
+    </section>
+</div>
+
+<script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
 {% endblock %}
