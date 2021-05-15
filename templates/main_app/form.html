@@ -48,12 +48,14 @@
           に同意する</label>
       </div>
       <div class="g-recaptcha" data-sitekey="6LffvWgaAAAAAEwCrsrcNLJr8DyjgnUx4p5JMLed"></div>
-      <button id="open" class="button is-primary for-submit" type="submit" onclick="return check()" disabled>投稿する</button>
-      <div id="submited" style="color:red">{{text}}</div>
+      <button id="open" class="button is-primary for-submit" type="submit" onclick="return check()">投稿する</button>
+      <!--button id="open" class="button is-primary for-submit" type="submit" onclick="return check()" disabled>投稿する</button-->
+      {% if text != 'none' %}
+      <div id="submited" style="color:red">{{ text }}</div>
+      {% endif %}
   </form>
 </div>
-<div class="form-content">
-  <!--div id="open">詳細をみる</div-->
+<!--div class="form-content">
     <div id="mask" class="hidden"></div>
     <section id="modal" class="hidden">
       <img src="{% static 'img/handclap.jpg' %}" alt="">
@@ -78,5 +80,5 @@
     </section>
 </div>
 
-<script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/modal.js' %}"></script-->
 {% endblock %}

@@ -43,12 +43,12 @@
     <header>
       {# if you have account and login now #}
       {% if user.is_authenticated %}
-      <div class="over-trim" id="sample">
+      <!--div class="over-trim" id="sample">
         <a href="/accounts/mypage">
           <label for="toggle">
             <div class="trim"><i class="fas fa-user fa-3x"></i></div>
           </label>
-        </a>
+        </a-->
         <!--input type="checkbox" id="toggle">
         <div class="trim-2">
           <nav>
@@ -60,15 +60,15 @@
             <a href="/accounts/logout/"><li><i class="fas fa-sign-out-alt"></i>ログアウト</li></a>
           </nav>
         </div-->
-      </div>
+      <!--/div-->
       {% else %}
-      <div class="over-trim" id="sample">
+      <!--div class="over-trim" id="sample">
         <a href="/accounts/create">
           <label for="toggle">
             <div class="trim"><i class="fas fa-user fa-3x"></i></div>
           </label>
         </a>
-      </div>
+      </div-->
       {% endif %}
 
       <div class="hamburger">
@@ -76,6 +76,8 @@
         <span></span>
         <span></span>
       </div>
+      <p class="text-menu">メニュー</p>
+
     <h1><a href="/"><img src="{% static 'img/Hospee.png' %}"></a></h1>
       <nav class="globalMenuSp">
         <ul class="">

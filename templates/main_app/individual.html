@@ -188,10 +188,26 @@
     {% endif %}
   </div>
 
-  <h1><div class="header-tab" id="second-g">
-    <p class="header-top">{{ hospital_name }} におけるその他のクチコミ情報</p>
-  </div></h1>
+  <h1>
+    <div class="header-tab" id="second-g">
+      <p class="header-top">{{ hospital_name }} におけるその他のクチコミ情報</p>
+    </div>
+  </h1>
   <div class="info-box">
+    <div class="info-topic First">
+      <div class="icon left-group"><i class="fas fa-user fa-3x"></i></div>
+      <div class="right-group">
+        <div class="comment">
+          {{ hospital_name }}が<b>"就職先としてどうなのか"</b>、
+          <b>”どれだけ教育に力を入れているか”</b>など
+          皆さんが考えること・感じること、ぜひ書き込んでください！
+        </div>
+        <ul>
+          <li class="username">Hospee運営</li>
+          <li class="date"></li>
+        </ul>
+      </div>
+    </div>
     {% for obj in database %}
       {% if forloop.counter|divisibleby:2 %}
       <div class="info-topic Even">

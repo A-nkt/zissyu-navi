@@ -296,7 +296,7 @@
   }
   .info-box-submit .p2 {
   position: absolute;
-  top: 45%;
+  top: 75%;
   z-index: 1;
   left: 5%;
   color:black;
@@ -987,8 +987,13 @@
   }
 }
 
-
-
+.First{
+  border: 2px solid red;
+}
+.First .icon i{
+  color: red;
+  font-size: 2.5em !important;
+}
 .side-wrap{
   width: 25%;
   float: right;
