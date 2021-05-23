@@ -1,14 +1,13 @@
 body,h1,h2,h3,h4,h5,h6{
   font-family:'メイリオ' !important;
 }
-.header-tab li{
-   list-style: none;
-   float: right;
-}
-
 /*SmartPhone*/
 @media screen and (max-width:560px){
-  .header-tab i{
+  .base-header-tab li{
+     list-style: none;
+     float: right;
+  }
+  .base-header-tab .i-top i,.base-header-tab .i-second i{
     color:rgb(90,90,90);
     font-size: 2em;
     margin-left: 5px;
@@ -22,7 +21,7 @@ body,h1,h2,h3,h4,h5,h6{
     margin-right: 0em;
     padding-right: 1em;
   }
-  .header-tab .login {
+  .base-header-tab .login {
     font-size: 12px;
   }
   .over-trim label{
@@ -203,7 +202,7 @@ body,h1,h2,h3,h4,h5,h6{
     float: left;
     margin-left: 10px;
   }
-  header h1 img{
+  header img{
     position: absolute;
     width: 9em;
     height: auto;
