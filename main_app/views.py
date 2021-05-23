@@ -374,7 +374,7 @@ def individual(request):
     for k in range(len(PLACE_CHOISE)):
         if PLACE_CHOISE[k][0] == pref_query:
             pref_name = PLACE_CHOISE[k][1]
-    # image_card(hospital_name) #現状、TwitterCardの連携がうまくできないので(2021.3.6)
+    image_card(hospital_name) #現状、TwitterCardの連携がうまくできないので(2021.3.6)
 
     #その他のクチコミ情報に関して
     if request.POST:
