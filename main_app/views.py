@@ -390,7 +390,7 @@ def individual(request):
             slack.notify(text="-----新規投稿のお知らせ-----" + '\n' + "その他のクチコミが投稿されました")
 
     database = OtherRecord.objects.all().filter(hospital_name=hospital_name)
-
+    #print("now_uri",request.build_absolute_uri())
     context = {
         'hospital_name':hospital_name, #病院名
         'all_count':all_count, #回答者数
@@ -408,7 +408,7 @@ def individual(request):
         'pref_query':pref_query,
         'pref_name':pref_name,
         'related_df':related_df,
-        'encode_name':urllib.parse.quote(hospital_name),
+        'now_uri':request.build_absolute_uri(),
         'form':OtherRecordForm(),
         'database':database,
     }
