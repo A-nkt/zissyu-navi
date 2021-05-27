@@ -3,23 +3,38 @@ body,h1,h2,h3,h4,h5,h6{
 }
 /*SmartPhone*/
 @media screen and (max-width:560px){
+  .hamburger{
+    color:white;
+  }
   .base-header-tab li{
      list-style: none;
      float: right;
   }
-  .base-header-tab .i-top i,.base-header-tab .i-second i{
-    color:rgb(90,90,90);
+  .base-header-tab .i-top i,
+  .base-header-tab .i-second i,
+  .base-header-tab .i-top-logged i{
+    color:white;
     font-size: 2em;
     margin-left: 5px;
     margin-top: 0.25em;
   }
+  .i-top-logged .login{
+    margin-left: -1em;
+    color:white;
+  }
   .i-top{
     margin-right: 3.5em;
+    padding-right: 1em;
+    color: white;
+  }
+  .i-top-logged{
+    margin-right: 3em;
     padding-right: 1em;
   }
   .i-second{
     margin-right: 0em;
     padding-right: 1em;
+    color: white;
   }
   .base-header-tab .login {
     font-size: 12px;
@@ -110,7 +125,7 @@ body,h1,h2,h3,h4,h5,h6{
     width   : 30px;
     height  : 2px ;
     left    : 6px;
-    background : #555;
+    background : white;/*#555;*/
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition   : 0.3s ease-in-out;
     transition        : 0.3s ease-in-out;
@@ -184,7 +199,6 @@ body,h1,h2,h3,h4,h5,h6{
     text-decoration :none;
   }
 
-  /* このクラスを、jQueryで付与・削除する */
   nav.globalMenuSp.active {
     transform: translateX(0%);
   }
@@ -198,7 +212,6 @@ body,h1,h2,h3,h4,h5,h6{
     z-index: 3;
   }
   header h1 {
-    /*text-align: center;*/
     float: left;
     margin-left: 10px;
   }
@@ -228,12 +241,7 @@ body,h1,h2,h3,h4,h5,h6{
     float: right !important;
     margin-top: 39px !important;
     margin-left: -10px;
-    margin-right: -10px
-    /*
-    background-color: red;
-    margin-right: 5px;
-    margin-right: 10px;
-  */
+    margin-right: -10px;
   }
   .content{
     padding-top: 16.5%;
@@ -242,13 +250,27 @@ body,h1,h2,h3,h4,h5,h6{
     min-height: calc(400vw - 70px);
   }
 
-
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
   .base-header-tab li{
      list-style: none;
      float: right;
+  }
+  .base-header-tab .i-top-logged {
+    display: none;
+  }
+  .i-top-logged{
+    float: right;
+    margin-top: -5.5em;
+    margin-right: 1.5em;
+  }
+  .i-top-logged p{
+    color: white;
+  }
+  .i-top-logged i{
+    font-size: 2.5em;
+    color: white;
   }
   .i-top,.i-second{
     display: none;
@@ -362,6 +384,21 @@ body,h1,h2,h3,h4,h5,h6{
 }
 /*PC*/
 @media screen and (min-width:960px){
+  .base-header-tab .i-top-logged {
+    display: none;
+  }
+  .i-top-logged{
+    float: right;
+    margin-top: -5.75em;
+    margin-right: 6em;
+  }
+  .i-top-logged p{
+    color: white;
+  }
+  .i-top-logged i{
+    font-size: 4em;
+    color: white;
+  }
   .base-header-tab li{
      list-style: none;
      float: right;
