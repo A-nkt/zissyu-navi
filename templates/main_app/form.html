@@ -49,36 +49,32 @@
       </div>
       <div class="g-recaptcha" data-sitekey="6LffvWgaAAAAAEwCrsrcNLJr8DyjgnUx4p5JMLed"></div>
       <button id="open" class="button is-primary for-submit" type="submit" onclick="return check()">投稿する</button>
-      <!--button id="open" class="button is-primary for-submit" type="submit" onclick="return check()" disabled>投稿する</button-->
+      <!--button id="open" data-toggle="modal" data-target="#testModal" class="button is-primary for-submit" type="submit" onclick="return check()">投稿する</button-->
       {% if text != 'none' %}
       <div id="submited" style="color:red">{{ text }}</div>
       {% endif %}
   </form>
-</div>
-<!--div class="form-content">
-    <div id="mask" class="hidden"></div>
-    <section id="modal" class="hidden">
-      <img src="{% static 'img/handclap.jpg' %}" alt="">
-      <div class="thnk">ありがとうございます！</div>
-      <p>この度は、投稿していただきありがとうございます。<br>ぜひ、SNSでシェアしてください。</p>
+  <!--div class="modal fade form-content" id="testModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div id="mask" class="modal-body"></div>
+      <section id="modal" class="">
+        <img src="{% static 'img/handclap.jpg' %}" alt="">
+        <div class="thnk">ありがとうございます！</div>
+        <p>この度は、投稿していただきありがとうございます。<br>ぜひ、SNSでシェアしてください。</p>
 
-      <ul class="shareList">
-        <li class="shareList__item">
-          <a class="shareList__link icon-twitter" href="https://twitter.com/share?url=https://hospeee.com{{ request.get_full_path }}&via=To_Hospee&text={{ post.title }}" rel="nofollow" target="_blank" title="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="shareList__item">
-          <a class="shareList__link icon-facebook" href="http://www.facebook.com/share.php?u=https://hospeee.com{{ request.get_full_path }}" rel="nofollow" target="_blank" title="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </li>
-      </ul>
-      <div id="close">
-        閉じる
-      </div>
-    </section>
+        <ul class="shareList">
+          <li class="shareList__item">
+            <a class="shareList__link icon-twitter" href="https://twitter.com/share?url=https://hospeee.com{{ request.get_full_path }}&via=To_Hospee&text={{ post.title }}" rel="nofollow" target="_blank" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="shareList__item">
+            <a class="shareList__link icon-facebook" href="http://www.facebook.com/share.php?u=https://hospeee.com{{ request.get_full_path }}" rel="nofollow" target="_blank" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+        </ul>
+        <div id="close" onclick="setAlert();">閉じる</div>
+      </section>
+  </div-->
 </div>
-
-<script type="text/javascript" src="{% static 'js/modal.js' %}"></script-->
 {% endblock %}

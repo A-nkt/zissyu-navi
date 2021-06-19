@@ -8,3 +8,8 @@ function check(){
       return true;
   }
 }
+
+function setAlert(){
+  const p1 = document.getElementById("testModal");
+  p1.style.display ="none";
+}

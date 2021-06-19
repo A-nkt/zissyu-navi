@@ -1,16 +1,3 @@
-
-#open,
-#close {
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-align: center;
-  padding: 12px;
-  margin: 16px auto 0;
-  background: rgb(106,191,176);
-  color: white;
-}
-
 #mask {
   background: rgba(0, 0, 0, 0.4);
   position: fixed;
@@ -19,21 +6,6 @@
   right: 0;
   left: 0;
   z-index: 1;
-}
-
-#modal {
-  background: #fff;
-  color: #555;
-  padding: 40px;
-  border-radius: 4px;
-  z-index: 2;
-  transition: 0.4s;
-  margin: -200px 0 0 -300px;  /*縦横半分をネガティブマージンでずらす*/   /*body要素に対して絶対配置*/
-  position: fixed;
-  top: 50%;       /*上端を中央に*/
-  left: 50%;      /*左端を中央に*/
-  width: 600px;   /*横幅*/
-  height: 550px;  /*縦幅*/
 }
 
 #modal p {
@@ -50,6 +22,30 @@
 }
 /*SmartPhone*/
 @media screen and (max-width:560px){
+  #modal {
+    background: #fff;
+    color: #555;
+    padding: 80px;
+    border-radius: 4px;
+    z-index: 2;
+    transition: 0.4s;
+    margin: -200px 0 0 -300px;  /*縦横半分をネガティブマージンでずらす*/   /*body要素に対して絶対配置*/
+    position: fixed;
+    top: 45%;       /*上端を中央に*/
+    left: 50%;      /*左端を中央に*/
+    width: 600px;   /*横幅*/
+    height: 550px;  /*縦幅*/
+  }
+  #open,#close {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    padding: 12px;
+    margin: 16px auto 0;
+    background: rgb(106,191,176);
+    color: white;
+  }
   .form-content{
     padding-top: 20px;
     padding-left: 1%;
@@ -129,6 +125,30 @@ ul{
 .shareList__link.icon-facebook:hover{color:white;}
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
+  #modal {
+    background: #fff;
+    color: #555;
+    padding: 40px;
+    border-radius: 4px;
+    z-index: 2;
+    transition: 0.4s;
+    margin: -200px 0 0 -300px;  /*縦横半分をネガティブマージンでずらす*/   /*body要素に対して絶対配置*/
+    position: fixed;
+    top: 50%;       /*上端を中央に*/
+    left: 50%;      /*左端を中央に*/
+    width: 600px;   /*横幅*/
+    height: 550px;  /*縦幅*/
+  }
+  #open,#close {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    padding: 12px;
+    margin: 16px auto 0;
+    background: rgb(106,191,176);
+    color: white;
+  }
   .form-content{
     padding-top: 40px;
     padding-left: 12%;
@@ -158,6 +178,31 @@ ul{
 }
 /*PC*/
 @media screen and (min-width:960px){
+
+  #modal {
+    background: #fff;
+    color: #555;
+    padding: 40px;
+    border-radius: 4px;
+    z-index: 2;
+    transition: 0.4s;
+    margin: -200px 0 0 -300px;  /*縦横半分をネガティブマージンでずらす*/   /*body要素に対して絶対配置*/
+    position: fixed;
+    top: 50%;       /*上端を中央に*/
+    left: 50%;      /*左端を中央に*/
+    width: 600px;   /*横幅*/
+    height: 550px;  /*縦幅*/
+  }
+  #open,#close {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    padding: 12px;
+    margin: 16px auto 0;
+    background: rgb(106,191,176);
+    color: white;
+  }
   .form-content{
     padding-top: 1vw;
     padding-left: 30vw;
