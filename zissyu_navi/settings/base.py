@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'social_django',
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'axes.middleware.AxesMiddleware', #login rate limit
+    'social_django.middleware.SocialAuthExceptionMiddleware', #social login
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -85,6 +87,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # social login
+                'social_django.context_processors.login_redirect', # social login
             ],
         },
     },
@@ -92,6 +96,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'zissyu_navi.wsgi.application'
 
+
+AUTHENTICATION_BACKENDS = (
+  'social_core.backends.open_id.OpenIdAuth',
+  #'social_core.backends.google.GoogleOpenId',
+  'social_core.backends.google.GoogleOAuth2',
+
+ 'django.contrib.auth.backends.ModelBackend',
+)
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -158,7 +170,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = env('RECAPTCHA_SECRET_KEY')
 #    os.path.join(BASE_DIR, 'static'),
 #)
 #STATIC_ROOT = '/var/www/mysite'
-
+LOGIN_REDIRECT_URL = '/'
 
 
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
@@ -166,3 +178,7 @@ CKEDITOR_IMAGE_BACKEND = "pillow"
 
 #MEDIA_URL = '/media/'
 #MEDIA_ROOT = '/var/www/mysite/media'
+
+#グーグルアカウント連携用
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')

@@ -1020,7 +1020,7 @@
 .recommend a:active { color: gray; }
 
 
-div p {
+.field p,.personal_own_2 p,.header-tab p {
   display: inline-block;
 }
 
@@ -1108,21 +1108,10 @@ div p {
   font-size: 18px;
   font-weight:bold;
 }
-
-
 .hospital-url a:link { color: gray; }
 .hospital-url a:visited { color: gray; }
 .hospital-url a:hover { color : #0000ff;}
 .hospital-url a:active { color: gray; }
-
-/*.category-box {
-  width:100%; height:60px;
-  margin:5px; padding:10px;
-  border:1px solid black;
-  background-color:lightgray;
-}*/
-
-
 
 #nav_ptn_2 a:link { color: white; }
 #nav_ptn_2 a:visited { color: white; }

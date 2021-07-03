@@ -200,5 +200,8 @@ def Comment(request):
     }
     return render(request,'accounts/mypage/comments.html',context)
 
+def google(request):
+    return render(request, 'accounts/google.html')
+
 import sendgrid
 from sendgrid.helpers.mail import *

@@ -1,5 +1,6 @@
 from . import views
 from django.urls import path, include
+from django.contrib.auth import views as google_auth_view
 
 app_name="accounts"
 
@@ -17,4 +18,7 @@ urlpatterns = [
     path('logout/' ,views.CustomLogoutView.as_view(), name='logout'),
     path('create/<token>/', views.UserCreateComplete.as_view(), name='user_create_complete'),
     path('user_create_done/', views.UserCreateDone.as_view(), name='user_create_done'),
+    path('google/',views.google,name='google'),
+    path('google_login/', google_auth_view.LoginView.as_view(), name='google_login'),
+    path('google_logout/', google_auth_view.LogoutView.as_view(), name='google_logout'),
 ]

@@ -36,6 +36,7 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}, name='sitemap'),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt',content_type='text/plain')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('auth/', include('social_django.urls', namespace='social')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
