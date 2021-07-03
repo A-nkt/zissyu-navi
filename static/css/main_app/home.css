@@ -156,7 +156,7 @@
   }
   .lanking-section{
     margin-top: 8rem;
-    width: 90%;
+    max-width:360px; /*ランキングの長さ*/
     margin-left: auto;
     margin-right: auto;
   }
@@ -169,8 +169,7 @@
     list-style: none;
   }
   .lank-g li:hover{
-    box-shadow: 0 0 5px rgba(0,0,0,.45);
-    border: 1px solid rgb(106,191,176);
+    background-color: rgb(242,242,242);
   }
   .lank-g li:before {
     padding:10px;
@@ -328,7 +327,7 @@
   }
   .lanking-section{
     margin-top: 130px;
-    width:70%;
+    max-width:420px; /*ランキングの長さ*/
     margin-left: auto;
     margin-right: auto;
   }
@@ -340,8 +339,7 @@
     list-style: none;
   }
   .lank-g li:hover{
-    box-shadow: 0 0 5px rgba(0,0,0,.45);
-    border: 1px solid rgb(106,191,176);
+      background-color: rgb(242,242,242);
   }
   .lank-g li:before {
     padding:10px;
@@ -356,11 +354,11 @@
     display: none;
   }
   .main-content-bk:hover{
-    box-shadow: 0 0 25px rgba(0,0,0,.45);
-    font-weight: bold;
+    background-color: rgb(96,181,166);
   }
+
   .top-content-bk:hover{
-    box-shadow: 0 0 25px rgba(0,0,0,.45);
+    background-color: rgb(242,242,242);
   }
   .box-sub-text{
     padding-top: 10px;
@@ -521,7 +519,7 @@
   }
   .lanking-section{
     margin-top: 130px;
-    width:50%;
+    max-width:420px; /*ランキングの長さ*/
     margin-left: auto;
     margin-right: auto;
   }
@@ -533,8 +531,7 @@
     list-style: none;
   }
   .lank-g li:hover{
-    box-shadow: 0 0 5px rgba(0,0,0,.45);
-    border: 1px solid rgb(106,191,176);
+    background-color: rgb(242,242,242);
   }
   .lank-g li:before {
     padding:10px;
@@ -549,11 +546,11 @@
     padding-top: 2vw;
   }
   .main-content-bk:hover{
-    box-shadow: 0 0 25px rgba(0,0,0,.45);
-    font-weight: bold;
+    background-color: rgb(96,181,166);
   }
+
   .top-content-bk:hover{
-    box-shadow: 0 0 25px rgba(0,0,0,.45);
+    background-color: rgb(242,242,242);
   }
   .box-sub-text{
     padding-top: 10px;
@@ -604,9 +601,11 @@ ul {
 .main-top-text{
   color:gray;
 }
+/*
 .top-content-bk :hover{
   font-weight: bold;
 }
+*/
 .img-text-section h2 {
   font-weight: normal;
 }

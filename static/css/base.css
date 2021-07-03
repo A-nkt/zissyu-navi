@@ -1,6 +1,10 @@
 body,h1,h2,h3,h4,h5,h6{
   font-family:'メイリオ' !important;
 }
+body{
+  background-color: rgb(249,249,249);
+}
+
 /*SmartPhone*/
 @media screen and (max-width:560px){
   .hamburger{
@@ -489,7 +493,7 @@ body,h1,h2,h3,h4,h5,h6{
   header {
     display: flex;
     width: 100%;
-    height: 6.23vw;
+    height: 10.5vh;
     background-color: rgb(106,191,176);
     align-items: center;
     position: fixed;
@@ -499,7 +503,7 @@ body,h1,h2,h3,h4,h5,h6{
     text-align: center;
   }
   header img{
-    width:8%;
+    width: 14.5vh;
     height: auto;
   }
   .globalMenuSp a:link { color: white; }
@@ -560,4 +564,7 @@ footer p{
 }
 .footer {
   height: 50px;
+}
+header{
+  z-index: 99;
 }

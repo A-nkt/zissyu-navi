@@ -914,7 +914,8 @@
     margin-top:10px;
   }
   .recommend-box:hover{
-    box-shadow: 0 0 10px rgba(0,0,0,.45);
+    background-color: white;
+    /*box-shadow: 0 0 10px rgba(0,0,0,.45);*/
   }
   .rcd-hospital-name,.rcd-place{
     display: inline-block;
@@ -1021,6 +1022,7 @@
   position: relative;
   text-align: center;
   vertical-align: middle;
+
   }
   .hospital-name-bg::before,.hospital-name-bg::after {
   border-color: #73c01a;
@@ -1029,7 +1031,7 @@
   content: '';
   position: absolute;
   width: 0;
-  z-index: -2;
+  z-index: 0;
   }
   .hospital-name-bg::before {
   border-left-color: transparent;
@@ -1040,10 +1042,12 @@
   border-right-color: transparent;
   border-width: 20px 15px 20px 15px;
   right: -20px;
+  z-index: 1;
   }
   .name {
   font-size: 18px;
   font-weight: bold;
+  z-index: 10;
   }
   .name {
   background: #8dce41;
