@@ -12,6 +12,18 @@
 <div class="main-content">
   {% if not user.is_authenticated %}
   <h1>ログイン</h1>
+  <div class="sns">
+    <!--Google Account-->
+    <div class="google-account">
+      <i class="fab fa-google"></i>
+      <a href="{% url 'social:begin' 'google-oauth2' %}">Googleでログイン</a>
+    </div>
+    <!--Twiiter Account-->
+    <div class="twitter-account">
+      <i class="fab fa-twitter"></i>
+      <a href="{% url 'social:begin' 'twitter' %}">twiiterでログイン</a>
+    </div>
+  </div>
   <form method="POST">
       {% csrf_token %}
   <div class="field">

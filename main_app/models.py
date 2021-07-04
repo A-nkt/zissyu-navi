@@ -66,6 +66,10 @@ class Like(models.Model):
     hospital = models.ForeignKey(Record, on_delete=models.CASCADE,blank=True,null=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,blank=True,null=True)
 
+    def __str__(self):
+        template = 'User : {0.user}' + ', ' + 'To : {0.hospital}'
+        return template.format(self)
+
 
 class Contact(models.Model):
     class Meta:

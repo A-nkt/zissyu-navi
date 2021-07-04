@@ -101,6 +101,7 @@ AUTHENTICATION_BACKENDS = (
   'social_core.backends.open_id.OpenIdAuth',
   #'social_core.backends.google.GoogleOpenId',
   'social_core.backends.google.GoogleOAuth2',
+  'social_core.backends.twitter.TwitterOAuth',
 
  'django.contrib.auth.backends.ModelBackend',
 )
@@ -182,3 +183,6 @@ CKEDITOR_IMAGE_BACKEND = "pillow"
 #グーグルアカウント連携用
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+#Twiiter連携用
+SOCIAL_AUTH_TWITTER_KEY = env('SOCIAL_AUTH_TWITTER_KEY')
+SOCIAL_AUTH_TWITTER_SECRET = env('SOCIAL_AUTH_TWITTER_SECRET')
