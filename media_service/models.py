@@ -34,5 +34,5 @@ class Blog(models.Model):
     views = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        template = 'タイトル：'+'{0.title}'+',　更新日：'+'{0.date}' + ', 公開状況：' + '{0.is_public}'
+        template = '閲覧数：'+'{0.views},　タイトル：'+'{0.title}'+',　更新日：'+'{0.date}' + ', 公開状況：' + '{0.is_public}'
         return template.format(self)
