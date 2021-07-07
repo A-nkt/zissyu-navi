@@ -414,7 +414,7 @@ def individual(request):
         'database':database,
     }
     return render(request, 'main_app/individual.html',context)
-@login_required
+
 def user_answer(request):
     id = request.GET['id']
     pref_query = request.GET['pref']
@@ -480,8 +480,7 @@ def likes(request, user, record):
             Like.objects.all().filter(hospital=SelectedRecord,user=SelectedUser).delete()
 
     return JsonResponse({"status": "responded by views.py"})
-    
-@login_required
+
 def user_list(request):
     pref_query = request.GET['pref']
     hp_query = request.GET['hospital_name']
