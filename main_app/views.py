@@ -577,8 +577,15 @@ def user_list(request):
 
     related_df = individual_related_df(pref_query,hp_query)
 
+    #コンテンツが０の時
+    if len(datas) == 0:
+        content_is_none = True
+    else:
+        content_is_none = False
+
     context = {
         'datas':datas,
+        'content_is_none':content_is_none,
         'hospital_name':hp_query,
         'score':round(np.mean(hospital_score),1),
         'length':len(datas_all),

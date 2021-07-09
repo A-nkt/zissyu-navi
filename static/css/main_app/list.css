@@ -289,7 +289,7 @@
     font-weight: bold;
   }
   .no-content-wrap{
-    padding-top: 20%;
+    padding-top: 4%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -709,7 +709,9 @@
     font-weight: bold;
   }
   .no-content-wrap{
-    padding-top: 10%;
+    float: left;
+    width: 44rem;
+    padding-left: 5%;
   }
   .no-content-box{
       padding: 0.5em 1em;
@@ -1111,6 +1113,10 @@
   }
   .no-content-wrap{
     padding-top: 10%;
+    float: left;
+    width: 44rem;
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
   }
   .no-content-box{
       padding: 0.5em 1em;
