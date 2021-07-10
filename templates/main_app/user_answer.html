@@ -61,20 +61,21 @@
   </div>
   <main>
   <div class="header-tab">
-    <h2><p class="header-top">{{ hospital_name }}</p></h2>
-    <div class="star-category" id="star-all">
-      <div class="star5_rating" data-rate="{{ score }}">
-      </div>&nbsp;&nbsp;<b>{{ score }}</b>
+    <h2 class="header-top">{{ hospital_name }}</h2>
+    <div class="star_and_comment">
+      <div class="star-category" id="star-all">
+        <div class="star5_rating" data-rate="{{ score }}">
+        </div>&nbsp;&nbsp;<b>{{ score }}</b>
+      </div>
+      <div class="all_count">
+        <i class="fas fa-comment-alt fa-sm"></i>
+        病院クチコミ：{{ length }}件
+      </div>
     </div>
-    <div class="all_count">
-      <i class="fas fa-comment-alt fa-sm"></i>
-      病院クチコミ：{{ length }}件
-    </div><br><br>
-
       {% if liked == True %}
       <div class="like-button">
         <a id="LikeMain" class="btn1" role="button" aria-pressed="true" onclick="likes(event, '{{ user }}', '{{ record_id }}')">
-          <i class="fas fa-thumbs-up">(<span class="watashi2" id="Sample">{{ likes_cnt }}</span>)</i>
+          <i class="fas fa-thumbs-up"><span class="watashi2" id="Sample">({{ likes_cnt }})</span></i>
         </a>
       </div>
       {% else %}

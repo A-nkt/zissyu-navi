@@ -34,14 +34,13 @@
   }
   .header-tab{
     margin-top: 0.5em;
-    padding-bottom: 30px;
+    padding-bottom: 0.5em;
     border-bottom: 1px solid silver;
     width:90%;
   }
   .all_count{
     font-size: 16px;
-    margin-left: 7%;
-    margin-top: -1.0%;
+    margin-left: 1em;
   }
   .star5_rating{
       position: relative;
@@ -314,10 +313,9 @@
    .recommend a:hover { color: gray; }
    .recommend a:active { color: gray; }
    .like-button{
-     float: left;
-     font-size: 1.1rem;
-     margin-top: -20px;
-     margin-left: 10px;
+     font-size: 1.25em;
+     /*margin-top: -20px;
+     margin-left: 10px;*/
    }
    .rcd-content{
      overflow:hidden;
@@ -326,6 +324,10 @@
    .star-category,.rcd-count{
      display: inline-block;
    }
+   .star_and_comment{
+     margin-top: -0.5em;
+   }
+
 }
 
 
@@ -368,8 +370,7 @@
   }
   .all_count{
     font-size: 20px;
-    margin-left: 7%;
-    margin-top: -1.0%;
+    margin-left: 1%;
   }
   .star5_rating{
       position: relative;
@@ -641,10 +642,7 @@
    .recommend a:hover { color: gray; }
    .recommend a:active { color: gray; }
    .like-button{
-     float: left;
      font-size: 1.25rem;
-     margin-top: -20px;
-     margin-left: 10px;
    }
    .rcd-content{
      overflow:hidden;
@@ -677,8 +675,7 @@
   }
   .all_count{
     font-size: 18px;
-    margin-left: 5%;
-    margin-top: -1.0%;
+    margin-left: 1em;
   }
   .left-wrap2{
     display: none;
@@ -993,16 +990,18 @@
      text-align: center;
    }
    .like-button{
-     float: left;
      font-size: 1.25rem;
-     margin-top: -20px;
-     margin-left: 10px;
+     margin-top: 0.5em;
+   }
+   .star_and_comment{
+     margin-top: -0.5em;
    }
 }
-.btn1 i {
+/*Common Setting*/
+.btn1{
   color: red ;
 }
-.btn2 i{
+.btn2{
   color:rgb(109,144,214);
 }
 .star5_rating[data-rate="5.0"]:after{ width: 100%; }
@@ -1064,4 +1063,7 @@
 .star5_rating[data-rate="0"]:after{ width: 0%; }
 h2{
   color: rgb(111,111,111) !important;
+}
+.star-category,.all_count{
+  display: inline-block;
 }

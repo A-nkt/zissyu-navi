@@ -491,7 +491,7 @@ body,h1,h2,h3,h4,h5,h6{
   header {
     display: flex;
     width: 100%;
-    height: 11vh;
+    height: 11.75vh;
     background-color: rgb(106,191,176);
     align-items: center;
     position: fixed;

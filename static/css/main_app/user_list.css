@@ -76,15 +76,13 @@
     }
     .header-tab{
       margin-top: 0.5em;
-      padding-bottom: 30px;
+      padding-bottom: 0.5em;
       border-bottom: 1px solid silver;
       width:90%;
     }
-
     .all_count{
       font-size: 16px;
-      margin-left: 7%;
-      margin-top: -1%;
+      margin-left: 1em;
     }
     #second-g{
       padding-top: 20px;
@@ -274,6 +272,9 @@
     .star-category,.rcd-count{
       display: inline-block;
     }
+    .star_and_comment{
+      margin-top:-0.5em;
+    }
 }
 
 /*Tablet*/
@@ -346,15 +347,14 @@
     font-size: 24px;
   }
   .header-tab{
-    padding-bottom: 50px;
+    padding-bottom: 0.5em;
     border-bottom: 1px solid silver;
     width:60%;
   }
 
   .all_count{
     font-size: 18px;
-    margin-left: 5%;
-    margin-top: -0.5%;
+    margin-left: 1em;
   }
   #second-g{
     padding-top: 40px;
@@ -542,6 +542,9 @@
     overflow:hidden;
     text-overflow: ellipsis;
   }
+  .star_and_comment{
+    margin-top: -0.5em;
+  }
 }
 
 /*PC*/
@@ -630,15 +633,14 @@
     font-size: 24px;
   }
   .header-tab{
-    padding-bottom: 50px;
+    padding-bottom: 0.5em;
     border-bottom: 1px solid silver;
     width:100%;
   }
 
   .all_count{
     font-size: 18px;
-    margin-left: 5%;
-    margin-top: -1.0%;
+    margin-left: 1em;
   }
   #second-g{
     padding-top: 40px;
@@ -824,7 +826,11 @@
     padding-top: 1%;
     color:gray;
   }
+  .star_and_comment{
+    margin-top: -0.5em;
+  }
 }
+/*Common Setting*/
 
 .star5_rating{
     position: relative;
@@ -906,4 +912,7 @@
 
 h2{
   color: rgb(111,111,111) !important;
+}
+.star-category,.all_count{
+  display: inline-block;
 }
