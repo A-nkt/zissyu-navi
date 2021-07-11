@@ -20,9 +20,11 @@ from django.conf import settings
 from django.contrib.sitemaps.views import sitemap
 from main_app.sitemaps import *
 from django.views.generic import TemplateView
+from zissyu_navi.sitemaps import BlogSiteMap
 
 sitemaps = {
     'BaseSitemap': BaseSitemap,
+    'Post':BlogSiteMap,
 }
 
 
