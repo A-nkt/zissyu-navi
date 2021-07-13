@@ -183,7 +183,7 @@
       <li>
         <a href="/list?major={{ data.db_major_name }}&page=1&sort=1">
           <div class="main-content-bk" id="content-no2">
-            <img src="{{ data.image.url }}"/>
+            <img src="{{ data.image.url }}" alt="各専攻のイメージ画像" />
             <div class="main-sub-text">{{ data.major_name }}<br>{{ data.count }}件</div><!--クチコミ件数は動的に-->
           </div>
         </a>
@@ -196,7 +196,7 @@
       {% for data in datas %}
         <a href="/list?major={{ data.db_major_name }}&page=1&sort=1">
           <div class="main-content-bk" id="content-no2">
-            <img src="{{ data.image.url }}"/>
+            <img src="{{ data.image.url }}" alt="各専攻のイメージ画像"/>
             <div class="main-sub-text">{{ data.major_name }}<br>{{ data.count }}件</div><!--クチコミ件数は動的に-->
           </div>
         </a>
