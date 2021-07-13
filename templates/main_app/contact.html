@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load widget_tweaks %}
+
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/main_app/contact.css' %}">{% endblock %}
+
 {% block js_file %}<script src='https://www.google.com/recaptcha/api.js'></script>{% endblock %}
+
 {% block title %}お問い合わせ{% endblock %}
-{% block meta_description %}<meta name="description" content="ご意見・ご感想などございましたら随時ご連絡いただけば対応させていただきます">{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="Hospeeのお問い合わせはこちらから。サービスへのご意見・ご感想や当サイトに関する取材やお仕事の依頼もこちらから承ります。
+ご返信に関しては、お問い合わせの内容を確認させていただいたのちに数日以内にご連絡させていただきます。">
+{% endblock %}
 
 {% block content %}
 <div class="main-content">

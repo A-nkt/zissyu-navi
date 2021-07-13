@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/media_service/content.css' %}">{% endblock %}
-{% block title %}メディア{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
 {% block meta_description %}
 <meta name="description" content="{{ post.discription }}">
 {% endblock %}

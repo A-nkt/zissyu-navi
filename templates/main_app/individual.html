@@ -3,8 +3,11 @@
 {% load widget_tweaks %}
 {% block css_file %}<link rel="stylesheet" href="{% static 'css/main_app/individual.css' %}">{% endblock %}
 {% block js_file %}<script type="text/javascript" src="{% static 'js/individual.js' %}"></script>{% endblock %}
-{% block title %}{{ hospital_name }}のクチコミ{% endblock %}
-{% block meta_description %}<meta name="description" content="{{ pref_name }}・{{ hospital_name }}における病院実習のクチコミです。実習担当者・レポート・コミュニケーションの観点からレビューを行っています">{% endblock %}
+{% block title %}{{ hospital_name }}の実習クチコミ{% endblock %}
+{% block meta_description %}
+<meta name="description" content="{{ pref_name }}にある{{ hospital_name }}の実習のクチコミです。実習担当者はどんな人？レポートでどのくらい？実習環境は問題ない？など
+みんなの疑問を解決することができます。閲覧も投稿も完全無料です。">
+{% endblock %}
 {% block twitter_card %}
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@To_Hospee" />
