@@ -3,7 +3,6 @@
   .contents-section{
     padding-right: 2%;
     padding-left: 2%;
-    z-index:0;
     font-size: 1em;
   }
   .img-section img{
@@ -17,11 +16,9 @@
     z-index:0;
   }
   .img-text-section{
-    position: absolute;
     top: 40px;
     max-height: 100%;
     padding-left: 5%;
-    text-align: left;
   }
   .header-text{
     color: white;
@@ -29,28 +26,12 @@
     font-size: 50px;
     font-weight: bold;
   }
-  .img-text-section p{
-    font-size: 20px;
-    color: gray !important;
-  }
   .box-header-text{
-    text-align: center;
-    color: black;
-    font-weight: bold;
     font-size: 18px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
   .top-content-bk{
-    border-radius:40px;
-    background-color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transform: translateY(0%) translateX(-50%);
-    -webkit- transform: translateY(0%) translateX(-50%);
     font-size: 1em;
     width: 155px;
     height: 155px;
@@ -59,25 +40,15 @@
     content: "\A" ;
 	   white-space: pre ;
   }
-
   .top-block {
-    text-align: center;
     height:170px;
   }
   .content-header-text{
-    text-align: center;
-    color: black;
-    font-weight: bold;
     font-size: 18px;
     padding-top: 10px;
   }
   .main-section{
     margin-top: 40px;
-  }
-  .main-top-text{
-    width: 80%;
-    overflow:hidden;
-    text-overflow: ellipsis;
   }
   .main-sub-text{
     width: 85%;
@@ -137,48 +108,15 @@
     width: 0px;
     height: 0px;
   }
-  .inline-block {
-    text-align: center;
-    /*width: 100%;*/
-  }/*
-  .inline-block li {
-    display: inline-block;
-  }*/
-  .top-block li {
-    display: inline-block;
-  }
-  .main-box{
-    width: 100%;
-    height: auto;
-    background-color: rgb(106,191,176);
-    overflow-x: auto;
-    white-space: nowrap;
-  }
   .lanking-section{
     margin-top: 8rem;
     max-width:360px; /*ランキングの長さ*/
-    margin-left: auto;
-    margin-right: auto;
   }
   .lank-g li {
-    border: 1px solid rgb(106,191,176);
-    border-radius: 30px;
-    margin-bottom: 20px;
     margin-left: -1em;
-    text-align: center;
-    list-style: none;
   }
   .lank-g li:hover{
     background-color: rgb(242,242,242);
-  }
-  .lank-g li:before {
-    padding:10px;
-    margin: 10px;
-  }
-  .crw{
-    float: left;
-    margin-left: 10px;
-    margin-top: 5px;
   }
   .img-text-section h2 {
       margin-top: -5px !important;
@@ -212,7 +150,6 @@
   .contents-section{
     padding-right: 2%;
     padding-left: 2%;
-    z-index:0;
   }
   .img-section img{
     width: 100%;
@@ -226,31 +163,21 @@
     z-index:0;
   }
   .img-text-section{
-    position: absolute;
     top: 100px;
     max-width: 100%;
     max-height: 100%;
     padding-left: 15%;
-    text-align: left;
   }
   .header-text{
     color: white;
-    /*-webkit-text-stroke: 0.75px rgb(106,191,176);*/
     text-shadow:2px 2px 0 rgb(106,191,176);
     font-size: 50px;
     font-weight: bold;
-  }
-  .img-text-section p{
-    font-size: 20px;
-    color: gray !important;
   }
   .img-text-section h2 {
       margin-top: -5px !important;
   }
   .box-header-text{
-    text-align: center;
-    color: black;
-    font-weight: bold;
     font-size: 22px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -260,24 +187,11 @@
     height: 200px;
     margin-right:3px;
     margin-left: 15px;
-    border-radius:40px;
-    background-color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transform: translateY(0%) translateX(-50%);
-    -webkit- transform: translateY(0%) translateX(-50%);
   }
   .top-block {
-    text-align: center;
     height:220px;
   }
   .content-header-text{
-    text-align: center;
-    color: black;
-    font-weight: bold;
     font-size: 22px;
     padding-top: 20px;
   }
@@ -308,47 +222,12 @@
     margin-right: 80px;
     margin-left: 80px;
   }
-  .inline-block {
-    text-align: center;
-  }
-  .inline-block li {
-    display: inline-block;
-  }
-
-  .top-block li {
-    display: inline-block;
-  }
-  .main-box{
-    width: 100%;
-    height: auto;
-    background-color: rgb(106,191,176);
-    overflow-x: auto;
-    white-space: nowrap;
-  }
   .lanking-section{
     margin-top: 130px;
     max-width:420px; /*ランキングの長さ*/
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .lank-g li {
-    border: 1px solid rgb(106,191,176);
-    border-radius: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-    list-style: none;
   }
   .lank-g li:hover{
       background-color: rgb(242,242,242);
-  }
-  .lank-g li:before {
-    padding:10px;
-    margin: 10px;
-  }
-  .crw{
-    float: left;
-    margin-left: 10px;
-    margin-top: 5px;
   }
   br {
     display: none;
@@ -356,7 +235,6 @@
   .main-content-bk:hover{
     background-color: rgb(96,181,166);
   }
-
   .top-content-bk:hover{
     background-color: rgb(242,242,242);
   }
@@ -369,11 +247,6 @@
     margin-bottom:5px;
     margin-top: 5px;
     font-weight: bold;
-  }
-  .main-top-text{
-    width: 80%;
-    overflow:hidden;
-    text-overflow: ellipsis;
   }
   .main-sub-text{
     width: 85%;
@@ -389,11 +262,6 @@
   .img-section img{
     width:100%;
     height:100%;
-  }
-  .main-top-text{
-    width: 80%;
-    overflow:hidden;
-    text-overflow: ellipsis;
   }
   .main-sub-text{
     width: 85%;
@@ -413,12 +281,10 @@
     font-size: 1.1em;
   }
   .img-text-section{
-    position: absolute;
     top: 25%;
     max-width: 100%;
     max-height: 100%;
     padding-left: 15%;
-    text-align: left;
   }
   .header-text{
     color: white !important;
@@ -426,18 +292,10 @@
     font-size: 50px !important;
     font-weight: bold !important;
   }
-  .img-text-section p{
-    font-size: 20px;
-    color: gray !important;
-  }
   .img-text-section h2 {
       margin-top: -5px !important;
   }
-
   .box-header-text{
-    text-align: center;
-    color: black;
-    font-weight: bold;
     font-size: 22px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -445,31 +303,17 @@
   .contents-section{
     padding-right: 22%;
     padding-left: 22%;
-    z-index:0;
   }
   .top-content-bk{
     width: 200px;
     height: 200px;
     margin-right:3px;
     margin-left: 15px;
-    border-radius:40px;
-    background-color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transform: translateY(0%) translateX(-50%);
-    -webkit- transform: translateY(0%) translateX(-50%);
   }
   .top-block {
-    text-align: center;
     height:220px;
   }
   .content-header-text{
-    text-align: center;
-    color: black;
-    font-weight: bold;
     font-size: 22px;
     padding-top: 20px;
   }
@@ -500,47 +344,12 @@
     margin-right: 80px;
     margin-left: 80px;
   }
-  .inline-block {
-    text-align: center;
-  }
-  .inline-block li {
-    display: inline-block;
-  }
-
-  .top-block li {
-    display: inline-block;
-  }
-  .main-box{
-    width: 100%;
-    height: auto;
-    background-color: rgb(106,191,176);
-    overflow-x: auto;
-    white-space: nowrap;
-  }
   .lanking-section{
     margin-top: 130px;
     max-width:420px; /*ランキングの長さ*/
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .lank-g li {
-    border: 1px solid rgb(106,191,176);
-    border-radius: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-    list-style: none;
   }
   .lank-g li:hover{
     background-color: rgb(242,242,242);
-  }
-  .lank-g li:before {
-    padding:10px;
-    margin: 10px;
-  }
-  .crw{
-    float: left;
-    margin-left: 10px;
-    margin-top: 5px;
   }
   .all-section{
     padding-top: 2vw;
@@ -548,7 +357,6 @@
   .main-content-bk:hover{
     background-color: rgb(96,181,166);
   }
-
   .top-content-bk:hover{
     background-color: rgb(242,242,242);
   }
@@ -566,8 +374,78 @@
     margin-top: 5rem !important;
   }
 }
-
-
+/* Common Setting */
+.img-text-section{
+  position: absolute;
+  text-align: left;
+}
+.img-text-section p{
+  font-size: 20px;
+  color: gray !important;
+}
+.box-header-text{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+.contents-section{
+    z-index:0;
+}
+.top-content-bk{
+    border-radius:40px;
+    background-color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: translateY(0%) translateX(-50%);
+    -webkit- transform: translateY(0%) translateX(-50%);
+}
+.top-block {
+  text-align: center;
+}
+.content-header-text{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+.inline-block {
+  text-align: center;
+}
+.inline-block li {
+  display: inline-block;
+}
+.top-block li {
+  display: inline-block;
+}
+.main-box{
+  width: 100%;
+  height: auto;
+  background-color: rgb(106,191,176);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.lanking-section{
+  margin-left: auto;
+  margin-right: auto;
+}
+.lank-g li {
+  border: 1px solid rgb(106,191,176);
+  border-radius: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  list-style: none;
+}
+.lank-g li:before {
+  padding:10px;
+  margin: 10px;
+}
+.crw{
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
+}
 .main-section i{
   margin-top: -0.2em;
 }
@@ -583,7 +461,6 @@
 .rank3{
   color:#C47222;
 }
-
 #site-icon{
   margin: 0px;
   padding: 0px;
@@ -600,12 +477,10 @@ ul {
 }
 .main-top-text{
   color:gray;
+  width: 80%;
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
-/*
-.top-content-bk :hover{
-  font-weight: bold;
-}
-*/
 .img-text-section h2 {
   font-weight: normal;
 }

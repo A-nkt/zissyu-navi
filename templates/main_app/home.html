@@ -26,8 +26,8 @@
         {% for index, row in datas.iterrows %}
         <li>
           <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
-            <div class="top-content-bk">
-              <div class="main-top-text">
+            <div itemscope itemtype="http://schema.org/SoftwareApplication" class="top-content-bk">
+              <div itemprop="name" content="{{ row.date }}" class="main-top-text">
                 <div class="hospital-name">{{ row.hospital_name }}</div>
                 <div class="box-sub-text">{{ row.place }},{{ row.major }}</div>
                 <div class="post-date">投稿日：</div>{{ row.date }}
@@ -83,9 +83,9 @@
     <div>
       <ul class="lank-g">
         {% for index, row in df_list.iterrows %}
-        <li>
-          <a href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
-            <div class="text-g">
+        <li itemscope itemtype="http://schema.org/SoftwareApplication" itemref="_name17 _review20 _review22 _review24">
+          <a itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" href="/list/individual/?pref={{ row.place_name }}&hospital_name={{ row.hospital_name }}">
+            <div itemprop="ratingCount" class="text-g">
               <div class="crown">
               {% if row.rank == 1 %}
                 <span class="fa-stack fa-lg crw rank1">
