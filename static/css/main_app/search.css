@@ -18,17 +18,12 @@
     position: relative;
   }
   .main-sub-text{
-    position: absolute;
     color: white;
-    font-size: 20px;
-    font-weight: bold;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    margin:0;
-    padding:0;
     text-align: center;
   }
   .main-section{
@@ -122,13 +117,6 @@
     transform: translateY(0%) translateX(-50%);
     -webkit- transform: translateY(0%) translateX(-50%);
   }
-  .main-sub-text{
-    position: absolute;
-    margin: 0%;
-    padding: 0%;
-    font-size: 20px;
-    font-weight: bold;
-  }
   .inline-block li {
   	display: inline-block;
   }
@@ -201,17 +189,9 @@
     transform: translateY(0%) translateX(-50%);
     -webkit- transform: translateY(0%) translateX(-50%);
   }
-  .main-sub-text{
-    position: absolute;
-    margin: 0%;
-    padding: 0%;
-    font-size: 20px;
-    font-weight: bold;
-  }
   .inline-block li {
   	display: inline-block;
   }
-
   #top-row{
     background-color: rgb(106,191,176);
     text-align: center!important;
@@ -238,18 +218,22 @@
     display: block;
     opacity: 0.6;
   }
-
   ul {
   	list-style-type: none;
   	padding-left: 0;
   }
 }
-
+.main-sub-text{
+  position: absolute;
+  margin: 0%;
+  padding: 0%;
+  font-size: 20px;
+  font-weight: bold;
+}
 .body-contents a:link { color: black; }
 .body-contents a:visited { color: black; }
 .body-contents a:hover { color: black; font-weight: bold;}
 .body-contents a:active { color: black; }
-
 .box-header-text{
   text-align: center;
   color: black;
@@ -257,16 +241,12 @@
   font-size: 20px;
   padding-bottom: 20px;
 }
-
 .main-content-bk:hover{
   box-shadow: 0 0 25px rgba(0,0,0,.45);
 }
-
-
 .inline-block {
 	text-align: center;
 }
-
 .major-header-text{
   text-align: center;
   color: black;

@@ -1,19 +1,13 @@
 function likes(event, user, record) {
-
     if(user != "AnonymousUser"){
       var element = document.getElementById("Sample");
       var element2 = document.getElementById("LikeMain");
       if(element.className == 'watashi1'){
-        /* default mode */
-        //console.log('Default Mode. -> Clicked Mode.')
-        /*element2.add("active");*/
         element.className = 'watashi2';
         element2.className = 'btn1';
         document.getElementById( "Sample" ).innerHTML =
           parseInt( document.getElementById( "Sample" ).firstChild.nodeValue ) + 1;
       }else{
-        /* clicked mode */
-        //console.log("Clicked Mode. -> Default Mode.")
         element.className = 'watashi1';
         element2.className = 'btn2';
         document.getElementById( "Sample" ).innerHTML =
@@ -28,13 +22,11 @@ function likes(event, user, record) {
             body: JSON.stringify({"status": "requested by javascript."})
             }
         );
-
     } else {
         window.location.href = '/accounts/login/';
         alert("'いいね'を押すためには、ログインが必要です。");
     }
 }
-
 $(function(){
   console.log(user)
   if(user != "AnonymousUser"){
@@ -47,7 +39,6 @@ $(function(){
       } else {
           var text = $(this).data('text-default');
       }
-
       $(this).html(text);
   });
   };
