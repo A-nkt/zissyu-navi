@@ -1,78 +1,41 @@
 /*SmartPhone*/
 @media screen and (max-width:560px){
-  .my-comment{
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  .hospital-name,.date{
-    display: inline-block;
-  }
   .hospital-name{
     font-size: 1.1rem;
-  }
-  .top-line{
-    margin-bottom: 10px;
-  }
-  .Odd{
-    border: 2px solid rgb(106,191,176,0.7);
-  }
-  .Even{
-    border: 2px solid rgb(218,165,32,0.7)
-  }
-  h2{
-    font-size: 1rem !important;
   }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
-  .my-comment{
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  .hospital-name,.date{
-    display: inline-block;
-  }
   .hospital-name{
     font-size: 1.1rem;
-  }
-  .top-line{
-    margin-bottom: 10px;
-  }
-  .Odd{
-    border: 2px solid rgb(106,191,176,0.7);
-  }
-  .Even{
-    border: 2px solid rgb(218,165,32,0.7)
-  }
-  h2{
-    font-size: 1rem !important;
   }
 }
 /*PC*/
 @media screen and (min-width:960px){
-  .my-comment{
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  .hospital-name,.date{
-    display: inline-block;
-  }
   .hospital-name{
     font-size: 1.15rem;
   }
   .date{
     text-decoration: underline;
   }
-  .top-line{
-    margin-bottom: 10px;
-  }
-  .Odd{
-    border: 2px solid rgb(106,191,176,0.7);
-  }
-  .Even{
-    border: 2px solid rgb(218,165,32,0.7);
-  }
-  h2{
-    font-size: 1rem !important;
-  }
+}
+/* Common Setting */
+.my-comment{
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.hospital-name,.date{
+  display: inline-block;
+}
+.top-line{
+  margin-bottom: 10px;
+}
+.Odd{
+  border: 2px solid rgb(106,191,176,0.7);
+}
+.Even{
+  border: 2px solid rgb(218,165,32,0.7);
+}
+h2{
+  font-size: 1rem !important;
 }

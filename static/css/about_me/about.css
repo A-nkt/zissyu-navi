@@ -1,3 +1,42 @@
+/*SmartPhone*/
+@media screen and (max-width:560px){
+  .main-content{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2vw !important;
+  }
+  .is-1{
+    font-size: 1.5em !important;
+  }
+  .is-2{
+    font-size: 1.25em !important;
+  }
+  .is-2:after {
+    margin-bottom: -1.5% !important;
+  }
+}
+/*Tablet*/
+@media screen and (min-width:561px) and (max-width:960px){
+  .main-content{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 2vw !important;
+  }
+  .is-2:after {
+    margin-bottom: -1% !important;
+  }
+}
+/*PC*/
+@media screen and (min-width:960px){
+  .main-content{
+    padding-left: 30vw;
+    padding-right: 30vw;
+  }
+  .is-2:after {
+    margin-bottom: -1% !important;
+  }
+}
+/* Common Setting */
 h1,h2{
   text-align: center;
 }
@@ -25,7 +64,6 @@ h1,h2{
 .is-2{
   position: relative;
 }
-
 .is-2:after {
   content: "";
   position: absolute;
@@ -36,7 +74,6 @@ h1,h2{
   background: -webkit-repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
   background: repeating-linear-gradient(-45deg, #6ad1c8, #6ad1c8 2px, #fff 2px, #fff 4px);
 }
-
 .is_start{
   margin: 10em 0 !important;
 }
@@ -45,46 +82,4 @@ h1,h2{
 }
 .is_start a:hover{
   color:rgb(0,0,0);
-}
-
-}
-
-/*SmartPhone*/
-@media screen and (max-width:560px){
-  .main-content{
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 2vw !important;
-  }
-  .is-1{
-    font-size: 1.5em !important;
-  }
-  .is-2{
-    font-size: 1.25em !important;
-  }
-  .is-2:after {
-    margin-bottom: -1.5% !important;
-  }
-
-}
-/*Tablet*/
-@media screen and (min-width:561px) and (max-width:960px){
-  .main-content{
-    padding-left: 10vw;
-    padding-right: 10vw;
-    padding-top: 2vw !important;
-  }
-  .is-2:after {
-    margin-bottom: -1% !important;
-  }
-}
-/*PC*/
-@media screen and (min-width:960px){
-  .main-content{
-    padding-left: 30vw;
-    padding-right: 30vw;
-  }
-  .is-2:after {
-    margin-bottom: -1% !important;
-  }
 }

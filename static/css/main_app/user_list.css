@@ -21,22 +21,6 @@
       border-radius: 3px 0 3px 0;
       margin: 0 auto;
     }
-    .recommend:before,.recommend:after{
-      content: '';
-      position: absolute;
-      width:10px;
-      height: 10px;
-      border: solid 2px rgb(106,191,176,0.7);
-      border-radius: 50%;
-    }
-    .recommend:after {
-      top:-12px;
-      left:-12px;
-    }
-    .recommend:before {
-      bottom:-12px;
-      right:-12px;
-    }
     .recommend-box{
       border:2px solid rgb(106,191,176);
       padding: 10px;
@@ -47,9 +31,6 @@
     }
     .recommend-box:hover{
       box-shadow: 0 0 10px rgba(0,0,0,.45);
-    }
-    .rcd-hospital-name,.rcd-place{
-      display: inline-block;
     }
     .rcd-hospital-name{
       font-size: 1em;
@@ -65,13 +46,7 @@
       margin-right: 30px;
       margin-top: 5px;
     }
-    .recommend a:link { color: gray; }
-    .recommend a:visited { color: gray; }
-    .recommend a:hover { color: gray; }
-    .recommend a:active { color: gray; }
-
     .header-top,#star-all{
-      font-weight: bold;
       font-size: 20px;
     }
     .header-tab{
@@ -103,27 +78,12 @@
       padding-right: 10px;
       margin-right: -1.86px;
     }
-    #gender_woman{
-      padding-left: 10px;
-      margin-left: -1.86px;
-    }
     #gender_type{
       padding-right: 1%;
     }
-    #gender_mid{
-      padding-right: 1%;
-      padding-left: 1%;
-    }
-
     #nav_gender{
       margin-bottom: 0px;
       margin-top: -10px;
-      /*font-size: 16px;*/
-    }
-
-    #nav_ptn_2 {
-      list-style: none;
-      /*font-size: 10px !important;*/
     }
     #nav_ptn_2 li {
       width:90%;
@@ -135,52 +95,17 @@
       color:gray;
       padding-top: 2px;
     }
-    #nav_ptn_2 li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-    #nav_ptn_2 li:hover{
-      background-color:rgb(76,161,146,0.7);
-      color:white;
-    }
-    #nav_ptn_2 li:hover .i_mark{
-      color: white;
-      font-weight: bold;
-    }
-    #nav_ptn_2 a:link { color: white; }
-    #nav_ptn_2 a:visited { color: white; }
-    #nav_ptn_2 a:hover { color: white; }
-    #nav_ptn_2 a:active { color: white; }
-    .personal_own p {
-      display: inline;
-     }
     .personal_major{
       font-size: 1em;
-      font-weight:bold;
     }
     .personal_gender{
       font-size: 1em;
     }
-    .personal_gender{
-      padding-left: 1%;
-    }
-    .personal_own{
-      padding-top: 0.5%;
-    }
     .personal_own_2{
-      padding-top: 0.5%;
-      padding-left: 2%;
       font-size: 1em;
     }
     .personal_date{
-      padding-left:3%;
       font-size: 1em;
-      display: inline-block;
-    }
-    .personal_group{
-      text-align:left;
-      padding-left: 5%;
     }
     .i_mark{
       float:right;
@@ -188,7 +113,6 @@
       padding-right: 15px;
       padding-top: 15px;
     }
-
     .back-hospital-page{
       margin-top: 5px;
       border : 2px solid rgb(76,161,146,0.7);
@@ -208,48 +132,8 @@
     .back-hospital-page-cover{
       width:60%;
     }
-    .back-hospital-page-cover a:visited{
-      color: gray;
-    }
-    .back-hospital-page-cover a:link{
-      color: gray;
-    }
-    .back-hospital-page-cover a:hover{
-      color: white;
-    }
-    .back-hospital-page-cover a:active{
-      color: white;
-    }
-    .is-current a{
-       font-weight: bold !important;
-       color: black!important;
-    }
-    #nav_gender li a {
-      text-decoration: none;
-      color: gray;
-    }
-    #nav_gender li {
-      text-align: center;
-      display: inline;
-    }
-    #gender_man:hover,#gender_woman:hover{
-      font-weight: bold !important;
-      color: black!important;
-    }
-    .paginator ul{
-      list-style: none;
-    }
-    .paginator{
-      float: left;
-      width: 60%;
-      padding: 0.2em 0.5em;
-      margin: 2em 0;
-    }
     .tabs{
       width:90%;
-    }
-    .recommend-text{
-      text-align: center;
     }
     .main-content{
       padding-top: 0px;
@@ -272,9 +156,6 @@
     .star-category,.rcd-count{
       display: inline-block;
     }
-    .star_and_comment{
-      margin-top:-0.5em;
-    }
 }
 
 /*Tablet*/
@@ -294,22 +175,6 @@
     border: solid 2px rgb(106,191,176,0.7);
     border-radius: 3px 0 3px 0;
   }
-  .recommend:before,.recommend:after{
-    content: '';
-    position: absolute;
-    width:10px;
-    height: 10px;
-    border: solid 2px rgb(106,191,176,0.7);
-    border-radius: 50%;
-  }
-  .recommend:after {
-    top:-12px;
-    left:-12px;
-  }
-  .recommend:before {
-    bottom:-12px;
-    right:-12px;
-  }
   .recommend-box{
     border:2px solid rgb(106,191,176);
     padding: 10px;
@@ -320,9 +185,6 @@
   }
   .recommend-box:hover{
     box-shadow: 0 0 10px rgba(0,0,0,.45);
-  }
-  .rcd-hospital-name,.rcd-place{
-    display: inline-block;
   }
   .rcd-hospital-name{
     font-size: 18px;
@@ -337,13 +199,7 @@
     margin-right: 30px;
     margin-top: 10px;
   }
-  .recommend a:link { color: gray; }
-  .recommend a:visited { color: gray; }
-  .recommend a:hover { color: gray; }
-  .recommend a:active { color: gray; }
-
   .header-top,#star-all{
-    font-weight: bold;
     font-size: 24px;
   }
   .header-tab{
@@ -351,7 +207,6 @@
     border-bottom: 1px solid silver;
     width:60%;
   }
-
   .all_count{
     font-size: 18px;
     margin-left: 1em;
@@ -375,25 +230,12 @@
     padding-right: 10px;
     margin-right: -1.86px;
   }
-  #gender_woman{
-    padding-left: 10px;
-    margin-left: -1.86px;
-  }
   #gender_type{
     padding-right: 1%;
   }
-  #gender_mid{
-    padding-right: 1%;
-    padding-left: 1%;
-  }
-
   #nav_gender{
     margin-bottom: 10px;
     margin-top: -10px;
-  }
-
-  #nav_ptn_2 {
-    list-style: none;
   }
   #nav_ptn_2 li {
     width:60%;
@@ -404,52 +246,17 @@
     border:2px solid rgb(106,191,176,0.7);
     color:gray;
   }
-  #nav_ptn_2 li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-  #nav_ptn_2 li:hover{
-    background-color:rgb(76,161,146,0.7);
-    color:white;
-  }
-  #nav_ptn_2 li:hover .i_mark{
-    color: white;
-    font-weight: bold;
-  }
-  #nav_ptn_2 a:link { color: white; }
-  #nav_ptn_2 a:visited { color: white; }
-  #nav_ptn_2 a:hover { color: white; }
-  #nav_ptn_2 a:active { color: white; }
-  .personal_own p {
-    display: inline;
-   }
   .personal_major{
     font-size: 18px;
-    font-weight:bold;
   }
   .personal_gender{
     font-size: 16px;
   }
-  .personal_gender{
-    padding-left: 1%;
-  }
-  .personal_own{
-    padding-top: 0.5%;
-  }
   .personal_own_2{
-    padding-top: 0.5%;
-    padding-left: 2%;
     font-size: 18px;
   }
   .personal_date{
-    padding-left:3%;
     font-size: 16px;
-    display: inline-block;
-  }
-  .personal_group{
-    text-align:left;
-    padding-left: 5%;
   }
   .i_mark{
     float:right;
@@ -458,7 +265,6 @@
     padding-top: 15px;
     padding-bottom: 15px;
   }
-
   .back-hospital-page{
     margin-top: 50px;
     border : 2px solid rgb(76,161,146,0.7);
@@ -478,48 +284,8 @@
   .back-hospital-page-cover{
     width:60%;
   }
-  .back-hospital-page-cover a:visited{
-    color: gray;
-  }
-  .back-hospital-page-cover a:link{
-    color: gray;
-  }
-  .back-hospital-page-cover a:hover{
-    color: white;
-  }
-  .back-hospital-page-cover a:active{
-    color: white;
-  }
-  .is-current a{
-     font-weight: bold !important;
-     color: black!important;
-  }
-  #nav_gender li a {
-    text-decoration: none;
-    color: gray;
-  }
-  #nav_gender li {
-    text-align: center;
-    display: inline;
-  }
-  #gender_man:hover,#gender_woman:hover{
-    font-weight: bold !important;
-    color: black!important;
-  }
-  .paginator ul{
-    list-style: none;
-  }
-  .paginator{
-    float: left;
-    width: 60%;
-    padding: 0.2em 0.5em;
-    margin: 2em 0;
-  }
   .tabs{
     width:60%;
-  }
-  .recommend-text{
-    text-align: center;
   }
   .main-content{
     padding-top: 40px;
@@ -541,9 +307,6 @@
   .rcd-content{
     overflow:hidden;
     text-overflow: ellipsis;
-  }
-  .star_and_comment{
-    margin-top: -0.5em;
   }
 }
 
@@ -576,22 +339,6 @@
     border: solid 2px rgb(106,191,176,0.7);
     border-radius: 3px 0 3px 0;
   }
-  .recommend:before,.recommend:after{
-    content: '';
-    position: absolute;
-    width:10px;
-    height: 10px;
-    border: solid 2px rgb(106,191,176,0.7);
-    border-radius: 50%;
-  }
-  .recommend:after {
-    top:-12px;
-    left:-12px;
-  }
-  .recommend:before {
-    bottom:-12px;
-    right:-12px;
-  }
   .recommend-box{
     border:2px solid rgb(106,191,176);
     padding: 10px;
@@ -603,12 +350,6 @@
   .rcd-content{
     overflow:hidden;
     text-overflow: ellipsis;
-  }
-  .recommend-box:hover{
-    box-shadow: 0 0 10px rgba(0,0,0,.45);
-  }
-  .rcd-hospital-name,.rcd-place{
-    display: inline-block;
   }
   .rcd-hospital-name{
     font-size: 18px;
@@ -623,13 +364,7 @@
     margin-right: 30px;
     margin-top: 10px;
   }
-  .recommend a:link { color: gray; }
-  .recommend a:visited { color: gray; }
-  .recommend a:hover { color: gray; }
-  .recommend a:active { color: gray; }
-
   .header-top,#star-all{
-    font-weight: bold;
     font-size: 24px;
   }
   .header-tab{
@@ -637,7 +372,6 @@
     border-bottom: 1px solid silver;
     width:100%;
   }
-
   .all_count{
     font-size: 18px;
     margin-left: 1em;
@@ -661,25 +395,12 @@
     padding-right: 10px;
     margin-right: -1.86px;
   }
-  #gender_woman{
-    padding-left: 10px;
-    margin-left: -1.86px;
-  }
   #gender_type{
     padding-right: 1%;
   }
-  #gender_mid{
-    padding-right: 1%;
-    padding-left: 1%;
-  }
-
   #nav_gender{
     margin-bottom: 10px;
     margin-top: -10px;
-  }
-
-  #nav_ptn_2 {
-    list-style: none;
   }
   #nav_ptn_2 li {
     width:35em;
@@ -690,52 +411,17 @@
     border:2px solid rgb(106,191,176,0.7);
     color:gray;
   }
-  #nav_ptn_2 li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-  #nav_ptn_2 li:hover{
-    background-color:rgb(76,161,146,0.7);
-    color:white;
-  }
-  #nav_ptn_2 li:hover .i_mark{
-    color: white;
-    font-weight: bold;
-  }
-  #nav_ptn_2 a:link { color: white; }
-  #nav_ptn_2 a:visited { color: white; }
-  #nav_ptn_2 a:hover { color: white; }
-  #nav_ptn_2 a:active { color: white; }
-  .personal_own p {
-    display: inline;
-   }
   .personal_major{
     font-size: 18px;
-    font-weight:bold;
   }
   .personal_gender{
     font-size: 16px;
   }
-  .personal_gender{
-    padding-left: 1%;
-  }
-  .personal_own{
-    padding-top: 0.5%;
-  }
   .personal_own_2{
-    padding-top: 0.5%;
-    padding-left: 2%;
     font-size: 18px;
   }
   .personal_date{
-    padding-left:3%;
     font-size: 16px;
-    display: inline-block;
-  }
-  .personal_group{
-    text-align:left;
-    padding-left: 5%;
   }
   .i_mark{
     float:right;
@@ -744,7 +430,6 @@
     padding-top: 15px;
     padding-bottom: 15px;
   }
-
   .back-hospital-page{
     margin-top: 50px;
     border : 2px solid rgb(76,161,146,0.7);
@@ -764,50 +449,9 @@
   .back-hospital-page-cover{
     width:100%;
   }
-  .back-hospital-page-cover a:visited{
-    color: gray;
-  }
-  .back-hospital-page-cover a:link{
-    color: gray;
-  }
-  .back-hospital-page-cover a:hover{
-    color: white;
-  }
-  .back-hospital-page-cover a:active{
-    color: white;
-  }
-  .is-current a{
-     font-weight: bold !important;
-     color: black!important;
-  }
-  #nav_gender li a {
-    text-decoration: none;
-    color: gray;
-  }
-  #nav_gender li {
-    text-align: center;
-    display: inline;
-  }
-  #gender_man:hover,#gender_woman:hover{
-    font-weight: bold !important;
-    color: black!important;
-  }
-  .paginator ul{
-    list-style: none;
-  }
-  .paginator{
-    float: left;
-    width: 60%;
-    padding: 0.2em 0.5em;
-    margin: 2em 0;
-  }
   .tabs{
     width:100%;
   }
-  .recommend-text{
-    text-align: center;
-  }
-
   .advertise{
     width : 100% ;
     padding-top : 100% ;
@@ -826,12 +470,132 @@
     padding-top: 1%;
     color:gray;
   }
-  .star_and_comment{
-    margin-top: -0.5em;
-  }
 }
 /*Common Setting*/
-
+.recommend:before,.recommend:after{
+  content: '';
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border: solid 2px rgb(106,191,176,0.7);
+  border-radius: 50%;
+}
+.recommend:after {
+  top:-12px;
+  left:-12px;
+}
+.recommend:before {
+  bottom:-12px;
+  right:-12px;
+}
+.recommend-box:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,.45);
+}
+.rcd-hospital-name,.rcd-place{
+  display: inline-block;
+}
+.recommend a:link { color: gray; }
+.recommend a:visited { color: gray; }
+.recommend a:hover { color: gray; }
+.recommend a:active { color: gray; }
+.header-top,#star-all{
+  font-weight: bold;
+}
+#gender_woman{
+  padding-left: 10px;
+  margin-left: -1.86px;
+}
+#gender_mid{
+  padding-right: 1%;
+  padding-left: 1%;
+}
+#nav_ptn_2 {
+  list-style: none;
+}
+#nav_ptn_2 li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+#nav_ptn_2 li:hover{
+  background-color:rgb(76,161,146,0.7);
+  color:white;
+}
+#nav_ptn_2 li:hover .i_mark{
+  color: white;
+  font-weight: bold;
+}
+#nav_ptn_2 a:link { color: white; }
+#nav_ptn_2 a:visited { color: white; }
+#nav_ptn_2 a:hover { color: white; }
+#nav_ptn_2 a:active { color: white; }
+.personal_own p {
+  display: inline;
+ }
+.personal_major{
+  font-weight:bold;
+}
+.personal_gender{
+  padding-left: 1%;
+}
+.personal_own{
+  padding-top: 0.5%;
+}
+.personal_own_2{
+  padding-top: 0.5%;
+  padding-left: 2%;
+}
+.personal_date{
+  padding-left:3%;
+  display: inline-block;
+}
+.personal_group{
+  text-align:left;
+  padding-left: 5%;
+}
+.back-hospital-page-cover a:visited{
+  color: gray;
+}
+.back-hospital-page-cover a:link{
+  color: gray;
+}
+.back-hospital-page-cover a:hover{
+  color: white;
+}
+.back-hospital-page-cover a:active{
+  color: white;
+}
+.is-current a{
+   font-weight: bold !important;
+   color: black!important;
+}
+#nav_gender li a {
+  text-decoration: none;
+  color: gray;
+}
+#nav_gender li {
+  text-align: center;
+  display: inline;
+}
+#gender_man:hover,#gender_woman:hover{
+  font-weight: bold !important;
+  color: black!important;
+}
+.paginator ul{
+  list-style: none;
+}
+.paginator{
+  float: left;
+  width: 60%;
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+}
+.recommend-text{
+  text-align: center;
+}
+.star_and_comment{
+  margin-top: -0.5em;
+}
 .star5_rating{
     position: relative;
     z-index: 0;
@@ -851,7 +615,6 @@
     white-space: nowrap;
     color: #ffcf32;
 }
-
 .star5_rating[data-rate="5.0"]:after{ width: 100%; }
 .star5_rating[data-rate="5"]:after{ width: 100%; }
 .star5_rating[data-rate="4.9"]:after{ width: 98%; }
@@ -909,7 +672,6 @@
 .star5_rating[data-rate="0.1"]:after{ width: 2%; }
 .star5_rating[data-rate="0.0"]:after{ width: 0%; }
 .star5_rating[data-rate="0"]:after{ width: 0%; }
-
 h2{
   color: rgb(111,111,111) !important;
 }

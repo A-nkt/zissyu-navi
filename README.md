@@ -37,4 +37,3 @@
 
 # MyTask
 - Mail機能
-- CSS最適化(main_app/user_answer.css, main_app/user_list.css, main_app/user.css)

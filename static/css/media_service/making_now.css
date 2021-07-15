@@ -7,11 +7,6 @@
     width: auto;
     height: 10rem;
   }
-  .img{
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    text-align: center;
-  }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -21,11 +16,6 @@
   img{
     width: auto;
     height: 15rem;
-  }
-  .img{
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    text-align: center;
   }
 }
 /*PC*/
@@ -38,11 +28,12 @@
     width: auto;
     height: 15rem;
   }
-  .img{
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    text-align: center;
-  }
+}
+/* Common Setting */
+.img{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
 }
 .main-content{
   text-align: center;
