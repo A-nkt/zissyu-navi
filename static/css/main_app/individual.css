@@ -131,7 +131,7 @@
     margin-top: -1em;
   }
   .recommend-box{
-    padding-bottom: 40px;
+    padding-bottom: 40px !important;
   }
   .recommend{
     padding: 0.2em 1em;
@@ -718,14 +718,12 @@ position: relative;
   bottom:-12px;
   right:-12px;
 }
-
 .recommend-box:hover{
   background-color: white;
 }
 .rcd-hospital-name,.rcd-place{
   display: inline-block;
 }
-
 .rcd-count{
   float: right;
   margin-right: 30px;

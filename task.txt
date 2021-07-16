@@ -1,4 +1,3 @@
 * 自分は今、”営業”をしているのか”マーケティング”をしているのか”開発”をしているのか意識する
 - Mailでの更新情報の発信（アカウントページでの有無の変更も忘れずに）
 - お問い合わせでのEmail確認送信
-- CSS最適化(media_service/content.css,main_app/以外,accounts/create.css以下)

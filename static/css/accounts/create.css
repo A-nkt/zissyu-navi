@@ -6,92 +6,6 @@
     height: auto;
     margin: 0 auto;
   }
-  .input{
-    padding-right: 100px;
-  }
-  .main-content h1{
-    border-bottom: 1px solid silver;
-    text-align: center;
-    padding-bottom: 5px;
-  }
-  .button:hover{
-    background-color: white !important ;
-    border-color: rgb(106,191,176) !important;
-    color : rgb(106,191,176) !important;
-  }
-  .button{
-    background-color: rgb(106,191,176) !important ;
-  }
-  .new-member{
-    float: right;
-  }
-  .forget-password{
-    clear:right;
-  }
-  /*About Google Accont*/
-  .google-account i{
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(211,65,47);
-    height:40px;
-    line-height:40px;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .google-account{
-    background-color: rgb(221,75,57);
-    width: 100%;
-    height:40px;
-    line-height:40px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-  }
-  .google-account a{
-    padding-left: 10px;
-    text-align: center;
-  }
-  .google-account:hover{
-    background-color: rgb(231,85,67);
-  }
-  .google-account:hover.google-account i {
-    background-color: rgb(221,75,57);
-  }
-  /*About Twitter Accont*/
-  .twitter-account i{
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(75,162,227);
-    height:40px;
-    line-height:40px;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .twitter-account{
-    background-color: rgb(85,172,237);
-    width: 100%;
-    height:40px;
-    line-height:40px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-  }
-  .twitter-account a{
-    padding-left: 10px;
-    text-align: center;
-  }
-  .twitter-account:hover{
-    background-color:rgb(95,182,247);
-  }
-  .twitter-account:hover.twitter-account i {
-    background-color: rgb(85,172,237);
-  }
-  .sns{
-    margin-bottom: 25px;
-  }
-
-  .google-account a:link,.twitter-account a:link { color: white; }
-  .google-account a:visited,.twitter-account a:visited { color: white; }
-  .google-account a:hover,.twitter-account a:hover { color: white; }
-  .google-account a:active,.twitter-account a:active { color: white; }
 }
 /*Tablet*/
 @media screen and (min-width:561px) and (max-width:960px){
@@ -107,92 +21,6 @@
     padding-top: 50px;
     margin-top: 1rem;
   }
-  .input{
-    padding-right: 100px;
-  }
-  .main-content h1{
-    border-bottom: 1px solid silver;
-    text-align: center;
-    padding-bottom: 5px;
-  }
-  .button:hover{
-    background-color: white !important ;
-    border-color: rgb(106,191,176) !important;
-    color : rgb(106,191,176) !important;
-  }
-  .button{
-    background-color: rgb(106,191,176) !important ;
-  }
-  .new-member{
-    float: right;
-  }
-  .forget-password{
-    clear:right;
-  }
-  /*About Google Accont*/
-  .google-account i{
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(211,65,47);
-    height:40px;
-    line-height:40px;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .google-account{
-    background-color: rgb(221,75,57);
-    width: 100%;
-    height:40px;
-    line-height:40px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-  }
-  .google-account a{
-    padding-left: 10px;
-    text-align: center;
-  }
-  .google-account:hover{
-    background-color: rgb(231,85,67);
-  }
-  .google-account:hover.google-account i {
-    background-color: rgb(221,75,57);
-  }
-  /*About Twitter Accont*/
-  .twitter-account i{
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(75,162,227);
-    height:40px;
-    line-height:40px;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .twitter-account{
-    background-color: rgb(85,172,237);
-    width: 100%;
-    height:40px;
-    line-height:40px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-  }
-  .twitter-account a{
-    padding-left: 10px;
-    text-align: center;
-  }
-  .twitter-account:hover{
-    background-color:rgb(95,182,247);
-  }
-  .twitter-account:hover.twitter-account i {
-    background-color: rgb(85,172,237);
-  }
-  .sns{
-    margin-bottom: 25px;
-  }
-
-  .google-account a:link,.twitter-account a:link { color: white; }
-  .google-account a:visited,.twitter-account a:visited { color: white; }
-  .google-account a:hover,.twitter-account a:hover { color: white; }
-  .google-account a:active,.twitter-account a:active { color: white; }
 }
 /*PC*/
 @media screen and (min-width:960px){
@@ -207,93 +35,93 @@
     padding-bottom: 100px;
     padding-top: 50px;
   }
-  .input{
-    padding-right: 100px;
-  }
-  .main-content h1{
-    border-bottom: 1px solid silver;
-    text-align: center;
-    padding-bottom: 5px;
-  }
-  .button:hover{
-    background-color: white !important ;
-    border-color: rgb(106,191,176) !important;
-    color : rgb(106,191,176) !important;
-  }
-  .button{
-    background-color: rgb(106,191,176) !important ;
-  }
-  .new-member{
-    float: right;
-  }
-  .forget-password{
-    clear:right;
-  }
-  /*About Google Accont*/
-  .google-account i{
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(211,65,47);
-    height:40px;
-    line-height:40px;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .google-account{
-    background-color: rgb(221,75,57);
-    width: 100%;
-    height:40px;
-    line-height:40px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-  }
-  .google-account a{
-    padding-left: 10px;
-    text-align: center;
-  }
-  .google-account:hover{
-    background-color: rgb(231,85,67);
-  }
-  .google-account:hover.google-account i {
-    background-color: rgb(221,75,57);
-  }
-  /*About Twitter Accont*/
-  .twitter-account i{
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(75,162,227);
-    height:40px;
-    line-height:40px;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .twitter-account{
-    background-color: rgb(85,172,237);
-    width: 100%;
-    height:40px;
-    line-height:40px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-  }
-  .twitter-account a{
-    padding-left: 10px;
-    text-align: center;
-  }
-  .twitter-account:hover{
-    background-color:rgb(95,182,247);
-  }
-  .twitter-account:hover.twitter-account i {
-    background-color: rgb(85,172,237);
-  }
-  .sns{
-    margin-bottom: 25px;
-  }
-
-  .google-account a:link,.twitter-account a:link { color: white; }
-  .google-account a:visited,.twitter-account a:visited { color: white; }
-  .google-account a:hover,.twitter-account a:hover { color: white; }
-  .google-account a:active,.twitter-account a:active { color: white; }
 }
+/* Common Setting */
+.input{
+  padding-right: 100px;
+}
+.main-content h1{
+  border-bottom: 1px solid silver;
+  text-align: center;
+  padding-bottom: 5px;
+}
+.button:hover{
+  background-color: white !important ;
+  border-color: rgb(106,191,176) !important;
+  color : rgb(106,191,176) !important;
+}
+.button{
+  background-color: rgb(106,191,176) !important ;
+}
+.new-member{
+  float: right;
+}
+.forget-password{
+  clear:right;
+}
+/*About Google Accont*/
+.google-account i{
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(211,65,47);
+  height:40px;
+  line-height:40px;
+  border-radius: 10px 0px 0px 10px;
+}
+.google-account{
+  background-color: rgb(221,75,57);
+  width: 100%;
+  height:40px;
+  line-height:40px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.google-account a{
+  padding-left: 10px;
+  text-align: center;
+}
+.google-account:hover{
+  background-color: rgb(231,85,67);
+}
+.google-account:hover.google-account i {
+  background-color: rgb(221,75,57);
+}
+/*About Twitter Accont*/
+.twitter-account i{
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(75,162,227);
+  height:40px;
+  line-height:40px;
+  border-radius: 10px 0px 0px 10px;
+}
+.twitter-account{
+  background-color: rgb(85,172,237);
+  width: 100%;
+  height:40px;
+  line-height:40px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.twitter-account a{
+  padding-left: 10px;
+  text-align: center;
+}
+.twitter-account:hover{
+  background-color:rgb(95,182,247);
+}
+.twitter-account:hover.twitter-account i {
+  background-color: rgb(85,172,237);
+}
+.sns{
+  margin-bottom: 25px;
+}
+.google-account a:link,.twitter-account a:link { color: white; }
+.google-account a:visited,.twitter-account a:visited { color: white; }
+.google-account a:hover,.twitter-account a:hover { color: white; }
+.google-account a:active,.twitter-account a:active { color: white; }
 .new-member:hover a,.forget-password:hover a{
   color: rgb(239,182,117) !important;
 }
