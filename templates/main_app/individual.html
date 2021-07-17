@@ -17,6 +17,29 @@
 <meta property="og:image" content="https://hospeee.com/media/media/{{ hospital_name }}-card.png" />
 {% endblock %}
 
+{% block head_content %}
+<!-- Google 構造化データ マークアップ支援ツールが生成した JSON-LD マークアップです。 -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "SoftwareApplication",
+  "name" : {{ hospital_name }},
+  "url" : {{ url }},
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "ratingCount" : {{ all_count }}
+  },
+  "review" : {
+    "@type" : "Review",
+    "reviewRating" : {
+      "@type" : "Rating",
+      "ratingValue" : {{ review_average }}
+    }
+  }
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="main-content">
 <div class="left-wrap">

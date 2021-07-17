@@ -15,6 +15,23 @@
 過去に実習を行なった先輩方の情報を見ることができます。これから行く方は参考にしてみてください！">
 {% endblock %}
 
+{% block head_content %}
+<!-- Google 構造化データ マークアップ支援ツールが生成した JSON-LD マークアップです。 -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "SoftwareApplication",
+  "name" : {{ hospital_name }},
+  "datePublished" : {{ row.date }},
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "ratingValue" : {{ score }},
+    "ratingCount" : {{ length }}
+  }
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="main-content">
 <div class="left-wrap">

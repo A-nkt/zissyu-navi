@@ -15,6 +15,19 @@
 <meta property="og:image" content="https://hospeee.com/media/{{ post.image }}"/>
 {% endblock %}
 
+{% block head_content %}
+<!-- Google 構造化データ マークアップ支援ツールが生成した JSON-LD マークアップです。 -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "SoftwareApplication",
+  "name" : {{ post.title }},
+  "image" : /media/{{ post.image }},
+  "datePublished" : {{ post.date }}
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="main-content">
   <div class="wrap">
