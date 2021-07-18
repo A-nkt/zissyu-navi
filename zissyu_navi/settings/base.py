@@ -15,25 +15,16 @@ import os
 import environ
 
 env = environ.Env()
-#BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 env.read_env(os.path.join(BASE_DIR,'.env'))
 
-
-
-# SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'ud#90yv)ao6y2dn_4ps27gtdhq_%i4-016fyf7u-zku3nv6=e0'
 SECRET_KEY = env('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 DEBUG = False
 
-#ALLOWED_HOSTS = ['hospeee.com','188.166.190.15']
-
 # Application definition
-
 INSTALLED_APPS = [
     'accounts',
     'ckeditor_uploader',
@@ -99,27 +90,12 @@ WSGI_APPLICATION = 'zissyu_navi.wsgi.application'
 
 AUTHENTICATION_BACKENDS = (
   'social_core.backends.open_id.OpenIdAuth',
-  #'social_core.backends.google.GoogleOpenId',
   'social_core.backends.google.GoogleOAuth2',
   'social_core.backends.twitter.TwitterOAuth',
-
- 'django.contrib.auth.backends.ModelBackend',
+  'django.contrib.auth.backends.ModelBackend',
 )
+
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'mysite',
-#        'USER':'mysiteuser',
-#        'PASSWORD':'mysiteuserp@S5',
-#        'HOST':'localhost',
-#        'PORT':'5432',
-#        'ATOMIC_REQUESTS':True,
-#    }
-#}
-
 DATABASE = {}
 
 # Password validation
@@ -140,10 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
-
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 USE_I18N = True
@@ -151,34 +124,16 @@ USE_L10N = True
 USE_TZ = True
 
 SITE_ID = 1
-#LOGOUT_REDIRECT_URL = 'accounts:logout'
-
-
 ##################
 ### RECAPTCHA  ###
 ##################
-
 GOOGLE_RECAPTCHA_SECRET_KEY = env('RECAPTCHA_SECRET_KEY')
 
 
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-#PROJECT_NAME = os.path.basename(BASE_DIR)
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-#STATIC_URL = '/static/'
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, 'static'),
-#)
-#STATIC_ROOT = '/var/www/mysite'
 LOGIN_REDIRECT_URL = '/'
-
 
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
 CKEDITOR_IMAGE_BACKEND = "pillow"
-
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = '/var/www/mysite/media'
 
 #グーグルアカウント連携用
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')

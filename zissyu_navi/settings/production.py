@@ -17,23 +17,16 @@ from .base import *
 
 env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 env.read_env(os.path.join(BASE_DIR,'.env'))
 
-# SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'ud#90yv)ao6y2dn_4ps27gtdhq_%i4-016fyf7u-zku3nv6=e0'
 SECRET_KEY = env('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
 DEBUG = False
 
 ALLOWED_HOSTS = ['hospeee.com','188.166.190.15']
 
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -46,17 +39,14 @@ DATABASES = {
     }
 }
 
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
             os.path.join(BASE_DIR, 'static'),
             )
 STATIC_ROOT = '/var/www/mysite'
 
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/var/www/mysite/media'
-
 
 ####################
 ## Email Settings ##

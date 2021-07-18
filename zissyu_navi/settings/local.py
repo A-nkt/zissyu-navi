@@ -19,14 +19,12 @@ ALLOWED_HOSTS = ['*']
 ############
 # Database #
 ############
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
-
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
@@ -37,7 +35,6 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = "/media/"
-
 
 ####################
 ## Email Settings ##
