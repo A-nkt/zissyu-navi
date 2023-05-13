@@ -9,14 +9,16 @@ class BlogSiteMap(Sitemap):
     ブログ記事のためのサイトマップ
     """
 
-    changefreq = "monthly" #items()の変更頻度
-    priority = 0.6 #0.4~1.0の間で優先順位を決めます。デフォルトは、0.5
+    changefreq = "monthly"
+    priority = 0.6
 
-    def items(self): #対象とするmodelとソート・フィルター
+    def items(self):
         return Blog.objects.filter(is_public=True)
 
-    def location(self,obj): #URLとパラメータ
-        return resolve_url("media_service:content_url",id=obj.id)
 
-    def lastmod(self,obj): #更新日
+    def location(self,obj):
+        return resolve_url("media_service:content_url", id=obj.id)
+
+
+    def lastmod(self,obj):
         return obj.date

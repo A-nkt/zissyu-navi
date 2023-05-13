@@ -24,10 +24,8 @@ from zissyu_navi.sitemaps import BlogSiteMap
 
 sitemaps = {
     'BaseSitemap': BaseSitemap,
-    'Post':BlogSiteMap,
+    'Post': BlogSiteMap,
 }
-
-
 
 urlpatterns = [
     path('host-admin/', admin.site.urls),

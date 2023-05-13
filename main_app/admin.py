@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Record,Major,Chapter,Category,Article,Contact,OtherRecord,Like
+
+from .models import Record, Major, Chapter, Category, Article, Contact, OtherRecord, Like
+
 
 admin.site.register(Record)
 admin.site.register(Major)
