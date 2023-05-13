@@ -4,7 +4,7 @@ LOGGING = {
         'formatters':{
             'production':{
                 'format':'%(asctime)s [%(levelname)s] %(process)d %(thread)d '
-                         '%(pathname)s:%(lineno)d %(message)s'
+                            '%(pathname)s:%(lineno)d %(message)s'
                 },
             },
         'handlers':{
